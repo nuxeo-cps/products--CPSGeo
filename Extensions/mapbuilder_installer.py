@@ -17,6 +17,9 @@ def install_lib(self):
     os.chdir(mb_dir)
     
     for root, dirs, files in os.walk('mapbuilder/lib'):
+        # ignore .svn directories
+        if root.find('.svn') > 0:
+            continue
         container = self.unrestrictedTraverse(root)
         for d in dirs:
             container.manage_addProduct['OFSP'].manage_addFolder(d)
@@ -41,6 +44,10 @@ def install_demo_app(self):
     os.chdir(mb_dir)
     
     for root, dirs, files in os.walk('demo'):
+        # ignore .svn directories
+        if root.find('.svn') > 0:
+            continue
+        
         container = self.unrestrictedTraverse(root)
         for f in files:
             ext = os.path.splitext(f)[1]

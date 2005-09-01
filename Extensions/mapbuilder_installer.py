@@ -32,6 +32,19 @@ def install_lib(self):
             else:
                 container.manage_addProduct['OFSP'].manage_addDTMLMethod(f,
                                                         file=open(f_path))
+
+    # Now, add all cps document icons from Products/CPSDocuments/skins/
+    # to the mapbuilder default skin folder
+    icon_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',
+                           'CPSDocument', 'skins', 'cps_document_images')
+    items = os.listdir(icon_dir)
+    for f in items:
+        ext = os.path.splitext(f)[1]
+        if ext.lower() in ['.jpg', '.gif', '.png']:
+            f_path = os.path.join(icon_dir, f)
+            data = open(f_path).read()
+            self.mapbuilder.lib.skin.default.images.manage_addProduct['OFSP'].manage_addImage(f, data)
+
     return 1
 
 def install_demo_app(self):

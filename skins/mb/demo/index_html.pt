@@ -12,16 +12,15 @@
 <body onload="mbDoLoad()">
 <table>
     <tr> 
-        <td/>&nbsp;
-        <td><h2 id="mapTitle"></h2></td>
+        <td>&nbsp;</td>
+        <td><h2>CPSGeo Map Browser</h2></td>
     </tr>
     <tr>
         <!-- left hand column -->
-        <td valign="top" style="padding:10px"> <div> 
-                <div id="locatorMap"/></div>
-            <div> 
-                <div id="legend"/></div>
-            <hr/> </td>
+        <td valign="top" style="padding:10px">
+            <div><div id="locatorMap"/></div>
+            <div><div id="legend"/></div>
+        </td>
         <!-- right hand column -->
         <td> <table width="100%">
                 <tr> 
@@ -43,15 +42,23 @@
                                 <td align="right" id="cursorTrack" />&nbsp;</tr>
                         </table></td>
                 </tr>
-                <tr> 
-                    <td align="left" id="abstract"/>&nbsp;</tr>
-                <tr> 
-                    <td align="left" id="gmlModelStatus"/>&nbsp;</tr>
             </table>
-            <hr/> <p align="right"><a href="http://mapbuilder.sourceforge.net">Community 
-                Map Builder</a><br/>
-                $Name: mapbuilder-lib-0_4 $</p></td>
     </tr>
-</table><div id="eventsListing">
+</table>
+
+<table>
+    <tr>
+        <td align="left">
+            Simulated Document Query Results Below
+            <hr/>
+            <div id="eventsListing"></div>
+        </td>
+        <td align="left">
+        Mouse over rows in the query results to see documents highlighted in
+        the map frame.
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>

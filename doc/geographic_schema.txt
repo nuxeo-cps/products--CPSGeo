@@ -1,0 +1,26 @@
+Geographic Schema for CPS
+
+    The geographic schema is based on a simple GML (Geography Markup Language)
+    point type geometry::
+
+        <gml:Point srsName="EPSG:4326">
+            <gml:posList dimension="2">2.4 47.3</gml:posList>
+        </gml:Point>
+
+    This is flattened into three simple fields::
+
+        SpatialReferenceSystem : string
+            The default is "EPSG:4326", longitude/latitude coordinates using the
+            WGS84 earth model.
+
+        PosListDimension : int
+            The dimension of coordinate tuples specified in the PosList string.
+            Our default is 2, meaning that we only specify x and y coordinates.
+
+        PosList : string
+            Location coordinates in decimal degree units, like "[x] [y]",
+            where x is the longitude East of the Greenwich meridian, and y is
+            the latitude North of the equator.  A PosList for a location near
+            Paris would be "2.4 47.33", and for Denver: "-105.0 39.75"
+
+

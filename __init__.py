@@ -1,9 +1,9 @@
 
-#from Products.CMFCore.DirectoryView import registerDirectory
+from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore import utils as cmfutils
 #from Products.CMFCore.CMFCorePermissions import AddPortalContent
 
-#registerDirectory('skins', globals())
+registerDirectory('skins', globals())
 
 import MapTool
 

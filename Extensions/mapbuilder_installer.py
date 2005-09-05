@@ -13,7 +13,7 @@ def install_lib(self):
     self.mapbuilder.manage_addProduct['OFSP'].manage_addFolder('lib')
             
     mb_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',
-                           'CPSGeo', 'skins', 'mb')
+                           'CPSGeo', 'skins')
     os.chdir(mb_dir)
     
     for root, dirs, files in os.walk('mapbuilder/lib'):

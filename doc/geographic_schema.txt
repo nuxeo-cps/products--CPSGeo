@@ -1,26 +1,68 @@
-Geographic Schema for CPS
 
-    The geographic schema is based on a simple GML (Geography Markup Language)
-    point type geometry::
+Schema Name
+
+    We shall call this schema "geolocation". 
+    
+Origins in GML
+
+    The geolocation schema is based on a simple GML (Geography Markup
+    Language) point type geometry::
 
         <gml:Point srsName="EPSG:4326">
             <gml:posList dimension="2">2.4 47.3</gml:posList>
         </gml:Point>
 
-    This is flattened into three simple fields::
+    With GML, it is generally accepted that *location* properties are of
+    *Point* type.
+    
+Schema for CPS
 
-        SpatialReferenceSystem : string
-            The default is "EPSG:4326", longitude/latitude coordinates using the
-            WGS84 earth model.
+    For CPS, we flatten this into three simple fields::
 
-        PosListDimension : int
-            The dimension of coordinate tuples specified in the PosList string.
-            Our default is 2, meaning that we only specify x and y coordinates.
+        SpatialReferenceSystem : string , default: "string:EPSG:4326"
+            The default is "EPSG:4326", longitude/latitude coordinates using
+            the WGS84 earth model.
 
-        PosList : string
+        PosListDimension : int , default: "python:2"
+            The dimension of coordinate tuples specified in the PosList
+            string.  Our default is 2, meaning that we only specify x and y
+            coordinates.
+
+        PosList : string , default: "string:"
             Location coordinates in decimal degree units, like "[x] [y]",
             where x is the longitude East of the Greenwich meridian, and y is
             the latitude North of the equator.  A PosList for a location near
             Paris would be "2.4 47.33", and for Denver: "-105.0 39.75"
 
+
+PosList Widget and Layout
+
+    We will rely on the default values for SpatialReferenceSystem and
+    PosListDimension until there is a strong future requirement for other
+    coordinates systems or 3D locations. No widgets or layout elements are
+    required for those schema fields. Below are the recommended properties for
+    the PosList widget::
+
+        Title : string
+            PosList
+        
+        Fields : tokens
+            PosList
+        
+        Labels : string
+            WGS84 Coordinates
+        
+        Description : text
+            A string of location coordinates
+        
+        Help : text
+            A string of location coordinates. A point location must be
+            represented as a x (longitude east of Greenwich meridian) and y
+            (latitude north of equator) pair in decimal degree units. For
+            example:
+                Paris: "2.40 48.7333"
+                Denver: "-105.0 39.75"
+        
+        Display width : int
+            25
 

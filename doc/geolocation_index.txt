@@ -1,0 +1,21 @@
+Geolocation and Cataloging
+
+    To rapidly find and map geolocated documents, new metadata and index will
+    be required for portal_maps.
+
+Metadata
+
+    PosList should be added to the catalog metadata to speed up the mapping of
+    geolocated documents.
+
+Indexing
+
+    I propose that geolocated documents be tracked by a FieldIndex on the
+    PosListDimension field. We will name this index "geolocation". This will
+    allow the MapTool to find geolocated documents like::
+
+        brains = self.portal_catalog(geolocation={'query': 1, 'range': 'min'})
+
+      
+
+    

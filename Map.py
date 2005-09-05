@@ -19,7 +19,9 @@
 """Map
 """
 
-class Map:
+from Products.CMFCore.PortalContent import PortalContent
+
+class Map(PortalContent):
 
     """Map
     """

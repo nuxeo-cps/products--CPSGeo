@@ -17,65 +17,81 @@
 #
 # $Id$
 
-"""Map Tool
+"""Map Tool For CPS
 """
 
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 
-from Products.CMFCore.utils import UniqueObject
-from OFS.Folder import Folder
+from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.permissions import ManagePortal
 
-from Map import Map
+from Products.CMFCore.utils import UniqueObject
+from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
+
 from georss import modelGeoRSS
 
-
-class MapPoolError(Exception):
-
-    """Errors involving a Tool's pool of maps"""
-    
-    
-class MapTool(UniqueObject, Folder):
+class MapTool(UniqueObject, CMFBTreeFolder):
 
     """Map Tool
     """
+
+    id = 'portal_maps'
+    title = "CPS Map Tool"
 
     meta_type = 'CPS Map Tool'
 
     security = ClassSecurityInfo()
 
     def __init__(self):
-        """Initialize"""
-        self.id = 'portal_maps'
-        self._maps = {}
+        CMFBTreeFolder.__init__(self, self.id)
 
+    security.declareProtected(ManagePortal, 'addMap')
     def addMap(self, id, url):
-        """Add a map"""
-        if id not in self._maps.keys():
-            self._maps[id] = url
-        else:
-            raise MapPoolError, \
-            "A map exists with id: %s" % (id)
+        """Add a map
+        """
+        # XXX Why don't you use auto-generated uids ?
+        # You may still use a name beside.
+        if id in list(self.keys()):
+            raise KeyError("A map exists with id: %s" % (id))
 
+        # XXX why don't you store Map objects instead ?
+        return self._setOb(id, url)
+
+    # XXX permission ?
+    def getMap(self, id):
+        """Get a map given its id
+        """
+        return self._getOb(id)
+
+    # XXX permission ? 
     def getDocumentsByLocation(self, meta_types=[], bounds=[]):
-        """Return documents of certain types within specified WGS84 bounds"""
-        brains = self.portal_catalog(geolocation={'query': 1, 'range': 'min'})
+        """Return documents of certain types within specified WGS84 bounds
+        """
+
+        catalog = getToolByName(self, 'portal_catalog')
+
+        # XXX Is this an index ?
+        brains = catalog(geolocation={'query': 1, 'range': 'min'})
         results = []
-        for b in brains:
-            results.append({'id': b.id, 'title': b.Title,
-                            'description': b.Description,
-                            'type': b.Type,
-                            'date': b.ModificationDate,
-                            'url': b.getURL(),
-                            'poslist': b.PosList})
+
+        # XXX can't you just use the brains directly ?
+        for brain in brains:
+            results.append({'id': brain.id, 'title': brain.Title,
+                            'description': brain.Description,
+                            'type': brain.Type,
+                            'date': brain.ModificationDate,
+                            'url': brain.getURL(),
+                            'poslist': brain.PosList})
         return results
-        
+
+    # XXX permission ? 
     def getGeoRSSModel(self, REQUEST=None):
-        """Return a GeoRSS model for mapbuilder"""
+        """Return a GeoRSS model for mapbuilder
+        """
         schemas = self.getDocumentsByLocation()
         if REQUEST:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return modelGeoRSS(self.title, self.absolute_url(), schemas)
-        
-        
+
 InitializeClass(MapTool)

@@ -5,8 +5,7 @@ if __name__ == '__main__':
 
 import unittest
 
-from Testing import ZopeTestCase
-from Products.CPSGeo.MapTool import MapTool, MapPoolError
+from Products.CPSGeo.MapTool import MapTool
 from Products.CPSGeo.Map import Map
 
 class ConfigToolTest(unittest.TestCase):
@@ -25,14 +24,13 @@ class ConfigToolTest(unittest.TestCase):
     def testAddMap(self):
         tool = MapTool()
         tool.addMap('usgs', self.usgsmap)
-        self.assert_(len(tool._maps) == 1, tool._maps)
-        self.assert_(tool._maps['usgs'].url == self.url, tool._maps)
+        self.assert_(len(tool.keys()), 1)
+        self.assert_(tool.getMap('usgs').url, self.url)
 
     def testAddMapDupe(self):
         tool = MapTool()
         tool.addMap('usgs', self.usgsmap)
-        self.assertRaises(MapPoolError, tool.addMap, 'usgs', Map('u'))
-
+        self.assertRaises(KeyError, tool.addMap, 'usgs', Map('u'))
        
 def test_suite():
     suite = unittest.TestSuite()

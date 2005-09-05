@@ -11,10 +11,7 @@ Map Tool Installation and Setup
 
 2. Restart Zope
 
-3. In a CPS site root, select "Add CPS Geo Tools". In the next form, add the
-   CPS Map Tool. This creates a "portal_maps" object in the site root.
-
-4. Download version 0.4 of the mapbuilder, http://mapbuilder.sourceforge.net/,
+3. Download version 0.4 of the mapbuilder, http://mapbuilder.sourceforge.net/,
    lib from:
    
    http://prdownloads.sourceforge.net/mapbuilder/mapbuilder-lib-0.4.zip?download
@@ -29,7 +26,7 @@ Map Tool Installation and Setup
 
    Mapbuilder is a rich AJAX library for web map browsing applications. 
 
-5. Install mapbuilder-lib into portal_maps:
+4. Install mapbuilder-lib into portal_maps:
 
    Create an External Method in portal_maps with id "install_mblib" using
    
@@ -41,7 +38,7 @@ Map Tool Installation and Setup
    many folders of DTML Methods.  **TODO**: better automation of installer
    and use of Filesystem DTML Methods.
 
-6. Install the preliminary mapbuilder application for portal_maps:
+5. Install the preliminary mapbuilder application for portal_maps:
 
    Create an External Method in portal_maps with id "install_mbapp" using
    
@@ -53,10 +50,10 @@ Map Tool Installation and Setup
    DTML Methods and a Page Template. **TODO**: better automation of installer
    and use of Filesystem DTML Methods.
 
-7. Load the CPSGeo/skins/mb/demo/index_html.pt in Zope as 
+6. Load the CPSGeo/skins/mb/demo/index_html.pt in Zope as 
    portal_maps/index_html.
 
 
-8. Visit /portal_maps/demo/index_html.
+7. Visit /portal_maps/demo/index_html.
 
 

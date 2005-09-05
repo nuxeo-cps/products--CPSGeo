@@ -4,27 +4,16 @@ CPSGeo Installation
 Sean Gillies
 sgillies@frii.com
 
-Map Tool Installation and Setup
--------------------------------
-
 1. Extract or copy the CPSGeo product to the Zope Products directory
 
 2. Restart Zope
 
-3. Download version 0.4 of the mapbuilder, http://mapbuilder.sourceforge.net/,
-   lib from:
+3. Install the CPSGeo Product
+
+   Create an External Method at the root of CPS.
    
-   http://prdownloads.sourceforge.net/mapbuilder/mapbuilder-lib-0.4.zip?download
-
-   Extract into Products/CPSGeo/skins/mb to produce the following tree:
-
-       Products/CPSGeo/skins/mb
-                               demo/
-                               mapbuilder/
-                                         lib/
-                                         ...
-
-   Mapbuilder is a rich AJAX library for web map browsing applications. 
+     module:      CPSGeo.install
+     function:    install
 
 4. Install mapbuilder-lib into portal_maps:
 

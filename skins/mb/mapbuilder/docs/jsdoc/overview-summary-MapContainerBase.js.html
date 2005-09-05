@@ -1,0 +1,355 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+<a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005 Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="MapContainerBase.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>MapContainerBase.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'MapContainerBase.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+    <table border="1" cellpadding="3" cellspacing="0" width="100%">
+    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
+    <td colspan=2><font size="+2">
+    
+        <b>Class Summary</b>
+    
+    </font></td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="MapContainerBase.html">MapContainerBase</a></b></td>
+    <td>&nbsp;</td>
+    </tr>
+    
+    </table>
+    <hr/> 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+License: LGPL as per: http://www.gnu.org/copyleft/lesser.html
+$Id$
+*/</span>
+<span class="comment">
+// Ensure this object's dependancies are loaded.</span>
+mapbuilder.loadScript(baseDir+<span class="literal">"/widget/WidgetBase.js"</span>);
+mapbuilder.loadScript(baseDir+<span class="literal">"/tool/Extent.js"</span>);
+
+<span class="comment">/**
+ * Base class for a MapContainer.  Widgets extending this class will have their
+ * output appended to the document in a shared container. 
+ * The container instance is specified by the mapContainerId property in config. 
+ * Only one instance of the container can be created and it should have only 
+ * one model which defines it and set as the widget.containerModel property.  
+ * Therefore only the first instance of this class with the given id will actually 
+ * create the container div and containerModel property.  
+ * Subsequent instances of this class with same mapContainerId will have their
+ * widget.node value set to the container node and will have access to a 
+ * widget.containerModel property.
+ * If the widget has the fixedWidth property set to true, then the width of the
+ * MapPane will be taken from the width of the HTML element.  Height will be set
+ * to maintain a constant aspect ratio.
+ * This widget implements listeners for all mouse event types so that tools can
+ * define mouse event callbacks.
+ *
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@base</span> WidgetBase
+ * <span class="attrib">@author</span> Mike Adair 
+ * <span class="attrib">@param</span> widget      Pointer to the widget instance being created
+ * <span class="attrib">@param</span> widgetNode  The widget's XML object node from the configuration document.
+ * <span class="attrib">@param</span> model       The model object that this widget belongs to.
+ */</span>
+<span class="reserved">function</span> MapContainerBase(widget,widgetNode,model) {
+  var base = new WidgetBase(widget, widgetNode, model);
+<span class="comment">
+  //if there is a container node for this widget, initialized later</span>
+  var mapContainerNode = widgetNode.selectSingleNode(<span class="literal">"mb:mapContainerId"</span>);
+  <span class="reserved">if</span> (mapContainerNode) {
+    widget.containerNodeId = mapContainerNode.firstChild.nodeValue;
+  } <span class="reserved">else</span> {
+    alert(<span class="literal">"MapContainerBase: required property mapContainerId missing in config:"</span>+widget.id);
+  }
+
+<span class="comment">/**
+ * Initialize the container if required.
+ */</span>
+  var containerNode = document.getElementById(widget.containerNodeId);
+  <span class="reserved">if</span> (containerNode) {
+    widget.containerModel = containerNode.containerModel;
+    model.containerModel = containerNode.containerModel;
+<span class="comment">    //widget.containerModel.addListener("bbox",widget.paint,widget);</span>
+
+    <span class="reserved">this</span>.setContainerWidth = <span class="reserved">function</span>(objRef) {
+      objRef.node.style.width=objRef.containerModel.getWindowWidth();
+      objRef.node.style.height=objRef.containerModel.getWindowHeight();
+      widget.stylesheet.setParameter(<span class="literal">"width"</span>, objRef.containerModel.getWindowWidth() );
+      widget.stylesheet.setParameter(<span class="literal">"height"</span>, objRef.containerModel.getWindowHeight() );
+    }
+
+<span class="comment">/**
+ * the containerModel is initialized here
+ */</span>
+  } <span class="reserved">else</span> {
+    containerNode = document.createElement(<span class="literal">"DIV"</span>);
+    containerNode.setAttribute(<span class="literal">"id"</span>,widget.containerNodeId);
+    containerNode.id=widget.containerNodeId;
+<span class="comment">    // Set dimensions of containing &lt;div&gt;widget.</span>
+    containerNode.style.position=<span class="literal">"relative"</span>;
+    containerNode.style.overflow=<span class="literal">"hidden"</span>;
+
+    containerNode.containerModel = widget.model;
+    widget.containerModel = widget.model;
+    model.containerModel = containerNode.containerModel;
+
+    <span class="comment">/**
+     * method to adjust the width of the container DIV on startup.  If the 
+     * &lt;fixedWidth&gt; property is set in config, width and height of the context
+     * doc will be adjusted.
+     * <span class="attrib">@param</span> objRef pointer to this object.
+     */</span>
+    <span class="reserved">this</span>.setContainerWidth = <span class="reserved">function</span>(objRef) {
+<span class="comment">      //adjust the context width and height if required.</span>
+      var fixedWidth = widgetNode.selectSingleNode(<span class="literal">"mb:fixedWidth"</span>);
+      <span class="reserved">if</span> ( fixedWidth ) {
+        fixedWidth = fixedWidth.firstChild.nodeValue;
+        var aspectRatio = objRef.containerModel.getWindowHeight()/objRef.containerModel.getWindowWidth();
+        var newHeight = Math.round(aspectRatio*fixedWidth);
+        objRef.containerModel.setWindowWidth( fixedWidth );
+        objRef.containerModel.setWindowHeight( newHeight );
+      }
+      objRef.node.style.width=objRef.containerModel.getWindowWidth();
+      objRef.node.style.height=objRef.containerModel.getWindowHeight();
+      widget.stylesheet.setParameter(<span class="literal">"width"</span>, objRef.containerModel.getWindowWidth() );
+      widget.stylesheet.setParameter(<span class="literal">"height"</span>, objRef.containerModel.getWindowHeight() );
+    }
+<span class="comment">
+    //add the extent tool</span>
+    widget.containerModel.extent = new Extent( widget.containerModel );
+    widget.containerModel.addFirstListener( <span class="literal">"loadModel"</span>, widget.containerModel.extent.init, widget.containerModel.extent );
+    widget.containerModel.addListener( <span class="literal">"bbox"</span>, widget.containerModel.extent.init, widget.containerModel.extent );
+<span class="comment">    //TBD: do an extent history by storing extents every time the aoi changes</span>
+
+    <span class="comment">/**
+     * Called just before paint to set the map scale as stylesheet param
+     * <span class="attrib">@param</span> objRef pointer to this object.
+     */</span>
+    widget.prePaint = <span class="reserved">function</span>(objRef) {
+      var mapScale = objRef.model.extent.getScale();
+      widget.stylesheet.setParameter(<span class="literal">"mapScale"</span>, mapScale );
+      <span class="reserved">if</span> (_SARISSA_IS_IE) widget.stylesheet.setParameter(<span class="literal">"isIE"</span>, <span class="literal">"true"</span> );
+    }
+
+    <span class="comment">/**
+     * Called just before paint to set a help message for when the cursor is 
+     * over the map container.
+      //TBD: implement some sort of map pane hover mechanism to show the tooltip
+     * <span class="attrib">@param</span> objRef pointer to this object.
+     */</span>
+    widget.setTooltip = <span class="reserved">function</span>(objRef, tooltip) {
+<span class="comment">      //alert("setting mappane tooltip to:"+tooltip);</span>
+    }
+    widget.containerModel.addListener( <span class="literal">"tooltip"</span>, widget.setTooltip, widget);
+
+  <span class="comment">/** Cross-browser mouse event handling.
+    * This function is the event handler for all MapContainer mouse events.
+    * Listeners are defined for all the mouse actions.  This includes:
+    * "mouseup", "mousedown", "mousemove", "mouseover", "mouseout".
+    * This function executes in the context of the MapContainer node, 
+    * ie. this = MapContainer node
+    * It will set some properties on this node, which is passed on for further 
+    * use by any regsitered listeners:
+    * * evpl      pixel/line of the event relative to the upper left corner of the DIV.
+    * * evxy      projection x and y of the event calculated via the context.extent.
+    * * evTarget  projection x and y of the event calculated via the context.extent.
+    * * evType    projection x and y of the event calculated via the context.extent.
+    * * keypress state for ALT CTL and SHIFT keys.
+    *
+    * <span class="attrib">@param</span> ev the mouse event oject passed in from the browser (will be null for IE)
+    */</span>
+    <span class="reserved">this</span>.eventHandler=<span class="reserved">function</span>(ev) {
+      <span class="reserved">if</span> (window.event) {
+<span class="comment">        //IE events</span>
+        var p = window.event.clientX - <span class="reserved">this</span>.offsetLeft + document.documentElement.scrollLeft + document.body.scrollLeft;
+        var l = window.event.clientY - <span class="reserved">this</span>.offsetTop + document.documentElement.scrollTop + document.body.scrollTop;
+        <span class="reserved">this</span>.evpl = new Array(p,l);
+        <span class="reserved">this</span>.eventTarget = window.event.srcElement;
+        <span class="reserved">this</span>.eventType = window.event.type;
+        <span class="reserved">this</span>.altKey = window.event.altKey;
+        <span class="reserved">this</span>.ctrlKey = window.event.ctrlKey;
+        <span class="reserved">this</span>.shiftKey = window.event.shiftKey;
+        window.event.returnValue = false;
+        window.event.cancelBubble = true;
+      } <span class="reserved">else</span> {
+<span class="comment">        //mozilla browsers</span>
+        var p = ev.clientX + window.scrollX - <span class="reserved">this</span>.offsetLeft;
+        var l = ev.clientY + window.scrollY - <span class="reserved">this</span>.offsetTop;
+        <span class="reserved">this</span>.evpl = new Array(p,l);
+        <span class="reserved">this</span>.eventTarget = ev.target;
+        <span class="reserved">this</span>.eventType = ev.type;
+        <span class="reserved">this</span>.altKey = ev.altKey;
+        <span class="reserved">this</span>.ctrlKey = ev.ctrlKey;
+        <span class="reserved">this</span>.shiftKey = ev.shiftKey;
+        ev.stopPropagation();
+      }
+
+      <span class="reserved">this</span>.containerModel.setParam(<span class="reserved">this</span>.eventType,<span class="reserved">this</span>);
+      <span class="reserved">return</span> false;
+    }
+    widget.eventHandler = <span class="reserved">this</span>.eventHandler;
+
+    containerNode.onmousemove = widget.eventHandler;
+    containerNode.onmouseout = widget.eventHandler;
+    containerNode.onmouseover = widget.eventHandler;
+    containerNode.onmousedown = widget.eventHandler;
+    containerNode.onmouseup = widget.eventHandler;
+    widget.node.appendChild(containerNode);
+  }
+  widget.node = document.getElementById(widget.containerNodeId);
+
+  widget.setContainerWidth = <span class="reserved">this</span>.setContainerWidth;
+  widget.containerModel.addFirstListener( <span class="literal">"loadModel"</span>, widget.setContainerWidth, widget );
+  widget.containerModel.addListener( <span class="literal">"bbox"</span>, widget.paint, widget );
+}
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Wed Aug 10 14:31:26 2005</div>
+</body>
+</html>

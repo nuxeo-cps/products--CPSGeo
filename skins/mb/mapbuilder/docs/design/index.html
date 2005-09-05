@@ -1,0 +1,301 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>mapbuilder-lib Software Design Description</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="design"></a>mapbuilder-lib Software Design Description</h2></div><div><div class="author"><h3 class="author"><span class="firstname">Cameron</span> <span class="surname">Shorter</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Adair</span></h3></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#id2451082">1. Scope</a></span></dt><dd><dl><dt><span class="section"><a href="#id2451087">1.1. Identification</a></span></dt><dt><span class="section"><a href="#id2451112">1.2. System Overview</a></span></dt><dt><span class="section"><a href="#id2451140">1.3. Document Overview</a></span></dt></dl></dd><dt><span class="section"><a href="#referencedocuments">2. Reference Documents</a></span></dt><dt><span class="section"><a href="#designdecisions">3. Design Decisions</a></span></dt><dd><dl><dt><span class="section"><a href="#designdrivers">3.1. Design Drivers</a></span></dt><dt><span class="section"><a href="#mvc">3.2. Model View Controller</a></span></dt><dd><dl><dt><span class="section"><a href="#mvcoverview">3.2.1. MVC Overview</a></span></dt><dt><span class="section"><a href="#mvcbenefits">3.2.2. MVC benefits</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="#id2451755">4. Architectural Design</a></span></dt><dd><dl><dt><span class="section"><a href="#interfacedesign">4.1. Interface Design</a></span></dt><dd><dl><dt><span class="section"><a href="#mainpage">4.1.1. MainPage</a></span></dt><dt><span class="section"><a href="#webmapcontext">4.1.2. Web Map Context</a></span></dt><dt><span class="section"><a href="#config">4.1.3. Config</a></span></dt><dd><dl><dt><span class="section"><a href="#configdocumentschema">4.1.3.1. Config Document Schema</a></span></dt><dt><span class="section"><a href="#MapbuilderConfig">4.1.3.2. MapbuilderConfig</a></span></dt><dt><span class="section"><a href="#configmodels">4.1.3.3. Models</a></span></dt><dt><span class="section"><a href="#configwidgets">4.1.3.4. Widgets</a></span></dt><dt><span class="section"><a href="#configtools">4.1.3.5. Tools</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="#components">4.2. Components</a></span></dt><dd><dl><dt><span class="section"><a href="#model">4.2.1. Model</a></span></dt><dt><span class="section"><a href="#id2452576">4.2.2. Widget</a></span></dt><dt><span class="section"><a href="#tool">4.2.3. Tool</a></span></dt><dd><dl><dt><span class="section"><a href="#id2452639">4.2.3.1. ButtonBase</a></span></dt></dl></dd><dt><span class="section"><a href="#util">4.2.4. Util</a></span></dt><dd><dl><dt><span class="section"><a href="#listener">4.2.4.1. Listener</a></span></dt></dl></dd><dt><span class="section"><a href="#mapbuilder">4.2.5. Mapbuilder</a></span></dt><dt><span class="section"><a href="#inheritance">4.2.6. Inheritance</a></span></dt><dt><span class="section"><a href="#id2453061">4.2.7. File and object name convention</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="#notes">5. Notes</a></span></dt><dd><dl><dt><span class="section"><a href="#id2453124">5.1. Extending the code base</a></span></dt></dl></dd><dt><span class="appendix"><a href="#glossary">A. Glossary</a></span></dt><dt><span class="appendix"><a href="#umllegend">B. UML Legend</a></span></dt></dl></div><div class="abstract"><p class="title"><b>Abstract</b></p><p>This document describes the design of mapbuilder-lib, a module
+    within the Community Map Builder framework.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2451082"></a>1. Scope</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2451087"></a>1.1. Identification</h3></div></div></div><p>This document is referred to as <em class="citetitle">mapbuilder-lib Software
+      Design Description</em>, associated with release $Name: mapbuilder-lib-0_4 $.</p><p>The source document is stored in Docbook XML format and is stored
+      in the Community Mapbuilder CVS repository in
+      <code class="filename">mapbuilder/design/mapbuilder-lib.xml</code>.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2451112"></a>1.2. System Overview</h3></div></div></div><p><em class="citetitle">mapbuilder-lib</em> provides components that can
+      be used to build geographic client applications within a web browser. It
+      uses Open GIS Standards (OGC) to communication with external Map
+      Servers.</p><p>It uses Javascript and XSL which can be rendered by Internet
+      Explorer 6+, Mozilla 1.3+ and Netscape 6+.</p><p><em class="citetitle">mapbuilder-lib</em> uses an object oriented
+      design which makes it easy to extend.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2451140"></a>1.3. Document Overview</h3></div></div></div><p>This document describes the design of
+      <em class="citetitle">mapbuilder-lib</em>, a module within the Community Map
+      Builder framework. See the layout guide for instructions on customizing
+      the configuration elements.</p><p>The structure of this document is loosely based on the SDD
+      template provided by <a href="http://www.pogner.demon.co.uk/mil_498/" target="_top">MIL-STD 498</a>.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="referencedocuments"></a>2. Reference Documents</h2></div></div></div><div class="itemizedlist"><ul type="disc"><li><p><a href="http://mapbuilder.sourceforge.net" target="_top">Community Map
+        Builder home page</a>.</p></li><li><p><a href="http://mapbuilder.sourceforge.net/?q=node/view/52" target="_top">mapbuilder-lib
+        Web Builder's tutorial</a>.</p></li><li><p><a href="http://mapbuilder.sourceforge.net/docs/jsdocs/index.html" target="_top">jsdocs</a>
+        of javascript objects. (Similar to javadocs).</p></li><li><p><a href="http://www.opengis.org/specs/?page=specs" target="_top">Web Map
+        Service</a> specification.</p></li><li><p><a href="http://www.opengis.org/specs/?page=specs" target="_top">Web Map
+        Context</a> specification.</p></li></ul></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="designdecisions"></a>3. Design Decisions</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="designdrivers"></a>3.1. Design Drivers</h3></div></div></div><p>The goals of the libraries are to provide the following:</p><div class="variablelist"><dl><dt><span class="term">Client is a Web Browser</span></dt><dd><p>Mapbuilder Clients should be easy for users to run. Users
+            should not have to download and install new software. Instead all
+            Mapbuilder clients should run inside the commonly used web
+            browsers. In particular, Internet Explorer 6+ and Mozilla browsers
+            based on Mozilla 1.3+.</p></dd><dt><span class="term">Minimal Server Side Functionality</span></dt><dd><p>Mapbuilder should keep deployment requirements to a minimum
+            in order to maximise the user base. Hence:</p><div class="orderedlist"><ol type="1"><li><p>Where possible, clients should not require server side
+                scripts.</p></li><li><p>If server side scripts are required, the server
+                environments currently supported include: Perl, PHP, JSP.
+                Contributions for equivalent functionality in other server
+                environments is encouraged. Please see server
+                dependencies</p><p>(TBD link a section for server requirements).</p></li></ol></div></dd><dt><span class="term">Easy to incorporate libraries into a web page</span></dt><dd><p>Mapbuilder widgets are to be incorporated into HTML web
+            pages. Incorporating widgets should be kept simple so that someone
+            with basic HTML and Javascript knowledge can build a Mapbuilder
+            Web Page.</p></dd><dt><span class="term">Keep bandwidth to a minimum</span></dt><dd><p>All client functionality needs to be downloaded, so it is
+            important to keep it to a minimum. Files that are downloaded
+            should also be static which means that browsers will cache them
+            locally. (CGI scripts generally do not provide images that are
+            cached).</p></dd><dt><span class="term">Use Javascript/XML/XSL</span></dt><dd><p>Mapbuilder stores state data internally in XML files.
+            Converting XML to HTML is done using XSL. XSL has the advantage
+            that it can be used both in the client and server.</p></dd><dt><span class="term">Modular Design</span></dt><dd><p>A modular design has many benefits.</p><div class="orderedlist"><ol type="1"><li><p>A client need only include the module it requires, hence
+                reducing the size of the client.</p></li><li><p>A modular design is easier to understand, maintain and
+                extend.</p></li><li><p>Extra functionality can be easily added and
+                removed.</p></li><li><p>It is easier to break development up between multiple
+                developers.</p></li></ol></div></dd><dt><span class="term">Open Source</span></dt><dd><p>Mapbuilder software is open source. Open source was chosen
+            because:</p><div class="orderedlist"><ol type="1"><li><p>Part of our target audience are community groups who
+                often cannot justify buying software.</p></li><li><p>Developers are more likely to extend open source
+                software.</p></li><li><p>It's fun developing open source software.</p></li></ol></div><p>Any libraries that Mapbuilder uses or extends should not
+            introduce an incompatible or closed license.</p></dd><dt><span class="term">Attract Developers</span></dt><dd><p>Hopefully potential developers will extend this project in
+            preference to creating their own. Things that should help attract
+            developers include:</p><div class="itemizedlist"><ul type="disc"><li><p>Keep the design simple, modular and easy to
+                understand.</p></li><li><p>Provide design and user documentation.</p></li><li><p>Provide discussion forums.</p></li><li><p>Provide stable releases which are easy to install and
+                evaluate.</p></li><li><p>Provide demos that potential users and developers can
+                try.</p></li></ul></div></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="mvc"></a>3.2. Model View Controller</h3></div></div></div><p>Mapbuilder uses the Model View Controller (MVC) design
+      pattern.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="mvcoverview"></a>3.2.1. MVC Overview</h4></div></div></div><div class="figure"><a name="id2451558"></a><p class="title"><b>Figure 1. Model View Controller</b></p><div class="mediaobject"><img src="images/mvc.gif" alt="Model View Controller"></div></div><p>The MVC pattern forces one to think of an application in terms
+        of three modules:</p><div class="variablelist"><dl><dt><span class="term">Model</span></dt><dd><p>This maintains the state and data that the application
+              represents. When changes occur in the model, it sends update
+              events to all of its views. <code class="filename">Context</code> is the
+              Model in the Mapbuilder application and stores Layers, Bounding
+              Box etc.</p></dd><dt><span class="term">View</span></dt><dd><p>The user interface which displays information about the
+              model to the user. Views displaying dynamic data need to
+              register for StateChange events from the Model.
+              <code class="filename">Legend</code>, <code class="filename">MapPane</code>, etc
+              are all Mapbuilder Views that get update events when
+              <code class="filename">Context</code> changes.</p></dd><dt><span class="term">Controller</span></dt><dd><p>The user interface presented to the user to manipulate the
+              application (ie keyboard and mouse input).
+              <code class="filename">ZoomTool</code>, <code class="filename">PanTool</code>,
+              <code class="filename">SelectFeature</code> are all Mapbuilder
+              Controllers which update <code class="filename">Context</code>.</p></dd></dl></div><p>Some components can act as both a View and Controller. For
+        example, a <code class="filename">LocatorMap</code> may allow users to draw a
+        select box to change the BoundingBox. Also, when the BoundingBox in
+        Context changes, the LocatorMap will draw a new Box over it's
+        basemap.</p><p>There is a lot of literature describing the MVC Design Pattern.
+        Here is <a href="http://www.cs.indiana.edu/~cbaray/projects/mvc.html" target="_top">one</a>.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="mvcbenefits"></a>3.2.2. MVC benefits</h4></div></div></div><p>The benefits of using the MVC design pattern include:</p><div class="variablelist"><dl><dt><span class="term">Modularity</span></dt><dd><p>Views and Tools can be added or removed without effecting
+              the rest of the application. Tools do not have any dependencies
+              on Views and visa-versa which makes Tools and Views
+              simpler.</p></dd><dt><span class="term">Multiple Views</span></dt><dd><p>Views can display the same data in different ways. For
+              example, a Locater Map and Main Map both display the BoundingBox
+              in different ways.</p></dd><dt><span class="term">Parallel Development</span></dt><dd><p>Once the interfaces have been defined, components can be
+              developed in parallel.</p></dd></dl></div></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2451755"></a>4. Architectural Design</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="interfacedesign"></a>4.1. Interface Design</h3></div></div></div><div class="figure"><a name="id2451769"></a><p class="title"><b>Figure 2. Components required to use mapbuilder-lib</b></p><div class="mediaobject"><img src="images/mainpage.gif" alt="Components required to use mapbuilder-lib"></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="mainpage"></a>4.1.1. MainPage</h4></div></div></div><p>The Main Web Page uses include and initialise mapbuilder-lib and
+        to layout the page.</p><div class="example"><a name="id2451800"></a><p class="title"><b>Example 1. Including and initialising mapbuilder-lib</b></p><pre class="programlisting">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mapbuilder Demo&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../lib/skin/default/html.css" type="text/css"&gt;
+    &lt;script&gt;
+      // URL of Mapbuilder configuration file.
+      var mbConfigUrl='config/CompleteConfig.xml';
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="../lib/Mapbuilder.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body onload="mbDoLoad()"&gt;
+    &lt;Insert more html here/&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></div><p>mapbuilder-lib widgets are inserted using HTML tags with unique
+        identifies. When mapbuilder-lib renders widgets, HTML is inserted into
+        the widget tags.</p><div class="example"><a name="id2451829"></a><p class="title"><b>Example 2. HTML with widget tags</b></p><pre class="programlisting">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td id="mainMapPaneId"/&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;div id="buttonBarId"/&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre></div><p>For further details on how to use mapbuilder-lib, refer to the
+        Users Guide.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="webmapcontext"></a>4.1.2. Web Map Context</h4></div></div></div><p>The Web Map Context stores geographic state, like Map Layers,
+        Bounding Box, etc. The format is defined by the OGC's <a href="http://www.opengis.org/specs/?page=specs" target="_top">Web Map Context</a>
+        (WMC) specification.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="config"></a>4.1.3. Config</h4></div></div></div><p>This section explains the structure of the mapbuilder-lib Config
+        file.</p><p>The Config file is an XML document which describes which
+        mapbuilder-lib components should be included in an application.</p><p>TBD: This section contains information about javascript
+        implementation of classes which should be moved to the Components
+        section.</p><p>TBD: Some information in this section is out of date.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="configdocumentschema"></a>4.1.3.1. Config Document Schema</h5></div></div></div><p>The mapbuilder-lib configuration XML document is based on RDF
+          principles. Future plans include defining a mapbuilder config
+          document schema by extending the RDF schema.</p><p>The config doc follows Object-Property-Value rule of GML3 and
+          RDF. As a rule of thumb, this means that parent and child elements
+          alternate between UpperCamelCase and lowerCamelCase, Upper is for
+          objects and lower is for properties. An object can only contain
+          another object through a property value.</p><div class="example"><a name="id2451922"></a><p class="title"><b>Example 3. Example use of Object-Property-Value</b></p><pre class="programlisting">    &lt;ContextCollection id="collectionGroup"&gt;
+      &lt;defaultModelUrl&gt;context/demoCollection.ccml&lt;/defaultModelUrl&gt;
+      &lt;widgets&gt;
+        &lt;CollectionList id="collectionListId"&gt;
+          &lt;scriptFile&gt;widget/collectionList/CollectionList.js&lt;/scriptFile&gt;
+          &lt;stylesheet&gt;widget/collectionList/Collection2List.xsl&lt;/stylesheet&gt;
+          &lt;targetWidgetGroup&gt;mainMapGroup&lt;/targetWidgetGroup&gt;
+        &lt;/CollectionList&gt;
+      &lt;/widgets&gt;
+    &lt;/ContextCollection&gt;
+</pre></div><p>A more complete description of the object-property-value rule
+          can be found in section 2.1 of the document: <a href="http://www.geoconnections.org/developersCorner/devCorner_devNetwork/components/GML_bpv1.3_E.pdf" target="_top">Developing
+          and Managing GML Application Schemas</a></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="MapbuilderConfig"></a>4.1.3.2. MapbuilderConfig</h5></div></div></div><p>The MapbuilderConfig object is the root of the object tree
+          structure.</p><div class="figure"><a name="id2451968"></a><p class="title"><b>Figure 3. Top level config object schema</b></p><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="533"><tr style="height: 329px"><td><img src="images/config.png" height="329" alt="Top level config object schema"></td></tr></table></div></div><p>The Config constructor must be called in the page &lt;HEAD&gt;
+          element and assigned to a global javascript object with the name
+          "mbConfig". This is normally accomplished by ...</p><pre class="programlisting">var mbConfig = new Config('configDocUrl');</pre><p>The constructor will first load all javascript files contained
+          in the config document and then set application scope
+          properties.</p><p>The Config object provides the <code class="systemitem">init()</code>
+          and <code class="systemitem">loadModel()</code> methods.</p><p>The <code class="systemitem">init() </code>method is called once
+          during body onload processing. The configuration document is parsed
+          and each Model object encountered is instantiated in turn.</p><p>The <code class="systemitem">loadModel()</code> method can be called
+          at any time to refresh the model object by retrieving the XML
+          document at the specified URL and storing the object as the .doc
+          property of the Model object.</p><pre class="programlisting">mbConfig.loadModel('modelGroupID', 'modelUrl');</pre><p>The Config object implements a "loadModel" listener array that
+          can be used to register models, widgets and tools that are
+          interested in when this model is refreshed from a URL, typically
+          widgets of a different Model object.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="configmodels"></a>4.1.3.3. Models</h5></div></div></div><p>The model object represents an single instance of an XML
+          document with properties and methods to access the document. A model
+          object must extend the ModelBase class, which provides some
+          properties and methods common to all models.</p><div class="figure"><a name="id2450869"></a><p class="title"><b>Figure 4. Model object schema</b></p><div class="mediaobject"><img src="images/configModels.png" alt="Model object schema"></div></div><p>The initial model URL to be loaded is specified using the
+          defaultModelURL property. The model object can be loaded from a
+          different URL at any time using the
+          <code class="systemitem">mbConfig.loadModel()</code> method.</p><p>Each Model object is stored as a property of the global Config
+          object using the ID provided for it in the configuration document.
+          This means that you can reference any Model object (for javascript
+          links or in other objects) as:</p><pre class="programlisting">mbConfig['modelID']</pre><p>The modelID is not used to link to any HTML element in the
+          page.</p><p>All models implement the loadModelDoc() and loadWidgets()
+          methods. Derived model types may implement their own custom
+          methods.</p><p>loadModelDoc() will issue the HTTP request to retrieve an XML
+          document.</p><p>The loadWidgets() method instantiates all child widget objects
+          of the model. The tools of each widget are instantiated before the
+          widget is painted by calling WidgetBase's loadTools() method. This
+          is so that tools can register a "paint" listener function with it's
+          parent widget if required.</p><p>Model objects provide a "loadWidget" listener array that can
+          be used to register widgets and tools that are interested in when
+          this model is refreshed from a URL, typically widgets of a different
+          Model object.</p><p>Currently supported model types:</p><div class="variablelist"><dl><dt><span class="term">Context</span></dt><dd><p>OGC Web Map Context Document</p></dd><dt><span class="term">ContextCollection</span></dt><dd><p>OGC WebMap Context Collection</p></dd><dt><span class="term">Gazetteer</span></dt><dd><p>tom's location list stuff</p></dd><dt><span class="term">WMS Capabilities</span></dt><dd><p>OGC Web Map Server capabilities documents</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="configwidgets"></a>4.1.3.4. Widgets</h5></div></div></div><p>Widgets represent the views from the MVC design pattern. A
+          Widget object must extend the WidgetBase class, which provides some
+          properties and methods common to all widgets. Most important of
+          these is the paint() method which renders the XML of the model to
+          HTML using the associated stylesheet.</p><div class="figure"><a name="id2452359"></a><p class="title"><b>Figure 5. Widget object schema</b></p><div class="mediaobject"><img src="images/configWidgets.png" alt="Widget object schema"></div></div><p>The HTML output of the stylesheet is then associated to an
+          HTML page element via the ID attribute. This is how mapbuilder ties
+          into the application HTML. The same ID attribute can be used on
+          several widgets; in this case the contents of the HTML web page
+          depends on how the application programs widget.paint() calls.</p><p>A Widget object may have a tools property which consists of
+          any number of Tool objects. A Tool object may be a controller or it
+          may be something else, but it is essentially some code that is
+          specific to that widget and for the purpose of supporting that
+          widget.</p><p>All widgets have a "paint" listener array that can be used by
+          tools that are interested in when the widget is re-painted.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="configtools"></a>4.1.3.5. Tools</h5></div></div></div><p>A Tool object may be a controller or it may be something else,
+          but it is essentially some code that is specific to that widget and
+          for the purpose of supporting that widget. A tool will usually call
+          either a get or set method of the model.</p><div class="figure"><a name="id2452417"></a><p class="title"><b>Figure 6. Tool object schema</b></p><div class="mediaobject"><img src="images/configTools.png" alt="Tool object schema"></div></div><p>Some concrete examples of tools:</p><div class="itemizedlist"><ul type="disc"><li><p>the CursorTrack tool is only interested in the mouse
+              position on the MapPane widget, so it registers with the mouse
+              event listeners of MapPane. It calls the model.getSRS()
+              method.</p></li><li><p>The AOIBox tool is only used for drawing a box on a
+              MapPane, it can't exist independent of a MapPane. It gets the
+              coords of the AOI to draw from the model.getAOI() method.</p></li><li><p>The AoiMouseHandler tool is used to click and drag an AOI
+              on a MapPane, so it registers with the mouse event listeners of
+              MapPane. It will call the setAoi() method of the model.</p></li><li><p>A ZoomIn tool is used to process a mouseup event on the
+              MapPane, it will change the model bbox.</p></li><li><p>a pan tool is used to click and drag the mappane container
+              div, on a mouseup event it will change the model bbox, but it
+              will also have to register mousedown and mousemove functions
+              with the mappane mouse handler arrays.</p></li><li><p>a highlight tool on a legend widget could register a
+              mouseover listener with the legend widget and call a
+              model.selectLayer method so all widgets interested in layers
+              being selected can be refreshed.</p></li></ul></div><p>The action to be carried out by a tool can target a different
+          ModelGroup by setting a property in the config document.</p></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="components"></a>4.2. Components</h3></div></div></div><div class="figure"><a name="id2452521"></a><p class="title"><b>Figure 7. mapbuilder-lib components</b></p><div class="mediaobject"><img src="images/mapbuilderlib.gif" alt="mapbuilder-lib components"></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="model"></a>4.2.1. Model</h4></div></div></div><div class="figure"><a name="id2452547"></a><p class="title"><b>Figure 8. Model Components</b></p><div class="mediaobject"><img src="images/model.gif" alt="Model Components"></div></div><p>Model components store mapbuilder state and notify widgets when
+        state changes. State is often read from and stored in XML
+        files.</p><p>TBD: Explain how state is stored in Listener objects.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="id2452576"></a>4.2.2. Widget</h4></div></div></div><div class="figure"><a name="id2452581"></a><p class="title"><b>Figure 9. Widget Components</b></p><div class="mediaobject"><img src="images/widget.gif" alt="Widget Components"></div></div><p>Widgets are responsible for rendering map components into the
+        MainPage whenever state changes. Usually, the widget uses XSL to
+        convert an XML document to an HTML snippet. The HTML snippet is
+        inserted into the widget's HTML tag in the MainPage.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tool"></a>4.2.3. Tool</h4></div></div></div><div class="figure"><a name="id2452616"></a><p class="title"><b>Figure 10. Tool Components</b></p><div class="mediaobject"><img src="images/tool.gif" alt="Tool Components"></div></div><p>Tool Components process mouse and key actions on behalf of a
+        widget and update Model Components with new state information.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="id2452639"></a>4.2.3.1. ButtonBase</h5></div></div></div><p>Tools which extend ButtonBase have a Button image associated
+          with the Tool which allows a user to select the Tool using the
+          Button.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="util"></a>4.2.4. Util</h4></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="listener"></a>4.2.4.1. Listener</h5></div></div></div><p>The Listener object provides setParam() and getParam()
+          methods, and notifies Listeners when the parameter changes. Objects
+          requiring this functionality extend the Listener object.</p><p>The Listener object was introduced to overcome Javascript's
+          poor support for events.</p><div class="example"><a name="id2452680"></a><p class="title"><b>Example 4. Simple use of Listener</b></p><div class="blockquote"><blockquote class="blockquote"><p><em class="citetitle">SomeModel</em> contains a parameter
+              <em class="citetitle">someParam</em> and
+              <em class="citetitle">SomeWidget</em> needs to repaint itself
+              whenever <em class="citetitle">someParam</em> changes.</p><div class="variablelist"><dl><dt><span class="term">SomeModel extends Listener()</span></dt><dd><pre class="programlisting">function SomeModel() {
+  // Inherit the Listener functions and parameters
+  var listener = new Listener();
+  for (sProperty in listener) { 
+    this[sProperty] = listener[sProperty]; 
+  }
+  ...</pre></dd><dt><span class="term">SomeWidget registers to receive update events when
+                  someParam changes</span></dt><dd><pre class="programlisting">  /** Function called when someParam changes */
+  this.someFunction=function(objRef){
+    alert("someParam has changed");
+  }
+  someModel.addListener("someParam",this.someFunction,this);</pre></dd><dt><span class="term">SomeTool updates someParam and triggers a call to
+                  SomeWidget.someFunction</span></dt><dd><pre class="programlisting">  SomeModel.setParam("someParam", "newValue");</pre></dd></dl></div></blockquote></div></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="mapbuilder"></a>4.2.5. Mapbuilder</h4></div></div></div><p>The Mapbuilder object is responsible for loading and
+        initialising required script files. The scripts required is determined
+        from the <a href="#config" title="4.1.3. Config">Config</a> file. The Mapbuilder
+        object loads the scripts in order of dependency, periodically checking
+        the load status. When all scripts have loaded, the javascript objects
+        are initialised which triggers the rendering of widgets.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="inheritance"></a>4.2.6. Inheritance</h4></div></div></div><p>Javascript doesn't naturally provide inheritance. Instead there
+        are a number of hack solutions that a programmer can choose from. In
+        mapbuilder-lib, the following method is used:</p><div class="example"><a name="id2453046"></a><p class="title"><b>Example 5. SomeObject inherits from the Listener Object</b></p><pre class="programlisting">function SomeObject() {
+  // Inherit the Listener functions and parameters
+  var listener = new Listener();
+  for (sProperty in listener) { 
+    this[sProperty] = listener[sProperty]; 
+  }
+  ...</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="id2453061"></a>4.2.7. File and object name convention</h4></div></div></div><p>Javascript object constructors must have the same name as the
+        node of it's corresponding object in the configuration document. For
+        example, a &lt;Context&gt; object from the config doc will be
+        instantiated by the javascript call:</p><pre class="programlisting">var model = new Context();</pre><p>The Javascript code for each model, widget and tool object type
+        should be created in the lib/model, lib/widget and lib/tool
+        directories respectively. By default, the file containing javascript
+        object code will have the same filename as the object type name, so
+        for example, the javascript Context code will be loaded from the file
+        lib/model/Context.js. This default filename of the javascript object
+        code can be over-ridden by setting a &lt;scriptfile&gt; property on
+        the object in the configuration document.</p><p>In addition, the stylehseet filename for widgets will also use
+        the object type name with an extension of .xsl by default. For
+        example, the &lt;Legend&gt; XSL file to style the Legend object is
+        lib/widget/Legend.xsl by default. This default filename can be
+        over-ridden by setting a &lt;stylesheet&gt; property on the widget
+        object.</p></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="notes"></a>5. Notes</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2453124"></a>5.1. Extending the code base</h3></div></div></div><p>When extending the mapbuilder code base, it's usually easiest to
+      copy code from other models, widgets and tools.</p><p>Depending on what functionality you want to add, you will begin at
+      one of the steps listed below. For example you could be just adding a
+      tool to a widget (step 4 only) or you could be adding a whole new model
+      type, along with a new ModelGroup in the config file and associated
+      widgets and tools (steps 1 through 4).</p><div class="orderedlist"><ol type="1"><li><p>Add a new model type:</p><p>If you are representing a new XML document type not already
+          supported by mapbuilder, first code the javascript Model object. All
+          model objects should inherit from ModelBase. Javascript source files
+          are added to the lib/models directory. Add a new object to the
+          &lt;models&gt; property of the config document which points to the
+          javascript source file. The model constructor must be named the same
+          as the &lt;modelType&gt; properties of a ModelGroup object.</p></li><li><p>Add a new model:</p><p>Only do this if the actual instance of the model you are
+          working with is not already represented as a Model in config. Assign
+          the Model an "id" attribute so that it can be referenced using that
+          id as the property name of mbConfig (e.g. mbConfig['modelId']). Add
+          defaultModelUrl properties to the Model which is the URL of the
+          document that will be loaded by default.</p></li><li><p>Add widgets to a model:</p><p>For each view of the model to be displayed on the web page,
+          add a widget object to the &lt;widgets&gt; property. All widget
+          objects must inherit from the WidgetBase class. A widget constructor
+          must have the same name as the widget object node name in the config
+          document. Source code for widgets is added as a subdirectory of
+          lib/widgets containing all files required to paint the widget. Add
+          the &lt;scriptfile&gt; and &lt;stylesheet&gt; properties to the
+          object in config to point to these source files. The widget will be
+          painted to the HTML element with the same id as the "id" attribute
+          of the widget. Customize the widget object as required.</p></li><li><p>Add tools to widgets</p><p>For each controller used to control the model objects, add a
+          tool object to the widget &lt;tools&gt; property. A tool constructor
+          must have the same name as the tool object node name in the config
+          document. Source code for tools are added to the lib/tools directory
+          (TBD: subject to change). Add the &lt;scriptfile&gt; property to the
+          object in config to point to these source files. A tool contained by
+          one model group can be used as a controller of another model group
+          by adding a &lt;targetModelGroup&gt; property which has the value of
+          a ModelGroup id. Customize the tool object as required.</p></li></ol></div></div></div><div class="appendix" lang="en"><h2 class="title" style="clear: both"><a name="glossary"></a>A. Glossary</h2><div class="table"><a name="id2453248"></a><p class="title"><b>Table A.1. Glossary</b></p><table summary="Glossary" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Term</th><th>Expanded Acronym</th><th>Description</th></tr></thead><tbody><tr><td>AOI</td><td>Area Of Interest</td><td class="auto-generated"> </td></tr><tr><td>CSS</td><td>Coordinate System Specification</td><td class="auto-generated"> </td></tr><tr><td>CTS</td><td>Coordinate Transform Service</td><td>As specified by the OGC.</td></tr><tr><td>IDE</td><td>Integrated Development Environment</td><td class="auto-generated"> </td></tr><tr><td>IRC</td><td>Internet Relay Chat</td><td>A way to communicate in real time with lots of other people
+            around the world in a virtual meeting.</td></tr><tr><td>GCS</td><td>Grid Coverage Specification</td><td>As specified by the OGC.</td></tr><tr><td>GIS</td><td>Geographic Information Systems</td><td class="auto-generated"> </td></tr><tr><td>GML</td><td>Geographic Markup Language</td><td>XML format for describing geographic features.</td></tr><tr><td>LGPL</td><td><a href="http://www.gnu.org/copyleft/lesser.html" target="_top">GNU
+            General Public License</a></td><td>Open Source License.</td></tr><tr><td>MIL-STD 498</td><td><a href="http://www.pogner.demon.co.uk/mil_498/" target="_top">Military Standard
+            498</a></td><td>Set of processes for software development.</td></tr><tr><td>OGC</td><td><a href="http://opengis.org" target="_top">Open GIS
+            Consortium</a></td><td>Geographic Standards Body</td></tr><tr><td>RDF</td><td><a href="http://www.w3.org/RDF/" target="_top">Resource Description
+            Framework</a></td><td>Framework to describe any Internet resource such as a Web
+            site and its content.</td></tr><tr><td>SDD</td><td>Software Design Description</td><td>A design document as defined by MIL-STD 498.</td></tr><tr><td>SRS</td><td>Spacial Reference System</td><td>Spacial Reference System (as defined by the OGC). An
+            alpha-numeric ID which specifies what coordinate system you are
+            using. Eg: SRS="EPSG:4326".</td></tr><tr><td>SVG</td><td>Scalable Vector Graphics</td><td class="auto-generated"> </td></tr><tr><td>SLD</td><td>Styled Layer Descriptor</td><td>XML document which describes how to draw specific features.
+            Eg, A road line may be drawn in red, 3 pixels wide.</td></tr><tr><td>UML</td><td>Unified Modeling Language</td><td>A set of diagrams used to describe software
+            pictorially.</td></tr><tr><td>WCS</td><td>Web Coverage Server</td><td class="auto-generated"> </td></tr><tr><td>WFS</td><td>Web Feature Server</td><td>Return vector data about features.</td></tr><tr><td>WMS</td><td>Web Map Server</td><td>Return raster map images and point queries.</td></tr><tr><td>XSL</td><td>Extensible Stylesheet Language</td><td>A language for expressing stylesheets.</td></tr><tr><td>XSLT</td><td>XSL Transform</td><td>A language for transforming XML documents into other XML
+            documents.</td></tr><tr><td>XML</td><td>Extensible Markup Language</td><td class="auto-generated"> </td></tr></tbody></table></div></div><div class="appendix" lang="en"><h2 class="title" style="clear: both"><a name="umllegend"></a>B. UML Legend</h2><div class="table"><a name="id2453604"></a><p class="title"><b>Table B.1. Legend for UML class diagrams</b></p><table summary="Legend for UML class diagrams" border="1"><colgroup><col><col></colgroup><tbody><tr><td><div class="mediaobject" align="left"><img src="images/PackageIcon.png" align="left"></div></td><td>Package</td></tr><tr><td><div class="mediaobject"><img src="images/DependencyIcon.png"></div></td><td>Dependencies between packages. This expresses that classes
+            within a package use classes from the package it depends
+            on.</td></tr><tr><td><div class="mediaobject" align="left"><img src="images/InterfaceIcon.png" align="left"></div></td><td>Interfaces. An Interface is restricted to only contain
+            operations but no attributes. Also, operations are abstract and
+            have no implementation.</td></tr><tr><td><div class="mediaobject" align="left"><img src="images/ClassIcon.png" align="left"></div></td><td>Classes. Classes hold operations and attributes and have
+            relations to other classes via association or inheritance
+            relations.</td></tr><tr><td><div class="mediaobject" align="left"><img src="images/InheritanceIcon.png" align="left"></div></td><td>Inheritance relations. Between interfaces or between
+            classes.</td></tr><tr><td><div class="mediaobject" align="left"><img src="images/RealizationIcon.png" align="left"></div></td><td>Implementation relations. Only between interfaces and
+            classes.</td></tr><tr><td><div class="mediaobject" align="left"><img src="images/AssociationIcon.png" align="left"></div></td><td>Association relations. Associations are relations between
+            classes. They often include navigation arrows, and multiplicity
+            (eg 1..*).</td></tr></tbody></table></div></div></div></body></html>

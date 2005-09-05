@@ -1,0 +1,238 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+<a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005 Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="WebServiceAction.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>WebServiceAction.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'WebServiceAction.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+    <table border="1" cellpadding="3" cellspacing="0" width="100%">
+    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
+    <td colspan=2><font size="+2">
+    
+        <b>Class Summary</b>
+    
+    </font></td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="WebServiceAction.html">WebServiceAction</a></b></td>
+    <td>&nbsp;</td>
+    </tr>
+    
+    </table>
+    <hr/> 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+License: LGPL as per: http://www.gnu.org/copyleft/lesser.html
+$Id$
+*/</span>
+
+<span class="comment">/**
+ * Tool used to initiate a WFS Transaction.
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@author</span> Cameron Shorter
+ */</span>
+<span class="reserved">function</span> WebServiceAction(){
+  <span class="comment">/** Url of WFS */</span>
+  <span class="reserved">this</span>.webServiceUrl=null;//widgetNode.selectSingleNode(<span class="literal">"mb:webServiceUrl"</span>).firstChild.nodeValue;
+
+  <span class="comment">/** Xsl to convert Feature into a WFS Transaction Insert. */</span>
+  <span class="reserved">this</span>.insertXsl=new XslProcessor(baseDir+<span class="literal">"/tool/xsl/wfs_Insert.xsl"</span>);
+
+  <span class="comment">/**
+   * Process an action - usually initiated by a button press.
+   * <span class="attrib">@param</span> objRef Reference to this object.
+   * <span class="attrib">@param</span> model The model which contains the FeatureCollection to send to
+   * the WFS as well as other state data.
+   * <span class="attrib">@param</span> action The action to perform, stored as a string, usually a
+   * button name.  Button can be:&lt;br/&gt;
+   * "Reset" - reset FeatureCollection to the default.&lt;br/&gt;
+   * "Insert Feature" - Add a feature to a WFS-T.&lt;br/&gt;
+   * "Update Feature" - Update an existing WFS-T feature.&lt;br/&gt;
+   */</span>
+  <span class="reserved">this</span>.processAction=<span class="reserved">function</span>(objRef,model,action){
+    httpPayload=new Object();
+    param=model.getParam(<span class="literal">"transactionResponseModel"</span>);
+    transactionResponseModel=eval(<span class="literal">"config.objects."</span>+param);
+    param=model.getParam(<span class="literal">"targetContext"</span>);
+    targetContext=eval(<span class="literal">"config.objects."</span>+param);
+
+    switch(action){
+      case <span class="literal">"Reset"</span>:
+        <span class="reserved">if</span>(model.url){
+          httpPayload.url=model.url;
+          httpPayload.method=<span class="literal">"get"</span>;
+          model.newRequest(model,httpPayload);
+          break;
+        }
+      case <span class="literal">"Insert Feature"</span>:
+        s=objRef.insertXsl.transformNodeToObject(model.doc);
+        httpPayload.postData=s;
+<span class="comment">        //httpPayload.url=objRef.webServiceUrl;</span>
+        httpPayload.url=model.getParam(<span class="literal">"webServiceUrl"</span>);
+        httpPayload.method=<span class="literal">"post"</span>;
+        transactionResponseModel.newRequest(transactionResponseModel,httpPayload);
+        sucess=transactionResponseModel.doc.selectSingleNode(<span class="literal">"//wfs:TransactionResult/wfs:Status/wfs:SUCCESS"</span>);
+        <span class="reserved">if</span> (sucess){
+<span class="comment">          // Remove FeatureList if feature entry was successful.</span>
+          httpPayload.url=null;
+          model.newRequest(model,httpPayload);
+<span class="comment">          // Repaint the WMS layers</span>
+          targetContext.callListeners(<span class="literal">"refreshWmsLayers"</span>);
+        }
+        break;
+      case <span class="literal">"Update Feature"</span>:
+        alert(<span class="literal">"WebServiceAction: Update Feature not implemented"</span>);
+        break;
+      default:
+        alert(<span class="literal">"WebServiceAction: Unknown action: "</span>+action);
+    }
+  }
+}
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Wed Aug 10 14:31:26 2005</div>
+</body>
+</html>

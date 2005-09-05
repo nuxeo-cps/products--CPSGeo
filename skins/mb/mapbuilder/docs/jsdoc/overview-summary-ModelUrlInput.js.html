@@ -1,0 +1,267 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+<a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005 Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="ModelUrlInput.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>ModelUrlInput.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'ModelUrlInput.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+    <table border="1" cellpadding="3" cellspacing="0" width="100%">
+    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
+    <td colspan=2><font size="+2">
+    
+        <b>Class Summary</b>
+    
+    </font></td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="ModelUrlInput.html">ModelUrlInput</a></b></td>
+    <td>&nbsp;</td>
+    </tr>
+    
+    </table>
+    <hr/> 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+Author:       Mike Adair mike.adairATccrs.nrcan.gc.ca
+License:      LGPL as per: http://www.gnu.org/copyleft/lesser.html
+
+$Id$
+*/</span>
+<span class="comment">
+// Ensure this object's dependancies are loaded.</span>
+mapbuilder.loadScript(baseDir+<span class="literal">"/widget/WidgetBase.js"</span>);
+
+<span class="comment">/**
+ * Widget to display the a form to input any model's URL and load the new URL 
+ * as the model's document
+ *
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@base</span> WidgetBase
+ * <span class="attrib">@param</span> widgetNode  This widget's object node from the configuration document.
+ * <span class="attrib">@param</span> model       The model that this widget is a view of.
+ */</span>
+
+<span class="reserved">function</span> ModelUrlInput(widgetNode, model) {
+  var base = new WidgetBase(<span class="reserved">this</span>, widgetNode, model);
+
+  <span class="comment">/**
+   * Handles submission of the form (via javascript in an &lt;a&gt; tag)
+   */</span>
+  <span class="reserved">this</span>.submitForm = <span class="reserved">function</span>() {
+    var httpPayload = new Object();
+    httpPayload.url = <span class="reserved">this</span>.urlInputForm.defaultUrl.value;
+    httpPayload.method = <span class="reserved">this</span>.targetModel.method;
+<span class="comment">/*
+    for (var i=0; i&lt;httpMethod.length; ++i) {   //loop through radio buttons
+      if (httpMethod[i].checked) {
+        httpPayload.method = httpMethod[i].value;
+        if (httpPayload.method.toLowerCase() == "post") {
+          httpPayload.postData = null; //TBD get this from somewhere? or not allow post?
+          if (this.debug) alert("postData:"+httpPayload.postData.xml);
+        } else {
+          httpPayload.postData = null;
+        }
+        break;
+      }
+    }
+*/</span>    
+    <span class="reserved">this</span>.targetModel.newRequest(<span class="reserved">this</span>.targetModel,httpPayload);
+  }
+
+  <span class="comment">/**
+   * handles keypress events to filter out everything except "enter".  
+   * Pressing the "enter" key will trigger a form submit
+   * <span class="attrib">@param</span> event  the event object passed in for Mozilla; IE uses window.event
+   */</span>
+  <span class="reserved">this</span>.handleKeyPress = <span class="reserved">function</span>(event) {
+    var keycode;
+    var target;
+    <span class="reserved">if</span> (event){
+<span class="comment">      //Mozilla</span>
+      keycode=event.which;
+      target=event.currentTarget;
+    }<span class="reserved">else</span>{
+<span class="comment">      //IE</span>
+      keycode=window.event.keyCode;
+      target=window.event.srcElement.form;
+    }
+
+    <span class="reserved">if</span> (keycode == 13) {    //enter key
+      target.parentWidget.submitForm();
+    <span class="reserved">return</span> false;   //prevent the form from actually being submitted
+    }
+  }
+
+  <span class="comment">/**
+   * initializes stylesheet parameters for the form
+   * <span class="attrib">@param</span> objRef Pointer to this widget object.
+   */</span>
+  <span class="reserved">this</span>.prePaint = <span class="reserved">function</span>(objRef) {
+    objRef.stylesheet.setParameter(<span class="literal">"modelTitle"</span>, objRef.targetModel.title);
+  }
+
+  <span class="comment">/**
+   * Refreshes the form and event handlers when this widget is painted.
+   * <span class="attrib">@param</span> objRef Pointer to this CurorTrack object.
+   */</span>
+  <span class="reserved">this</span>.postPaint = <span class="reserved">function</span>(objRef) {
+    objRef.urlInputForm = document.getElementById(objRef.formName);
+    objRef.urlInputForm.parentWidget = objRef;
+    objRef.urlInputForm.onkeypress = objRef.handleKeyPress;
+<span class="comment">    //objRef.WebServiceForm.onsubmit = objRef.submitForm;</span>
+<span class="comment">    //objRef.WebServiceForm.mapsheet.onblur = objRef.setMapsheet;</span>
+  }
+<span class="comment">
+  //set some properties for the form output</span>
+  <span class="reserved">this</span>.formName = <span class="literal">"urlInputForm_"</span> + mbIds.getId();
+  <span class="reserved">this</span>.stylesheet.setParameter(<span class="literal">"formName"</span>, <span class="reserved">this</span>.formName);
+}
+
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Wed Aug 10 14:31:26 2005</div>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Frameset//EN""http://www.w3.org/TR/REC-html40/frameset.dtd">
+<html>
+<head>
+<title>
+<a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005 Overview
+</title>
+<link rel ="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+<script>
+function asd() {
+	
+		parent.document.title="Extent.js Overview";
+	
+}
+</script>
+</head>
+<body bgcolor="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> 	<font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top">
+<em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<center>
+	
+	   <h2>Extent.js</h2>
+	
+</center>
+
+	
+
+
+<h4>Summary</h4>
+<p>
+	
+		No overview generated for 'Extent.js'<BR/><BR/>
+	
+</p>
+
+<hr>
+
+
+    <table border="1" cellpadding="3" cellspacing="0" width="100%">
+    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
+    <td colspan=2><font size="+2">
+    
+        <b>Class Summary</b>
+    
+    </font></td>
+    </tr>
+    
+    <tr bgcolor="white" class="TableRowColor">
+    <td width="15%"><b><a href="Extent.html">Extent</a></b></td>
+    <td>&nbsp;</td>
+    </tr>
+    
+    </table>
+    <hr/> 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+        <pre class="sourceview"><span class="comment">/*
+Author:       Mike Adair mike.adairATccrs.nrcan.gc.ca
+License: LGPL as per: http://www.gnu.org/copyleft/lesser.html
+$Id$
+*/</span>
+
+
+var Rearth = 6378137.0;                 // Radius of the earth (sphere); different from Proj value?
+var degToMeter = Rearth*2*Math.PI/360;
+<span class="comment">//var mbScaleFactor = 72 * 39.3701;   //PixelsPerInch*InchesPerMapUnit; magic numbers </span>
+<span class="comment">                                    //need to determine magic number for lat/lon</span>
+var mbScaleFactor = 3571.428   //magic number, <span class="reserved">for</span> Geoserver SLD compatibility
+<span class="comment">                               // 1/0.00028 (0.28 mm "is a common actual size for</span>
+<span class="comment">                               // contemporary display" as written in the SLD specification ...</span>
+
+<span class="comment">/*
+ * FD 2005/03/04 : minScale et maxScale
+ * DGR : should be in config ?
+ */</span>
+var minScale = 1000;
+var maxScale = 200000;
+
+<span class="comment">/**
+ * A tool designed to handle geography calculations for widgets which render
+ * the model in 2D.
+ * Use of this tool requires that it's model implements get/setWindowHeight/Width
+ * methods.
+ * Encapsulates all geography and image size aspects of a geographic object 
+ * displayed in a rectangular area on the screen.
+ * All coordinates are handled as points which is a 2 element array, where x is 
+ * the first element and y is the second. Coordinates are either pixel and lixel
+ * (pl) relative to the top left of the extent or projection XY values (xy). 
+ *
+ * <span class="attrib">@constructor</span>
+ * <span class="attrib">@param</span> model       the model document that this extent represents
+ * <span class="attrib">@param</span> initialRes  (optional) if supplied the extent resolution will be set to this value
+ */</span>
+<span class="reserved">function</span> Extent( model, initialRes ) {
+  <span class="reserved">this</span>.model = model;
+  <span class="reserved">this</span>.size = new Array();
+  <span class="reserved">this</span>.res = new Array();
+  <span class="reserved">this</span>.zoomBy = 4;
+  <span class="reserved">this</span>.id = model.id + <span class="literal">"_MbExtent"</span> + mbIds.getId();
+
+  <span class="comment">/**
+   * Returns the XY center of this extent
+   * <span class="attrib">@return</span>  array of XY for th center of the extent
+   */</span>
+  <span class="reserved">this</span>.getCenter = <span class="reserved">function</span>() {
+    <span class="reserved">return</span> new Array((<span class="reserved">this</span>.ul[0]+<span class="reserved">this</span>.lr[0])/2, (<span class="reserved">this</span>.ul[1]+<span class="reserved">this</span>.lr[1])/2);
+  }
+
+  <span class="comment">/**
+   * Returns XY coordinates for given pixel line coords w.r.t. top left corner
+   * <span class="attrib">@param</span> pl   pixel line in extent to calculate
+   * <span class="attrib">@return</span>     point array of XY coordinates
+   */</span>
+  <span class="reserved">this</span>.getXY = <span class="reserved">function</span>(pl) {
+    var x = <span class="reserved">this</span>.ul[0]+pl[0]*<span class="reserved">this</span>.res[0];
+    var y = <span class="reserved">this</span>.ul[1]- pl[1]*<span class="reserved">this</span>.res[1];
+    <span class="reserved">return</span> new Array(x,y);
+  }
+
+  <span class="comment">/**
+   * Returns pixel/line coordinates for given XY projection coords
+   * <span class="attrib">@param</span> xy   projection XY coordinate to calculate
+   * <span class="attrib">@return</span>     point array of pxiel/line coordinates w.r.t. top left corner
+   */</span>
+  <span class="reserved">this</span>.getPL = <span class="reserved">function</span>(xy) {
+    var p = Math.floor( (xy[0]-<span class="reserved">this</span>.ul[0])/<span class="reserved">this</span>.res[0] );
+    var l = Math.floor( (<span class="reserved">this</span>.ul[1]-xy[1])/<span class="reserved">this</span>.res[1] );
+    <span class="reserved">return</span> new Array(p,l);
+  }
+
+  <span class="comment">/**
+   * Adjust the extent so that it is centered at given XY coordinate with given
+   * resolution.  Extent width and height remain fixed.  Optionally check to 
+   * ensure that it doesn't go beyond available extent.
+   *
+   * <span class="attrib">@param</span> center      projection XY coordinate to center at
+   * <span class="attrib">@param</span> newres      resolution to display at
+   * <span class="attrib">@param</span> limitExtent ensure that the extent doesn't go beyond available bbox (TBD: not complete/tested)
+   * <span class="attrib">@return</span>            none
+   */</span>
+  <span class="reserved">this</span>.centerAt = <span class="reserved">function</span>(center, newres, limitExtent) {
+    var half = new Array(<span class="reserved">this</span>.size[0]/2, <span class="reserved">this</span>.size[1]/2);
+<span class="comment">/*
+ * FD 2005/03/04 : respect de minScale et maxScale
+ * DGR : scale constraints
+    var nRmin= minScale/mbScaleFactor;
+    var nRmax= maxScale/mbScaleFactor;
+    if (newres &lt; nRmin) {
+      newres= nRmin ;
+    }
+    if (newres &gt; nRmax) {
+      newres= nRmax ;
+    }
+ */</span>
+    <span class="reserved">this</span>.lr = new Array(center[0]+half[0]*newres, center[1]-half[1]*newres);
+    <span class="reserved">this</span>.ul = new Array(center[0]-half[0]*newres, center[1]+half[1]*newres);
+<span class="comment">
+    //make sure the request doesn't extend beyond the available model</span>
+<span class="comment">    //TBD this block not tested</span>
+    <span class="reserved">if</span> ( limitExtent ) {
+      var xShift = 0;
+      <span class="reserved">if</span> ( <span class="reserved">this</span>.lr[0] &gt; ContextExtent.lr[0] ) xShift = ContextExtent.lr[0] - <span class="reserved">this</span>.lr[0];
+      <span class="reserved">if</span> ( <span class="reserved">this</span>.ul[0] &lt; ContextExtent.ul[0] ) xShift = ContextExtent.ul[0] - <span class="reserved">this</span>.ul[0];
+      <span class="reserved">this</span>.lr[0] += xShift;
+      <span class="reserved">this</span>.ul[0] += xShift;
+
+      var yShift = 0;
+      <span class="reserved">if</span> ( <span class="reserved">this</span>.lr[1] &lt; ContextExtent.lr[1] ) yShift = ContextExtent.lr[1] - <span class="reserved">this</span>.lr[1];
+      <span class="reserved">if</span> ( <span class="reserved">this</span>.ul[1] &gt; ContextExtent.ul[1] ) yShift = ContextExtent.ul[1] - <span class="reserved">this</span>.ul[1];
+      <span class="reserved">this</span>.lr[1] += yShift;
+      <span class="reserved">this</span>.ul[1] += yShift;
+    }
+
+    <span class="reserved">this</span>.model.setBoundingBox( new Array(<span class="reserved">this</span>.ul[0], <span class="reserved">this</span>.lr[1], <span class="reserved">this</span>.lr[0], <span class="reserved">this</span>.ul[1]) );
+<span class="comment">    //this.setResolution(size);</span>
+    <span class="reserved">this</span>.setSize(newres);
+  }
+
+  <span class="comment">/**
+   * Adjust the extent to the given bbox.  Resolution is recalculated. 
+   * Extent width and height remain fixed.  
+   * <span class="attrib">@param</span> ul      upper left coordinate of bbox in XY projection coords
+   * <span class="attrib">@param</span> lr      lower right coordinate of bbox in XY projection coords
+   */</span>
+  <span class="reserved">this</span>.zoomToBox = <span class="reserved">function</span>(ul, lr) {    //pass in xy
+    var center = new Array((ul[0]+lr[0])/2, (ul[1]+lr[1])/2);
+    newres = Math.max((lr[0] - ul[0])/<span class="reserved">this</span>.size[0], (ul[1] - lr[1])/<span class="reserved">this</span>.size[1]);
+    <span class="reserved">this</span>.centerAt( center, newres );
+  } 
+
+<span class="comment">/**
+   * Adjust the width and height to that bbox is displayed at specified resolution
+   * <span class="attrib">@param</span> res   the resolution to be set
+   */</span>
+<span class="comment">  //TBD update the model doc</span>
+  <span class="reserved">this</span>.setSize = <span class="reserved">function</span>(res) {     //pass in a resolution and width, height are recalculated
+    <span class="reserved">this</span>.res[0] = <span class="reserved">this</span>.res[1] = res;
+    <span class="reserved">this</span>.size[0] = (<span class="reserved">this</span>.lr[0] - <span class="reserved">this</span>.ul[0])/<span class="reserved">this</span>.res[0];
+    <span class="reserved">this</span>.size[1] = (<span class="reserved">this</span>.ul[1] - <span class="reserved">this</span>.lr[1])/<span class="reserved">this</span>.res[1];
+    <span class="reserved">this</span>.width = Math.ceil(<span class="reserved">this</span>.size[0]);
+    <span class="reserved">this</span>.height = Math.ceil(<span class="reserved">this</span>.size[1]);
+  }
+
+  <span class="comment">/**
+   * Adjust the resolution so the bbox fits in the specified width and height
+   * <span class="attrib">@param</span> size   width, height array passed in
+   */</span>
+<span class="comment">  //TBD update the model doc</span>
+  <span class="reserved">this</span>.setResolution = <span class="reserved">function</span>(size) {    //pass in a width, height and res is recalculated
+    <span class="reserved">this</span>.size[0] = size[0];
+    <span class="reserved">this</span>.size[1] = size[1];
+    <span class="reserved">this</span>.res[0] = (<span class="reserved">this</span>.lr[0] - <span class="reserved">this</span>.ul[0])/<span class="reserved">this</span>.size[0];
+    <span class="reserved">this</span>.res[1] = (<span class="reserved">this</span>.ul[1] - <span class="reserved">this</span>.lr[1])/<span class="reserved">this</span>.size[1];
+    <span class="reserved">this</span>.width = Math.ceil(<span class="reserved">this</span>.size[0]);
+    <span class="reserved">this</span>.height = Math.ceil(<span class="reserved">this</span>.size[1]);
+  }
+
+  <span class="comment">/**
+   * Returns the map scale denominator for the current extent resolution
+   * <span class="attrib">@return</span> map scale denominator
+   */</span>
+  <span class="reserved">this</span>.getScale = <span class="reserved">function</span>() {
+    var pixRes = null;
+    switch(<span class="reserved">this</span>.model.getSRS()) {
+      case <span class="literal">"EPSG:4326"</span>:				//all projection codes in degrees
+      case <span class="literal">"EPSG:4269"</span>:				
+        pixRes = <span class="reserved">this</span>.res[0]*degToMeter;
+        break;
+      default:                //all projection codes in meters
+        pixRes = <span class="reserved">this</span>.res[0];
+        break;
+    }
+    <span class="reserved">return</span> mbScaleFactor*pixRes;
+  }
+
+  <span class="comment">/**
+   * Sets the model's resolution from mapScale input value.  The map center 
+   * remains fixed.
+   * <span class="attrib">@param</span> scale   map scale denominator value
+   */</span>
+  <span class="reserved">this</span>.setScale = <span class="reserved">function</span>(scale) {
+    var newRes = null;
+<span class="comment">/*
+ * FD 2005/03/04
+ * On contraint l'echelle min et max de l'application.
+ * A externaliser dans le fichier de config de l'application ;-)
+ * DGR : should be in the config
+    if (scale &lt; minScale) {
+      scale= minScale ;
+    }
+    if (scale &gt; maxScale) {
+      scale= maxScale ;
+    }
+ */</span>
+    switch(<span class="reserved">this</span>.model.getSRS()) {
+      case <span class="literal">"EPSG:4326"</span>:				//all projection codes in degrees
+      case <span class="literal">"EPSG:4269"</span>:				
+<span class="comment">        //convert to resolution in degrees</span>
+        newRes = scale/(mbScaleFactor*degToMeter);
+        break;
+      default:                //all projection codes in meters
+        newRes = scale/mbScaleFactor;
+        break;
+    }
+    <span class="reserved">this</span>.centerAt(<span class="reserved">this</span>.getCenter(), newRes );
+  }
+
+
+  <span class="comment">/**
+   * Initialization of the Extent tool, called as a loadModel event listener.
+   * <span class="attrib">@param</span> extent      the object being initialized
+   * <span class="attrib">@param</span> initialRes  (optional) if supplied the extent resolution will be set to this value
+   */</span>
+  <span class="reserved">this</span>.init = <span class="reserved">function</span>(extent, initialRes) {
+    var bbox = extent.model.getBoundingBox();
+    extent.ul = new Array(bbox[0],bbox[3]);
+    extent.lr = new Array(bbox[2],bbox[1]);
+<span class="comment">/*
+TBD: when called as a listener this gets a bbox array passed in, not initialRes value
+    if ( initialRes ) {
+      extent.setSize( initialRes );
+    } else {
+      extent.setResolution( new Array(extent.model.getWindowWidth(), extent.model.getWindowHeight() ) );
+    }
+*/</span>
+    extent.setResolution( new Array(extent.model.getWindowWidth(), extent.model.getWindowHeight() ) );
+  }
+  <span class="reserved">if</span> ( initialRes ) <span class="reserved">this</span>.init(<span class="reserved">this</span>, initialRes);
+}
+
+  
+  
+</pre>
+	<hr>
+
+
+
+<!-- ========== START OF NAVBAR ========== -->
+<a name="navbar_top"><!-- --></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td colspan=2 bgcolor="#EEEEFF" class="NavBarCell1">
+<a name="navbar_top_firstrow"><!-- --></a>
+<table border="0" cellpadding="0" cellspacing="3">
+  <tr align="center" valign="top">
+  
+  
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td>
+  <td bgcolor="#FFFFFF" class="NavBarCell1Rev">	&nbsp;<font class="NavBarFont1Rev"><b>File</b></font>&nbsp;</td>
+  
+
+  <td bgcolor="#FFFFFF" class="NavBarCell1"> <font class="NavBarFont1">Class</font>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="overview-tree.html"><font class="NavBarFont1"><b>Tree</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="index-all.html"--><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;</td>
+  <td bgcolor="#EEEEFF" class="NavBarCell1">    <a href="help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+  </tr>
+</table>
+</td>
+<td bgcolor="#EEEEFF" align="right" valign="top"><em>
+<b><a href='http://mapbuilder.sourceforge.net'>Community Map Builder</a> 10 Aug 2005</b></em>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</font></td>
+<td bgcolor="white" class="NavBarCell2"><font size="-2">
+  <a href="index.html" target="_top"><b>FRAMES</b></a>  &nbsp;
+&nbsp;<a href="overview-summary.html" target="_top"><b>NO FRAMES</b></a>
+&nbsp;&nbsp;
+<script>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</script>
+<noscript>
+<a href="allclasses-noframe.html" target=""><b>All Classes</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<!-- =========== END OF NAVBAR =========== -->
+
+<hr>
+<font size="-1">
+
+</font>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Wed Aug 10 14:31:26 2005</div>
+</body>
+</html>

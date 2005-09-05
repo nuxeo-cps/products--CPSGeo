@@ -33,7 +33,7 @@ class ConfigToolTest(unittest.TestCase):
         tool.addMap('usgs', self.usgsmap)
         self.assertRaises(MapPoolError, tool.addMap, 'usgs', Map('u'))
 
-        
+       
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(ConfigToolTest))

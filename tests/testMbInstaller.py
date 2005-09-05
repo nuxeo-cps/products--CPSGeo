@@ -15,12 +15,12 @@ class MbInstallerTest(ZopeTestCase.ZopeTestCase):
 
     def test_install_lib(self):
         install_lib(self.folder)
-        self.assert_(len(self.folder.mapbuilder.lib._objects) == 9,
+        self.assert_(len(self.folder.mapbuilder.lib._objects) == 10,
                      self.folder.mapbuilder.lib._objects)
         
     def test_install_demo(self):
         install_demo_app(self.folder)
-        self.assert_(len(self.folder.demo._objects) == 5,
+        self.assert_(len(self.folder.demo._objects) == 6,
                      self.folder.demo._objects)
         
 

@@ -2,12 +2,12 @@
 <html>
 <head>
 <title>CPSGeo Map Widget Demo</title>
-<link rel="stylesheet" href="../mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
+<link rel="stylesheet" href="/mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
 <script>
     // URL of Mapbuilder configuration file.
     var mbConfigUrl='config.xml';    
 </script>
-<script type="text/javascript" src="../mapbuilder/lib/Mapbuilder.js"></script>
+<script type="text/javascript" src="/mapbuilder/lib/Mapbuilder.js"></script>
 </head>
 <body onload="mbDoLoad()">
 <table>
@@ -32,7 +32,7 @@
                                 <td colspan="3"> <div id="mainMapPane"/>
                                     <div id="loading"> 
                                         <p>Loading Program<br/>
-                                            <img src="../mapbuilder/lib/skin/default/images/Loading.gif"/> 
+                                            <img src="/mapbuilder/lib/skin/default/images/Loading.gif"/> 
                                         </p>
                                     </div></td>
                             </tr>

@@ -16,7 +16,7 @@
         </Loading>
         <AoiBoxDHTML id="aoiBox2">
           <htmlTagId>mainMapPane</htmlTagId>
-          <stylesheet>../mapbuilder/lib/widget/Null.xsl</stylesheet>
+          <stylesheet>/mapbuilder/lib/widget/Null.xsl</stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
@@ -38,7 +38,7 @@
       </tools>
     </Context>
     <GeoRSS id="geoRSS">
-      <defaultModelUrl>documents.xml</defaultModelUrl>
+      <defaultModelUrl>getGeoRSSModel</defaultModelUrl>
       <namespace>xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:rss='http://purl.org/rss/1.0/' xmlns:taxo='http://purl.org/rss/1.0/modules/taxonomy/' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:syn='http://purl.org/rss/1.0/modules/syndication/' xmlns:geo='http://www.w3.org/2003/01/geo/wgs84_pos#'</namespace>
       <nodeSelectXpath>/rdf:RDF/rss:item</nodeSelectXpath>
       <widgets>
@@ -64,7 +64,7 @@
         </MapPane>
         <AoiBoxWZ id="aoiBoxLocator">
           <htmlTagId>locatorMap</htmlTagId>
-          <stylesheet>../mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
+          <stylesheet>/mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
@@ -113,6 +113,6 @@
       <disabledSrc>/images/ResetExtentDisable.gif</disabledSrc>
     </Reset>
   </widgets>
-  <skinDir>../mapbuilder/lib/skin/default</skinDir>
+  <skinDir>/mapbuilder/lib/skin/default</skinDir>
   <widgetTextUrl>widgetText.xml</widgetTextUrl> <!-- relative to the skin dir -->
 </MapbuilderConfig>

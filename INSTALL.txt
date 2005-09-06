@@ -17,13 +17,15 @@ sgillies@frii.com
 
 4. Install mapbuilder-lib into /:
 
-   Create an External Method in / with id "install_mblib" using
+   Download mapbuilder-lib version 0.4 and extract into the CPSGeo/skins
+   directory, producing a CPSGeo/skins/mapbuilder/lib/... path. Next, Create
+   an External Method in / with id "install_mblib" using
    
      module:      CPSGeo.mapbuilder_installer
      function:    install_lib
 
    Call this method in the context of /, such as through its Test tab. This
-   will produce a /mapbuilder hierarchy containing many folders of DTML
+   will produce a /mapbuilder/lib hierarchy containing many folders of DTML
    Methods.  **TODO**: better automation of installer and use of Filesystem
    DTML Methods.
 

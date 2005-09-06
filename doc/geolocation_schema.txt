@@ -19,26 +19,26 @@ Schema for CPS
 
     For CPS, we flatten this into three simple fields::
 
-        SpatialReferenceSystem : string , default: "string:EPSG:4326"
+        spatial_reference_system : string , default: "string:EPSG:4326"
             The default is "EPSG:4326", longitude/latitude coordinates using
             the WGS84 earth model.
 
-        PosListDimension : int , default: "python:2"
+        pos_list_dimension : int , default: "python:2"
             The dimension of coordinate tuples specified in the PosList
             string.  Our default is 2, meaning that we only specify x and y
             coordinates.
 
-        PosList : string , default: "string:"
+        pos_list : string , default: "string:"
             Location coordinates in decimal degree units, like "[x] [y]",
             where x is the longitude East of the Greenwich meridian, and y is
             the latitude North of the equator.  A PosList for a location near
-            Paris would be "2.4 47.33", and for Denver: "-105.0 39.75"
+            Paris would be "2.4 48.73", and for Denver: "-105.0 39.75"
 
 
 PosList Widget and Layout
 
-    We will rely on the default values for SpatialReferenceSystem and
-    PosListDimension until there is a strong future requirement for other
+    We will rely on the default values for spatial_reference_system and
+    pos_list_dimension until there is a strong future requirement for other
     coordinates systems or 3D locations. No widgets or layout elements are
     required for those schema fields. Below are the recommended properties for
     the PosList widget::
@@ -47,7 +47,7 @@ PosList Widget and Layout
             PosList
         
         Fields : tokens
-            PosList
+            pos_list
         
         Labels : string
             WGS84 Coordinates

@@ -20,6 +20,9 @@
 # Contact email: sgillies@frii.com
 # =============================================================================
 
+# The georss module currently "lives" in ZCO, but may soon be split out into
+# a separate package
+
 # try to find elementtree or lxml
 try:
     import elementtree
@@ -59,8 +62,17 @@ def GEOElement(tag):
     return Element("{http://www.w3.org/2003/01/geo/wgs84_pos#}" + tag)
 
 
-def modelGeoRSS(title, about, schemas):
-    """Convert descriptive dictionaries to GeoRSS format"""
+def brainsToGeoRSS(title, about, brains):
+    """Convert catalog query result brains to GeoRSS format
+    
+    We expect the following brain attributes:
+    - Title
+    - Description
+    - getURL
+    - Date
+    - pos_list
+    
+    """
     rdf = RDFElement('RDF')
     channel = RSSElement('channel')
     channel.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] \
@@ -73,24 +85,24 @@ def modelGeoRSS(title, about, schemas):
     channel.append(chlink)
     rdf.append(channel)
     
-    for schema in schemas:
+    for schema in brains:
         item = RSSElement('item')
         item.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] \
-                   = schema['url']
+                   = schema.getURL()
         title = RSSElement('title')
-        title.text = schema['title']
+        title.text = schema.Title
         item.append(title)
         link = RSSElement('link')
-        link.text = schema['url']
+        link.text = schema.getURL()
         item.append(link)
         description = RSSElement('description')
-        description.text = schema['description']
+        description.text = schema.Description
         item.append(description)
         date = DCElement('date')
-        date.text = schema['date']
+        date.text = schema.Date
         item.append(date)
         # location
-        x, y = schema['poslist'].split()
+        x, y = schema.pos_list.split()
         long = GEOElement('long')
         long.text = x
         lat = GEOElement('lat')

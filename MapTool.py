@@ -29,7 +29,7 @@ from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 
-from georss import modelGeoRSS
+from georss import brainsToGeoRSS
 
 class MapTool(UniqueObject, CMFBTreeFolder):
 
@@ -68,30 +68,16 @@ class MapTool(UniqueObject, CMFBTreeFolder):
     def getDocumentsByLocation(self, meta_types=[], bounds=[]):
         """Return documents of certain types within specified WGS84 bounds
         """
-
         catalog = getToolByName(self, 'portal_catalog')
-
-        # XXX Is this an index ?
-        brains = catalog(geolocation={'query': 1, 'range': 'min'})
-        results = []
-
-        # XXX can't you just use the brains directly ?
-        for brain in brains:
-            results.append({'id': brain.id, 'title': brain.Title,
-                            'description': brain.Description,
-                            'type': brain.Type,
-                            'date': brain.ModificationDate,
-                            'url': brain.getURL(),
-                            'poslist': brain.PosList})
-        return results
+        return catalog(geolocation={'query': 1, 'range': 'min'})
 
     # XXX permission ? 
     def getGeoRSSModel(self, REQUEST=None):
         """Return a GeoRSS model for mapbuilder
         """
-        schemas = self.getDocumentsByLocation()
+        brains = self.getDocumentsByLocation()
         if REQUEST:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
-        return modelGeoRSS(self.title, self.absolute_url(), schemas)
+        return brainsToGeoRSS(self.title, self.absolute_url(), brains)
 
 InitializeClass(MapTool)

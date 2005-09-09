@@ -25,11 +25,13 @@ from AccessControl import ClassSecurityInfo
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.permissions import ManagePortal
-
+from Products.CMFCore.permissions import View
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 
 from georss import brainsToGeoRSS
+from context import mapToWebMapContext
+
 
 class MapTool(UniqueObject, CMFBTreeFolder):
 
@@ -46,32 +48,14 @@ class MapTool(UniqueObject, CMFBTreeFolder):
     def __init__(self):
         CMFBTreeFolder.__init__(self, self.id)
 
-    security.declareProtected(ManagePortal, 'addMap')
-    def addMap(self, id, url):
-        """Add a map
-        """
-        # XXX Why don't you use auto-generated uids ?
-        # You may still use a name beside.
-        if id in list(self.keys()):
-            raise KeyError("A map exists with id: %s" % (id))
-
-        # XXX why don't you store Map objects instead ?
-        return self._setOb(id, url)
-
-    # XXX permission ?
-    def getMap(self, id):
-        """Get a map given its id
-        """
-        return self._getOb(id)
-
-    # XXX permission ? 
+    security.declareProtected(View, 'getDocumentsByLocation')
     def getDocumentsByLocation(self, meta_types=[], bounds=[]):
         """Return documents of certain types within specified WGS84 bounds
         """
         catalog = getToolByName(self, 'portal_catalog')
         return catalog(geolocation={'query': 1, 'range': 'min'})
 
-    # XXX permission ? 
+    security.declareProtected(View, 'getGeoRSSModel')
     def getGeoRSSModel(self, REQUEST=None):
         """Return a GeoRSS model for mapbuilder
         """
@@ -80,4 +64,14 @@ class MapTool(UniqueObject, CMFBTreeFolder):
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(), brains)
 
+    security.declareProtected(View, 'getMapContext')
+    def getMapContext(self, map_id=None, REQUEST=None):
+        map = getattr(self, map_id)
+        if REQUEST:
+            REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        return '<?xml version="1.0" encoding="utf-8"?>' \
+               + mapToWebMapContext(map)
+
+
 InitializeClass(MapTool)
+

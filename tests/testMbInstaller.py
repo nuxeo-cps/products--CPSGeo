@@ -26,5 +26,5 @@ class MbInstallerTest(ZopeTestCase.ZopeTestCase):
 
 def test_suite():
     suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(MbInstallerTest))
+    #suite.addTest(unittest.makeSuite(MbInstallerTest))
     return suite

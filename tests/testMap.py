@@ -7,23 +7,23 @@ from Map import Map
 
 class MapTest(unittest.TestCase):
 
-    def testInit(self):
-        m = Map('url', name='name', title='title', version='version',
-                bounds=[-120,30,-90,50],
-                srs=['EPSG:4326'],
-                layers=['one', 'two'],
-                formats=['image/jpeg'])
-        self.assert_(m.url == 'url')
-        self.assert_(m.name == 'name')
-        self.assert_(m.title == 'title')
-        self.assert_(m.version == 'version')
-        self.assert_(m.bounds == [-120,30,-90,50])
-        self.assert_(m.srs == ['EPSG:4326'])
-        self.assert_(m.layers == ['one', 'two'])
-        self.assert_(m.formats == ['image/jpeg'])
-        
+    url = 'http://wms.jpl.nasa.gov/wms.cgi'
+    
+    def testMapContext(self):
+        m = Map('map1', self.url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.mapContext()
+        self.assert_(wmc.find('<?xml version="1.0" encoding="utf-8"?><wmc:ViewContext') == 0, wmc)
+        f = open('testMapContext.xml', 'w')
+        f.write(wmc)
+        f.close()
+
 
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(MapTest))
     return suite
+
+if __name__ == '__main__':
+    unittest.TextTestRunner().run(test_suite())
+

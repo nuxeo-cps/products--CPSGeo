@@ -8,7 +8,7 @@ import unittest
 import CPSGeoTestCase
 
 from Products.CPSGeo.Extensions.install import install as install_cpsgeo
-
+from Products.CPSGeo import Map
 
 class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
@@ -20,10 +20,27 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         self.logout()
 
     def testMapTool(self):
-        print "testMapTools"
         mt = self.portal.portal_maps
-        self.assertEquals(mt.meta_type, "CPS Map Tool")
-        
+        self.assertEquals(mt.meta_type, 'CPS Map Tool')
+       
+    def testAddMap(self):
+        mt = self.portal.portal_maps
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        Map.addMap(mt, 'map1', url)
+        map1 = getattr(mt, 'map1')
+        self.assertEquals(map1.name, 'OGC:WMS')
+        self.assertEquals(map1.title, 'JPL World Map Service')
+        map1.srs = 'EPSG:4326'
+        map1.format = 'image/jpeg'
+        map1.bounds = (-120,25,-80,55)
+        map1.size = (400,300)
+        map1.visible_layers = ('global_mosaic',)
+        xml = mt.map1.mapContext()
+        f = open('testAddMap.xml', 'w')
+        f.write(xml)
+        f.close()
+
+         
        
 def test_suite():
     suite = unittest.TestSuite()

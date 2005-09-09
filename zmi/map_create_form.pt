@@ -1,0 +1,46 @@
+<tal:zmi_header replace="structure here/manage_page_header"/>
+<span tal:define="manage_tabs_message options/manage_tabs_message|nothing; management_view string:Edit" tal:replace="structure here/manage_tabs"></span>
+
+<p class="form-help">
+Add a CPS Cartographic Map.
+</p>
+
+<form ACTION="addMap" METHOD="post">
+
+  <table cellspacing="0" cellpadding="2" border="0">
+    
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">id</div>
+      </td>
+      <td align="left" valign="top">
+        <input type="text" name="id" size="40" />
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        url
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <input type="text" name="url" size="73"/>
+      </td>
+    </tr>
+
+  <tr>
+    <td align="left" valign="top"></td>
+    <td align="left" valign="top">
+      <div class="form-element">
+        <input class="form-element" type="submit" name="submit"
+               value="Add" />
+      </div>
+    </td>
+  </tr>
+
+</table>
+</form>
+
+<tal:zmi_footer replace="structure here/manage_page_footer"/>
+

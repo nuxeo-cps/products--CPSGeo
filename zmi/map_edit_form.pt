@@ -1,0 +1,153 @@
+<tal:zmi_header replace="structure here/manage_page_header"/>
+<span tal:define="manage_tabs_message options/manage_tabs_message|nothing; management_view string:Edit" tal:replace="structure here/manage_tabs"></span>
+
+<p class="form-help">
+Edit CPS Cartographic Map.
+</p>
+
+<form ACTION="manage_editMap" METHOD="post">
+
+  <table cellspacing="0" cellpadding="2" border="0">
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        name
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <input type="text" name="name" size="20" tal:attributes="value here/name | nothing"/>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">
+        &nbsp;
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        title
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <input type="text" name="title" size="20" tal:attributes="value here/title | nothing"/>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">
+        &nbsp;
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        format
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <select name="format" size="2">
+          <option tal:condition="here/format" selected tal:content="here/format">CURRENT FORMAT</option>
+          <option tal:repeat="format here/formatlist" tal:content="format">FORMAT</option>
+        </select>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">&nbsp;
+        </div>
+      </td>
+    </tr>
+    
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        size
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <input tal:condition="here/size" type="text" name="size:tokens"
+            size="9"
+            tal:attributes="value python:'%d %d' % here.size"/>
+        <input tal:condition="not:here/size" type="text" name="size:tokens" size="9" value="480 360"/>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">
+        default map width and height in pixels
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        srs
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <select name="srs" size="2">
+          <option tal:condition="here/srs" selected tal:content="here/srs">CURRENT SRS</option>
+          <option tal:repeat="srs here/srslist" tal:content="srs">SRS</option>
+        </select>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">&nbsp;
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        bounds
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <input tal:condition="here/bounds" type="text" name="bounds:tokens"
+            size="50"
+            tal:attributes="value python:'%f %f %f %f' % here.bounds"/>
+        <input tal:condition="not:here/bounds" type="text" name="bounds:tokens"
+            size="50" value="-10 30 30 60"/>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">
+        default map extents
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
+        default layers
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <select name="layers:list" MULTIPLE size="12">
+          <span tal:repeat="layername here/layernames">
+             <option tal:condition="python:layername in here.visible_layers" selected tal:content="layername">LAYER</option>
+             <option tal:condition="python:layername not in here.visible_layers" tal:content="layername">LAYER</option>
+          </span>
+        </select>
+      </td>
+      <td align="left" valign="top">
+        <div class="form-help">&nbsp;
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left" valign="top"></td>
+      <td align="left" valign="top">
+        <div class="form-element">
+          <input class="form-element" type="submit" name="submit"
+                 value="Modify" />
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</form>
+
+
+<tal:zmi_footer replace="structure here/manage_page_footer"/>

@@ -1,0 +1,23 @@
+
+1. Create Map
+
+    Within portal_maps, select "CPSGeo Cartographic Map" from the list of
+    objects than can be added. Within the next form, set an *id* and the base
+    URL to the Web Map Service (WMS) which will be providing the map layers.
+
+2. Edit Map
+
+    Next step is to use the "Edit" tab of the new map instance to specify the
+    map image format, image size, spatial reference system, spatial bounds,
+    and default visible layers for the map. Many of these can be selected from
+    lists obtained from the WMS.
+
+    MapServer WMS users can paste map size and extents from their map files
+    into the size and bounds form fields.
+
+3. Test Map
+
+    The mapbuilder map widget requires a Web Map Context document from a Map.
+    Visit the URL portal_maps/newmap/mapContext to test this. Substitute the
+    id of the newly created map instance for "newmap".
+    

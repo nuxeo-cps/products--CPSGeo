@@ -23,7 +23,9 @@ from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.interfaces.Contentish import Contentish as IContentish
 from Products.CMFCore.PortalContent import PortalContent
+from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
+from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
 from context import mapToWebMapContext
 from ogclib import wms
@@ -41,7 +43,9 @@ class Map(PortalContent):
     portal_type = 'CPS Cartographic Map'
    
     __implements__ = (IContentish,)
-    
+
+    manage_options = ({'label': 'Edit', 'action': 'manage_editMapForm'},)
+
     security = ClassSecurityInfo()
     
     def __init__(self, id, url, name=None, title=None, size=None,
@@ -53,6 +57,8 @@ class Map(PortalContent):
         self.title = cap.servicetitle() or title
         self.layernames = cap.layernames()
         self.layertitles = cap.layertitles()
+        self.formatlist = cap.getmapformats()
+        self.srslist = cap.layersrs()
         self.size = tuple(size)
         self.bounds = tuple(bounds)
         self.srs = srs
@@ -72,6 +78,36 @@ class Map(PortalContent):
         return '<?xml version="1.0" encoding="utf-8"?>' \
                + mapToWebMapContext(self)
 
+    #security.declareProtected(ManagePortalContent, 'editMap')
+    def editMap(self, name='', title='', size=[], bounds=[],
+                srs=None, format=None, layers=[]):
+        """edit map attributes"""
+        if name:
+            self.name = str(name)
+        if title:
+            self.title = str(title)
+        if size:
+            assert len(size) == 2
+            self.size = tuple(map(int, size))
+        if bounds:
+            assert len(bounds) == 4
+            self.bounds = tuple(map(float, bounds))
+        if srs:
+            self.srs = str(srs)
+        if format:
+            self.format = str(format)
+        if layers:
+            self.visible_layers = tuple(layers)
+
+    #security.declareProtected(ManagePortalContent, 'manage_editMap')
+    def manage_editMap(self, name='', title='', size=[], bounds=[],
+                srs=None, format=None, layers=[], REQUEST=None):
+        """web front end to editMap"""
+        self.editMap(name, title, size, bounds, srs, format, layers)
+        return self.manage_editMapForm(self, REQUEST, update_menu=1)
+
+    manage_editMapForm = PageTemplateFile('zmi/map_edit_form.pt', globals(),
+                                          __name__='manage_editMapForm')
 
 InitializeClass(Map)
 
@@ -82,5 +118,15 @@ def addMap(container, id, url, name='', title='', size=[], bounds=[],
     container._setObject(id, ob)
     if REQUEST:
         ob = container._getOb(id)
-        REQUEST.RESPONSE.redirect(ob.absolute_url()+'/manage_main')
-        
+        REQUEST.RESPONSE.redirect(ob.absolute_url()+'/manage_editMapForm')
+     
+manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', 
+                                globals(), __name__='manage_addMapForm')
+
+
+def initialize(context):
+    context.registerClass(Map, 
+                          constructors = (manage_addMapForm, addMap),
+                          icon = 'tool.png')
+
+

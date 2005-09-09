@@ -31,3 +31,10 @@ def install(self):
     installer.install()
     return installer.logResult()
 
+# For use during development
+def uninstall(self):
+    self.portal_skins.manage_delObjects(['cpsgeo', 'cpsgeo_schemas'])
+    self.portal_schemas.manage_delObjects(['geolocation'])
+    self.manage_delObjects(['portal_maps'])
+    return 1
+

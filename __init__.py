@@ -5,7 +5,7 @@ from Products.CMFCore import utils as cmfutils
 
 registerDirectory('skins', globals())
 
-import MapTool
+import MapTool, Map
 
 tools = (MapTool.MapTool,)
 
@@ -15,4 +15,4 @@ def initialize(registrar):
         tools = tools,
         icon = 'tool.png'
         ).initialize(registrar)
-
+    Map.initialize(registrar)

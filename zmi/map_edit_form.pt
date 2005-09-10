@@ -1,8 +1,17 @@
 <tal:zmi_header replace="structure here/manage_page_header"/>
 <span tal:define="manage_tabs_message options/manage_tabs_message|nothing; management_view string:Edit" tal:replace="structure here/manage_tabs"></span>
 
-<p class="form-help">
+<h3 class="form-help">
 Edit CPS Cartographic Map.
+</h3>
+
+<p class="form-help">
+Initial values for these form fields are suggested from the service capabilities
+document: <a tal:define="url python:'%s?service=WMS&version=1.1.1&request=GetCapabilities' % (here.url.replace('?', ''))" tal:attributes="href url" tal:content="url">CAPABILITIES_REQUEST</a>.
+</p>
+
+<p class="form-help">
+Default <em>size</em> and <em>bounds</em> presume a map <em>srs</em> of EPSG:4326. Please adjust these attributes to proper values.
 </p>
 
 <form ACTION="manage_editMap" METHOD="post">
@@ -36,7 +45,7 @@ Edit CPS Cartographic Map.
       </td>
       <td align="left" valign="top">
         <div class="form-help">
-        &nbsp;
+        Title string to be used in map selectors
         </div>
       </td>
     </tr>
@@ -54,7 +63,8 @@ Edit CPS Cartographic Map.
         </select>
       </td>
       <td align="left" valign="top">
-        <div class="form-help">&nbsp;
+        <div class="form-help">
+        Note that image/jpeg does not support transparent overlays
         </div>
       </td>
     </tr>
@@ -69,11 +79,11 @@ Edit CPS Cartographic Map.
         <input tal:condition="here/size" type="text" name="size:tokens"
             size="9"
             tal:attributes="value python:'%d %d' % here.size"/>
-        <input tal:condition="not:here/size" type="text" name="size:tokens" size="9" value="480 360"/>
+        <input tal:condition="not:here/size" type="text" name="size:tokens" size="9" value="480 240"/>
       </td>
       <td align="left" valign="top">
         <div class="form-help">
-        default map width and height in pixels
+        default map size in pixels [width] [height]
         </div>
       </td>
     </tr>
@@ -91,7 +101,8 @@ Edit CPS Cartographic Map.
         </select>
       </td>
       <td align="left" valign="top">
-        <div class="form-help">&nbsp;
+        <div class="form-help">
+        Choose a spatial reference system offered by the WMS
         </div>
       </td>
     </tr>
@@ -107,11 +118,11 @@ Edit CPS Cartographic Map.
             size="50"
             tal:attributes="value python:'%f %f %f %f' % here.bounds"/>
         <input tal:condition="not:here/bounds" type="text" name="bounds:tokens"
-            size="50" value="-10 30 30 60"/>
+            size="50" value="-180.0 -90.0 180.0 90.0"/>
       </td>
       <td align="left" valign="top">
         <div class="form-help">
-        default map extents
+        default map extents [minx] [miny] [maxx] [maxy]
         </div>
       </td>
     </tr>
@@ -131,7 +142,8 @@ Edit CPS Cartographic Map.
         </select>
       </td>
       <td align="left" valign="top">
-        <div class="form-help">&nbsp;
+        <div class="form-help">
+        Selected layers will be activated in the initial map view
         </div>
       </td>
     </tr>

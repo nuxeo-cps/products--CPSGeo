@@ -20,6 +20,9 @@
 """Map Tool For CPS
 """
 
+from urlparse import urlsplit
+import os.path
+
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 
@@ -71,6 +74,14 @@ class MapTool(UniqueObject, CMFBTreeFolder):
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return '<?xml version="1.0" encoding="utf-8"?>' \
                + mapToWebMapContext(map)
+
+    security.declareProtected(View, 'mapContextPaths')
+    def mapContexts(self):
+        base = urlsplit(self.absolute_url())[2]
+        return [{'id': mapid, 'title': getattr(self, mapid).title,
+                 'path': os.path.join(base, mapid, 'mapContext')} \
+                for mapid in self.objectIds()]
+
 
 
 InitializeClass(MapTool)

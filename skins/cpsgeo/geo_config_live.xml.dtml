@@ -6,7 +6,7 @@
     
   <models>
     <Context id="mainMap">
-      <defaultModelUrl>geo_baseMap.xml</defaultModelUrl>
+      <defaultModelUrl><dtml-var expr="portal_maps.mapContexts()[0]['path']"></defaultModelUrl>
       <widgets>
         <MapPane id="mainMapWidget">
           <htmlTagId>mainMapPane</htmlTagId>

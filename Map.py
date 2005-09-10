@@ -118,7 +118,7 @@ def addMap(container, id, url, name='', title='', size=[], bounds=[],
     container._setObject(id, ob)
     if REQUEST:
         ob = container._getOb(id)
-        REQUEST.RESPONSE.redirect(ob.absolute_url()+'/manage_editMapForm')
+        REQUEST.RESPONSE.redirect(container.absolute_url()+'/%s/manage_editMapForm' % (id))
      
 manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', 
                                 globals(), __name__='manage_addMapForm')

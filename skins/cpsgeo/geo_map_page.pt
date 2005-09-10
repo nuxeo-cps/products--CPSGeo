@@ -6,10 +6,29 @@
 <script>
     // URL of Mapbuilder configuration file.
     var mbConfigUrl='geo_config_live.xml';    
+
+    function switch_map()
+    {
+        box = document.forms[0].map;
+        modelurl = box.options[box.selectedIndex].value;
+        if (modelurl) config.loadModel('mainMap', modelurl);
+    }
 </script>
 <script type="text/javascript" src="/mapbuilder/lib/Mapbuilder.js"></script>
 </head>
 <body onload="mbDoLoad()">
+
+<!-- Map selector form -->
+<p>Select base map</p>
+<form id="map_selector">
+    <select name=map onChange="switch_map()">
+    <option value=''>--- Choose Map ---</option>
+    <div tal:repeat="map here/portal_maps/mapContexts">
+    <option tal:attributes="value map/path" tal:content="map/title">TITLE</option>
+    </div>
+    </select>
+</form>
+
 <table>
     <tr> 
         <td>&nbsp;</td>

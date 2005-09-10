@@ -43,6 +43,9 @@ $Name:  $
     <xsl:variable name="y"><xsl:value-of select="geo:lat"/></xsl:variable>
     <xsl:variable name="link"><xsl:value-of select="rss:link"/></xsl:variable>
     <tr onmouseover="config.objects.{$modelId}.setParam('highlightFeature','{$fid}')" onmouseout="config.objects.{$modelId}.setParam('dehighlightFeature','{$fid}')">
+      <xsl:if test="position() mod 2 = 0">
+        <xsl:attribute name="bgcolor">#cccccc</xsl:attribute>
+      </xsl:if>
       <td>
         <a href="{$link}"><xsl:value-of select="rss:title"/></a>
         - <xsl:value-of select="rss:description"/>

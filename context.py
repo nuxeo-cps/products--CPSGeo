@@ -21,7 +21,10 @@ def mapToWebMapContext(map):
     e_general.append(e_bbox)
     e_context.append(e_general)
     e_layerlist = WMCElement('LayerList')
-    for name, title in zip(map.layernames, map.layertitles):
+    layering = zip(map.layernames, map.layertitles)
+    # mapbuilder draws layers in top-bottom order
+    layering.reverse()
+    for name, title in layering:
         e_layer = WMCElement('Layer')
         e_layer.attrib['queryable'] = '0'
         e_layer.attrib['hidden'] = str(int(name not in map.visible_layers))

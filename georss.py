@@ -83,6 +83,20 @@ def brainsToGeoRSS(title, about, brains):
     chlink = RSSElement('link')
     chlink.text = about
     channel.append(chlink)
+    chperiod = SYNElement('updatePeriod')
+    chperiod.text = 'often'
+    chfreq = SYNElement('updateFrequency')
+    chfreq.text = '1'
+    channel.append(chperiod)
+    channel.append(chfreq)
+    chitems = RSSElement('items')
+    seq = RDFElement('Seq')
+    for schema in brains:
+        li = RDFElement('li')
+        li.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] = schema.getURL()
+        seq.append(li)
+    chitems.append(seq)
+    channel.append(chitems)
     rdf.append(channel)
     
     for schema in brains:

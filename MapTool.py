@@ -67,8 +67,17 @@ class MapTool(UniqueObject, CMFBTreeFolder):
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(), brains)
 
+    security.declareProtected(View, 'geoRSSPath')
+    def geoRSSPath(self):
+        """Return a BASEPATH2-ish path to GeoRSS doc for mapbuilder
+        """
+        base = urlsplit(self.absolute_url())[2]
+        return os.path.join(base, 'getGeoRSSModel')
+
     security.declareProtected(View, 'getMapContext')
     def getMapContext(self, map_id=None, REQUEST=None):
+        """Return a 1.0 Web Map Context for mapbuilder
+        """
         map = getattr(self, map_id)
         if REQUEST:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
@@ -77,11 +86,13 @@ class MapTool(UniqueObject, CMFBTreeFolder):
 
     security.declareProtected(View, 'mapContextPaths')
     def mapContexts(self):
+        """Return a list of dicts describing map id, title, and BASEPATH2-ish
+        path to the map context
+        """
         base = urlsplit(self.absolute_url())[2]
         return [{'id': mapid, 'title': getattr(self, mapid).title,
                  'path': os.path.join(base, mapid, 'mapContext')} \
                 for mapid in self.objectIds()]
-
 
 
 InitializeClass(MapTool)

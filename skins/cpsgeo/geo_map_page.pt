@@ -2,11 +2,16 @@
 <html>
 <head>
 <title>CPSGeo Map Widget Demo</title>
+<link rel="stylesheet" type="text/css" media="all"
+        title="CPSDefault styles" href="/cps/default.css" />
+<link rel="stylesheet" type="text/css" media="all"
+        href="/cps/boxes.css" />
 <link rel="stylesheet" href="/mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
 <script>
     // URL of Mapbuilder configuration file.
     var mbConfigUrl='geo_config_live.xml';    
 
+    // Work with the "map_selector" form in the body
     function switch_map()
     {
         box = document.forms[0].map;
@@ -19,7 +24,8 @@
 <body onload="mbDoLoad()">
 
 <!-- Map selector form -->
-<p>Select base map</p>
+<div style="padding:10px">
+Select base map
 <form id="map_selector">
     <select name=map onChange="switch_map()">
     <option value=''>--- Choose Map ---</option>
@@ -28,12 +34,9 @@
     </div>
     </select>
 </form>
+</div>
 
 <table>
-    <tr> 
-        <td>&nbsp;</td>
-        <td><h2>CPSGeo Map Browser</h2></td>
-    </tr>
     <tr>
         <!-- left hand column -->
         <td valign="top" style="padding:10px">
@@ -41,41 +44,35 @@
             <div><div id="legend"/></div>
         </td>
         <!-- right hand column -->
-        <td> <table width="100%">
+        <td valign="top"> <table width="100%">
                 <tr> 
-                    <td align="left"> <h2 id="mapTitle"></h2></td>
-                </tr>
-                <tr> 
-                    <td align="center"> <table>
+                    <td align="center" valign="top"> <table>
                             <tr> 
                                 <td colspan="3"> <div id="mainMapPane"/>
                                     <div id="loading"> 
                                         <p>Loading Program<br/>
                                             <img src="/mapbuilder/lib/skin/default/images/Loading.gif"/> 
                                         </p>
-                                    </div></td>
+                                    </div>
+                                </td>
                             </tr>
                             <tr> 
                                 <td align="left"> <div id="mainButtonBar"/></td>
                                 <td align="center" id="mapScaleText" />&nbsp;
-                                <td align="right" id="cursorTrack" />&nbsp;</tr>
-                        </table></td>
-                </tr>
-            </table>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <td align="left">
-            Simulated Document Query Results Below
-            <hr/>
-            <div id="eventsListing"></div>
-        </td>
-        <td align="left">
+                                <td align="right" id="cursorTrack" />&nbsp;
+                            </tr>
+                            <tr>
+                              <td colspan="3" align="left">
         Mouse over rows in the query results to see documents highlighted in
         the map frame.
-        </td>
+        [<a tal:attributes="href string:javascript:config.loadModel('geoRSS', '${here/portal_maps/geoRSSPath}');">refresh results</a>] <hr/>
+                              <div id="eventsListing"></div>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
     </tr>
 </table>
 

@@ -54,7 +54,7 @@
         </GmlPointRenderer>
       </widgets>
     </GeoRSS>
-    <Context id="locatorMap">
+    <Context id="locator">
       <defaultModelUrl>geo_locatorMap.xml</defaultModelUrl>
       <widgets>
         <MapPane id="locatorMapWidget">

@@ -78,7 +78,6 @@
         </ZoomToAoi>
       </tools>
     </Context>
-
   </models>
   <widgets>
     <ZoomIn id="zoomIn">
@@ -116,3 +115,4 @@
   <skinDir>/mapbuilder/lib/skin/default</skinDir>
   <widgetTextUrl>widgetText.xml</widgetTextUrl> <!-- relative to the skin dir -->
 </MapbuilderConfig>
+

@@ -14,14 +14,23 @@
         </MapPane>
         <Loading id="loading">
         </Loading>
-        <AoiBoxDHTML id="aoiBox2">
+        <!--AoiBoxDHTML id="aoiBox2">
           <htmlTagId>mainMapPane</htmlTagId>
           <stylesheet>/mapbuilder/lib/widget/Null.xsl</stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
           <mapContainerId>mainMapContainer</mapContainerId>
-        </AoiBoxDHTML>
+        </AoiBoxDHTML-->
+        <AoiBoxWZ id="aoiBox2">
+          <htmlTagId>mainMapPane</htmlTagId>
+          <stylesheet>/mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
+          <lineColor>#FF0000</lineColor>
+          <lineWidth>1</lineWidth>
+          <crossSize>15</crossSize>
+          <mapContainerId>mainMapContainer</mapContainerId>
+        </AoiBoxWZ>
+
         <CursorTrack id="cursorTrack">
           <mouseHandler>mainMap</mouseHandler>
         </CursorTrack>
@@ -35,6 +44,7 @@
         <DragPanHandler id="mainDragPan">
           <enabled>false</enabled>
         </DragPanHandler>
+        <MouseClickHandler id="mainMouseClick"/>
       </tools>
     </Context>
     <GeoRSS id="geoRSS">
@@ -78,15 +88,34 @@
         </ZoomToAoi>
       </tools>
     </Context>
+    <FeatureCollection id="featureCollection">
+      <namespace>xmlns:gml='http://www.opengis.net/gml' xmlns:wfs='http://www.opengis.net/wfs' xmlns:cps='http://www.cps-project.org/cps'</namespace>
+      <widgets>
+        <GmlRendererWZ id="testGmlRenderer">
+          <htmlTagId>mainMapPane</htmlTagId>
+          <targetModel>mainMap</targetModel>
+          <mapContainerId>mainMapContainer</mapContainerId>
+          <lineColor>#FF0000</lineColor>
+          <lineWidth>1</lineWidth>
+          <pointDiameter>10</pointDiameter>
+        </GmlRendererWZ>
+        <!--FeatureList id="featureList">
+        </FeatureList-->
+        <Widget id="docLocation">
+          <stylesheet>geo_docLocation.xsl</stylesheet>
+          <targetModel>mainMap</targetModel>
+        </Widget>
+      </widgets>
+    </FeatureCollection>
 
   </models>
   <widgets>
     <ZoomIn id="zoomIn">
       <buttonBar>mainButtonBar</buttonBar>
       <targetModel>mainMap</targetModel>
+      <selected>true</selected>
       <mouseHandler>mainAoi</mouseHandler>
       <class>RadioButton</class>
-      <selected>true</selected>
       <enabledSrc>/images/ZoomInEnable.gif</enabledSrc>
       <disabledSrc>/images/ZoomInDisable.gif</disabledSrc>
     </ZoomIn>
@@ -106,6 +135,19 @@
       <enabledSrc>/images/PanEnable.gif</enabledSrc>
       <disabledSrc>/images/PanDisable.gif</disabledSrc>
     </DragPan>
+    <EditPoint id="editPoint">
+      <buttonBar>mainButtonBar</buttonBar>
+      <mouseHandler>mainMouseClick</mouseHandler>
+      <class>RadioButton</class>
+      <enabledSrc>/images/EditPointEnable.gif</enabledSrc>
+      <disabledSrc>/images/EditPointDisable.gif</disabledSrc>
+      <targetModel>featureCollection</targetModel>
+      <transactionResponseModel>transaction</transactionResponseModel>
+      <webServiceUrl>../../../geoserver/wfs</webServiceUrl>
+      <featureXpath>/gml:featureMember/cps:document/cps:location/gml:MultiPoint/gml:pointMember/gml:Point/gml:coordinates</featureXpath>
+      <defaultModelUrl>template_doclocation.xml</defaultModelUrl>
+      <targetContext>mainMap</targetContext>
+    </EditPoint>
     <Reset id="reset">
       <buttonBar>mainButtonBar</buttonBar>
       <targetModel>mainMap</targetModel>
@@ -116,3 +158,4 @@
   <skinDir>/mapbuilder/lib/skin/default</skinDir>
   <widgetTextUrl>widgetText.xml</widgetTextUrl> <!-- relative to the skin dir -->
 </MapbuilderConfig>
+

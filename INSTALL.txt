@@ -29,6 +29,20 @@ sgillies@frii.com
    Methods.  **TODO**: better automation of installer and use of Filesystem
    DTML Methods.
 
-5. Visit /portal_maps/geo_map_page.
+5. Add a first map to portal_maps
+
+   in portal_maps/manage_main, add a new "CPS Cartographic Map" object. In the
+   initial form, specify the id and base URL for a WMS service. For example,
+   try
+
+     id:    onearth
+     url:   http://wms.jpl.nasa.gov/wms.cgi
+
+   In the next edit form, select 'image/jpeg' as the map format, 'EPSG:4326'
+   as the srs (spatial reference system), and select 'modis' as a default
+   layer.
+
+6. Visit portal_maps/geo_location_view
+
 
 

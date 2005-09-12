@@ -3,7 +3,7 @@ import sys
 import unittest
 
 sys.path.insert(0, '..')
-from Map import Map
+from Products.CPSGeo.Map import Map
 
 class MapTest(unittest.TestCase):
 

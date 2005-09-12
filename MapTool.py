@@ -84,7 +84,7 @@ class MapTool(UniqueObject, CMFBTreeFolder):
         return '<?xml version="1.0" encoding="utf-8"?>' \
                + mapToWebMapContext(map)
 
-    security.declareProtected(View, 'mapContextPaths')
+    security.declareProtected(View, 'mapContexts')
     def mapContexts(self):
         """Return a list of dicts describing map id, title, and BASEPATH2-ish
         path to the map context

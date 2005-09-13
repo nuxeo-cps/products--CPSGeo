@@ -24,7 +24,7 @@
         </AoiBoxDHTML-->
         <AoiBoxWZ id="aoiBox2">
           <htmlTagId>mainMapPane</htmlTagId>
-          <stylesheet>/mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
+          <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
@@ -74,7 +74,7 @@
         </MapPane>
         <AoiBoxWZ id="aoiBoxLocator">
           <htmlTagId>locatorMap</htmlTagId>
-          <stylesheet>/mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
+          <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
@@ -155,7 +155,7 @@
       <disabledSrc>/images/ResetExtentDisable.gif</disabledSrc>
     </Reset>
   </widgets>
-  <skinDir>/mapbuilder/lib/skin/default</skinDir>
+  <skinDir><dtml-var getBaseUrl>mapbuilder/lib/skin/default</skinDir>
   <widgetTextUrl>widgetText.xml</widgetTextUrl> <!-- relative to the skin dir -->
 </MapbuilderConfig>
 

@@ -1,12 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<html>
+<html tal:define="mb_dir here/getBaseUrl">
 <head>
 <title>CPSGeo Map Widget Demo</title>
 <link rel="stylesheet" type="text/css" media="all"
         title="CPSDefault styles" href="/cps/default.css" />
 <link rel="stylesheet" type="text/css" media="all"
         href="/cps/boxes.css" />
-<link rel="stylesheet" href="/mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
+<link rel="stylesheet" tal:attributes="href string:${mb_dir}mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
 <script>
     // URL of Mapbuilder configuration file.
     var mbConfigUrl='geo_edit_config.xml';    
@@ -19,7 +19,7 @@
         if (modelurl) config.loadModel('mainMap', modelurl);
     }
 </script>
-<script type="text/javascript" src="/mapbuilder/lib/Mapbuilder.js"></script>
+<script type="text/javascript" tal:attributes="src string:${mb_dir}mapbuilder/lib/Mapbuilder.js"></script>
 </head>
 <body onload="mbDoLoad()">
 
@@ -51,7 +51,7 @@ Select base map
                                 <td colspan="3"> <div id="mainMapPane"/>
                                     <div id="loading"> 
                                         <p>Loading Program<br/>
-                                            <img src="/mapbuilder/lib/skin/default/images/Loading.gif"/> 
+                                            <img tal:attributes="src string:{$mb_dir}mapbuilder/lib/skin/default/images/Loading.gif"/> 
                                         </p>
                                     </div>
                                 </td>

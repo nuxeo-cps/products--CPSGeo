@@ -19,6 +19,14 @@
         if (modelurl) config.loadModel('mainMap', modelurl);
     }
 </script>
+<script tal:content="structure python:'
+    function reload_docs()
+    {
+        text = document.forms[3].elements[0].value;
+        if (text) config.loadModel(\'geoRSS\', \'%sportal_maps/getGeoRSSModel?SearchableText=\'+text);
+    }
+' % (here.getBaseUrl())">    
+</script>
 <script type="text/javascript" tal:attributes="src string:${mb_dir}mapbuilder/lib/Mapbuilder.js"></script>
 </head>
 <body onload="mbDoLoad()">
@@ -63,9 +71,11 @@ Select base map
                             </tr>
                             <tr>
                               <td colspan="3" align="left" style="border:solid grey 1px;padding:0.5em">
+        <form id=search_form>
+        <input type="text" name="SearchableText" size="12" maxlength="256" value=""/>  <button type="button" onclick="reload_docs();" class="SearchBox">Search</button>
+        </form>
         Mouse over rows in the query results to see documents highlighted in
         the map frame.
-        [<a tal:attributes="href string:javascript:config.loadModel('geoRSS', '${here/portal_maps/geoRSSPath}');">refresh results</a>]
                               <div id="eventsListing"></div>
                               </td>
                             </tr>
@@ -82,4 +92,5 @@ Select base map
 
 </body>
 </html>
+
 

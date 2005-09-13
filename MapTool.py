@@ -26,6 +26,8 @@ import os.path
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 
+from Products.PageTemplates.PageTemplateFile import PageTemplateFile
+
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
@@ -94,6 +96,19 @@ class MapTool(UniqueObject, CMFBTreeFolder):
                  'path': os.path.join(base, mapid, 'mapContext')} \
                 for mapid in self.objectIds()]
 
+    #
+    # ZMI
+    #
+
+    security.declareProtected(ManagePortal, 'manage_addMapForm')
+    manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', globals(),
+                                         __name__='manage_addMapForm')
+    
+    def all_meta_types(self):
+        return ({'name': 'CPS Cartographic Map',
+                 'action': 'manage_addMapForm',
+                 'permission': ManagePortal},
+                )        
 
 InitializeClass(MapTool)
 

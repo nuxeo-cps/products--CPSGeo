@@ -1,6 +1,8 @@
 
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
+from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
+
 CPS_SKINS = { 'cpsgeo': 'Products/CPSGeo/skins/cpsgeo',
               'cpsgeo_document': 'Products/CPSGeo/skins/cpsgeo_document' }
 
@@ -24,6 +26,14 @@ class CPSGeoInstaller(CPSInstaller):
         self.verifyTool('portal_maps',
                         'CPSGeo',
                         'CPS Map Tool')
+
+    def setupMapBuilderLibs(self):
+        """Install mapbuilder within ZODB
+        """
+        # XXX : split this within a skins dir 
+        if 'mapbuilder' in self.portal.objectIds():
+            self.portal.manage_delObjects(['mapbuilder'])
+        install_lib(self.portal)
 
                         
 def install(self):

@@ -15,21 +15,7 @@ sgillies@frii.com
      module:      CPSGeo.install
      function:    install
 
-4. Install mapbuilder-lib into /:
-
-   Download mapbuilder-lib version 0.4 and extract into the CPSGeo/skins
-   directory, producing a CPSGeo/skins/mapbuilder/lib/... path. Next, Create
-   an External Method in / with id "install_mblib" using
-   
-     module:      CPSGeo.mapbuilder_installer
-     function:    install_lib
-
-   Call this method in the context of /, such as through its Test tab. This
-   will produce a /mapbuilder/lib hierarchy containing many folders of DTML
-   Methods.  **TODO**: better automation of installer and use of Filesystem
-   DTML Methods.
-
-5. Add a first map to portal_maps
+4. Add a first map to portal_maps
 
    in portal_maps/manage_main, add a new "CPS Cartographic Map" object. In the
    initial form, specify the id and base URL for a WMS service. For example,
@@ -42,7 +28,7 @@ sgillies@frii.com
    as the srs (spatial reference system), and select 'modis' as a default
    layer.
 
-6. Visit portal_maps/geo_location_view
+5. Visit portal_maps/geo_location_view
 
 
 

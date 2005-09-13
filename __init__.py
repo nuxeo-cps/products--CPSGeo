@@ -1,18 +1,59 @@
+# -*- coding: ISO-8859-15 -*-
+# Copyright (c) 2005 Nuxeo SARL <http://nuxeo.com>
 
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+# $Id: CPSPortlet.py 26680 2005-09-09 14:22:18Z janguenot $
+
+from Products.CMFCore import utils
+from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.DirectoryView import registerDirectory
-from Products.CMFCore import utils as cmfutils
-#from Products.CMFCore.CMFCorePermissions import AddPortalContent
+
+import MapTool
+import Map
+import CPSMapDocument
+
+tools = (MapTool.MapTool,
+         )
+
+contentClasses = (
+    CPSMapDocument.CPSMapDocument,
+    )
+
+contentConstructors = (
+    CPSMapDocument.addCPSMapDocument,
+    )
+
+fti = ()
 
 registerDirectory('skins', globals())
 
-import MapTool, Map
-
-tools = (MapTool.MapTool,)
-
 def initialize(registrar):
-    cmfutils.ToolInit(
-        'CPS Geo Tools',
-        tools = tools,
-        icon = 'tool.png'
-        ).initialize(registrar)
+
+    # Content
+    utils.ContentInit(
+        'CPS Geo Content Types',
+        content_types=contentClasses,
+        permission=AddPortalContent,
+        extra_constructors=contentConstructors,
+        fti=fti).initialize(registrar)
+
     Map.initialize(registrar)
+
+    # Tool
+    utils.ToolInit(
+        'CPS Geo Tools',
+        tools=tools,
+        icon='tool.png'
+        ).initialize(registrar)

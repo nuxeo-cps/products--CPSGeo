@@ -3,8 +3,10 @@ from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
 from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
 
-CPS_SKINS = { 'cpsgeo': 'Products/CPSGeo/skins/cpsgeo',
-              'cpsgeo_document': 'Products/CPSGeo/skins/cpsgeo_document' }
+CPS_SKINS = {
+    'cpsgeo': 'Products/CPSGeo/skins/cpsgeo',
+    'cpsgeo_document': 'Products/CPSGeo/skins/cpsgeo_document'
+    }
 
 class CPSGeoInstaller(CPSInstaller):
         
@@ -15,9 +17,9 @@ class CPSGeoInstaller(CPSInstaller):
         self.setupMapTool()
         self.verifySkins(CPS_SKINS)
         self.resetSkinCache()
-        # TODO: widgets
         self.verifySchemas(self.portal.getCPSGeoSchemas())
         self.verifyLayouts(self.portal.getCPSGeoLayouts())
+        self.setupMapBuilderLibs()
         self.finalize()
         self.log("End of specific CPSGeo install")
 

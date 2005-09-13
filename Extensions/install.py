@@ -2,7 +2,7 @@
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
 CPS_SKINS = { 'cpsgeo': 'Products/CPSGeo/skins/cpsgeo',
-              'cpsgeo_schemas': 'Products/CPSGeo/skins/cpsgeo_schemas' }
+              'cpsgeo_document': 'Products/CPSGeo/skins/cpsgeo_document' }
 
 class CPSGeoInstaller(CPSInstaller):
         

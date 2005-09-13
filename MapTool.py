@@ -64,9 +64,8 @@ class MapTool(UniqueObject, CMFBTreeFolder):
     def getGeoRSSModel(self, REQUEST=None):
         """Return a GeoRSS model for mapbuilder
         """
-        brains = self.getDocumentsByLocation()
-        if REQUEST:
-            REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        brains = self.search(REQUEST.form)
+        REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(), brains)
 
     security.declareProtected(View, 'geoRSSPath')

@@ -14,8 +14,8 @@ class CPSGeoInstaller(CPSInstaller):
         self.verifySkins(CPS_SKINS)
         self.resetSkinCache()
         # TODO: widgets
-        #self.verifyWidgets()
         self.verifySchemas(self.portal.getCPSGeoSchemas())
+        self.verifyLayouts(self.portal.getCPSGeoLayouts())
         self.finalize()
         self.log("End of specific CPSGeo install")
 

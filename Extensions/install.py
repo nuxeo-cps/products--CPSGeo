@@ -4,7 +4,8 @@ from Products.CPSInstaller.CPSInstaller import CPSInstaller
 from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
 
 CPS_SKINS = {
-    'cpsgeo': 'Products/CPSGeo/skins/cpsgeo',
+    'cpsgeo_standalone': 'Products/CPSGeo/skins/cpsgeo_standalone',
+    'cpsgeo_widgets': 'Products/CPSGeo/skins/cpsgeo_widgets',
     'cpsgeo_document': 'Products/CPSGeo/skins/cpsgeo_document'
     }
 

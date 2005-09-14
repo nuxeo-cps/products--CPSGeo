@@ -34,7 +34,7 @@ def install_lib(self):
                                                         file=open(f_path))
 
     # Install patched GMLPointRenderer widget
-    patchfile = open(os.path.join(mb_dir, 'mapbuilder', 
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches', 
                                   'GmlPointRenderer_patched.js'), 'r')
     patched_content = patchfile.read()
     renderer = getattr(self.mapbuilder.lib.widget, 'GmlPointRenderer.js')

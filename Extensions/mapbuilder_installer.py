@@ -3,7 +3,7 @@
 import os 
 
 # we expect a mapbuilder javascript package to have been extracted into
-# the skins/mb directory, resulting in CPSGeo/skins/mb/mapbuilder/lib/...
+# the skins/mapbuilder directory, resulting in CPSGeo/skins/mapbuilder/lib/...
 
 def install_lib(self):
     """Call in the context of a site portal_maps to install the mapbuilder
@@ -33,6 +33,13 @@ def install_lib(self):
                 container.manage_addProduct['OFSP'].manage_addDTMLMethod(f,
                                                         file=open(f_path))
 
+    # Install patched GMLPointRenderer widget
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder', 
+                                  'GmlPointRenderer_patched.js'), 'r')
+    patched_content = patchfile.read()
+    renderer = getattr(self.mapbuilder.lib.widget, 'GmlPointRenderer.js')
+    renderer.manage_edit(data=patched_content, title='')
+    
     # Now, add all cps document icons from Products/CPSDocuments/skins/
     # to the mapbuilder default skin folder
     icon_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',
@@ -47,34 +54,3 @@ def install_lib(self):
 
     return 1
 
-def install_demo_app(self):
-    """Call in the context of a site portal_maps to install the demo app
-    config and model components"""
-    self.manage_addProduct['OFSP'].manage_addFolder('demo')
-       
-    mb_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',
-                           'CPSGeo', 'skins', 'mb')
-    os.chdir(mb_dir)
-    
-    for root, dirs, files in os.walk('demo'):
-        # ignore .svn directories
-        if root.find('.svn') > 0:
-            continue
-        
-        container = self.unrestrictedTraverse(root)
-        for f in files:
-            ext = os.path.splitext(f)[1]
-            f_path = os.path.join(mb_dir, root, f)
-            if ext.lower() in ['.pt']:
-                #data = open(f_path).read()
-                #container.manage_addProduct['PageTemplates'].manage_addPageTemplate(id, text=data)
-                # above results in AttributeError: PageTemplates, for now
-                # we need to create the index_html manually
-                pass
-            else:
-                container.manage_addProduct['OFSP'].manage_addDTMLMethod(f,
-                                                        file=open(f_path))
-    return 1
-
-
-                

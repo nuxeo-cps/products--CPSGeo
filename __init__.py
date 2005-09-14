@@ -23,6 +23,7 @@ from Products.CMFCore.DirectoryView import registerDirectory
 import MapTool
 import Map
 import CPSMapDocument
+import CPSWidgets
 
 tools = (MapTool.MapTool,
          )
@@ -48,8 +49,6 @@ def initialize(registrar):
         permission=AddPortalContent,
         extra_constructors=contentConstructors,
         fti=fti).initialize(registrar)
-
-    Map.initialize(registrar)
 
     # Tool
     utils.ToolInit(

@@ -3,7 +3,7 @@
 """
 
 vocabularies = {
-    'template': {'type': 'CPS Method Vocabulary',
+    'maps': {'type': 'CPS Method Vocabulary',
                  'data': {'get_vocabulary_method':
                           'getAllMapIds'
                           },

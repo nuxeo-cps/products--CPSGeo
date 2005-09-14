@@ -5,7 +5,7 @@
 cps_map_document_type = {
     'title': 'portal_type_CPSMapDocument_title',
     'description': 'portal_type_CPSMapDocument_description',
-    'content_icon': 'document_icon.gif',
+    'content_icon': 'document_map.png',
     'content_meta_type': 'CPS Map Document',
     'product': 'CPSGeo',
     'factory': 'addCPSMapDocument',

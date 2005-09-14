@@ -19,7 +19,7 @@ cps_map_document_type = {
     'cps_proxy_type': 'document',
     'cps_display_as_document_in_listing': True,
     'schemas': ('metadata', 'common'),
-    'layouts': ('metadata',),
+    'layouts': ('common',),
     'layout_clusters': ('metadata:metadata',),
     'flexible_layouts': (),
     'storage_methods': (),

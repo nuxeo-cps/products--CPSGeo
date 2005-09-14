@@ -23,6 +23,8 @@ class CPSGeoInstaller(CPSInstaller):
         self.resetSkinCache()
         self.verifySchemas(self.portal.getCPSGeoSchemas())
         self.verifyLayouts(self.portal.getCPSGeoLayouts())
+        self.verifyWidgets(self.portal.getCPSGeoWidgets())
+        self.verifyVocabularies(self.portal.getCPSGeoVocabularies())
         self.setupFlexibleTypes()
         self.setupMapBuilderLibs()
         self.finalize()

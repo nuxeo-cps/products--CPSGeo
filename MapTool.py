@@ -36,7 +36,7 @@ from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 
 from georss import brainsToGeoRSS
 from context import mapToWebMapContext
-
+from Map import Map
 
 class MapTool(UniqueObject, CMFBTreeFolder):
 
@@ -95,6 +95,22 @@ class MapTool(UniqueObject, CMFBTreeFolder):
                  'path': os.path.join(base, mapid, 'mapContext')} \
                 for mapid in self.objectIds()]
 
+    security.declareProtected(View, 'locatorMapUrl')
+    def getLocatorMap(self, REQUEST=None):
+        """Return locator map for use in printing"""
+        import Image
+        import ImageDraw
+        from StringIO import StringIO
+        image_in = StringIO(self.geo_locator_image.data)
+        im = Image.open(image_in)
+        draw = ImageDraw.Draw(im)
+        draw.line((0, 0) + im.size, fill=128)
+        draw.line((0, im.size[1], im.size[0], 0), fill=128)
+        REQUEST.RESPONSE.setHeader('Content-type', 'image/png')
+        image_out = StringIO()
+        im.save(image_out)
+        return image_out.getvalue()
+
     #
     # ZMI
     #
@@ -102,7 +118,16 @@ class MapTool(UniqueObject, CMFBTreeFolder):
     security.declareProtected(ManagePortal, 'manage_addMapForm')
     manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', globals(),
                                          __name__='manage_addMapForm')
-    
+
+    def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
+                      srs=None, format=None, layers=[], REQUEST=None):
+        """Add a Map to a Map tool"""
+        ob = Map(id, url, name, title, size, bounds, srs, format, layers)
+        self._setObject(id, ob)
+        if REQUEST:
+            ob = self._getOb(id)
+            REQUEST.RESPONSE.redirect(self.absolute_url()+'/%s/manage_editMapForm' % (id))
+
     def all_meta_types(self):
         return ({'name': 'CPS Cartographic Map',
                  'action': 'manage_addMapForm',

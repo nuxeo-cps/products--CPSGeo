@@ -111,22 +111,10 @@ class Map(PortalContent):
 
 InitializeClass(Map)
 
-def addMap(container, id, url, name='', title='', size=[], bounds=[],
-           srs=None, format=None, layers=[], REQUEST=None):
-    """Add a Map to a Map tool"""
-    ob = Map(id, url, name, title, size, bounds, srs, format, layers)
-    container._setObject(id, ob)
-    if REQUEST:
-        ob = container._getOb(id)
-        REQUEST.RESPONSE.redirect(container.absolute_url()+'/%s/manage_editMapForm' % (id))
-     
-manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', 
-                                globals(), __name__='manage_addMapForm')
-
 
 def initialize(context):
     context.registerClass(Map, 
                           constructors = (manage_addMapForm, addMap),
-                          icon = 'tool.png')
+                          icon = 'map_context.png')
 
 

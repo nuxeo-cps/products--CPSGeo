@@ -5,7 +5,7 @@
 Add a CPS Cartographic Map.
 </p>
 
-<form ACTION="addMap" METHOD="post">
+<form ACTION="manage_addMap" METHOD="post">
 
   <table cellspacing="0" cellpadding="2" border="0">
     

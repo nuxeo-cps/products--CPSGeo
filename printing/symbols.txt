@@ -1,0 +1,7 @@
+
+SYMBOL
+    NAME 'document_icon.png'
+    TYPE PIXMAP
+    IMAGE 'document_icon.png'
+END
+

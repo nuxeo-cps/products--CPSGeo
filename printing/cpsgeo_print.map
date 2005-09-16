@@ -1,0 +1,116 @@
+MAP
+  NAME "Template"
+  EXTENT -10 10 70 70
+  UNITS DD
+  IMAGETYPE PNG
+  IMAGECOLOR 255 255 255
+  STATUS ON
+  SIZE 800 600
+  SYMBOLSET "symbols.txt"
+  TEMPLATEPATTERN "cpsgeo_print_template"
+
+  SCALEBAR
+    STATUS ON
+    POSTLABELCACHE TRUE
+    STYLE 0
+    UNITS KILOMETERS
+    SIZE 250 5
+    POSITION LR
+    TRANSPARENT TRUE
+    COLOR 0 0 0
+    IMAGECOLOR 242 255 195
+    BACKGROUNDCOLOR 204 204 204
+    LABEL
+      TYPE BITMAP
+      SIZE TINY
+      COLOR 0 0 0
+      POSITION UR
+      BUFFER 10
+    END
+  END
+
+  LEGEND
+    IMAGECOLOR 255 255 255
+    STATUS ON
+    KEYSIZE 20 18
+    LABEL
+      TYPE BITMAP
+      SIZE SMALL
+      COLOR 0 0 0
+    END
+  END
+ 
+  REFERENCE
+    EXTENT -180 -90 180 90
+    IMAGE "world_locator_image.png"
+    SIZE 180 90
+    STATUS ON
+    COLOR -1 -1 -1
+    OUTLINECOLOR 255 0 0
+  END
+  
+  WEB
+    #TEMPLATE "template.html"
+    IMAGEPATH "/var/www-tmp/"
+    IMAGEURL "/tmp/"
+    METADATA
+      "wms_title" "MapServer Map"
+      "wms_onlineresource" "http://lenny/cgi-bin/mapserv?map=/home/sean/sggs/jobs/Nuxeo/maps1/CPSGeo/printing/cpsgeo_print.map"
+      "wms_srs" "EPSG:4326"
+    END
+  END
+
+  PROJECTION
+    "init=epsg:4326"
+  END
+
+  # This layer is only for testing purposes
+  LAYER
+    NAME "world"
+    TYPE POLYGON
+    PROJECTION
+      "init=epsg:4326"
+    END
+    STATUS ON
+    DATA "/var/wms_data/world/world_borders.shp"
+    CLASS
+      NAME "world"
+      STYLE
+        COLOR 128 128 128
+        OUTLINECOLOR 0 0 0
+      END
+    END
+    TRANSPARENCY 50
+    METADATA
+      "wms_title" "world"
+      "wms_srs"   "EPSG:4326"
+    END
+  END
+ 
+  # This is the CPS Map Document layer that must be replicated in MapServer
+  # mapfiles to support printing maps that show CPS documents.
+  LAYER
+    NAME "cpsdocs"
+    TYPE ANNOTATION
+    DEBUG ON
+    TRANSPARENCY ALPHA
+    PROJECTION
+      "init=epsg:4326"
+    END
+    STATUS OFF
+    CLASS
+      NAME "CPS Map Documents"
+      STYLE
+        SYMBOL 'document_icon.png'
+      END
+      LABEL
+        TYPE BITMAP
+        POSITION AUTO
+        SIZE SMALL
+        COLOR 0 0 0
+      END
+    END
+  END
+
+END
+

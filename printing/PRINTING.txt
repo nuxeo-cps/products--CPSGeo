@@ -1,0 +1,32 @@
+Printing Maps
+
+  CPSGeo will rely on an external MapServer instance in the conventional
+  non-WMS mode for printing support. We can POST document feature locations and
+  titles to the MapServer for rendering on top of other map layers. This will
+  require small edits to the MapServer map configuration files as described
+  below.
+
+  Once everything is configured we will request a printed map from the
+  MapServer by posting the following data:
+
+      map_web_template=cpsgeo_print_template.html
+      layers=[map layers]+cpsdocs
+      map_projection=init%3Depsg:4326
+      map_cpsdocs_feature=new
+      map_cpsdocs_feature_points=[x y]
+      map_cpsdocs_feature_text=[document title]
+
+      
+Print template
+
+  A simple printing template for MapServer is provided and may customized. Use
+  of this template must be configured in the mapfile. See the cpsgeo_print.map
+  file for an example of configuring TEMPLATEPATTERN.
+
+CPS Document Map Layer
+
+  The target mapfile will require a layer for the purpose of rendering CPS map
+  documents into the printed map. Please see the "cpsdocs" layer in
+  cpsgeo_print.map for guidance. It makes use of the CPS document_icon.png file
+  that is defined in the attached symbols file.
+

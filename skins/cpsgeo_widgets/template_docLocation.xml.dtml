@@ -6,7 +6,7 @@
        <gml:MultiPoint srsName="epsg:4326">
         <gml:pointMember>
           <gml:Point>
-            <gml:coordinates decimal="." cs="," ts=" "></gml:coordinates>
+            <gml:coordinates decimal="." cs="," ts=" "><dtml-var getCurrentCoordinates></gml:coordinates>
           </gml:Point>
         </gml:pointMember>
       </gml:MultiPoint>

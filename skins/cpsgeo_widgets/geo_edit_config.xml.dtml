@@ -113,7 +113,6 @@
     <ZoomIn id="zoomIn">
       <buttonBar>mainButtonBar</buttonBar>
       <targetModel>mainMap</targetModel>
-      <selected>true</selected>
       <mouseHandler>mainAoi</mouseHandler>
       <class>RadioButton</class>
       <enabledSrc>/images/ZoomInEnable.gif</enabledSrc>
@@ -138,6 +137,7 @@
     <EditPoint id="editPoint">
       <buttonBar>mainButtonBar</buttonBar>
       <mouseHandler>mainMouseClick</mouseHandler>
+      <selected>true</selected>
       <class>RadioButton</class>
       <enabledSrc>/images/EditPointEnable.gif</enabledSrc>
       <disabledSrc>/images/EditPointDisable.gif</disabledSrc>

@@ -1,3 +1,64 @@
-<p>
-  Here, the map and related should be displayed
-</p>
+<span tal:define="mb_dir here/getBaseUrl">
+<script>
+
+    // Work with the "map_selector" form in the body
+    function switch_map()
+    {
+        alert("switching map");
+        box = document.getElementById("map_selector");
+        modelurl = box.options[box.selectedIndex].value;
+        if (modelurl) config.loadModel('mainMap', modelurl);
+    }
+
+</script>
+
+<!-- Map selector form -->
+<div style="padding:10px">
+Select base map
+    <select id="map_selector" name=map onChange="switch_map()">
+    <option value=''>--- Choose Map ---</option>
+    <div tal:repeat="map here/portal_maps/mapContexts">
+    <option tal:attributes="value map/path" tal:content="map/title">TITLE</option>
+    </div>
+    </select>
+</div>
+
+<table>
+    <tr>
+        <!-- left hand column -->
+        <td valign="top" style="padding:10px">
+            <div><div id="locatorMap"/></div>
+            <div><div id="legend"/></div>
+        </td>
+        <!-- right hand column -->
+        <td valign="top"> <table width="100%">
+                <tr> 
+                    <td align="center" valign="top"> <table>
+                            <tr> 
+                                <td colspan="3"> <div id="mainMapPane"/>
+                                    <div id="loading"> 
+                                        <p>Loading Program<br/>
+                                            <img tal:attributes="src python:'%smapbuilder/lib/skin/default/images/Loading.gif' % (mb_dir)"/> 
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr> 
+                                <td align="left"> <div id="mainButtonBar"/></td>
+                                <td align="center" id="mapScaleText" />&nbsp;
+                                <td align="right" id="cursorTrack" />&nbsp;
+                            </tr>
+                            <tr>
+                              <td colspan="3">
+                                  <div id="docLocation"></div>
+                              </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+            </table>
+    </tr>
+</table>
+
+</span>

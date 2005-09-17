@@ -135,9 +135,11 @@ class WMSCapabilitiesReader:
 
         service_url is the base url, to which is appended the service, version,
         and request parameters"""
-        url = service_url.replace('?', '')
+        url = service_url
+        if url.find('?') < 0:
+            url = url + '?'
         if self.version == '1.1.1':
-            request = '%s?service=WMS&version=1.1.1&request=GetCapabilities' \
+            request = '%sservice=WMS&version=1.1.1&request=GetCapabilities' \
                     % (url)
         else:
             raise Exception, "unsupported version: %s" % (self.version)

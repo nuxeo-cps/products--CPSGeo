@@ -40,7 +40,25 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         f = open('testAddMap.xml', 'w')
         f.write(xml)
         f.close()
-         
+        
+    def testAddMapLenny(self):
+        mt = self.portal.portal_maps
+        url = 'http://lenny/cgi-bin/mapserv?map=/home/sean/sggs/jobs/Nuxeo/maps1/CPSGeo/printing/cpsgeo_print.map&'
+        mt.manage_addMap('map2', url)
+        self.assertEquals(mt.mapContexts(), [{'id': 'map2', 'title': 'MapServer Map', 'path': '/portal/portal_maps/map2/mapContext'}])
+        map2 = getattr(mt, 'map2')
+        self.assertEquals(map2.name, 'OGC:WMS')
+        self.assertEquals(map2.title, 'MapServer Map')
+        map2.srs = 'EPSG:4326'
+        map2.format = 'image/png'
+        map2.bounds = (-120,25,-80,55)
+        map2.size = (400,300)
+        map2.visible_layers = ('world',)
+        xml = mt.map2.mapContext()
+        f = open('testAddMapLenny.xml', 'w')
+        f.write(xml)
+        f.close()
+
        
 def test_suite():
     suite = unittest.TestSuite()

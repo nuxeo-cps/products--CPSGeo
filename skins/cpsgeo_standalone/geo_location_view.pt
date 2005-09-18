@@ -1,47 +1,48 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<html tal:define="mb_dir here/getBaseUrl">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<metal:block tal:define="mb_dir here/getBaseUrl">
+
+<html>
 <head>
 <title>CPSGeo Map Widget Demo</title>
 <link rel="stylesheet" type="text/css" media="all"
-        title="CPSDefault styles" href="/cps/default.css" />
-<link rel="stylesheet" type="text/css" media="all"
-        href="/cps/boxes.css" />
-<link rel="stylesheet" tal:attributes="href string:${mb_dir}mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
+        title="CPSDefault styles" href="/cps/default.css">
+<!--link rel="stylesheet" type="text/css" media="all"
+        href="/cps/boxes.css" /-->
 <script>
     // URL of Mapbuilder configuration file.
-    var mbConfigUrl='geo_view_config.xml';    
+    var mbConfigUrl="geo_view_config.xml";    
 
-    // Work with the "map_selector" form in the body
     function switch_map()
     {
-        box = document.forms[0].map;
+        box = document.getElementById("cpsgeo_map_selector");
         modelurl = box.options[box.selectedIndex].value;
-        if (modelurl) config.loadModel('mainMap', modelurl);
+        if (modelurl) config.loadModel("mainMap", modelurl);
     }
+
 </script>
 <script tal:content="structure python:'
     function reload_docs()
     {
-        text = document.forms[3].elements[0].value;
+        text = document.getElementById(\'cpsgeo_search_text\').value;
         if (text) config.loadModel(\'geoRSS\', \'%sportal_maps/getGeoRSSModel?SearchableText=\'+text);
     }
 ' % (here.getBaseUrl())">    
 </script>
+<script type="text/javascript" src="cpsgeo.js"></script>
 <script type="text/javascript" tal:attributes="src string:${mb_dir}mapbuilder/lib/Mapbuilder.js"></script>
+<script type="text/javascript" src="overlib.js"></script>
 </head>
 <body onload="mbDoLoad()">
 
 <!-- Map selector form -->
 <div style="padding:10px">
 Select base map
-<form id="map_selector">
-    <select name=map onChange="switch_map()">
+    <select id="cpsgeo_map_selector" name="map" onChange="switch_map()">
     <option value=''>--- Choose Map ---</option>
     <div tal:repeat="map here/portal_maps/mapContexts">
     <option tal:attributes="value map/path" tal:content="map/title">TITLE</option>
     </div>
     </select>
-</form>
 </div>
 
 <table>
@@ -52,9 +53,20 @@ Select base map
             <div><div id="legend"/></div>
         </td>
         <!-- right hand column -->
-        <td valign="top"> <table width="100%">
+        <td valign="top"> 
+            
+            <div align="right">
+                <form id="cpsgeo_print_map_form" action="ACTION" method="POST">
+                
+                <input id="cpsgeo_print_map" type="submit" name="submit" 
+                       value="print" onclick="print()"/>
+                </form>
+            </div>
+            
+            <table width="100%">
                 <tr> 
-                    <td align="center" valign="top"> <table>
+                    <td align="center" valign="top">
+                        <table>
                             <tr> 
                                 <td colspan="3"> <div id="mainMapPane"/>
                                     <div id="loading"> 
@@ -66,31 +78,25 @@ Select base map
                             </tr>
                             <tr> 
                                 <td align="left"> <div id="mainButtonBar"/></td>
-                                <td align="center" id="mapScaleText" />&nbsp;
-                                <td align="right" id="cursorTrack" />&nbsp;
+                                <td align="center" id="mapScaleText" />
+                                <td align="right" id="cursorTrack" />
                             </tr>
                             <tr>
-                              <td colspan="3" align="left" style="border:solid grey 1px;padding:0.5em">
-        <form id=search_form>
-        <input type="text" name="SearchableText" size="12" maxlength="256" value=""/>  <button type="button" onclick="reload_docs();" class="SearchBox">Search</button>
-        </form>
-        Mouse over rows in the query results to see documents highlighted in
-        the map frame.
-                              <div id="eventsListing"></div>
+                              <td colspan="3" align="left">
+                                <p>Search for documents. Results are displayed on the map above.</p>
+        <label>Searchable Text: </label>                      
+        <input id="cpsgeo_search_text" type="text" name="SearchableText" size="12" maxlength="256" value=""/>  <button type="button" onclick="reload_docs();" class="SearchBox">Search</button>
                               </td>
                             </tr>
-                            <tr>
-                              <td colspan="3" id="featureList"/>
-                            </tr>
-
                         </table>
                     </td>
                 </tr>
             </table>
+        </td>
     </tr>
 </table>
 
 </body>
 </html>
-
+</metal:block>
 

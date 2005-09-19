@@ -1,5 +1,24 @@
+/*
+# (C) Copyright 2005 Nuxeo SARL <http://nuxeo.com>
+# Author: Sean Gillies (sgillies@frii.com)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as published
+# by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+#
+*/
 
-function print()
+function print_map()
 {
     var layernames = new Array();
     var layernodes = config.objects.mainMap.doc.selectNodes("/wmc:ViewContext/wmc:LayerList/wmc:Layer");
@@ -13,15 +32,24 @@ function print()
     }
     var bbox = config.objects.mainMap.getBoundingBox();
     var srs = config.objects.mainMap.getSRS();
-    var url = layernode[0].selectSingleNode("wmc:Server/wmc:OnlineResource").getAttribute("xlink:href");
+    var url = layernodes[0].selectSingleNode("wmc:Server/wmc:OnlineResource").getAttribute("xlink:href");
 
-    var mapext = "mapext=" + bbox.replace(/,/, "+");
-    var mapsize = "mapsize=800+600";
-    var layers = "layers=" + layernames.join("+");
-    var map_projection = "map_projection=init%3Depsg:" + srs.split(/:/)[1];
-    var 
-    
-    var url= "http://foo.com?foo&" + "&layers=" + layernames.join("+") + "&bbox=" + bbox + "&srs=" + srs;
-    alert(url);
+    var form = document.getElementById("cpsgeo_print_map_form");
+    form.mapext.value = String(bbox).replace(/,/g, " ");
+    form.layers.value = layernames.join("+");
+    form.map_projection.value = "init=epsg:" + srs.split(/:/)[1];
+
+    // in the case that a mapfile is specified in the url
+    if (url.indexOf('?map=') >= 0)
+    {
+        pieces = url.split('?map=');
+        form.action = pieces[0];
+        form.map.value = pieces[1];
+    }
+    else 
+    {
+        form.action = url;
+    }
+    return true;
 }
 

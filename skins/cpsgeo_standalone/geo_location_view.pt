@@ -57,9 +57,15 @@ Select base map
             
             <div align="right">
                 <form id="cpsgeo_print_map_form" action="ACTION" method="POST">
-                
+                <input type="hidden" name="map" value=""/>
+                <input type="hidden" name="map_web_template" value="cpsgeo_print_template.html"/>
+                <input type="hidden" name="mapext" value=""/>
+                <input type="hidden" name="mapsize" value="800 600"/>
+                <input type="hidden" name="layers" value=""/>
+                <input type="hidden" name="map_projection" value=""/>
+                <div id="printingFeatures"/> 
                 <input id="cpsgeo_print_map" type="submit" name="submit" 
-                       value="print" onclick="print()"/>
+                       value="print" onclick="return print_map();"/>
                 </form>
             </div>
             

@@ -1,6 +1,2 @@
 
 - lxml 0.7 or elementtree 1.2+
-
-- mapbuilder 0.4
-  http://mapbuilder.sourceforge.net/
-

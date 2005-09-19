@@ -22,3 +22,6 @@ msgstr ""
 msgid "portal_type_CPSMapDocument_description"
 msgstr ""
 
+msgid "label_cpsgeo_map_id"
+msgstr ""
+

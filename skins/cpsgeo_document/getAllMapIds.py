@@ -5,19 +5,21 @@
 Used within a Method vocabularies
 """
 
-# XXX not tested
-
-search = context.search(query={'portal_type':['Map']})
+maptool = context.portal_maps
 
 returned = []
-
-for brain in search:
-    ob = brain.getObject()
-    returned.append(ob.getId())
+for id_, map_ in maptool.items():
+    label = id_ \
+            + ' -- ' \
+            + getattr(map_, 'name', '') \
+            + ' ( ' \
+            + getattr(map_, 'url', 'UNKNOWN') \
+            +  ' ) '
+    returned.append((id_, label))
 
 if key is not None:
     for each in returned:
-        if each == key:
-            return each
+        if each[0] == key:
+            return each[0]
 
 return returned

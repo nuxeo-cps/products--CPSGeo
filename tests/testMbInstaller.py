@@ -14,8 +14,7 @@ class MbInstallerTest(ZopeTestCase.ZopeTestCase):
 
     def test_install_lib(self):
         install_lib(self.folder)
-        self.assert_(len(self.folder.mapbuilder.lib._objects) == 10,
-                     self.folder.mapbuilder.lib._objects)
+        self.assertEqual(len(self.folder.mapbuilder.lib._objects), 11)
 
 def test_suite():
     suite = unittest.TestSuite()

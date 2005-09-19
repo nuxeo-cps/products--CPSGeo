@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2005-09-19 11:49default\n"
-"PO-Revision-Date: 2005-09-19 11:45+0200\n"
+"POT-Creation-Date: 2005-09-19 12:30default\n"
+"PO-Revision-Date: 2005-09-19 12:30+0200\n"
 "Last-Translator: Julien Anguenot <anguenot@dhcp-316-577>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,3 +27,7 @@ msgstr ""
 "A map document lets you select a map, proposed by the system, and record a "
 "search query on geo-located documents that will be used to generate a layer "
 "representing the locations of the documents on the map."
+
+msgid "label_cpsgeo_map_id"
+msgstr "Map identifier"
+

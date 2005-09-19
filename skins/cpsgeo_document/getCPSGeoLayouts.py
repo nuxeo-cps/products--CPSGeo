@@ -37,7 +37,50 @@ cpsgeo_layout = {
     },
 }
 
+map_document_layout = {
+    'widgets': {
+        'map_id': {
+            'type': 'Select Widget',
+            'data': {
+                'title': '',
+                'fields': ('map_id',),
+                'is_required': True,
+                'label': 'label_cpsgeo_map_id',
+                'label_edit': 'label_cpsgeo_map_id',
+                'description': '',
+                'help': '',
+                'is_i18n': True,
+                'readonly_layout_modes': (),
+                'hidden_layout_modes': (),
+                'hidden_readonly_layout_modes': (),
+                'hidden_empty': False,
+                'hidden_if_expr': '',
+                'widget_mode_expr': '',
+                'css_class': '',
+                'css_class_expr': '',
+                'javascript_expr': '',
+                'vocabulary': 'maps',
+                'translated': False,
+            },
+        },
+    },
+    'layout': {
+        'style_prefix': 'layout_default_',
+        'layout_create_method': '',
+        'layout_edit_method': '',
+        'layout_view_method': '',
+        'flexible_widgets': (),
+        'validate_values_expr': '',
+        'ncols': 1,
+        'rows': [
+            [{'widget_id': 'map_id', 'ncols': 1},
+            ],
+        ],
+    },
+}
+
 layouts = {}
 layouts['geolocation'] = cpsgeo_layout
+layouts['map_document'] = map_document_layout
 
 return layouts

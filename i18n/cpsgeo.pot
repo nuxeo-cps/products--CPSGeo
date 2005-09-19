@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2005-09-19 11:49default\n"
+"POT-Creation-Date: 2005-09-19 12:30default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -20,4 +20,7 @@ msgid "portal_type_CPSMapDocument_title"
 msgstr ""
 
 msgid "portal_type_CPSMapDocument_description"
+msgstr ""
+
+msgid "label_cpsgeo_map_id"
 msgstr ""

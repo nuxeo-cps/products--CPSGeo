@@ -1,0 +1,103 @@
+<metal:block use-macro="here/main_template/macros/master"
+	     tal:define="global mb_dir here/getBaseUrl">
+  <metal:block fill-slot="javascript_head_slot">
+    <link rel="stylesheet" type="text/css" media="all"
+	  title="CPSDefault styles" href="/cps/default.css" />
+      <script>
+	// URL of Mapbuilder configuration file.
+	var mbConfigUrl='geo_view_config.xml';    
+
+	function switch_map()
+	{
+	  box = document.getElementById("cpsgeo_map_selector");
+  	  modelurl = box.options[box.selectedIndex].value;
+          if (modelurl) config.loadModel("mainMap", modelurl);
+        }
+      </script>
+      <script tal:content="structure python:'
+        function reload_docs()
+        {
+            text = document.getElementById(\'cpsgeo_search_text\').value;
+            if (text) config.loadModel(\'geoRSS\', \'%sportal_maps/getGeoRSSModel?SearchableText=\'+text);
+        }
+      ' % (here.getBaseUrl())">    
+      </script>
+      <script type="text/javascript" src="cpsgeo.js"></script>
+      <script type="text/javascript" tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+      <script type="text/javascript" src="overlib.js"></script>
+  </metal:block>
+
+  <metal:block fill-slot="main">
+
+<body onload="mbDoLoad()">
+
+<!-- Map selector form -->
+<div style="padding:10px">
+Select base map
+    <select id="cpsgeo_map_selector" name="map" onChange="switch_map()">
+    <option value=''>--- Choose Map ---</option>
+    <div tal:repeat="map here/portal_maps/mapContexts">
+    <option tal:attributes="value map/path" tal:content="map/title">TITLE</option>
+    </div>
+    </select>
+</div>
+
+<table>
+    <tr>
+        <!-- left hand column -->
+        <td valign="top" style="padding:10px">
+            <div><div id="locatorMap"/></div>
+            <div><div id="legend"/></div>
+        </td>
+        <!-- right hand column -->
+        <td valign="top"> 
+            
+            <div align="right">
+                <form id="cpsgeo_print_map_form" action="ACTION" method="POST">
+                <input type="hidden" name="map" value=""/>
+                <input type="hidden" name="map_web_template" value="cpsgeo_print_template.html"/>
+                <input type="hidden" name="mapext" value=""/>
+                <input type="hidden" name="mapsize" value="800 600"/>
+                <input type="hidden" name="layers" value=""/>
+                <input type="hidden" name="map_projection" value=""/>
+                <div id="printingFeatures"/> 
+                <input id="cpsgeo_print_map" type="submit" name="submit" 
+                       value="print" onclick="return print_map();"/>
+                </form>
+            </div>
+            
+            <table width="100%">
+                <tr> 
+                    <td align="center" valign="top">
+                        <table>
+                            <tr> 
+                                <td colspan="3"> <div id="mainMapPane"/>
+                                    <div id="loading"> 
+                                        <p>Loading Program<br/>
+                                            <img tal:attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif"/> 
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr> 
+                                <td align="left"> <div id="mainButtonBar"/></td>
+                                <td align="center" id="mapScaleText" />
+                                <td align="right" id="cursorTrack" />
+                            </tr>
+                            <tr>
+                              <td colspan="3" align="left">
+                                <p>Search for documents. Results are displayed on the map above.</p>
+        <label>Searchable Text: </label>                      
+        <input id="cpsgeo_search_text" type="text" name="SearchableText" size="12" maxlength="256" value=""/>  <button type="button" onclick="reload_docs();" class="SearchBox">Search</button>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</metal:block>
+</metal:block>

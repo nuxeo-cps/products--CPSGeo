@@ -33,15 +33,18 @@ from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
+from Products.CMFCore.ActionProviderBase import ActionProviderBase
 
 from georss import brainsToGeoRSS
 from context import mapToWebMapContext
 from Map import Map
 
-class MapTool(UniqueObject, CMFBTreeFolder):
+class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
 
     """Map Tool
     """
+
+    __implements__ = ActionProviderBase.__implements__
 
     id = 'portal_maps'
     title = "CPS Map Tool"
@@ -110,6 +113,9 @@ class MapTool(UniqueObject, CMFBTreeFolder):
     #
     # ZMI
     #
+
+    manage_options = ActionProviderBase.manage_options + \
+                     CMFBTreeFolder.manage_options
 
     security.declareProtected(ManagePortal, 'manage_addMapForm')
     manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', globals(),

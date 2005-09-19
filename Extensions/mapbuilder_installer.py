@@ -33,12 +33,30 @@ def install_lib(self):
                 container.manage_addProduct['OFSP'].manage_addDTMLMethod(f,
                                                         file=open(f_path))
 
-    # Install patched GMLPointRenderer widget
+    # Install patched mapbuilder tools and widgets
+    # ---------------------------------------------------------------------
+    mb_lib = self.mapbuilder.lib
+
+    # GmlPointRenderer
     patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches', 
-                                  'GmlPointRenderer_patched.js'), 'r')
+                                  'GmlPointRenderer.js'), 'r')
     patched_content = patchfile.read()
-    renderer = getattr(self.mapbuilder.lib.widget, 'GmlPointRenderer.js')
+    renderer = getattr(mb_lib.widget, 'GmlPointRenderer.js')
     renderer.manage_edit(data=patched_content, title='')
+
+    # Popup
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches', 
+                                  'Popup.js'), 'r')
+    mb_lib.widget.manage_addProduct['OFSP'].manage_addDTMLMethod(
+                                                'Popup.js',
+                                                file=patchfile)
+
+    # FeatureBase
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches', 
+                                  'FeatureBase.js'), 'r')
+    mb_lib.tool.manage_addProduct['OFSP'].manage_addDTMLMethod(
+                                                'FeatureBase.js',
+                                                file=patchfile)
     
     # Now, add all cps document icons from Products/CPSDocuments/skins/
     # to the mapbuilder default skin folder

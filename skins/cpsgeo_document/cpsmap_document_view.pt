@@ -1,5 +1,5 @@
 <metal:block define-macro="view">
-<metal:block use-macro="here/content_lib_master/macros/master">
+<metal:block use-macro="here/main_template/macros/master">
 <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
 
   <metal:block fill-slot="header">
@@ -13,7 +13,7 @@
   </metal:block>
 
   <metal:block fill-slot="main">
-    <tal:block tal:content="structure rendered_main|python:doc.render(proxy=here)" />
+    <tal:block tal:content="structure rendered_main|python:here.getContent().render(proxy=here)" />
 
     <tal:block tal:condition="python:hasattr(here,'portal_discussion') and
       hasattr(here.portal_discussion, 'isCommentingAllowedFor')">

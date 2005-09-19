@@ -12,7 +12,7 @@
 	function switch_map()
 	{
 	  box = document.getElementById("cpsgeo_map_selector");
-  	  modelurl = box.options[box.selectedIndex].value;
+  	  modelurl = box.value;
           if (modelurl) config.loadModel("mainMap", modelurl);
         }
       </script>

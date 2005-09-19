@@ -36,7 +36,7 @@ function print_map()
 
     var form = document.getElementById("cpsgeo_print_map_form");
     form.mapext.value = String(bbox).replace(/,/g, " ");
-    form.layers.value = layernames.join("+");
+    form.layers.value = layernames.join(" ");
     form.map_projection.value = "init=epsg:" + srs.split(/:/)[1];
 
     // in the case that a mapfile is specified in the url

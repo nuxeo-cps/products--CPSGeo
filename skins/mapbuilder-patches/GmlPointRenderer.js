@@ -13,7 +13,7 @@ into mapbuilder November 2005
 // Ensure this object's dependancies are loaded.
 mapbuilder.loadScript(baseDir+"/model/Proj.js");
 mapbuilder.loadScript(baseDir+"/widget/MapContainerBase.js");
-mapbuilder.loadScript(baseDir+"/widget/Popup.js");
+//mapbuilder.loadScript(baseDir+"/widget/Popup.js");
 mapbuilder.loadScript(baseDir+"/tool/FeatureBase.js");
 
 // Resource: http://www.bazon.net/mishoo/articles.epl?art_id=824
@@ -36,7 +36,7 @@ function GmlPointRenderer(widgetNode, model) {
 
   this.normalImage = widgetNode.selectSingleNode("mb:normalImage").firstChild.nodeValue; 
   	this.highlightImage = widgetNode.selectSingleNode("mb:highlightImage").firstChild.nodeValue;
-  this.popup = new Popup( widgetNode, model );
+  //this.popup = new Popup( widgetNode, model );
   
   this.featureBase = new FeatureBase(model);
   

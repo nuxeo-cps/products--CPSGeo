@@ -15,9 +15,10 @@ class MbInstallerTest(ZopeTestCase.ZopeTestCase):
     def test_install_lib(self):
         install_lib(self.folder)
         self.assert_(len(self.folder.mapbuilder.lib._objects) == 10,
-                     self.folder.mapbuilder.lib._objects)        
+                     self.folder.mapbuilder.lib._objects)
 
 def test_suite():
     suite = unittest.TestSuite()
-    #suite.addTest(unittest.makeSuite(MbInstallerTest))
+    suite.addTest(unittest.makeSuite(MbInstallerTest))
     return suite
+

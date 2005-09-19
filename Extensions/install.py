@@ -163,11 +163,31 @@ class CPSGeoInstaller(CPSInstaller):
             if to_add not in layoutdef['rows']:
                 layoutdef['rows'].append(to_add)
         metadata.setLayoutDefinition(layoutdef)
-        
+
+    def _setupCatalogIndexes(self):
+        catalog = getToolByName(self.portal, 'portal_catalog')
+        indexes = (
+            ('pos_list', 'FieldIndex', None),
+            )
+        for id, type, extra in indexes:
+            if id in catalog.indexes() is not None:
+                catalog.delIndex(id)
+            catalog.addIndex(id, type, extra)
+    
+    def _setupCatalogMetadata(self):
+        catalog = getToolByName(self.portal, 'portal_catalog')
+        metadata = (
+            'pos_list',
+            )
+        for id in metadata:
+            if not catalog._catalog.schema.has_key(id):
+                catalog.addColumn(id, None)
+
     def setupCatalogSpecifics(self):
         """Setup geolocation indexes and metadata
         """
-        pass
+        self._setupCatalogIndexes()
+        self._setupCatalogMetadata()
         
 def install(self):
     installer = CPSGeoInstaller(self)

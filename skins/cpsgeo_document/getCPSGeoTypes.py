@@ -9,7 +9,7 @@ cps_map_document_type = {
     'content_meta_type': 'CPS Map Document',
     'product': 'CPSGeo',
     'factory': 'addCPSMapDocument',
-    'immediate_view': 'cpsdocument_view',
+    'immediate_view': 'cpsmap_document_view',
     'global_allow': True,
     'filter_content_types': True,
     'allowed_content_types': (),
@@ -29,7 +29,7 @@ cps_map_document_type = {
     'actions': (
          {'id': 'view',
           'name': 'action_view',
-          'action': 'string:${object_url}/cpsdocument_view',
+          'action': 'string:${object_url}/cpsmap_document_view',
           'condition': '',
           'permission': ('View',),
           'category': 'object',

@@ -1,0 +1,1 @@
+/home/zopes/cps3.3.x/Products/CPSGeo/i18n/cpsgeo.pot

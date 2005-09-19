@@ -27,6 +27,7 @@ class CPSGeoInstaller(CPSInstaller):
         self.verifyVocabularies(self.portal.getCPSGeoVocabularies())
         self.setupFlexibleTypes()
         self.setupMapBuilderLibs()
+        self.setupTranslations()
         self.finalize()
         self.log("End of specific CPSGeo install")
 

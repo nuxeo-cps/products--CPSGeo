@@ -1,0 +1,30 @@
+# translation of fr.po to
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+# Julien Anguenot <anguenot@dhcp-316-577>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"POT-Creation-Date: 2005-09-19 11:49default\n"
+"PO-Revision-Date: 2005-09-19 11:47+0200\n"
+"Last-Translator: Julien Anguenot <anguenot@dhcp-316-577>\n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Preferred-encodings: latin9 utf-8\n"
+"Domain: default\n"
+"X-Generator: KBabel 1.10.2\n"
+
+msgid "portal_type_CPSMapDocument_title"
+msgstr "Document carte"
+
+msgid "portal_type_CPSMapDocument_description"
+msgstr ""
+"Une document carte vous permet de visualiser une carte, proposée par le "
+"système. Vous avez la possibilité d'enregistrer une recherche de documents "
+"et de générer un couche sur la carte correspondant à la liste des documents "
+"geo-localisés."

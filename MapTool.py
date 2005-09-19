@@ -56,13 +56,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     def __init__(self):
         CMFBTreeFolder.__init__(self, self.id)
 
-    security.declareProtected(View, 'getDocumentsByLocation')
-    def getDocumentsByLocation(self, meta_types=[], bounds=[]):
-        """Return documents of certain types within specified WGS84 bounds
-        """
-        catalog = getToolByName(self, 'portal_catalog')
-        brains = catalog(geolocation={'query': 1, 'range': 'min'})
-        
     security.declareProtected(View, 'getGeoRSSModel')
     def getGeoRSSModel(self, bbox=[], REQUEST=None):
         """Return a GeoRSS model for mapbuilder
@@ -78,16 +71,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         base = urlsplit(self.absolute_url())[2]
         return os.path.join(base, 'getGeoRSSModel')
 
-    security.declareProtected(View, 'getMapContext')
-    def getMapContext(self, map_id=None, REQUEST=None):
-        """Return a 1.0 Web Map Context for mapbuilder
-        """
-        map = getattr(self, map_id)
-        if REQUEST:
-            REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
-        return '<?xml version="1.0" encoding="utf-8"?>' \
-               + mapToWebMapContext(map)
-
     security.declareProtected(View, 'mapContexts')
     def mapContexts(self):
         """Return a list of dicts describing map id, title, and BASEPATH2-ish
@@ -97,18 +80,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         return [{'id': mapid, 'title': getattr(self, mapid).title,
                  'path': os.path.join(base, mapid, 'mapContext')} \
                 for mapid in self.objectIds()]
-
-    security.declareProtected(View, 'locatorMapUrl')
-    def getLocatorMap(self, bbox='-1000,-1000,-9999,-9999', color='#ff0000',
-                      REQUEST=None):
-        """Return locator map for use in printing"""
-        from StringIO import StringIO
-        image_in = StringIO(getattr(self, 'world_locator_image.png').data)
-        minx, miny, maxx, maxy = [float(v) for v in bbox.split(',')]
-        image_out = getGeographicLocatorMap(image_in, minx, miny, maxx, maxy,
-                                            color)
-        REQUEST.RESPONSE.setHeader('Content-type', 'image/png')
-        return image_out
 
     #
     # ZMI

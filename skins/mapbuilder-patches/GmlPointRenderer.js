@@ -74,7 +74,9 @@ function GmlPointRenderer(widgetNode, model) {
       var title = objRef.model.getFeatureName(feature);
       var itemId = objRef.model.getFeatureId(feature);   //or feature id's for feature collections?
       var point = objRef.model.getFeaturePoint(feature);
-      
+      var description = feature.selectSingleNode("rss:description").firstChild.nodeValue;
+      var about = feature.selectSingleNode("rss:link").firstChild.nodeValue;
+
       if( (point[0] == 0) && (point[1] == 0 )) {
       		// no point in going any further 
       		return;
@@ -100,8 +102,8 @@ function GmlPointRenderer(widgetNode, model) {
         normalImageDiv.appendChild(newImage);
         objRef.node.appendChild( normalImageDiv );
 
-        var overlib = objRef.popup.transform( objRef.popup, feature );
-        objRef.featureBase.install( newImage, itemId, overlib );
+        //var overlib = objRef.popup.transform( objRef.popup, feature );
+        objRef.featureBase.install(newImage, itemId, title, description, about);
 
         //add in the highlightImage
         highlightImageDiv = document.createElement("DIV");

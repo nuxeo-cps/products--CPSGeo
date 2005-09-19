@@ -14,9 +14,12 @@ $Id$
  
 function FeatureBase(model) {
 
-  this.install = function( feature, itemId, popupStr ) {
+  this.install = function(feature, itemId, title, description, about) {
     feature.itemId = itemId;
-    feature.overlib = popupStr;
+    feature.overlib = ""; //popupStr;
+    feature.title = title;
+    feature.description = description;
+    feature.link = about;
     feature.onmouseover = this.mouseOverHandler; 
     feature.onmouseout  = this.mouseOutHandler;
   }
@@ -44,12 +47,15 @@ function FeatureBase(model) {
     highlightImageDiv.style.visibility = "visible";
     
     // set the popup text with stylesheet output
-	var popupStr = this.overlib;
-	if( popupStr == undefined ) {
-	  popupStr = "Feature under construction.  Stay tuned!";
-	}
+	//var popupStr = this.overlib;
+    //if( popupStr == undefined ) {
+	//  popupStr = "Feature under construction.  Stay tuned!";
+	//}
 
-	overlib(popupStr, WIDTH, 50, STICKY, FIXX, left, FIXY, top, CAPTION, 'Caption');
+    var desc = this.description.replace(/'/, "\'");
+    desc = desc.replace(/"/, "&quot;");
+    var popupStr = "<p>" + desc + "</p><p>[<a href=\"" + this.link + "\">link</a>] [<a href=\"javascript:void(0);\" onclick=\"window.open(\'" + this.link + "\')\">new window</a>]</p>";
+	overlib(popupStr, WIDTH, 150, STICKY, FIXX, left, FIXY, top, CAPTION, this.title);
     return true;
   }
   

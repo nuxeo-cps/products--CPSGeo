@@ -11,7 +11,7 @@
       // Work with the "map_selector" form in the body
       function switch_map()
       {
-          var box = document.forms[0].map;
+          var box = document.getElementById("map_selector").map;
           var modelurl = box.options[box.selectedIndex].value;
           if (modelurl) config.loadModel('mainMap', modelurl);
       }

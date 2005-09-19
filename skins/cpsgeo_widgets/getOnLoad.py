@@ -20,4 +20,5 @@ if request.has_key('URL'):
         (URL.endswith('search_form') or URL.endswith('advanced_search_form')):
         return 'highlightSearchTerm();setFocus();'
 
-return 'mbDoLoad(); setFocus();'
+# XXX filter
+return 'mbDoLoad(); switch_map()'

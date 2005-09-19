@@ -36,7 +36,6 @@ from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 
 from georss import brainsToGeoRSS
 from context import mapToWebMapContext
-from locator import getGeographicLocatorMap
 from Map import Map
 
 class MapTool(UniqueObject, CMFBTreeFolder):

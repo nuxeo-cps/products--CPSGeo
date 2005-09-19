@@ -19,6 +19,8 @@
 
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import ModifyPortalContent
+from Products.CMFCore.utils import getToolByName
+
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
 from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
@@ -48,7 +50,9 @@ class CPSGeoInstaller(CPSInstaller):
         self.setupFlexibleTypes()
         self.setupMapBuilderLibs()
         self.setupCPSGeoActions()
+        self.extendCPSMetadata()
         self.setupTranslations()
+        self.setupCatalogSpecifics()
         self.finalize()
         self.log("End of specific CPSGeo install")
 
@@ -100,6 +104,7 @@ class CPSGeoInstaller(CPSInstaller):
         # Cleaning actions
         actiondelmap = {
             'portal_maps': ('cps_map_server',
+                            'cps_geolocation',
                                  )
         }
         self.deleteActions(actiondelmap)
@@ -125,6 +130,44 @@ class CPSGeoInstaller(CPSInstaller):
             visible=1)
 
         self.log(" Added actions for cps map server")
+
+    def extendCPSMetadata(self):
+        """Extend CPS Metadata with geo location
+        """
+
+        self.log("Extend portal_schemas.metadata with geolocation fields")
+
+        stool = getToolByName(self.portal, 'portal_schemas')
+        geolocation = stool['geolocation']
+        metadata = stool['metadata']
+        for id_ in geolocation.objectIds():
+            if id_ in metadata.objectIds():
+                metadata.manage_delObjects([id_])
+            ob = geolocation[id_]
+            metadata._setObject(id_, ob)
+
+        self.log("Extend portal_layouts.metadata with geolocation fields")
+        ltool = getToolByName(self.portal, 'portal_layouts')
+        geolocation = ltool['geolocation']
+        metadata = ltool['metadata']
+        for id_ in geolocation.objectIds():
+            if id_ in metadata.objectIds():
+                metadata.manage_delObjects([id_])
+            ob = geolocation[id_]
+            metadata._setObject(id_, ob)
+
+        # XXX
+        layoutdef = metadata.getLayoutDefinition()
+        for widget in geolocation.objectValues():
+            to_add = [{'widget_id': widget.getWidgetId(), 'ncols': 2},]
+            if to_add not in layoutdef['rows']:
+                layoutdef['rows'].append(to_add)
+        metadata.setLayoutDefinition(layoutdef)
+        
+    def setupCatalogSpecifics(self):
+        """Setup geolocation indexes and metadata
+        """
+        pass
         
 def install(self):
     installer = CPSGeoInstaller(self)

@@ -1,87 +1,113 @@
-<metal:block use-macro="here/main_template/macros/master">
-  <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
-  <metal:block fill-slot="javascript_head_slot">
-    <script>
-    // URL of Mapbuilder configuration file.
-    var mbConfigUrl='geo_edit_config.xml';    
-
-    // Work with the "map_selector" form in the body
-    function switch_map()
-    {
-        var box = document.forms[0].map;
-        var modelurl = box.options[box.selectedIndex].value;
-        if (modelurl) config.loadModel('mainMap', modelurl);
-    }
-
-    function submit_location()
-    {
-        var pos = document.getElementById("doc_location").pos_list.value;
-        var field = opener.document.forms[2].widget__pos_list.value = pos;
-        window.close();
-    }
-    </script>
-    <script type="text/javascript" 
-	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js" />
+<tal:block xmlns:tal="http://xml.zope.org/namespaces/tal"
+	   xmlns:metal="http://xml.zope.org/namespaces/metal"
+	   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <metal:block use-macro="here/main_template/macros/master">
+    <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
+    <metal:block fill-slot="javascript_head_slot">
+      <script>
+	// URL of Mapbuilder configuration file.
+      var mbConfigUrl='geo_edit_config.xml';
+      
+      // Work with the "map_selector" form in the body
+      function switch_map()
+      {
+          var box = document.forms[0].map;
+          var modelurl = box.options[box.selectedIndex].value;
+          if (modelurl) config.loadModel('mainMap', modelurl);
+      }
+  
+      function submit_location()
+      {
+          var pos = document.getElementById("doc_location").pos_list.value;
+          var field = opener.document.forms[2].widget__pos_list.value = pos;
+          window.close();
+      }
+      </script>
+      <script type="text/javascript"
+  	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js" />
+    </metal:block>
+    <metal:block fill-slot="header">
+      <h1 i18n:translate="header_geolocation_form">
+	Geo-locate this document
+      </h1>
+    </metal:block>
+    <metal:block fill-slot="main">
+      <div style="padding:10px">
+	<span i18n:translate="label_cpsgeo_select_base_map">
+	  Select base map
+	</span>
+	<form id="map_selector">
+	  <select name=map onChange="switch_map()">
+	    <option value=""
+		    i18n:translate="label_cpsgeo_choose_map">
+	      --- Choose Map ---
+	    </option>
+	    <div tal:repeat="map here/portal_maps/mapContexts">
+	      <option tal:attributes="value map/path"
+		      tal:content="map/title">title
+	      </option>
+	    </div>
+	  </select>
+	</form>
+      </div>
+      <table>
+	<tr>
+	  <td valign="top" style="padding:10px">
+	    <div><div id="locatorMap"/></div>
+	    <div><div id="legend"/></div>
+	  </td>
+	  <td valign="top"> 
+	    <table width="100%">
+	      <tr>
+		<td align="center" valign="top"> <table>
+		  <tr>
+		    <td colspan="3"> <div id="mainMapPane"/>
+		    <div id="loading">
+		      <p i18n:translate="label_cpsgeo_loading_program">Loading Program<br/>
+		      <img tal:attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif"/>
+		      </p>
+		    </div>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td align="left"> <div id="mainButtonBar"/></td>
+		    <td align="center" id="mapScaleText" />&nbsp;
+		    <td align="right" id="cursorTrack" />&nbsp;
+		  </tr>
+		  <tr>
+		    <td colspan="3">
+		      <h3 i18n:translate="label_cpsgeo_document_location">
+			Document Location
+		      </h3>
+		      <form id="doc_location" action="."
+			    tal:attributes="action here/absolute_url">
+			<div class="field">
+			  <div class="label">
+			    <span i18n:translate="label_cpsgeo_coordinates">
+			      WGS84 Coordinates
+			    </span>
+			  </div>
+			  <div class="row">
+			    <span id="docLocation" />
+			  </div>
+			</div>
+			<div align="left">
+			  <input type="submit" name="cps_geolocate:method" 
+				 value="button_cpsgeo_set_location" 
+				 class="standalone"
+				 i18n:attributes="value"
+				 onclick="submit_location();"/>
+			</div>
+		      </form>
+		    </td>
+		  </tr>
+		</table>
+		</td>
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+    </metal:block>
   </metal:block>
-  <metal:block fill-slot="main">
-    <body onload="mbDoLoad()">
-
-<!-- Map selector form -->
-
-<div style="padding:10px">
-Select base map
-<form id="map_selector">
-    <select name=map onChange="switch_map()">
-    <option value=''>--- Choose Map ---</option>
-    <div tal:repeat="map here/portal_maps/mapContexts">
-    <option tal:attributes="value map/path" tal:content="map/title">TITLE</option>
-    </div>
-    </select>
-</form>
-</div>
-
-<table>
-    <tr>
-        <!-- left hand column -->
-        <td valign="top" style="padding:10px">
-            <div><div id="locatorMap"/></div>
-            <div><div id="legend"/></div>
-        </td>
-        <!-- right hand column -->
-        <td valign="top"> <table width="100%">
-                <tr> 
-                    <td align="center" valign="top"> <table>
-                            <tr> 
-                                <td colspan="3"> <div id="mainMapPane"/>
-                                    <div id="loading"> 
-                                        <p>Loading Program<br/>
-                                            <img tal:attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif"/> 
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr> 
-                                <td align="left"> <div id="mainButtonBar"/></td>
-                                <td align="center" id="mapScaleText" />&nbsp;
-                                <td align="right" id="cursorTrack" />&nbsp;
-                            </tr>
-                            <tr>
-                              <td colspan="3">
-                                <h3>Document Location</h3>
-                                <form id="doc_location" action="." 
-				      tal:attributes="action here/absolute_url">
-				  WGS84 Coordinates:&nbsp;<span id="docLocation"></span><br/>
-                                <input type="submit" name="cps_geolocate:method" value="Set Location" onclick="submit_location();"/>
-                                </form>
-                              </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-</metal:block>
-</metal:block>
-
+</tal:block>

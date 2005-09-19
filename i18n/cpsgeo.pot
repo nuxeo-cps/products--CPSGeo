@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2005-09-19 19:04default\n"
+"POT-Creation-Date: 2005-09-20 01:15default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -32,4 +32,28 @@ msgid "action_cps_geolocation"
 msgstr ""
 
 msgid "label_WGS84_coordinates"
+msgstr ""
+
+msgid "header_geolocation_form"
+msgstr ""
+
+msgid "label_cpsgeo_select_base_map"
+msgstr ""
+
+msgid "label_cpsgeo_choose_map"
+msgstr ""
+
+msgid "label_cpsgeo_document_location"
+msgstr ""
+
+msgid "label_cpsgeo_coordinates"
+msgstr ""
+
+msgid "label_cpsgeo_loading_program"
+msgstr ""
+
+msgid "button_cpsgeo_set_location"
+msgstr ""
+
+msgid "psm_document_geolocated"
 msgstr ""

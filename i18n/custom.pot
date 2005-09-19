@@ -33,3 +33,27 @@ msgstr ""
 
 msgid "label_WGS84_coordinates"
 msgstr ""
+
+msgid "header_geolocation_form"
+msgstr ""
+
+msgid "label_cpsgeo_select_base_map"
+msgstr ""
+
+msgid "label_cpsgeo_choose_map"
+msgstr ""
+
+msgid "label_cpsgeo_document_location"
+msgstr ""
+
+msgid "label_cpsgeo_coordinates"
+msgstr ""
+
+msgid "label_cpsgeo_loading_program"
+msgstr ""
+
+msgid "button_cpsgeo_set_location"
+msgstr ""
+
+msgid "psm_document_geolocated"
+msgstr ""

@@ -128,6 +128,15 @@ class WMSCapabilitiesReader:
         """Initialize"""
         self.version = version
         self._infoset = None
+       
+    def capabilities_url(self, service_url):
+        """Return a capabilities url"""
+        if service_url.find('?') < 0:
+            return '%s?service=WMS&version=1.1.1&request=GetCapabilities' \
+                    % (service_url)
+        if service_url.find('?') >= 0:
+            return '%s&service=WMS&version=1.1.1&request=GetCapabilities' \
+                    % (service_url)
         
     def read(self, service_url):
         """Get and parse a WMS capabilities document, returning an instance
@@ -135,14 +144,7 @@ class WMSCapabilitiesReader:
 
         service_url is the base url, to which is appended the service, version,
         and request parameters"""
-        url = service_url
-        if url.find('?') < 0:
-            url = url + '?'
-        if self.version == '1.1.1':
-            request = '%sservice=WMS&version=1.1.1&request=GetCapabilities' \
-                    % (url)
-        else:
-            raise Exception, "unsupported version: %s" % (self.version)
+        request = self.capabilities_url(service_url)
         u = urllib.urlopen(request)
         return WMSCapabilitiesInfoset(fromstring(u.read()))
 

@@ -13,7 +13,7 @@ def mapToWebMapContext(map):
     e_window.attrib['height'] = str(map.size[1])
     e_general.append(e_window)
     e_bbox = WMCElement('BoundingBox')
-    e_bbox.attrib['SRS'] = str(map.srs)
+    e_bbox.attrib['SRS'] = str(map.srs.split()[0])
     e_bbox.attrib['minx'] = str(map.bounds[0])
     e_bbox.attrib['miny'] = str(map.bounds[1])
     e_bbox.attrib['maxx'] = str(map.bounds[2])
@@ -22,8 +22,7 @@ def mapToWebMapContext(map):
     e_context.append(e_general)
     e_layerlist = WMCElement('LayerList')
     layering = zip(map.layernames, map.layertitles)
-    # mapbuilder draws layers in top-bottom order
-    layering.reverse()
+    # mapbuilder draws layers in bottom-top order
     for name, title in layering:
         e_layer = WMCElement('Layer')
         e_layer.attrib['queryable'] = '0'

@@ -51,7 +51,8 @@ class Map(PortalContent):
     def __init__(self, id, url, name=None, title=None, size=None,
                  bounds=None, srs=None, format=None, layers=[]):
         """Initialize"""
-        self.url = url
+        # fix url
+        self.url = url.rstrip('?&')
         cap = self._readCapabilities()
         self.name = cap.servicename() or name
         self.title = cap.servicetitle() or title
@@ -69,7 +70,13 @@ class Map(PortalContent):
         # Make a WMS capabilities request
         reader = wms.WMSCapabilitiesReader('1.1.1')
         return reader.read(self.url)
-    
+   
+    security.declareProtected(View, 'getCapabilitiesURL')
+    def getCapabilitiesUrl(self):
+        """Return capabilities URL"""
+        reader = wms.WMSCapabilitiesReader('1.1.1')
+        return reader.capabilities_url(self.url)
+        
     security.declareProtected(View, 'mapContext')
     def mapContext(self, REQUEST=None):
         """Return a 1.0 Web Map Context document for use with mapbuilder"""

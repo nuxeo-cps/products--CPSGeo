@@ -7,7 +7,7 @@ Edit CPS Cartographic Map.
 
 <p class="form-help">
 Initial values for these form fields are suggested from the service capabilities
-document: <a tal:define="url python:'%s?service=WMS&version=1.1.1&request=GetCapabilities' % (here.url.replace('?', ''))" tal:attributes="href url" tal:content="url">CAPABILITIES_REQUEST</a>.
+document: <a tal:define="url here/getCapabilitiesUrl" tal:attributes="href url" tal:content="url">CAPABILITIES_REQUEST</a>.
 </p>
 
 <p class="form-help">

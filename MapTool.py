@@ -36,6 +36,7 @@ from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 
 from georss import brainsToGeoRSS
 from context import mapToWebMapContext
+from locator import getGeographicLocatorMap
 from Map import Map
 
 class MapTool(UniqueObject, CMFBTreeFolder):
@@ -58,10 +59,10 @@ class MapTool(UniqueObject, CMFBTreeFolder):
         """Return documents of certain types within specified WGS84 bounds
         """
         catalog = getToolByName(self, 'portal_catalog')
-        return catalog(geolocation={'query': 1, 'range': 'min'})
-
+        brains = catalog(geolocation={'query': 1, 'range': 'min'})
+        
     security.declareProtected(View, 'getGeoRSSModel')
-    def getGeoRSSModel(self, REQUEST=None):
+    def getGeoRSSModel(self, bbox=[], REQUEST=None):
         """Return a GeoRSS model for mapbuilder
         """
         brains = self.search(REQUEST.form)
@@ -96,20 +97,16 @@ class MapTool(UniqueObject, CMFBTreeFolder):
                 for mapid in self.objectIds()]
 
     security.declareProtected(View, 'locatorMapUrl')
-    def getLocatorMap(self, REQUEST=None):
+    def getLocatorMap(self, bbox='-1000,-1000,-9999,-9999', color='#ff0000',
+                      REQUEST=None):
         """Return locator map for use in printing"""
-        import Image
-        import ImageDraw
         from StringIO import StringIO
-        image_in = StringIO(self.geo_locator_image.data)
-        im = Image.open(image_in)
-        draw = ImageDraw.Draw(im)
-        draw.line((0, 0) + im.size, fill=128)
-        draw.line((0, im.size[1], im.size[0], 0), fill=128)
+        image_in = StringIO(getattr(self, 'world_locator_image.png').data)
+        minx, miny, maxx, maxy = [float(v) for v in bbox.split(',')]
+        image_out = getGeographicLocatorMap(image_in, minx, miny, maxx, maxy,
+                                            color)
         REQUEST.RESPONSE.setHeader('Content-type', 'image/png')
-        image_out = StringIO()
-        im.save(image_out)
-        return image_out.getvalue()
+        return image_out
 
     #
     # ZMI

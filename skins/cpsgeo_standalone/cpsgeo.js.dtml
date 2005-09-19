@@ -1,0 +1,27 @@
+
+function print()
+{
+    var layernames = new Array();
+    var layernodes = config.objects.mainMap.doc.selectNodes("/wmc:ViewContext/wmc:LayerList/wmc:Layer");
+    for (var i=0; i<layernodes.length; i++)
+    {
+        layer = layernodes[i];
+        if (layer.getAttribute("hidden") == "0")
+        {
+            layernames.push(layer.selectSingleNode("wmc:Name").firstChild.nodeValue);
+        }
+    }
+    var bbox = config.objects.mainMap.getBoundingBox();
+    var srs = config.objects.mainMap.getSRS();
+    var url = layernode[0].selectSingleNode("wmc:Server/wmc:OnlineResource").getAttribute("xlink:href");
+
+    var mapext = "mapext=" + bbox.replace(/,/, "+");
+    var mapsize = "mapsize=800+600";
+    var layers = "layers=" + layernames.join("+");
+    var map_projection = "map_projection=init%3Depsg:" + srs.split(/:/)[1];
+    var 
+    
+    var url= "http://foo.com?foo&" + "&layers=" + layernames.join("+") + "&bbox=" + bbox + "&srs=" + srs;
+    alert(url);
+}
+

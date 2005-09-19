@@ -30,3 +30,6 @@ msgstr ""
 
 msgid "action_cps_geolocation"
 msgstr ""
+
+msgid "label_WGS84_coordinates"
+msgstr ""

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2005-09-19 17:33default\n"
-"PO-Revision-Date: 2005-09-19 17:34+0200\n"
+"POT-Creation-Date: 2005-09-19 19:04default\n"
+"PO-Revision-Date: 2005-09-19 19:04+0200\n"
 "Last-Translator: Julien Anguenot <anguenot@dhcp-316-577>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,4 +37,7 @@ msgstr "Serveur de carte"
 
 msgid "action_cps_geolocation"
 msgstr "Géo-référencer ce document"
+
+msgid "label_WGS84_coordinates"
+msgstr "Géo-location (Coordonnées WGS84)"
 

@@ -1,6 +1,5 @@
 /*
 License: LGPL as per: http://www.gnu.org/copyleft/lesser.html
-$Id$
 */
 
 /**
@@ -11,7 +10,12 @@ $Id$
  * @param itemId      ItemId
  * @param popupStr    HTML text to appear in popup
  */
- 
+
+/*
+ Heavily modified by Sean Gillies sgillies@frii.com, will be folded back into
+ mapbuilder November 2005
+*/
+
 function FeatureBase(model) {
 
   this.install = function(feature, itemId, title, description, about) {

@@ -5,6 +5,11 @@ License:      LGPL as per: http://www.gnu.org/copyleft/lesser.html
 $Id: GmlPointRenderer.js,v 1.3 2005/08/05 18:47:11 madair1 Exp $
 */
 
+/*
+Heavily modified by Sean Gillies, sgillies@frii.com, and will be rolled back
+into mapbuilder November 2005
+*/
+
 // Ensure this object's dependancies are loaded.
 mapbuilder.loadScript(baseDir+"/model/Proj.js");
 mapbuilder.loadScript(baseDir+"/widget/MapContainerBase.js");

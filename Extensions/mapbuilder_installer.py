@@ -44,13 +44,6 @@ def install_lib(self):
     renderer = getattr(mb_lib.widget, 'GmlPointRenderer.js')
     renderer.manage_edit(data=patched_content, title='')
 
-    # Popup
-    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches', 
-                                  'Popup.js'), 'r')
-    mb_lib.widget.manage_addProduct['OFSP'].manage_addDTMLMethod(
-                                                'Popup.js',
-                                                file=patchfile)
-
     # FeatureBase
     patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches', 
                                   'FeatureBase.js'), 'r')

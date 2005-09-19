@@ -2,12 +2,16 @@
 Author:       Cameron Shorter cameronATshorter.net
 License:      LGPL as per: http://www.gnu.org/copyleft/lesser.html
 
-$Id: GmlPointRenderer.js,v 1.2 2005/08/03 19:07:00 mattdiez Exp $
+$Id: GmlPointRenderer.js,v 1.3 2005/08/05 18:47:11 madair1 Exp $
 */
 
 // Ensure this object's dependancies are loaded.
 mapbuilder.loadScript(baseDir+"/model/Proj.js");
 mapbuilder.loadScript(baseDir+"/widget/MapContainerBase.js");
+mapbuilder.loadScript(baseDir+"/widget/Popup.js");
+mapbuilder.loadScript(baseDir+"/tool/FeatureBase.js");
+
+// Resource: http://www.bazon.net/mishoo/articles.epl?art_id=824
 
 /**
  * Render GML point geometery into HTML.  This is a MapContainer widget.
@@ -22,16 +26,37 @@ mapbuilder.loadScript(baseDir+"/widget/MapContainerBase.js");
  * @param widgetNode  The widget's XML object node from the configuration document.
  * @param model       The model object that this widget belongs to.
  */
+
 function GmlPointRenderer(widgetNode, model) {
 
   this.normalImage = widgetNode.selectSingleNode("mb:normalImage").firstChild.nodeValue; 
-  this.highlightImage = widgetNode.selectSingleNode("mb:highlightImage").firstChild.nodeValue; 
-
+  	this.highlightImage = widgetNode.selectSingleNode("mb:highlightImage").firstChild.nodeValue;
+  this.popup = new Popup( widgetNode, model );
+  
+  this.featureBase = new FeatureBase(model);
+  
+  /**
+    * Clear all markers
+    */
+  this.clearWidget = function(objRef) {
+    // we need to clear all the div's first
+    var divs = document.getElementsByTagName("div");
+    //for (var i=0;i< divs.length;i++) {
+    for (var i= divs.length-1; i>= 0; i--) {
+        var id = new String(divs[i].getAttribute("id"));
+      if( id.indexOf("RSS_Item") >= 0 ) {
+          var img = divs[i].firstChild;
+          img.onmouseover = null;
+          img.onmouseout = null;
+          divs[i].parentNode.removeChild( divs[i] );
+        }
+      }
+  }
+  
   /** draw the points by putting the image at the point
     * @param objRef a pointer to this widget object
     */
   this.paint = function(objRef) {
-    // clean up -- patch by Sean Gillies and Patrice Cappelaere
     var divs = document.getElementsByTagName("div");
     for (var i=divs.length-1; i>=0; i--) {
       var div = divs[i];
@@ -41,7 +66,7 @@ function GmlPointRenderer(widgetNode, model) {
         img.onmouseout = null;
         div.parentNode.removeChild(div);
       }
-    }    
+    }          	
     var containerProj = new Proj(objRef.containerModel.getSRS());
     var features = objRef.model.getFeatureNodes();
     for (var i=0; i<features.length; ++i) {
@@ -49,6 +74,12 @@ function GmlPointRenderer(widgetNode, model) {
       var title = objRef.model.getFeatureName(feature);
       var itemId = objRef.model.getFeatureId(feature);   //or feature id's for feature collections?
       var point = objRef.model.getFeaturePoint(feature);
+      
+      if( (point[0] == 0) && (point[1] == 0 )) {
+      		// no point in going any further 
+      		return;
+      	}
+      	
       point = containerProj.Forward(point);
       point = objRef.containerModel.extent.getPL(point);
 
@@ -61,11 +92,16 @@ function GmlPointRenderer(widgetNode, model) {
         normalImageDiv.style.position = "absolute";
         normalImageDiv.style.visibility = "visible";
         normalImageDiv.style.zIndex = 300;
+        
         var newImage = document.createElement("IMG");
         newImage.src = config.skinDir+objRef.normalImage;
         newImage.title = title;
+ 				             
         normalImageDiv.appendChild(newImage);
         objRef.node.appendChild( normalImageDiv );
+
+        var overlib = objRef.popup.transform( objRef.popup, feature );
+        objRef.featureBase.install( newImage, itemId, overlib );
 
         //add in the highlightImage
         highlightImageDiv = document.createElement("DIV");
@@ -86,10 +122,10 @@ function GmlPointRenderer(widgetNode, model) {
       highlightImageDiv.style.top = point[1];
     }
   }
-
+    
   this.stylesheet = new XslProcessor(baseDir+"/widget/Null.xsl");
   var base = new MapContainerBase(this,widgetNode,model);
-
+ 
   /** highlights the selected feature by switching to the highlight image
     * @param objRef a pointer to this widget object
     */
@@ -113,3 +149,4 @@ function GmlPointRenderer(widgetNode, model) {
   this.model.addListener("dehighlightFeature",this.dehighlight, this);
 
 }
+

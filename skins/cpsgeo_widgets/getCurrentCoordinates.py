@@ -7,11 +7,10 @@
 ##parameters=
 ##title=
 ##
-obid = context.id
-path = '/'.join(context.getPhysicalPath())
-results = container.portal_catalog(path=path, getId=obid)
-if results:
-    pos = getattr(results[0], 'pos_list', '0 0')
-    return '%s,%s' % tuple(results[0].pos_list.split())
+
+pos_list = context.getContent().pos_list
+if pos_list:
+    return pos_list.replace(' ',',')
 else:
-    return '0 0'
+    return '0.0,0.0'
+

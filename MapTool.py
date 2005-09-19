@@ -123,7 +123,8 @@ class MapTool(UniqueObject, CMFBTreeFolder):
         self._setObject(id, ob)
         if REQUEST:
             ob = self._getOb(id)
-            REQUEST.RESPONSE.redirect(self.absolute_url()+'/%s/manage_editMapForm' % (id))
+            REQUEST.RESPONSE.redirect(self.absolute_url() +
+                                      '/%s/manage_editMapForm' % (id))
 
     def all_meta_types(self):
         return ({'name': 'CPS Cartographic Map',

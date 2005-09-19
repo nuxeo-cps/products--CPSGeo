@@ -81,6 +81,16 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
                  'path': os.path.join(base, mapid, 'mapContext')} \
                 for mapid in self.objectIds()]
 
+    security.declareProtected(View, 'mapContextFor')
+    def mapContextFor(self, mapid):
+        """Return a dict describing the map id, title, and BASEPATH2-ish
+        path to the map context given a map id
+        """
+        base = urlsplit(self.absolute_url())[2]
+        map_ = getattr(self, mapid)
+        return {'id': mapid, 'title': map_.title,
+                'path': os.path.join(base, mapid, 'mapContext')}
+
     #
     # ZMI
     #
@@ -106,7 +116,7 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         return ({'name': 'CPS Cartographic Map',
                  'action': 'manage_addMapForm',
                  'permission': ManagePortal},
-                )        
+                )
 
 InitializeClass(MapTool)
 

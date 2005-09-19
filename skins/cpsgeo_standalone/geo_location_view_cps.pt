@@ -29,8 +29,6 @@
 
   <metal:block fill-slot="main">
 
-<body onload="mbDoLoad()">
-
 <!-- Map selector form -->
 <div style="padding:10px">
 Select base map
@@ -98,6 +96,5 @@ Select base map
         </td>
     </tr>
 </table>
-</body>
 </metal:block>
 </metal:block>

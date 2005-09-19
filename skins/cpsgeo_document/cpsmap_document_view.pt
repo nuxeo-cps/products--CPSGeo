@@ -1,16 +1,46 @@
 <metal:block define-macro="view">
-<metal:block use-macro="here/main_template/macros/master">
-<metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
+  <metal:block use-macro="here/main_template/macros/master"
+	       tal:define="global mb_dir here/getBaseUrl">
+    <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
+    <metal:block fill-slot="javascript_head_slot">
+    <link rel="stylesheet" type="text/css" media="all"
+	  title="CPSDefault styles" href="/cps/default.css" />
+      <script>
+	// URL of Mapbuilder configuration file.
+	var mbConfigUrl='geo_view_config.xml';    
 
-  <metal:block fill-slot="header">
-  </metal:block>
+	function switch_map()
+	{
+	  box = document.getElementById("cpsgeo_map_selector");
+  	  modelurl = box.options[box.selectedIndex].value;
+          if (modelurl) config.loadModel("mainMap", modelurl);
+        }
+      </script>
+      <script tal:content="structure python:'
+        function reload_docs()
+        {
+            text = document.getElementById(\'cpsgeo_search_text\').value;
 
-  <metal:block fill-slot="css_slot">
-    <link rel="Stylesheet" type="text/css" href=""
-      tal:attributes="href string:${base_url}document.css" />
-    <link rel="Stylesheet" type="text/css" href=""
-      tal:attributes="href string:${base_url}forum.css" />
-  </metal:block>
+            if (text) config.loadModel(\'geoRSS\', \'%sportal_maps/getGeoRSSModel?SearchableText=\'+text);
+        }
+      ' % (here.getBaseUrl())">    
+      </script>
+      <script type="text/javascript" src="cpsgeo.js" 
+	      tal:attributes="src string:${here/absolute_url}/cpsgeo.js"></script>
+      <script type="text/javascript" 
+	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+      <script type="text/javascript" src="overlib.js" 
+	      tal:attributes="src string:${here/absolute_url}/overlib.js"></script>
+    </metal:block>
+    <metal:block fill-slot="header">
+    </metal:block>
+
+    <metal:block fill-slot="css_slot">
+      <link rel="Stylesheet" type="text/css" href=""
+	    tal:attributes="href string:${base_url}document.css" />
+      <link rel="Stylesheet" type="text/css" href=""
+	    tal:attributes="href string:${base_url}forum.css" />
+    </metal:block>
 
   <metal:block fill-slot="main">
     <tal:block tal:content="structure rendered_main|python:here.getContent().render(proxy=here)" />

@@ -18,6 +18,7 @@
 # $Id: CPSMapDocument.py 26799 2005-09-13 16:44:28Z janguenot $
 
 from Products.CMFCore.permissions import ManagePortal
+from Products.CMFCore.permissions import ModifyPortalContent
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
 from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
@@ -113,7 +114,17 @@ class CPSGeoInstaller(CPSInstaller):
             category='global',
             visible=1)
 
-        self.log(" Added Action cps map server")
+        # category : object
+        self.portal['portal_maps'].addAction(
+            id='cps_geolocation',
+            name='action_cps_geolocation',
+            action='string:${object_url}/cps_geolocation_form',
+            condition="",
+            permission=(ModifyPortalContent,),
+            category='object',
+            visible=1)
+
+        self.log(" Added actions for cps map server")
         
 def install(self):
     installer = CPSGeoInstaller(self)

@@ -1,5 +1,7 @@
 <metal:block use-macro="here/main_template/macros/master"
 	     tal:define="global mb_dir here/getBaseUrl">
+  <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  </metal:block>
   <metal:block fill-slot="javascript_head_slot">
     <link rel="stylesheet" type="text/css" media="all"
 	  title="CPSDefault styles" href="/cps/default.css" />
@@ -18,13 +20,17 @@
         function reload_docs()
         {
             text = document.getElementById(\'cpsgeo_search_text\').value;
+
             if (text) config.loadModel(\'geoRSS\', \'%sportal_maps/getGeoRSSModel?SearchableText=\'+text);
         }
       ' % (here.getBaseUrl())">    
       </script>
-      <script type="text/javascript" src="cpsgeo.js"></script>
-      <script type="text/javascript" tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
-      <script type="text/javascript" src="overlib.js"></script>
+      <script type="text/javascript" src="cpsgeo.js" 
+	      tal:attributes="src string:${here/absolute_url}/cpsgeo.js"></script>
+      <script type="text/javascript" 
+	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+      <script type="text/javascript" src="overlib.js" 
+	      tal:attributes="src string:${here/absolute_url}/overlib.js"></script>
   </metal:block>
 
   <metal:block fill-slot="main">

@@ -1,12 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html tal:define="mb_dir here/getBaseUrl">
 <head>
 <title>CPSGeo Map Widget Demo</title>
 <link rel="stylesheet" type="text/css" media="all"
         title="CPSDefault styles" href="/cps/default.css" />
-<link rel="stylesheet" type="text/css" media="all"
-        href="/cps/boxes.css" />
-<link rel="stylesheet" tal:attributes="href string:${mb_dir}mapbuilder/lib/skin/default/mapStyle.css" type="text/css">
 <script>
     // URL of Mapbuilder configuration file.
     var mbConfigUrl='geo_edit_config.xml';    
@@ -14,9 +11,16 @@
     // Work with the "map_selector" form in the body
     function switch_map()
     {
-        box = document.forms[0].map;
-        modelurl = box.options[box.selectedIndex].value;
+        var box = document.forms[0].map;
+        var modelurl = box.options[box.selectedIndex].value;
         if (modelurl) config.loadModel('mainMap', modelurl);
+    }
+
+    function submit_location()
+    {
+        var pos = document.getElementById("doc_location").pos_list.value;
+        var field = opener.document.forms[2].widget__pos_list.value = pos;
+        window.close();
     }
 </script>
 <script type="text/javascript" tal:attributes="src string:${mb_dir}mapbuilder/lib/Mapbuilder.js"></script>
@@ -66,24 +70,15 @@ Select base map
                                 <h3>Document Location</h3>
                                 <form id="doc_location">
                                 WGS84 Coordinates:&nbsp;<span id="docLocation"></span><br/>
-                                <input type="submit" name="submit" value="Set Location"/>
+                                <input type="submit" name="submit" value="Set Location" onclick="submit_location();"/>
                                 </form>
                               </td>
                             </tr>
-
-                            <tr>
-                              <td colspan="3" align="left" style="border:solid grey 1px;padding:0.5em">
-        Mouse over rows in the query results to see documents highlighted in
-        the map frame.
-        [<a tal:attributes="href string:javascript:config.loadModel('geoRSS', '${here/portal_maps/geoRSSPath}');">refresh results</a>]
-                              <div id="eventsListing"></div>
-                              </td>
-                            </tr>
-
                         </table>
                     </td>
                 </tr>
             </table>
+        </td>
     </tr>
 </table>
 

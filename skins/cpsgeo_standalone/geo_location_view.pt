@@ -6,8 +6,6 @@
 <title>CPSGeo Map Widget Demo</title>
 <link rel="stylesheet" type="text/css" media="all"
         title="CPSDefault styles" href="/cps/default.css">
-<!--link rel="stylesheet" type="text/css" media="all"
-        href="/cps/boxes.css" /-->
 <script>
     // URL of Mapbuilder configuration file.
     var mbConfigUrl="geo_view_config.xml";    

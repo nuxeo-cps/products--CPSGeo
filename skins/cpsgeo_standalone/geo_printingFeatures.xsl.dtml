@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-Description: presents the list of events in a GeoRSS
-Author:      adair
-Licence:     LGPL as specified in http://www.gnu.org/copyleft/lesser.html .
+# (C) Copyright 2005 Nuxeo SARL 
+# Author: Sean Gillies (sgillies@frii.com)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as published
+# by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+#
 
-$Id: SelectFeatureType.xsl,v 1.10 2005/05/01 02:03:49 madair1 Exp $
-$Name:  $
+Description: converts queried document info to form fields so that we
+             can push features to the external mapserver for a print map
 -->
 
 <xsl:stylesheet version="1.0" 
@@ -20,7 +34,6 @@ $Name:  $
 
   <xsl:output method="xml" omit-xml-declaration="no" encoding="utf-8" indent="yes"/>
 
-  <!-- The coordinates of the DHTML Layer on the HTML page -->
   <xsl:param name="modelId"/>
   <xsl:param name="targetModelId"/>
   <xsl:param name="widgetId"/>

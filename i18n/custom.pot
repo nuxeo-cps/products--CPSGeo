@@ -57,3 +57,12 @@ msgstr ""
 
 msgid "psm_document_geolocated"
 msgstr ""
+
+msgid "label_cpsgeo_search_results"
+msgstr ""
+
+msgid "label_folder"
+msgstr ""
+
+msgid "label_nb_items"
+msgstr ""

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2005-09-20 01:15default\n"
+"POT-Creation-Date: 2005-09-20 02:59default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -15,6 +15,20 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-encodings: latin9 utf-8\n"
 "Domain: default\n"
+
+#.   <option value="">
+#.   	--- Choose Map ---
+#.         </option>
+#: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
+msgid "label_cpsgeo_choose_map"
+msgstr ""
+
+#.   <span>
+#.       Select base map
+#.     </span>
+#: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
+msgid "label_cpsgeo_select_base_map"
+msgstr ""
 
 msgid "portal_type_CPSMapDocument_title"
 msgstr ""
@@ -37,12 +51,6 @@ msgstr ""
 msgid "header_geolocation_form"
 msgstr ""
 
-msgid "label_cpsgeo_select_base_map"
-msgstr ""
-
-msgid "label_cpsgeo_choose_map"
-msgstr ""
-
 msgid "label_cpsgeo_document_location"
 msgstr ""
 
@@ -56,4 +64,13 @@ msgid "button_cpsgeo_set_location"
 msgstr ""
 
 msgid "psm_document_geolocated"
+msgstr ""
+
+msgid "label_cpsgeo_search_results"
+msgstr ""
+
+msgid "label_folder"
+msgstr ""
+
+msgid "label_nb_items"
 msgstr ""

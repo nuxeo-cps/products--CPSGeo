@@ -8,7 +8,7 @@
 ##title=
 ##
 
-pos_list = context.getContent().pos_list
+pos_list = getattr(context.getContent(), 'pos_list', False)
 if pos_list:
     return pos_list.replace(' ',',')
 else:

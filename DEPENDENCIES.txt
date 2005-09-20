@@ -1,2 +1,4 @@
+$Id: $
 
+- CPS >= 3.3.6
 - lxml 0.7 or elementtree 1.2+

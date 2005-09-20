@@ -19,6 +19,10 @@ if request.has_key('URL'):
     if URL is not None and \
         (URL.endswith('search_form') or URL.endswith('advanced_search_form')):
         return 'highlightSearchTerm();setFocus();'
-
-# XXX filter
-return 'mbDoLoad(); switch_map()'
+    if (URL is not None and
+        URL.endswith('cpsmap_document_view') or
+        URL.endswith('cps_geolocation_form') or
+        URL.endswith('cps_map_server')
+        ):
+        return 'mbDoLoad(); switch_map()'
+return ''

@@ -209,8 +209,6 @@ map_document_layout = {
             ],
             [{'widget_id': 'results', 'ncols': 1},
             ],
-            [{'widget_id': 'search', 'ncols': 1},
-            ],
         ],
     },
 }

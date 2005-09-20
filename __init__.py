@@ -20,6 +20,12 @@ from Products.CMFCore import utils
 from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.DirectoryView import registerDirectory
 
+##Allow the time module within restricted code.
+from AccessControl import ModuleSecurityInfo
+ModuleSecurityInfo('Products.CPSGeo.georss').declarePublic('brainsToGeoRSS')
+##EOF
+
+
 import MapTool
 import Map
 import CPSMapDocument

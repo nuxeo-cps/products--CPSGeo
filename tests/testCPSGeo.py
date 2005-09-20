@@ -40,6 +40,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         f = open('testAddMap.xml', 'w')
         f.write(xml)
         f.close()
+        os.system('rm -f testAddMap.xml')
         
 ##    def testAddMapLenny(self):
 ##        mt = self.portal.portal_maps

@@ -1,4 +1,5 @@
 
+import os
 import sys
 import unittest
 
@@ -8,7 +9,7 @@ from Products.CPSGeo.Map import Map
 class MapTest(unittest.TestCase):
 
     url = 'http://wms.jpl.nasa.gov/wms.cgi'
-    
+
     def testMapContext(self):
         m = Map('map1', self.url, size=[640, 480], bounds=[-120,25,-80,55],
                 srs='EPSG:4326', layers=['global_mosaic'])
@@ -17,7 +18,7 @@ class MapTest(unittest.TestCase):
         f = open('testMapContext.xml', 'w')
         f.write(wmc)
         f.close()
-
+        os.system('rm -f testMapContext.xml')
 
 def test_suite():
     suite = unittest.TestSuite()

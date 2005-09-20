@@ -9,7 +9,7 @@
 ##
 
 results = context.getContent().results
-print results
+return results
 
 #context.portal_maps.brainsToGeoRSS(context.title, context.absolute_url(), context.getContent().results)
 #container.REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')

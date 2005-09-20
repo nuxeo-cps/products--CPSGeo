@@ -6,7 +6,7 @@
     
   <models>
     <Context id="mainMap">
-      <defaultModelUrl><dtml-var "getBaseUrl">/portal_maps/<dtml-var "getContent/map_id"></defaultModelUrl>
+      <defaultModelUrl><dtml-var getBaseUrl>portal_maps/<dtml-var expr="getContent().map_id">/mapContext</defaultModelUrl>
       <widgets>
         <MapPane id="mainMapWidget">
           <htmlTagId>mainMapPane</htmlTagId>

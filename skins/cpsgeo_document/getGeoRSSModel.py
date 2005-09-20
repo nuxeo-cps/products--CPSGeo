@@ -11,11 +11,10 @@
 from Products.CPSGeo.georss import brainsToGeoRSS
 
 results = context.getContent().results
-return results
-
-#brainsToGeoRSS(context.title, context.absolute_url(), context.getContent().results)
-#container.REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
-#return context.portal_maps.brainsToGeoRSS(context.title, context.absolute_url(), context.getContent().results)
-
-
+brains = []
+for r in results:
+    brain = context.portal_catalog(path=r)
+    brains.append(brain)
+container.REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+return brainsToGeoRSS(context.title, context.absolute_url(), brains)
 

@@ -32,24 +32,7 @@
       </h1>
     </metal:block>
     <metal:block fill-slot="main">
-      <div style="padding:10px">
-	<span i18n:translate="label_cpsgeo_select_base_map">
-	  Select base map
-	</span>
-	<form id="map_selector">
-	  <select name=map onChange="switch_map()">
-	    <option value=""
-		    i18n:translate="label_cpsgeo_choose_map">
-	      --- Choose Map ---
-	    </option>
-	    <div tal:repeat="map here/portal_maps/mapContexts">
-	      <option tal:attributes="value map/path"
-		      tal:content="map/title">title
-	      </option>
-	    </div>
-	  </select>
-	</form>
-      </div>
+      <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
       <table>
 	<tr>
 	  <td valign="top" style="padding:10px">

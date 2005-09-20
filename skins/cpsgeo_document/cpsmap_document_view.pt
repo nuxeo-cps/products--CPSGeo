@@ -9,22 +9,15 @@
 	// URL of Mapbuilder configuration file.
 	var mbConfigUrl='geo_view_config.xml';    
 
-	function switch_map()
-	{
-	  box = document.getElementById("cpsgeo_map_selector");
-  	  modelurl = box.value;
-          if (modelurl) config.loadModel("mainMap", modelurl);
-        }
+      // Work with the "map_selector" form in the body
+      function switch_map()
+      {
+          var box = document.getElementById("map_selector").map;
+          var modelurl = box.options[box.selectedIndex].value;
+          if (modelurl) config.loadModel('mainMap', modelurl);
+      }
       </script>
-      <script tal:content="structure python:'
-        function reload_docs()
-        {
-            text = document.getElementById(\'cpsgeo_search_text\').value;
 
-            if (text) config.loadModel(\'geoRSS\', \'%sportal_maps/getGeoRSSModel?SearchableText=\'+text);
-        }
-      ' % (here.getBaseUrl())">    
-      </script>
       <script type="text/javascript" src="cpsgeo.js" 
 	      tal:attributes="src string:${here/absolute_url}/cpsgeo.js"></script>
       <script type="text/javascript" 

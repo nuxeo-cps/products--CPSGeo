@@ -1,39 +1,36 @@
-<tal:block xmlns:tal="http://xml.zope.org/namespaces/tal"
-	   xmlns:metal="http://xml.zope.org/namespaces/metal"
-	   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <metal:block use-macro="here/main_template/macros/master">
-    <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
-    <metal:block fill-slot="javascript_head_slot">
-      <script>
+<metal:block use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
+  <metal:block fill-slot="javascript_head_slot">
+    <script>
 	// URL of Mapbuilder configuration file.
-      var mbConfigUrl='geo_edit_config.xml';
-      
-      // Work with the "map_selector" form in the body
-      function switch_map()
-      {
-          var box = document.getElementById("map_selector").map;
-          var modelurl = box.options[box.selectedIndex].value;
-          if (modelurl) config.loadModel('mainMap', modelurl);
-      }
-  
-      function submit_location()
-      {
-          var pos = document.getElementById("doc_location").pos_list.value;
-          var field = opener.document.forms[2].widget__pos_list.value = pos;
-          window.close();
-      }
-      </script>
-      <script type="text/javascript"
-  	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js" />
-    </metal:block>
-    <metal:block fill-slot="header">
-      <h1 i18n:translate="header_geolocation_form">
+    var mbConfigUrl='geo_edit_config.xml';
+    
+    // Work with the "map_selector" form in the body
+    function switch_map()
+    {
+        var box = document.getElementById("map_selector").map;
+        var modelurl = box.options[box.selectedIndex].value;
+        if (modelurl) config.loadModel('mainMap', modelurl);
+    }
+
+    function submit_location()
+    {
+        var pos = document.getElementById("doc_location").pos_list.value;
+        var field = opener.document.forms[2].widget__pos_list.value = pos;
+        window.close();
+    }
+    </script>
+    <script type="text/javascript"
+	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js" />
+  </metal:block>
+  <metal:block fill-slot="header">
+    <h1 i18n:translate="header_geolocation_form">
 	Geo-locate this document
-      </h1>
-    </metal:block>
-    <metal:block fill-slot="main">
-      <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
-      <table>
+    </h1>
+  </metal:block>
+  <metal:block fill-slot="main">
+    <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
+    <table>
 	<tr>
 	  <td valign="top" style="padding:10px">
 	    <div><div id="locatorMap"/></div>
@@ -90,7 +87,6 @@
 	    </table>
 	  </td>
 	</tr>
-      </table>
-    </metal:block>
+    </table>
   </metal:block>
-</tal:block>
+</metal:block>

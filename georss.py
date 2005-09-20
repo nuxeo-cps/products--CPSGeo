@@ -114,7 +114,7 @@ def brainsToGeoRSS(title, about, brains):
         link.text = schema.getURL()
         item.append(link)
         description = RSSElement('description')
-        description.text = schema.Description
+        description.text = schema.Description or '-- no description --'
         item.append(description)
         date = DCElement('date')
         date.text = schema.Date

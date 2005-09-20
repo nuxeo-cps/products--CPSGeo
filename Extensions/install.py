@@ -117,7 +117,7 @@ class CPSGeoInstaller(CPSInstaller):
             condition="",
             permission=(ManagePortal,),
             category='global',
-            visible=1)
+            visible=0)
 
         # category : object
         self.portal['portal_maps'].addAction(
@@ -126,6 +126,7 @@ class CPSGeoInstaller(CPSInstaller):
             action='string:${object_url}/cps_geolocation_form',
             condition="",
             permission=(ModifyPortalContent,),
+
             category='object',
             visible=1)
 

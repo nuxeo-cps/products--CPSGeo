@@ -92,7 +92,7 @@ def brainsToGeoRSS(title, about, brains):
     chitems = RSSElement('items')
     seq = RDFElement('Seq')
     for schema in brains:
-        if not schema.pos_list:
+        if not getattr(schema, 'pos_list', False):
             continue
         li = RDFElement('li')
         li.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] = schema.getURL()
@@ -102,7 +102,7 @@ def brainsToGeoRSS(title, about, brains):
     rdf.append(channel)
     
     for schema in brains:
-        if not schema.pos_list:
+        if not getattr(schema, 'pos_list', False):
             continue
         item = RSSElement('item')
         item.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] \

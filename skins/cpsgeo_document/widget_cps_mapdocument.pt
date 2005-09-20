@@ -35,7 +35,12 @@
 		<td colspan="3" align="left">
 		  <p>Search for documents. Results are displayed on the map above.</p>
 		  <label>Searchable Text: </label>
-		  <input id="cpsgeo_search_text" type="text" name="SearchableText" size="12" maxlength="256" value=""/>  <button type="button" onclick="reload_docs();" class="SearchBox">Search</button>
+		  <input id="cpsgeo_search_text" 
+			 type="text" name="SearchableText" 
+			 size="12" maxlength="256" value=""/>  
+		  <button type="button" onclick="reload_docs();" class="standalone">
+		    Search
+		  </button>
 		</td>
 	      </tr>
 	    </table>

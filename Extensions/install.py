@@ -124,9 +124,8 @@ class CPSGeoInstaller(CPSInstaller):
             id='cps_geolocation',
             name='action_cps_geolocation',
             action='string:${object_url}/cps_geolocation_form',
-            condition="",
+            condition="python:object != portal",
             permission=(ModifyPortalContent,),
-
             category='object',
             visible=1)
 

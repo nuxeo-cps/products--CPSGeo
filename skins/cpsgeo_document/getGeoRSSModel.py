@@ -14,7 +14,8 @@ results = context.getContent().results
 brains = []
 for r in results:
     brain = context.portal_catalog(path=r)
-    brains.append(brain)
+    if brain:
+        brains.append(brain[0])
 container.REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
 return brainsToGeoRSS(context.title, context.absolute_url(), brains)
 

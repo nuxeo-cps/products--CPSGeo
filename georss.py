@@ -92,8 +92,6 @@ def brainsToGeoRSS(title, about, brains):
     chitems = RSSElement('items')
     seq = RDFElement('Seq')
     for schema in brains:
-        if not getattr(schema, 'pos_list', False):
-            continue
         li = RDFElement('li')
         li.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] = schema.getURL()
         seq.append(li)
@@ -102,8 +100,6 @@ def brainsToGeoRSS(title, about, brains):
     rdf.append(channel)
     
     for schema in brains:
-        if not getattr(schema, 'pos_list', False):
-            continue
         item = RSSElement('item')
         item.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] \
                    = schema.getURL()
@@ -120,14 +116,17 @@ def brainsToGeoRSS(title, about, brains):
         date.text = schema.Date
         item.append(date)
         # location
-        x, y = schema.pos_list.split()
-        long = GEOElement('long')
-        long.text = x
-        lat = GEOElement('lat')
-        lat.text = y
-        item.append(long)
-        item.append(lat)
-        rdf.append(item)
+
+        pos_list = schema.pos_list
+        if pos_list:
+          x, y = pos_list.split()
+          long = GEOElement('long')
+          long.text = x
+          lat = GEOElement('lat')
+          lat.text = y
+          item.append(long)
+          item.append(lat)
+          rdf.append(item)
 
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' \
            + tostring(rdf)

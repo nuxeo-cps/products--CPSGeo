@@ -40,7 +40,7 @@ class CPSMapDocument(CPSDocument):
     security.declareProtected(View, 'getGeoRSSModel')
     def getGeoRSSModel(self, proxy, REQUEST=None):
         dm = self.getDataModel()
-        brains = proxy.getSearchWidgetContents(dm)
+        brains = proxy.getSearchWidgetContents(dm)[0]
         if REQUEST is not None:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
             return brainsToGeoRSS(

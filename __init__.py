@@ -20,9 +20,6 @@ from Products.CMFCore import utils
 from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.DirectoryView import registerDirectory
 
-from AccessControl import ModuleSecurityInfo
-ModuleSecurityInfo('Products.CPSGeo.georss').declarePublic('brainsToGeoRSS')
-
 import MapTool
 import Map
 import CPSMapDocument

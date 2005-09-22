@@ -20,18 +20,33 @@
 """CPS Map Document
 """
 
+from AccessControl import ClassSecurityInfo
+from Acquisition import aq_parent, aq_inner
 from Globals import InitializeClass
 
+from Products.CMFCore.permissions import View
+
 from Products.CPSDocument.CPSDocument import CPSDocument
+from Products.CPSGeo.georss import brainsToGeoRSS
 
 class CPSMapDocument(CPSDocument):
     """CPS Map Document
     """
+
     meta_type = 'CPS Map Document'
     portal_type = meta_type
 
-    # XXX implement me !
+    security = ClassSecurityInfo()
 
+    security.declareProtected(View, 'getGeoRSSModel')
+    def getGeoRSSModel(self, proxy, REQUEST=None):
+        dm = self.getDataModel()
+        brains = proxy.getSearchWidgetContents(dm)
+        if REQUEST is not None:
+            REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+            return brainsToGeoRSS(
+                proxy.Title(), proxy.absolute_url(), brains)
+        
 InitializeClass(CPSMapDocument)
 
 def addCPSMapDocument(container, id, REQUEST=None, **kw):

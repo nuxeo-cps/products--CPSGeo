@@ -28,7 +28,6 @@ from AccessControl import ClassSecurityInfo
 
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
-from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
 from Products.CMFCore.utils import UniqueObject
@@ -36,7 +35,6 @@ from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 from Products.CMFCore.ActionProviderBase import ActionProviderBase
 
 from georss import brainsToGeoRSS
-from context import mapToWebMapContext
 from Map import Map
 
 class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):

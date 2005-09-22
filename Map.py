@@ -23,7 +23,6 @@ from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.interfaces.Contentish import Contentish as IContentish
 from Products.CMFCore.PortalContent import PortalContent
-from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 

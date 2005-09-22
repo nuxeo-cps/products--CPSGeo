@@ -21,7 +21,6 @@
 """
 
 from AccessControl import ClassSecurityInfo
-from Acquisition import aq_parent, aq_inner
 from Globals import InitializeClass
 
 from Products.CMFCore.permissions import View

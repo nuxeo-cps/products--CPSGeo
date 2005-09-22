@@ -6,7 +6,8 @@ New features:
 - Initial release
 Bug fixes:
 ~~~~~~~~~~
--
+- #956 (MapDocument : Change the stored search results to stored search request
+   parameters)
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -1,0 +1,17 @@
+*******************************************
+** CPSGeo V0.1.1 [R1 build 2005/09/22-16:35 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 27528
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Initial release
+Bug fixes:
+~~~~~~~~~~
+- #956 (MapDocument : Change the stored search results to stored search request
+   parameters)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+

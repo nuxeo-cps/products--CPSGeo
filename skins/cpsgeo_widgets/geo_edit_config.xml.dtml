@@ -14,14 +14,6 @@
         </MapPane>
         <Loading id="loading">
         </Loading>
-        <!--AoiBoxDHTML id="aoiBox2">
-          <htmlTagId>mainMapPane</htmlTagId>
-          <stylesheet>/mapbuilder/lib/widget/Null.xsl</stylesheet>
-          <lineColor>#FF0000</lineColor>
-          <lineWidth>1</lineWidth>
-          <crossSize>15</crossSize>
-          <mapContainerId>mainMapContainer</mapContainerId>
-        </AoiBoxDHTML-->
         <AoiBoxWZ id="aoiBox2">
           <htmlTagId>mainMapPane</htmlTagId>
           <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
@@ -30,7 +22,6 @@
           <crossSize>15</crossSize>
           <mapContainerId>mainMapContainer</mapContainerId>
         </AoiBoxWZ>
-
         <CursorTrack id="cursorTrack">
           <mouseHandler>mainMap</mouseHandler>
         </CursorTrack>
@@ -47,23 +38,6 @@
         <MouseClickHandler id="mainMouseClick"/>
       </tools>
     </Context>
-    <GeoRSS id="geoRSS">
-      <defaultModelUrl><dtml-var expr="portal_maps.geoRSSPath()"></defaultModelUrl>
-      <namespace>xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:rss='http://purl.org/rss/1.0/' xmlns:taxo='http://purl.org/rss/1.0/modules/taxonomy/' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:syn='http://purl.org/rss/1.0/modules/syndication/' xmlns:geo='http://www.w3.org/2003/01/geo/wgs84_pos#'</namespace>
-      <nodeSelectXpath>/rdf:RDF/rss:item</nodeSelectXpath>
-      <widgets>
-        <Widget id="eventsListing">
-          <stylesheet>geo_documentsListing.xsl</stylesheet>
-          <targetModel>mainMap</targetModel>
-        </Widget>
-        <GmlPointRenderer id="pointRenderer">
-          <htmlTagId>mainMapPane</htmlTagId>
-          <mapContainerId>mainMapContainer</mapContainerId>
-          <normalImage>/images/document_icon.png</normalImage>
-          <highlightImage>/images/pressrelease_icon.png</highlightImage>
-        </GmlPointRenderer>
-      </widgets>
-    </GeoRSS>
     <Context id="locator">
       <defaultModelUrl>geo_locatorMap.xml</defaultModelUrl>
       <widgets>
@@ -107,7 +81,6 @@
         </Widget>
       </widgets>
     </FeatureCollection>
-
   </models>
   <widgets>
     <ZoomIn id="zoomIn">

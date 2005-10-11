@@ -50,7 +50,21 @@ def install_lib(self):
     mb_lib.tool.manage_addProduct['OFSP'].manage_addDTMLMethod(
                                                 'FeatureBase.js',
                                                 file=patchfile)
-    
+
+    # Change zoom hardcoded default value from 4 to 1.5
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches',
+                                  'ZoomIn.js'), 'r')
+    patched_content = patchfile.read()
+    orig = getattr(mb_lib.widget, 'ZoomIn.js')
+    orig.manage_edit(data=patched_content, title='')
+
+    # Change zoom hardcoded default value from 4 to 1.5
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches',
+                                  'ZoomOut.js'), 'r')
+    patched_content = patchfile.read()
+    orig = getattr(mb_lib.widget, 'ZoomOut.js')
+    orig.manage_edit(data=patched_content, title='')
+
     # Now, add all cps document icons from Products/CPSDocuments/skins/
     # to the mapbuilder default skin folder
     icon_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',

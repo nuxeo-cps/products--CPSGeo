@@ -94,11 +94,28 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     #
 
     manage_options = ActionProviderBase.manage_options + \
-                     CMFBTreeFolder.manage_options
+                     ({'label': "Geo Location View",
+                       'action': 'manage_geoLocationView',
+                       },
+                      {'label': "Geo Location Edit",
+                       'action': 'manage_geoLocationEdit',
+                       },
+                      ) + \
+                      CMFBTreeFolder.manage_options
 
     security.declareProtected(ManagePortal, 'manage_addMapForm')
     manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', globals(),
                                          __name__='manage_addMapForm')
+
+    security.declareProtected(ManagePortal, 'manage_geoLocationView')
+    manage_geoLocationView = PageTemplateFile(
+        'skins/cpsgeo_standalone/geo_location_view.pt', globals(),
+        __name__='manage_geoLocationView')
+
+    security.declareProtected(ManagePortal, 'manage_geoLocationEdit')
+    manage_geoLocationEdit = PageTemplateFile(
+        'skins/cpsgeo_standalone/geo_location_edit.pt', globals(),
+        __name__='manage_geoLocationEdit')
 
     def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
                       srs=None, format=None, layers=[], REQUEST=None):

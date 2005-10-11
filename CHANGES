@@ -4,6 +4,7 @@ Requires:
 New features:
 ~~~~~~~~~~~~~
 - Change zoom hardcoded default value from 4 to 1.5
+- zmi actions on the maps tool
 Bug fixes:
 ~~~~~~~~~~
 -

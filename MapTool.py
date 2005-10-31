@@ -65,7 +65,8 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         """Return a BASEPATH2-ish path to GeoRSS doc for mapbuilder
         """
         utool = getToolByName(self, 'portal_url')
-        return os.path.join(utool.getRelativeContentURL(self), 'getGeoRSSModel')
+        return os.path.join(
+            utool.getRelativeContentURL(self), 'getGeoRSSModel')
 
     security.declareProtected(View, 'mapContexts')
     def mapContexts(self):

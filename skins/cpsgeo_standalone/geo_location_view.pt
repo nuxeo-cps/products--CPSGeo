@@ -1,6 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <metal:block tal:define="mb_dir here/getBaseUrl">
-
 <html>
 <head>
 <title>CPSGeo Map Widget Demo</title>
@@ -31,7 +30,8 @@
 <script type="text/javascript" src="overlib.js"></script>
 </head>
 <body onload="mbDoLoad()">
-
+<tal:zmi_header define="mtool nocall:here/portal_maps"
+		replace="structure mtool/manage_tabs"/>
 <!-- Map selector form -->
 <div style="padding:10px">
 Select base map

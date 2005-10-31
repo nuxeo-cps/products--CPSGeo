@@ -26,6 +26,8 @@
 <script type="text/javascript" tal:attributes="src string:${mb_dir}mapbuilder/lib/Mapbuilder.js"></script>
 </head>
 <body onload="mbDoLoad()">
+<tal:zmi_header define="mtool nocall:here/portal_maps"
+		replace="structure mtool/manage_tabs"/>
 
 <!-- Map selector form -->
 <div style="padding:10px">

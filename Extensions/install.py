@@ -60,9 +60,7 @@ class CPSGeoInstaller(CPSInstaller):
         """Map Repository Tool
         """
         self.log("Checking Map Tool")
-        self.verifyTool('portal_maps',
-                        'CPSGeo',
-                        'CPS Map Tool')
+        self.verifyTool('portal_maps', 'CPSGeo', 'CPS Map Tool')
 
     def setupMapBuilderLibs(self):
         """Install mapbuilder within ZODB
@@ -117,7 +115,7 @@ class CPSGeoInstaller(CPSInstaller):
             condition="",
             permission=(ManagePortal,),
             category='global',
-            visible=0)
+            visible=1)
 
         # category : object
         self.portal['portal_maps'].addAction(

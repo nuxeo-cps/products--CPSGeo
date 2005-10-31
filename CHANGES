@@ -3,7 +3,8 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- Allow to change / refresh the url of a map after the map has been
+created.
 Bug fixes:
 ~~~~~~~~~~
 -

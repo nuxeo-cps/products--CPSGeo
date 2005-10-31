@@ -47,8 +47,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     id = 'portal_maps'
     title = "CPS Map Tool"
 
-    meta_type = 'CPS Map Tool'
-
     security = ClassSecurityInfo()
 
     def __init__(self):

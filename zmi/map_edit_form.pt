@@ -21,6 +21,17 @@ Default <em>size</em> and <em>bounds</em> presume a map <em>srs</em> of EPSG:432
     <tr>
       <td align="left" valign="top">
         <div class="form-label">
+        url
+        </div>
+      </td>
+      <td align="left" valign="top">
+        <input type="text" name="url" size="73"
+	       tal:attributes="value here/url | nothing"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" valign="top">
+        <div class="form-label">
         name
         </div>
       </td>

@@ -29,7 +29,6 @@ from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from context import mapToWebMapContext
 from ogclib import wms
 
-
 class Map(PortalContent):
 
     """Map
@@ -43,12 +42,14 @@ class Map(PortalContent):
    
     __implements__ = (IContentish,)
 
-    manage_options = ({'label': 'Edit', 'action': 'manage_editMapForm'},)
+    manage_options = (
+        {'label': 'Edit', 'action': 'manage_editMapForm'},
+        )
 
     security = ClassSecurityInfo()
     
-    def __init__(self, id, url, name=None, title=None, size=None,
-                 bounds=None, srs=None, format=None, layers=[]):
+    def __init__(self, id, url, name=None, title=None, size=(),
+                 bounds=(), srs=None, format=None, layers=[]):
         """Initialize"""
         # fix url
         self.url = url.rstrip('?&')
@@ -85,9 +86,14 @@ class Map(PortalContent):
                + mapToWebMapContext(self)
 
     #security.declareProtected(ManagePortalContent, 'editMap')
-    def editMap(self, name='', title='', size=[], bounds=[],
+    def editMap(self, url='', name='', title='', size=[], bounds=[],
                 srs=None, format=None, layers=[]):
         """edit map attributes"""
+
+        # Here, reinit the map by fetching back the map from the server
+        if url:
+            self.__init__(self.getId(), url=url, name=name)
+        # Then set the properties
         if name:
             self.name = str(name)
         if title:
@@ -106,10 +112,11 @@ class Map(PortalContent):
             self.visible_layers = tuple(layers)
 
     #security.declareProtected(ManagePortalContent, 'manage_editMap')
-    def manage_editMap(self, name='', title='', size=[], bounds=[],
+    def manage_editMap(self, url='', name='', title='', size=[], bounds=[],
                 srs=None, format=None, layers=[], REQUEST=None):
         """web front end to editMap"""
-        self.editMap(name, title, size, bounds, srs, format, layers)
+        self.editMap(url=url, name=name, title=title, size=size, bounds=bounds,
+                     srs=srs, format=format, layers=layers)
         return self.manage_editMapForm(self, REQUEST, update_menu=1)
 
     manage_editMapForm = PageTemplateFile('zmi/map_edit_form.pt', globals(),

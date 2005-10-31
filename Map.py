@@ -60,6 +60,17 @@ class Map(PortalContent):
         self.srs = srs
         self.format = format
         self.visible_layers = tuple(layers)
+
+    def _getTitle(self, max_length=0):
+        """Return a the title of the map
+
+        It will return a title <= max_length.
+        If max_lenght=0 then return the complete title
+        """
+        if max_length == 0:
+            return self.title
+        else:
+            return ''.join(self.title[:max_length])
        
     def _readCapabilities(self):
         # Make a WMS capabilities request

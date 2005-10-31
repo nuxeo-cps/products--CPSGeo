@@ -6,6 +6,7 @@ New features:
 - Allow to change / refresh the url of a map after the map has been
 created.
 - Add zmi tabs and breadcrumbs on the geo view in ZMI
+- Restrict the title to 30 chars
 Bug fixes:
 ~~~~~~~~~~
 -

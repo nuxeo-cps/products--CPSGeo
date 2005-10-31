@@ -82,6 +82,9 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         """Return a dict describing the map id, title, and BASEPATH2-ish
         path to the map context given a map id
         """
+        # XXX : change the title length restriction on the display
+        # later on when the widgets will be common to the standalone
+        # and CPS ones
         base = urlsplit(self.absolute_url())[2]
         map_ = getattr(self, mapid)
         return {'id': mapid, 'title': map_._getTitle(max_length=30),

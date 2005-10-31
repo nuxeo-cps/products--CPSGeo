@@ -21,10 +21,12 @@
 
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
-from Products.CMFCore.interfaces.Contentish import Contentish as IContentish
+
+from Products.PageTemplates.PageTemplateFile import PageTemplateFile
+
 from Products.CMFCore.PortalContent import PortalContent
 from Products.CMFCore.permissions import View
-from Products.PageTemplates.PageTemplateFile import PageTemplateFile
+from Products.CMFCore.permissions import ManagePortal
 
 from context import mapToWebMapContext
 from ogclib import wms
@@ -37,15 +39,8 @@ class Map(PortalContent):
     and the default screen size and spatial bounding box. 
     """
 
-    meta_type = 'CPS Cartographic Map'
-    portal_type = 'CPS Cartographic Map'
+    meta_type = portal_type = 'CPS Cartographic Map'
    
-    __implements__ = (IContentish,)
-
-    manage_options = (
-        {'label': 'Edit', 'action': 'manage_editMapForm'},
-        )
-
     security = ClassSecurityInfo()
     
     def __init__(self, id, url, name=None, title=None, size=(),
@@ -85,7 +80,7 @@ class Map(PortalContent):
         return '<?xml version="1.0" encoding="utf-8"?>' \
                + mapToWebMapContext(self)
 
-    #security.declareProtected(ManagePortalContent, 'editMap')
+    security.declareProtected(ManagePortal, 'editMap')
     def editMap(self, url='', name='', title='', size=[], bounds=[],
                 srs=None, format=None, layers=[]):
         """edit map attributes"""
@@ -111,7 +106,7 @@ class Map(PortalContent):
         if layers:
             self.visible_layers = tuple(layers)
 
-    #security.declareProtected(ManagePortalContent, 'manage_editMap')
+    security.declareProtected(ManagePortal, 'manage_editMap')
     def manage_editMap(self, url='', name='', title='', size=[], bounds=[],
                 srs=None, format=None, layers=[], REQUEST=None):
         """web front end to editMap"""
@@ -119,11 +114,18 @@ class Map(PortalContent):
                      srs=srs, format=format, layers=layers)
         return self.manage_editMapForm(self, REQUEST, update_menu=1)
 
+    #
+    # ZMI
+    #
+
+    manage_options = (
+        {'label': 'Edit', 'action': 'manage_editMapForm'},
+        )
+
     manage_editMapForm = PageTemplateFile('zmi/map_edit_form.pt', globals(),
                                           __name__='manage_editMapForm')
 
 InitializeClass(Map)
-
 
 def initialize(context):
     context.registerClass(Map, 

@@ -45,7 +45,7 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     __implements__ = ActionProviderBase.__implements__
 
     id = 'portal_maps'
-    title = "CPS Map Tool"
+    meta_type = title = "CPS Map Tool"
 
     security = ClassSecurityInfo()
 
@@ -115,6 +115,7 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         'skins/cpsgeo_standalone/geo_location_edit.pt', globals(),
         __name__='manage_geoLocationEdit')
 
+    security.declareProtected(ManagePortal, 'manage_addMap')
     def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
                       srs=None, format=None, layers=[], REQUEST=None):
         """Add a Map to a Map tool"""

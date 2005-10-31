@@ -72,10 +72,10 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         """Return a list of dicts describing map id, title, and BASEPATH2-ish
         path to the map context
         """
-        base = urlsplit(self.absolute_url())[2]
-        return [{'id': mapid, 'title': getattr(self, mapid).title,
-                 'path': os.path.join(base, mapid, 'mapContext')} \
-                for mapid in self.objectIds()]
+        contexts = []
+        for id_ in list(self.keys()):
+            contexts.append(self.mapContextFor(id_))
+        return contexts
 
     security.declareProtected(View, 'mapContextFor')
     def mapContextFor(self, mapid):
@@ -84,7 +84,7 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         """
         base = urlsplit(self.absolute_url())[2]
         map_ = getattr(self, mapid)
-        return {'id': mapid, 'title': map_.title,
+        return {'id': mapid, 'title': map_._getTitle(max_length=30),
                 'path': os.path.join(base, mapid, 'mapContext')}
 
     #
@@ -125,6 +125,8 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
             ob = self._getOb(id)
             REQUEST.RESPONSE.redirect(self.absolute_url() +
                                       '/%s/manage_editMapForm' % (id))
+        else:
+            return getattr(self, id)
 
     def all_meta_types(self):
         return ({'name': 'CPS Cartographic Map',

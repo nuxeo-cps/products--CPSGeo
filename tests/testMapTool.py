@@ -47,7 +47,7 @@ class MapToolTestCase(unittest.TestCase):
         # Add a map in the map tool.
         id_ = 'earth'
         url = 'http://wms.jpl.nasa.gov/wms.cgi'
-        self._maptool.manage_addMap(id=id_, url=url)
+        map_ = self._createMap(id_=id_, url=url)
         self.assertEqual(1, len(self._maptool))
 
         # Fetch the map and check the default params
@@ -60,7 +60,7 @@ class MapToolTestCase(unittest.TestCase):
         # Add a map in the map tool
         id_ = 'earth'
         url = 'http://wms.jpl.nasa.gov/wms.cgi'
-        self._maptool.manage_addMap(id=id_, url=url)
+        map_ = self._createMap(id_=id_, url=url)
         self.assertEqual(1, len(self._maptool))
 
         # Fetch the map
@@ -74,6 +74,65 @@ class MapToolTestCase(unittest.TestCase):
         self.assertEqual(map_.url, url)
         self.assertEqual(map_.title, 'Earth')
 
+    def test_mapContextFor(self):
+
+        id_ = 'earth'
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        map_ = self._createMap(id_=id_, url=url)
+
+        context = self._maptool.mapContextFor(id_)
+        expected = {'path': 'earth/mapContext',
+                    'id': 'earth', 'title':
+                    'JPL World Map Service'}
+
+        self.assertEqual(expected, context)
+
+        # Change the title
+        map_.editMap(title='The title')
+
+        context = self._maptool.mapContextFor(id_)
+        expected = {'path': 'earth/mapContext',
+                    'id': 'earth', 'title':
+                    'The title'}
+
+        self.assertEqual(expected, context)
+
+    def test_mapContexts(self):
+        id_ = 'earth'
+        id2_ = 'earth2'
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        map_ = self._createMap(id_=id_, url=url)
+        map2_ = self._createMap(id_=id2_, url=url)
+
+        context1 = self._maptool.mapContextFor(id_)
+        expected1 = {'path': 'earth/mapContext',
+                    'id': 'earth', 'title':
+                    'JPL World Map Service'}
+
+        self.assertEqual(expected1, context1)
+        
+        context2 = self._maptool.mapContextFor(id2_)
+        expected2 = {'path': 'earth2/mapContext',
+                    'id': 'earth2', 'title':
+                    'JPL World Map Service'}
+
+        self.assertEqual(expected1, context1)
+
+        # Check now that mapContexts returns sth consistent
+        contexts = self._maptool.mapContexts()
+        for context in contexts:
+            if context['id'] == id_:
+                self.assertEqual(context1, context)
+            else:
+                self.assertEqual(context2, context)
+                
+    #
+    # PRIVATE
+    #
+
+    def _createMap(self, id_, url, **kw):
+        return self._maptool.manage_addMap(id=id_, url=url)
+        
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(MapToolTestCase))

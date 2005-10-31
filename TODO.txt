@@ -1,4 +1,0 @@
-see : http://svn.nuxeo.org/pub/trac/report
-
-- Decide about removing the standalone viewer application from skins.
-

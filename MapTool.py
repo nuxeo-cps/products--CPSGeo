@@ -20,7 +20,6 @@
 """Map Tool For CPS
 """
 
-from urlparse import urlsplit
 import os.path
 
 from Globals import InitializeClass
@@ -28,11 +27,12 @@ from AccessControl import ClassSecurityInfo
 
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
+from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
+from Products.CMFCore.ActionProviderBase import ActionProviderBase
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
 from Products.CMFCore.utils import UniqueObject
-from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
-from Products.CMFCore.ActionProviderBase import ActionProviderBase
+from Products.CMFCore.utils import getToolByName
 
 from georss import brainsToGeoRSS
 from Map import Map
@@ -64,8 +64,8 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     def geoRSSPath(self):
         """Return a BASEPATH2-ish path to GeoRSS doc for mapbuilder
         """
-        base = urlsplit(self.absolute_url())[2]
-        return os.path.join(base, 'getGeoRSSModel')
+        utool = getToolByName(self, 'portal_url')
+        return os.path.join(utool.getRelativeContentURL(self), 'getGeoRSSModel')
 
     security.declareProtected(View, 'mapContexts')
     def mapContexts(self):
@@ -82,13 +82,18 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         """Return a dict describing the map id, title, and BASEPATH2-ish
         path to the map context given a map id
         """
+        utool = getToolByName(self, 'portal_url')
         # XXX : change the title length restriction on the display
         # later on when the widgets will be common to the standalone
         # and CPS ones
-        base = urlsplit(self.absolute_url())[2]
         map_ = getattr(self, mapid)
-        return {'id': mapid, 'title': map_._getTitle(max_length=30),
-                'path': os.path.join(base, mapid, 'mapContext')}
+        map_path_ = os.path.join(
+            utool.getRelativeContentURL(self), mapid, 'mapContext')
+        return {
+            'id': mapid,
+            'title': map_._getTitle(max_length=30),
+            'path': map_path_
+            }
 
     #
     # ZMI

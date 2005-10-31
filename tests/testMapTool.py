@@ -21,7 +21,10 @@ import os
 import sys
 import unittest
 
+from OFS.Folder import Folder
+
 from Products.CMFCore.permissions import ManagePortal
+from Products.CMFCore.URLTool import URLTool
 
 from Products.CPSGeo.MapTool import MapTool
 from Products.CPSGeo.Map import Map
@@ -31,7 +34,10 @@ class MapToolTestCase(unittest.TestCase):
     # Test the MapTool
 
     def setUp(self):
-        self._maptool = MapTool()
+        self._root = Folder('cps') # site root
+        self._root.portal_maps = MapTool()
+        self._root.portal_url = URLTool()
+        self._maptool = getattr(self._root, 'portal_maps')
 
     def test_fixtures(self):
         self.assertEqual(self._maptool.id, 'portal_maps')
@@ -81,7 +87,7 @@ class MapToolTestCase(unittest.TestCase):
         map_ = self._createMap(id_=id_, url=url)
 
         context = self._maptool.mapContextFor(id_)
-        expected = {'path': 'earth/mapContext',
+        expected = {'path': 'portal_maps/earth/mapContext',
                     'id': 'earth', 'title':
                     'JPL World Map Service'}
 
@@ -91,7 +97,7 @@ class MapToolTestCase(unittest.TestCase):
         map_.editMap(title='The title')
 
         context = self._maptool.mapContextFor(id_)
-        expected = {'path': 'earth/mapContext',
+        expected = {'path': 'portal_maps/earth/mapContext',
                     'id': 'earth', 'title':
                     'The title'}
 
@@ -105,14 +111,14 @@ class MapToolTestCase(unittest.TestCase):
         map2_ = self._createMap(id_=id2_, url=url)
 
         context1 = self._maptool.mapContextFor(id_)
-        expected1 = {'path': 'earth/mapContext',
+        expected1 = {'path': 'portal_maps/earth/mapContext',
                     'id': 'earth', 'title':
                     'JPL World Map Service'}
 
         self.assertEqual(expected1, context1)
         
         context2 = self._maptool.mapContextFor(id2_)
-        expected2 = {'path': 'earth2/mapContext',
+        expected2 = {'path': 'portal_maps/earth2/mapContext',
                     'id': 'earth2', 'title':
                     'JPL World Map Service'}
 
@@ -125,6 +131,10 @@ class MapToolTestCase(unittest.TestCase):
                 self.assertEqual(context1, context)
             else:
                 self.assertEqual(context2, context)
+
+    def test_geoRSSPath(self):
+        rsspath = self._maptool.geoRSSPath()
+        self.assertEqual('portal_maps/getGeoRSSModel', rsspath)
                 
     #
     # PRIVATE

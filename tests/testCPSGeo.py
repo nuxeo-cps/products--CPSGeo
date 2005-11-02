@@ -27,7 +27,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         mt = self.portal.portal_maps
         url = 'http://wms.jpl.nasa.gov/wms.cgi'
         mt.manage_addMap('map1', url)
-        self.assertEquals(mt.mapContexts(), [{'id': 'map1', 'title': 'JPL World Map Service', 'path': '/portal/portal_maps/map1/mapContext'}])
+        self.assertEquals(mt.mapContexts(), [{'id': 'map1', 'title': 'JPL World Map Service', 'path': 'portal_maps/map1/mapContext'}])
         map1 = getattr(mt, 'map1')
         self.assertEquals(map1.name, 'OGC:WMS')
         self.assertEquals(map1.title, 'JPL World Map Service')

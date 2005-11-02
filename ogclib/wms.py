@@ -38,7 +38,6 @@ except:
 
 import urllib
 
-
 class WMSError(Exception):
 
     """Base class for WMS module errors"""
@@ -58,7 +57,6 @@ class WMSError(Exception):
         exception_elem.text = self.message
         report_elem.append(exception_elem)
         return preamble + tostring(report_elem)
-       
 
 class WebMapService:
 
@@ -118,7 +116,6 @@ class WMSCapabilitiesInfoset:
         for n in self._infoset.findall('Capability/Layer/Layer/Title'):
             titles = titles + (n.text,)
         return titles
- 
         
 class WMSCapabilitiesReader:
 
@@ -132,11 +129,10 @@ class WMSCapabilitiesReader:
     def capabilities_url(self, service_url):
         """Return a capabilities url"""
         if service_url.find('?') < 0:
-            return '%s?service=WMS&version=1.1.1&request=GetCapabilities' \
-                    % (service_url)
+            return '%s?service=WMS&version=%s&request=GetCapabilities' \
+                    % (service_url, self.version)
         if service_url.find('?') >= 0:
-            return '%s&service=WMS&version=1.1.1&request=GetCapabilities' \
-                    % (service_url)
+            return service_url
         
     def read(self, service_url):
         """Get and parse a WMS capabilities document, returning an instance

@@ -21,13 +21,11 @@ import unittest
 
 from Products.CPSGeo.ogclib.wms import WMSCapabilitiesReader
 
-class Reader111TestCase(unittest.TestCase):
+class Reader111TestCaseBase(unittest.TestCase):
 
     def setUp(self):
         self._version = '1.1.1'
-        self._url = 'http://wms.jpl.nasa.gov/wms.cgi'
         self._reader = WMSCapabilitiesReader(self._version)
-        self._cap = self._reader.read(self._url)
 
     def test_getroot(self):
         self.assertEqual(self._cap.getroot().tag, 'WMT_MS_Capabilities')
@@ -78,10 +76,26 @@ class Reader111TestCase(unittest.TestCase):
               'Digital Elevation Map of the United States, DTED dataset, '
               '3 second resolution, hue mapped')
             )
-        
+
+class Reader111TestCase01(Reader111TestCaseBase):
+
+    def setUp(self):
+        Reader111TestCaseBase.setUp(self)
+        self._url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._cap = self._reader.read(self._url)
+
+class Reader111TestCase02(Reader111TestCaseBase):
+
+    def setUp(self):
+        Reader111TestCaseBase.setUp(self)
+        self._service_url = 'http://wms.jpl.nasa.gov/wms.cgi?service=WMS&version=%s&request=GetCapabilities'
+        self._cap = self._reader.read(self._service_url)
+                
 def test_suite():
-    loader = unittest.TestLoader()
-    return loader.loadTestsFromTestCase(Reader111TestCase)
+    suite = unittest.TestSuite()
+    suite.addTest(unittest.makeSuite(Reader111TestCase01))
+    suite.addTest(unittest.makeSuite(Reader111TestCase02))
+    return suite
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')    

@@ -82,7 +82,16 @@ class Map(PortalContent):
         """Return capabilities URL"""
         reader = wms.WMSCapabilitiesReader('1.1.1')
         return reader.capabilities_url(self.url)
-        
+
+    security.declareProtected(View, 'getGeoRSSModel')
+    def getGeoRSSModel(self, ):
+        """Return a GeoRSS model for mapbuilder
+        """
+        REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        return brainsToGeoRSS(self.title, self.absolute_url(),
+                              self.getContent().results)
+
+
     security.declareProtected(View, 'mapContext')
     def mapContext(self, REQUEST=None):
         """Return a 1.0 Web Map Context document for use with mapbuilder"""

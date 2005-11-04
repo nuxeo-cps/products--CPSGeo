@@ -141,7 +141,7 @@ Default <em>size</em> and <em>bounds</em> presume a map <em>srs</em> of EPSG:432
     <tr>
       <td align="left" valign="top">
         <div class="form-label">
-        default layers
+        visible layers
         </div>
       </td>
       <td align="left" valign="top">
@@ -154,7 +154,7 @@ Default <em>size</em> and <em>bounds</em> presume a map <em>srs</em> of EPSG:432
       </td>
       <td align="left" valign="top">
         <div class="form-help">
-        Selected layers will be activated in the initial map view
+        Selected layers will be visible in the map view
         </div>
       </td>
     </tr>

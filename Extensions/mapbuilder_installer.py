@@ -65,6 +65,14 @@ def install_lib(self):
     orig = getattr(mb_lib.widget, 'ZoomOut.js')
     orig.manage_edit(data=patched_content, title='')
 
+    # Remove the javascript alert when a document geolocated tried to
+    # be rendered on restricted map.
+    partchfile = open(os.path.join(mb_dir, 'mapbuilder-patches',
+                                   'Proj.js'), 'r')
+    patched_content = patchfile.read()
+    orig = getattr(mb_lib.model, 'Proj.js')
+    orig.manage_edit(data=patched_content, title='')
+
     # Now, add all cps document icons from Products/CPSDocuments/skins/
     # to the mapbuilder default skin folder
     icon_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',

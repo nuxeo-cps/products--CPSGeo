@@ -15,7 +15,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 #
-# $Id: $
+# $Id$
 
 """Map Tool For CPS
 """
@@ -101,11 +101,8 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     #
 
     manage_options = ActionProviderBase.manage_options + \
-                     ({'label': "Geo Location View",
-                       'action': 'manage_geoLocationView',
-                       },
-                      {'label': "Geo Location Edit",
-                       'action': 'manage_geoLocationEdit',
+                     ({'label': "Map browser",
+                       'action': 'manage_mapbrowserView',
                        },
                       ) + \
                       CMFBTreeFolder.manage_options
@@ -115,14 +112,9 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
                                          __name__='manage_addMapForm')
 
     security.declareProtected(ManagePortal, 'manage_geoLocationView')
-    manage_geoLocationView = PageTemplateFile(
-        'skins/cpsgeo_standalone/geo_location_view.pt', globals(),
-        __name__='manage_geoLocationView')
-
-    security.declareProtected(ManagePortal, 'manage_geoLocationEdit')
-    manage_geoLocationEdit = PageTemplateFile(
-        'skins/cpsgeo_standalone/geo_location_edit.pt', globals(),
-        __name__='manage_geoLocationEdit')
+    manage_mapbrowserView = PageTemplateFile(
+        'skins/cpsgeo_standalone/mapbrowser_view.pt', globals(),
+        __name__='manage_mapbrowserView')
 
     security.declareProtected(ManagePortal, 'manage_addMap')
     def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],

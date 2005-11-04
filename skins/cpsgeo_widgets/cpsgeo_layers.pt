@@ -1,3 +1,5 @@
 <metal:block define-macro="layers">
-  <div><div id="legend"/></div>
+  <div>
+    <div id="legend" style="width: 200px; height: 400px; overflow: scroll;" />
+  </div>
 </metal:block>

@@ -13,7 +13,7 @@ for id_, map_ in maptool.items():
             + ' -- ' \
             + getattr(map_, 'name', '') \
             + ' ( ' \
-            + getattr(map_, 'url', 'UNKNOWN') \
+            + getattr(map_, 'title', 'UNKNOWN') \
             +  ' ) '
     returned.append((id_, label))
 

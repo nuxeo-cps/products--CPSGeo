@@ -11,7 +11,7 @@
 
     function switch_map()
     {
-        box = document.getElementById("cpsgeo_map_selector");
+        box = document.getElementById("map_selector").map;
         modelurl = box.options[box.selectedIndex].value;
         if (modelurl) config.loadModel("mainMap", modelurl);
     }
@@ -32,16 +32,9 @@
 <body onload="mbDoLoad()">
 <tal:zmi_header define="mtool nocall:here/portal_maps"
 		replace="structure mtool/manage_tabs"/>
+
 <!-- Map selector form -->
-<div style="padding:10px">
-Select base map
-    <select id="cpsgeo_map_selector" name="map" onChange="switch_map()">
-    <option value=''>--- Choose Map ---</option>
-    <div tal:repeat="map here/portal_maps/mapContexts">
-    <option tal:attributes="value map/path" tal:content="map/title">TITLE</option>
-    </div>
-    </select>
-</div>
+<metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
 
 <table>
     <tr>

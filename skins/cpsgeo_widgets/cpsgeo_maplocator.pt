@@ -1,0 +1,3 @@
+<metal:block define-macro="maplocator">
+  <div><div id="locatorMap"/></div>
+</metal:block>

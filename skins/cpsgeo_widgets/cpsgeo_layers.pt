@@ -1,0 +1,3 @@
+<metal:block define-macro="layers">
+  <div><div id="legend"/></div>
+</metal:block>

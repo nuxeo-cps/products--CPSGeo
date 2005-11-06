@@ -1,34 +1,51 @@
+# -*- coding: ISO-8859-15 -*-
+# Copyright (c) 2005 Nuxeo SARL <http://nuxeo.com>
+# Author : Julien Anguenot <ja@nuxeo.com>
 
-import os, sys
-if __name__ == '__main__':
-    execfile(os.path.join(sys.path[0], 'framework.py'))
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+# $Id: CPSPortlet.py 26680 2005-09-09 14:22:18Z janguenot $
+
+import os
+import sys
 
 import unittest
-#from Testing import ZopeTestCase
 import CPSGeoTestCase
-
-from Products.CPSGeo.Extensions.install import install as install_cpsgeo
-from Products.CPSGeo import Map
 
 class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
     def afterSetUp(self):
         self.login('manager')
-        install_cpsgeo(self.portal)        
+        self._mtool = self.portal.portal_maps
 
     def beforeTearDown(self):
         self.logout()
 
     def testMapTool(self):
-        mt = self.portal.portal_maps
-        self.assertEquals(mt.meta_type, 'CPS Map Tool')
-       
+        self.assertEquals(self._mtool.meta_type, 'CPS Map Tool')
+
     def testAddMap(self):
-        mt = self.portal.portal_maps
+
+        id_ = 'map1'
         url = 'http://wms.jpl.nasa.gov/wms.cgi'
-        mt.manage_addMap('map1', url)
-        self.assertEquals(mt.mapContexts(), [{'id': 'map1', 'title': 'JPL World Map Service', 'path': 'portal_maps/map1/mapContext'}])
-        map1 = getattr(mt, 'map1')
+        self._createMap(id_, url)
+
+        self.assertEquals(self._mtool.mapContexts(),
+                          [{'id': 'map1',
+                            'title': 'JPL World Map Service',
+                            'path': 'portal_maps/map1/mapContext'}])
+        map1 = getattr(self._mtool, 'map1')
         self.assertEquals(map1.name, 'OGC:WMS')
         self.assertEquals(map1.title, 'JPL World Map Service')
         map1.srs = 'EPSG:4326'
@@ -36,32 +53,51 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         map1.bounds = (-120,25,-80,55)
         map1.size = (400,300)
         map1.visible_layers = ('global_mosaic',)
-        xml = mt.map1.mapContext()
+        xml = self._mtool.map1.mapContext()
         f = open('testAddMap.xml', 'w')
         f.write(xml)
         f.close()
         os.system('rm -f testAddMap.xml')
-        
-##    def testAddMapLenny(self):
-##        mt = self.portal.portal_maps
-##        url = 'http://lenny/cgi-bin/mapserv?map=/home/sean/sggs/jobs/Nuxeo/maps1/CPSGeo/printing/cpsgeo_print.map&'
-##        mt.manage_addMap('map2', url)
-##        self.assertEquals(mt.mapContexts(), [{'id': 'map2', 'title': 'MapServer Map', 'path': '/portal/portal_maps/map2/mapContext'}])
-##        map2 = getattr(mt, 'map2')
-##        self.assertEquals(map2.name, 'OGC:WMS')
-##        self.assertEquals(map2.title, 'MapServer Map')
-##        map2.srs = 'EPSG:4326'
-##        map2.format = 'image/png'
-##        map2.bounds = (-120,25,-80,55)
-##        map2.size = (400,300)
-##        map2.visible_layers = ('world',)
-##        xml = mt.map2.mapContext()
-##        f = open('testAddMapLenny.xml', 'w')
-##        f.write(xml)
-##        f.close()
 
-       
+    def test_mapVocabularyNoKey(self):
+
+        maps = self.portal.getAllMapIds()
+        self.assert_(not maps)
+
+        id_ = 'map1'
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._createMap(id_, url)
+
+        maps = self.portal.getAllMapIds()
+        self.assertEqual(len(maps), 1)
+        map_ = self._mtool.map1
+
+        self.assertEqual(maps[0][0], 'map1')
+        self.assertEqual(maps[0][1], 'map1 ( %s ) '%map_.title)
+    
+    def test_mapVocabularyKey(self):
+
+        maps = self.portal.getAllMapIds()
+        self.assert_(not maps)
+
+        id_ = 'map1'
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._createMap(id_, url)
+        
+        map_info_ = self.portal.getAllMapIds('map1')
+        self.assertEqual(map_info_, 'map1 ( %s ) '%map_.title)
+        
+    #
+    # PRIVATE
+    #
+
+    def _createMap(self, id_, url, **kw):
+        return self._mtool.manage_addMap(id=id_, url=url)        
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(MapTest))
     return suite
+
+if __name__ == '__main__':
+    execfile(os.path.join(sys.path[0], 'framework.py'))

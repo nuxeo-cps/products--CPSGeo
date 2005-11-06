@@ -10,8 +10,6 @@ maptool = context.portal_maps
 returned = []
 for id_, map_ in maptool.items():
     label = id_ \
-            + ' -- ' \
-            + getattr(map_, 'name', '') \
             + ' ( ' \
             + getattr(map_, 'title', 'UNKNOWN') \
             +  ' ) '
@@ -20,6 +18,6 @@ for id_, map_ in maptool.items():
 if key is not None:
     for each in returned:
         if each[0] == key:
-            return each[0]
+            return each[1]
 
 return returned

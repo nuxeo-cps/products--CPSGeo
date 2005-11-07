@@ -129,9 +129,6 @@ class MapContext:
 
         return layerlist
 
-    def _getOnlineRessource(self):
-        
-
     def __call__(self):
         """Export self._map to WMC
         """

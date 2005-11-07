@@ -47,12 +47,11 @@ class MapTest(unittest.TestCase):
         m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
                 srs='EPSG:4326', layers=['global_mosaic'])
         wmc = m.mapContext()
-        self.assert_(
-            wmc.find('<?xml version="1.0" encoding="utf-8"?><wmc:ViewContext') == 0, wmc)
-        f = open('context.xml', 'w')
+
+        f = open('/tmp/context.xml', 'w')
         f.write(wmc)
         f.close()
-        os.system('rm -f context.xml')
+        os.system('rm -f /tmp/context.xml')
 
         expected_path = os.path.join(
             self._this_directory,

@@ -3,14 +3,11 @@
 		   maptool nocall:here/portal_maps;
 		   map_context python:maptool.mapContextFor(map_id)
 		   ">
-
 <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
-
-  <table>
+<table>
   <tr>
     <td valign="top" style="padding:10px">
-      <div><div id="locatorMap"/></div>
-      <div><div id="legend"/></div>
+      <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" />
     </td>
     <td valign="top">
       <table width="100%">

@@ -36,13 +36,13 @@ class Map(PortalContent):
     """Map
 
     Defines a set of cartographic layers from an external web map service,
-    and the default screen size and spatial bounding box. 
+    and the default screen size and spatial bounding box.
     """
 
     meta_type = portal_type = 'CPS Cartographic Map'
-   
+
     security = ClassSecurityInfo()
-    
+
     def __init__(self, id, url, name=None, title=None, size=(),
                  bounds=(), srs=None, format=None, layers=[]):
         """Initialize"""
@@ -71,12 +71,12 @@ class Map(PortalContent):
             return self.title
         else:
             return ''.join(self.title[:max_length])
-       
+
     def _readCapabilities(self):
         # Make a WMS capabilities request
         reader = wms.WMSCapabilitiesReader('1.1.1')
         return reader.read(self.url)
-   
+
     security.declareProtected(View, 'getCapabilitiesURL')
     def getCapabilitiesUrl(self):
         """Return capabilities URL"""
@@ -146,10 +146,3 @@ class Map(PortalContent):
                                           __name__='manage_editMapForm')
 
 InitializeClass(Map)
-
-def initialize(context):
-    context.registerClass(Map, 
-                          constructors = (manage_addMapForm, addMap),
-                          icon = 'map_context.png')
-
-

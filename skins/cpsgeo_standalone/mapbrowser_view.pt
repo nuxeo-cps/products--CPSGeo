@@ -1,67 +1,49 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html tal:define="mb_dir here/getBaseUrl">
-<head>
-<title>CPSGeo Map Widget Demo</title>
-<link rel="stylesheet" type="text/css" media="all"
-        title="CPSDefault styles" href="/cps/default.css" />
-<script>
-    // URL of Mapbuilder configuration file.
-    var mbConfigUrl='geo_edit_config.xml';    
-
-    // Work with the "map_selector" form in the body
-    function switch_map()
-    {
-        var box = document.forms[0].map;
-        var modelurl = box.options[box.selectedIndex].value;
-        if (modelurl) config.loadModel('mainMap', modelurl);
-    }
-
-    function submit_location()
-    {
-        var pos = document.getElementById("doc_location").pos_list.value;
-        var field = opener.document.forms[2].widget__pos_list.value = pos;
-        window.close();
-    }
-</script>
-<script type="text/javascript" tal:attributes="src string:${mb_dir}mapbuilder/lib/Mapbuilder.js"></script>
-</head>
-<body onload="mbDoLoad()">
-
-<tal:zmi_header define="mtool nocall:here/portal_maps"
-		replace="structure mtool/manage_tabs"/>
-
-<metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
-
-<table>
-  <tr>
-    <td valign="top" style="padding:10px">
-      <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" />
-      <metal:block use-macro="here/cpsgeo_layers/macros/layers" />
-    </td>
-    <td valign="top"> <table width="100%">
-      <tr> 
-	<td align="center" valign="top"> <table>
-	  <tr> 
-	    <td colspan="3"> <div id="mainMapPane"/>
-	    <div id="loading"> 
-	      <p>Loading Program<br/>
-	      <img tal:attributes="src string:{$mb_dir}mapbuilder/lib/skin/default/images/Loading.gif"/> 
-	      </p>
-	    </div>
-	    </td>
-	  </tr>
-	  <tr> 
-	    <td align="left"> <div id="mainButtonBar"/></td>
-	    <td align="center" id="mapScaleText" />&nbsp;
-	    <td align="right" id="cursorTrack" />&nbsp;
-	  </tr>
-	</table>
+<html>
+  <head>
+    <title>CPSGeo Map Browser</title>
+    <script type="text/javascript" src="cps_geo_common.js"
+	    tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"/>
+    <script type="text/javascript"
+	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"/>
+  </head>
+  <body onload="mbDoLoad()">
+    <tal:zmi_header define="mtool nocall:here/portal_maps"
+		    replace="structure mtool/manage_tabs"/>
+    <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
+    <table>
+      <tr>
+	<td valign="top" style="padding:10px">
+	  <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" />
+	  <metal:block use-macro="here/cpsgeo_layers/macros/layers" />
+	</td>
+	<td valign="top"> 
+	  <table width="100%">
+	    <tr>
+	      <td align="center" valign="top">
+		<table>
+		  <tr>
+		    <td colspan="3">
+		      <div id="mainMapPane"/>
+		      <div id="loading">
+			<p>Loading Program<br/>
+			<img tal:attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif"/>
+			</p>
+		      </div>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td align="left"> <div id="mainButtonBar"/></td>
+		    <td align="center" id="mapScaleText" />&nbsp;
+		    <td align="right" id="cursorTrack" />&nbsp;
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
 	</td>
       </tr>
     </table>
-    </td>
-  </tr>
-</table>
-</body>
+  </body>
 </html>
 

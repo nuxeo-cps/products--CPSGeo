@@ -67,7 +67,7 @@ def install_lib(self):
 
     # Remove the javascript alert when a document geolocated tried to
     # be rendered on restricted map.
-    partchfile = open(os.path.join(mb_dir, 'mapbuilder-patches',
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches',
                                    'Proj.js'), 'r')
     patched_content = patchfile.read()
     orig = getattr(mb_lib.model, 'Proj.js')

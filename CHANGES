@@ -7,17 +7,19 @@ New features:
 created.
 - Add zmi tabs and breadcrumbs on the geo view in ZMI
 - Restrict the title of the maps to 30 chars.
-- Global actions for Manager to browser maps.
+- Global actions for Manager to browse server maps.
 Bug fixes:
 ~~~~~~~~~~
 - MapBuilder patch : don't send js popups when the coordinates are out
 of the map's range.
 - Don't display the maps urls, that could be really long, when adding
 a Map Document. It avoids broken pages
+- Avoid js popups when useless.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Fix security on MapTool and Map
 - Aggregates all layers define within the `visible` map property and
 send this to the server at once.
+- widgets refactoring and cleanups
 - more tests
 

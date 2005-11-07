@@ -1,4 +1,33 @@
 *******************************************
+** CPSGeo V0.3.0 [R1 build 2005/11/07-03:46 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29038
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Allow to change / refresh the url of a map after the map has been
+created.
+- Add zmi tabs and breadcrumbs on the geo view in ZMI
+- Restrict the title of the maps to 30 chars.
+- Global actions for Manager to browse server maps.
+Bug fixes:
+~~~~~~~~~~
+- MapBuilder patch : don't send js popups when the coordinates are out
+of the map's range.
+- Don't display the maps urls, that could be really long, when adding
+a Map Document. It avoids broken pages
+- Avoid js popups when useless.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Fix security on MapTool and Map
+- Aggregates all layers define within the `visible` map property and
+send this to the server at once.
+- widgets refactoring and cleanups
+- more tests
+
+
+*******************************************
 ** CPSGeo V0.2.0 [R1 build 2005/10/11-02:36 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 28120
 Requires:

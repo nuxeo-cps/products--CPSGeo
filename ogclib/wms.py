@@ -48,7 +48,6 @@ class WMSError(Exception):
 
     def toxml(self):
         """Serialize into a WMS Service Exception XML"""
-        from elementtree.ElementTree import Element, tostring
         preamble = '<?xml version="1.0" ?>'
         report_elem = Element('ServiceExceptionReport')
         report_elem.attrib['version'] = '1.1.1'
@@ -67,7 +66,6 @@ class WebMapService:
         top = Element('a')
         top.text = self.getName()
         return tostring(top)
-
 
 class WMSCapabilitiesInfoset:
 
@@ -116,7 +114,19 @@ class WMSCapabilitiesInfoset:
         for n in self._infoset.findall('Capability/Layer/Layer/Title'):
             titles = titles + (n.text,)
         return titles
-        
+
+##    def layerlegendURLs(self):
+##        legendURLs = {}
+##        for layer in self._infoset.findall('Capability/Layer/Layer/'):
+##            name = layer.find('Name').text
+##            legendURLs[name] = ''
+##            style = layer.find('Style')
+##            if style is not None:
+##                legendURL = style.find('LegendURL')
+##                if legendURL is not None:
+##                    
+##        return legendURLs
+
 class WMSCapabilitiesReader:
 
     """Read and parse capabilities document into a ElementTree infoset"""
@@ -143,5 +153,4 @@ class WMSCapabilitiesReader:
         request = self.capabilities_url(service_url)
         u = urllib.urlopen(request)
         return WMSCapabilitiesInfoset(fromstring(u.read()))
-
 

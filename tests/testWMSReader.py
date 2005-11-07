@@ -17,9 +17,14 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 # $Id$
 
+import os
 import unittest
 
+import lxml.etree
+
 from Products.CPSGeo.ogclib.wms import WMSCapabilitiesReader
+from Products.CPSGeo.ogclib.wms import WMSCapabilitiesInfoset
+from Products.CPSGeo.ogclib.wms import WMSError
 
 class Reader111TestCaseBase(unittest.TestCase):
 
@@ -90,11 +95,35 @@ class Reader111TestCase02(Reader111TestCaseBase):
         Reader111TestCaseBase.setUp(self)
         self._service_url = 'http://wms.jpl.nasa.gov/wms.cgi?service=WMS&version=%s&request=GetCapabilities'
         self._cap = self._reader.read(self._service_url)
-                
+
+class Reader111TestCase03(unittest.TestCase):
+
+    def setUp(self):
+        this_directory = os.path.split(__file__)[0]
+        filepath = os.path.join(
+            this_directory,
+            'capabilities.xml')
+        f = open(filepath, 'r')
+        self._cap = WMSCapabilitiesInfoset(lxml.etree.fromstring(f.read()))
+    
+    def test_layerlegendURLs(self):
+        legend_urls = self._cap.layerlegendURLs()
+
+class WMSErrorTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self._message = 'WMS Error'
+
+    def test_wmserror(self):
+        error = WMSError(self._message)
+        xml_ = error.toxml()
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(Reader111TestCase01))
     suite.addTest(unittest.makeSuite(Reader111TestCase02))
+##    suite.addTest(unittest.makeSuite(Reader111TestCase03))
+    suite.addTest(unittest.makeSuite(WMSErrorTestCase))
     return suite
 
 if __name__ == '__main__':

@@ -30,7 +30,7 @@ msgstr "Set location"
 #.       </h1>
 #: from ../skins/cpsgeo_standalone/cps_map_browser.pt
 msgid "header_geolocation_browser"
-msgstr "Browser maps"
+msgstr "Maps browser"
 
 #.   <h1>
 #.   	Geo-locate this document

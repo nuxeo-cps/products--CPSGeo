@@ -83,6 +83,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         id_ = 'map1'
         url = 'http://wms.jpl.nasa.gov/wms.cgi'
         self._createMap(id_, url)
+        map_ = self._mtool.map1
         
         map_info_ = self.portal.getAllMapIds('map1')
         self.assertEqual(map_info_, 'map1 ( %s ) '%map_.title)

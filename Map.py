@@ -70,7 +70,7 @@ class Map(PortalContent):
         if max_length == 0:
             return self.title
         else:
-            return ''.join(self.title[:max_length])
+            return self.title[:max_length]
 
     def _readCapabilities(self):
         # Make a WMS capabilities request

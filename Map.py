@@ -28,7 +28,7 @@ from Products.CMFCore.PortalContent import PortalContent
 from Products.CMFCore.permissions import View
 from Products.CMFCore.permissions import ManagePortal
 
-from context import mapToWebMapContext
+from ogclib import wmc
 from ogclib import wms
 
 class Map(PortalContent):
@@ -98,7 +98,7 @@ class Map(PortalContent):
         if REQUEST:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return '<?xml version="1.0" encoding="utf-8"?>' \
-               + mapToWebMapContext(self)
+               + wmc.mapToWebMapContext(self)
 
     security.declareProtected(ManagePortal, 'editMap')
     def editMap(self, url='', name='', title='', size=[], bounds=[],

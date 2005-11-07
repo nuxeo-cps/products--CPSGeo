@@ -115,17 +115,13 @@ class WMSCapabilitiesInfoset:
             titles = titles + (n.text,)
         return titles
 
-##    def layerlegendURLs(self):
-##        legendURLs = {}
-##        for layer in self._infoset.findall('Capability/Layer/Layer/'):
-##            name = layer.find('Name').text
-##            legendURLs[name] = ''
-##            style = layer.find('Style')
-##            if style is not None:
-##                legendURL = style.find('LegendURL')
-##                if legendURL is not None:
-##                    
-##        return legendURLs
+    def layerlegendURLs(self):
+        legendURLs = ()
+        for each in self._infoset.findall(
+            'Capability/Layer/Layer/Style/LegendURL/OnlineResource'):
+            href_ = each.attrib['{http://www.w3.org/1999/xlink}href']
+            legendURLs += (href_,)
+        return legendURLs
 
 class WMSCapabilitiesReader:
 

@@ -26,6 +26,7 @@ from Products.CPSGeo.Map import Map
 class MapTest(unittest.TestCase):
 
     def setUp(self):
+        self._this_directory = os.path.split(__file__)[0]
         self._url = 'http://wms.jpl.nasa.gov/wms.cgi'
 
     def test__getTitle(self):
@@ -48,10 +49,15 @@ class MapTest(unittest.TestCase):
         wmc = m.mapContext()
         self.assert_(
             wmc.find('<?xml version="1.0" encoding="utf-8"?><wmc:ViewContext') == 0, wmc)
-        f = open('testMapContext.xml', 'w')
+        f = open('context.xml', 'w')
         f.write(wmc)
         f.close()
-        os.system('rm -f testMapContext.xml')
+        os.system('rm -f context.xml')
+
+        expected_path = os.path.join(
+            self._this_directory,
+            'context.xml')
+        self.assertEqual(wmc, open(expected_path, 'r').read())
 
 def test_suite():
     suite = unittest.TestSuite()

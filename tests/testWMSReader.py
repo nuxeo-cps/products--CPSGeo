@@ -108,6 +108,9 @@ class Reader111TestCase03(unittest.TestCase):
     
     def test_layerlegendURLs(self):
         legend_urls = self._cap.layerlegendURLs()
+        self.assertEqual(len(legend_urls), 5)
+        expected = ('http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Desserte_Forrestiere&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Points_eau&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Massifs_forestiers&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Depfla&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Communes_37&format=image/png')
+        self.assertEqual(legend_urls, expected)
 
 class WMSErrorTestCase(unittest.TestCase):
 
@@ -122,7 +125,7 @@ def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(Reader111TestCase01))
     suite.addTest(unittest.makeSuite(Reader111TestCase02))
-##    suite.addTest(unittest.makeSuite(Reader111TestCase03))
+    suite.addTest(unittest.makeSuite(Reader111TestCase03))
     suite.addTest(unittest.makeSuite(WMSErrorTestCase))
     return suite
 

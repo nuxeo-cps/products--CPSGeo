@@ -20,63 +20,127 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 # $Id: CPSPortlet.py 26680 2005-09-09 14:22:18Z janguenot $
 
+"""Web Map Context (WMC)
+
+Specification can be found over there :
+https://portal.opengeospatial.org/files/?artifact_id=8618
+
+"""
+
 import lxml.etree
+
+context_ns_uri = 'http://www.opengis.net/context'
+context_schemas_uri = 'http://schemas.opengis.net/context/1.0.0/context.xsd'
 
 def WMCElement(tag):
     """WMC based element
     """
-    return lxml.etree.Element("{http://www.opengis.net/context}" + tag)
+    return lxml.etree.Element("{%s}"%context_ns_uri + tag)
+
+class MapContext:
+    """ Map Context abstraction
+
+    It uses a Map representation as input and export it as as map
+    context
+    """
+
+    def __init__(self, map_):
+        self._map = map_
+
+    def _getRootElement(self):
+        root = WMCElement('ViewContext')
+        attrs = {
+            '{http://www.w3.org/2001/XMLSchema-instance}schemaLocation':
+            context_ns_uri + ' ' + context_schemas_uri,
+            'id' : self._map.id,
+            'version' : '1.0.0',
+            }
+        for k, v in attrs.items():
+            root.attrib[k] = v
+        return root
+
+    def _getGeneralElement(self):
+        general = WMCElement('General')
+        general.append(self._getWindowElement())
+        general.append(self._getBoundingBoxElement())
+        return general
+
+    def _getWindowElement(self):
+        window = WMCElement('Window')
+        window.attrib['width'] = str(self._map.size[0])
+        window.attrib['height'] = str(self._map.size[1])
+        return window
+
+    def _getBoundingBoxElement(self):
+        bbox = WMCElement('BoundingBox')
+        bbox.attrib['SRS'] = str(self._map.srs.split()[0])
+        bbox.attrib['minx'] = str(self._map.bounds[0])
+        bbox.attrib['miny'] = str(self._map.bounds[1])
+        bbox.attrib['maxx'] = str(self._map.bounds[2])
+        bbox.attrib['maxy'] = str(self._map.bounds[3])
+        return bbox
+
+    def _getLayerListElement(self):
+        layerlist = WMCElement('LayerList')
+        layering = zip(self._map.layernames, self._map.layertitles)
+
+        # mapbuilder draws layers in bottom-top order
+        for name, title in layering:
+
+            # Layer
+            layer = WMCElement('Layer')
+            layer.attrib['queryable'] = '0'
+            layer.attrib['hidden'] = str(
+                int(name not in self._map.visible_layers))
+
+            # Server
+            server = WMCElement('Server')
+            server.attrib['service'] = 'OGC:WMS'
+            server.attrib['version'] = '1.1.1'
+            server.attrib['title'] = 'OGC:WMS'
+
+            # OnlineRessource
+            oressource = WMCElement('OnlineResource')
+            oressource.attrib[
+                '{http://www.w3.org/1999/xlink}type'] = 'simple'
+            oressource.attrib[
+                '{http://www.w3.org/1999/xlink}href'] = self._map.url
+            server.append(oressource)
+            layer.append(server)
+
+            # Name
+            e_name = WMCElement('Name')
+            e_name.text = name
+            layer.append(e_name)
+
+            # Title
+            e_title = WMCElement('Title')
+            e_title.text = title
+            layer.append(e_title)
+
+            # Format
+            formatlist = WMCElement('FormatList')
+            format = WMCElement('Format')
+            format.attrib['current'] = '1'
+            format.text = self._map.format
+            formatlist.append(format)
+            layer.append(formatlist)
+            layerlist.append(layer)
+
+        return layerlist
+
+    def _getOnlineRessource(self):
+        
+
+    def __call__(self):
+        """Export self._map to WMC
+        """
+        wmc_doc_tree = self._getRootElement()
+        wmc_doc_tree.append(self._getGeneralElement())
+        wmc_doc_tree.append(self._getLayerListElement())
+        return lxml.etree.tostring(wmc_doc_tree)
 
 def mapToWebMapContext(map):
-    """Export a Web Map Context document from a Map
+    """Helper
     """
-    e_context = WMCElement('ViewContext')
-    e_context.attrib['{http://www.w3.org/2001/XMLSchema-instance}schemaLocation'] = 'http://www.opengis.net/context http://schemas.opengis.net/context/1.0.0/context.xsd'
-    e_context.attrib['id'] = map.id
-    e_context.attrib['version'] = '1.0.0'
-    e_general = WMCElement('General')
-    e_window = WMCElement('Window')
-    e_window.attrib['width'] = str(map.size[0])
-    e_window.attrib['height'] = str(map.size[1])
-    e_general.append(e_window)
-    e_bbox = WMCElement('BoundingBox')
-    e_bbox.attrib['SRS'] = str(map.srs.split()[0])
-    e_bbox.attrib['minx'] = str(map.bounds[0])
-    e_bbox.attrib['miny'] = str(map.bounds[1])
-    e_bbox.attrib['maxx'] = str(map.bounds[2])
-    e_bbox.attrib['maxy'] = str(map.bounds[3])
-    e_general.append(e_bbox)
-    e_context.append(e_general)
-    e_layerlist = WMCElement('LayerList')
-    layering = zip(map.layernames, map.layertitles)
-    # mapbuilder draws layers in bottom-top order
-    for name, title in layering:
-        e_layer = WMCElement('Layer')
-        e_layer.attrib['queryable'] = '0'
-        e_layer.attrib['hidden'] = str(int(name not in map.visible_layers))
-        e_server = WMCElement('Server')
-        e_server.attrib['service'] = 'OGC:WMS'
-        e_server.attrib['version'] = '1.1.1'
-        e_server.attrib['title'] = 'OGC:WMS'
-        e_url = WMCElement('OnlineResource')
-        e_url.attrib['{http://www.w3.org/1999/xlink}type'] = 'simple'
-        e_url.attrib['{http://www.w3.org/1999/xlink}href'] = map.url
-        e_server.append(e_url)
-        e_layer.append(e_server)
-        e_name = WMCElement('Name')
-        e_name.text = name
-        e_layer.append(e_name)
-        e_title = WMCElement('Title')
-        e_title.text = title
-        e_layer.append(e_title)
-        e_formatlist = WMCElement('FormatList')
-        e_format = WMCElement('Format')
-        e_format.attrib['current'] = '1'
-        e_format.text = map.format
-        e_formatlist.append(e_format)
-        e_layer.append(e_formatlist)
-        e_layerlist.append(e_layer)
-    e_context.append(e_layerlist)
-    return lxml.etree.tostring(e_context)
-
-    
+    return MapContext(map)()

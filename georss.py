@@ -23,43 +23,33 @@
 # The georss module currently "lives" in ZCO, but may soon be split out into
 # a separate package
 
-# try to find elementtree or lxml
-try:
-    import elementtree
-    from elementtree.ElementTree import Element, SubElement
-    from elementtree.ElementTree import tostring, fromstring
-    # Monkey Patch adds to the default well known namespaces
-    elementtree.ElementTree._namespace_map.update({
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#":  "rdf", 
-        "http://purl.org/rss/1.0/":                     "rss", 
-        "http://purl.org/rss/1.0/modules/taxonomy/":    "taxo", 
-        "http://purl.org/dc/elements/1.1/":             "dc", 
-        "http://purl.org/rss/1.0/modules/syndication/": "syn", 
-        "http://www.w3.org/2003/01/geo/wgs84_pos#":     "geo"})
-except:
-    from lxml.etree import Element, SubElement, tostring, fromstring
-
+import lxml.etree
 
 # Convenience wrappers for the Element factory
 # --------------------------------------------
 def RDFElement(tag):
-    return Element("{http://www.w3.org/1999/02/22-rdf-syntax-ns#}" + tag)
+    return lxml.etree.Element(
+        "{http://www.w3.org/1999/02/22-rdf-syntax-ns#}" + tag)
 
 def RSSElement(tag):
-    return Element("{http://purl.org/rss/1.0/}" + tag)
+    return lxml.etree.Element(
+        "{http://purl.org/rss/1.0/}" + tag)
 
 def TAXOElement(tag):
-    return Element("{http://purl.org/rss/1.0/modules/taxonomy/}" +e.tag)
+    return lxml.etree.Element(
+        "{http://purl.org/rss/1.0/modules/taxonomy/}" +e.tag)
 
 def DCElement(tag):
-    return Element("{http://purl.org/dc/elements/1.1/}" + tag)
+    return lxml.etree.Element(
+        "{http://purl.org/dc/elements/1.1/}" + tag)
 
 def SYNElement(tag):
-    return Element("{http://purl.org/rss/1.0/modules/syndication/}" + tag)
-    return e
+    return lxml.etree.Element(
+        "{http://purl.org/rss/1.0/modules/syndication/}" + tag)
 
 def GEOElement(tag):
-    return Element("{http://www.w3.org/2003/01/geo/wgs84_pos#}" + tag)
+    return lxml.etree.Element(
+        "{http://www.w3.org/2003/01/geo/wgs84_pos#}" + tag)
 
 
 def brainsToGeoRSS(title, about, brains):
@@ -129,5 +119,5 @@ def brainsToGeoRSS(title, about, brains):
           rdf.append(item)
 
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' \
-           + tostring(rdf)
+           + lxml.etree.tostring(rdf)
 

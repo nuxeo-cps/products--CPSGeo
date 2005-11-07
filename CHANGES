@@ -1,12 +1,13 @@
 Requires:
 ~~~~~~~~~
--
+- lxml > 0.7
 New features:
 ~~~~~~~~~~~~~
--
+- back to mutliple layers on UI side.
+- remove elementtree compatibility
 Bug fixes:
 ~~~~~~~~~~
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- 

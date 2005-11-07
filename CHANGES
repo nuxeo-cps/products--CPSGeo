@@ -7,6 +7,7 @@ New features:
 created.
 - Add zmi tabs and breadcrumbs on the geo view in ZMI
 - Restrict the title of the maps to 30 chars.
+- Global actions for Manager to browser maps.
 Bug fixes:
 ~~~~~~~~~~
 - MapBuilder patch : don't send js popups when the coordinates are out

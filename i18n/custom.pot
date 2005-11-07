@@ -66,3 +66,6 @@ msgstr ""
 
 msgid "label_nb_items"
 msgstr ""
+
+msgid "header_geolocation_browser"
+msgstr ""

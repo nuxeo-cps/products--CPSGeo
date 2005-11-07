@@ -111,7 +111,7 @@ class CPSGeoInstaller(CPSInstaller):
         self.portal['portal_maps'].addAction(
             id='cps_map_server',
             name='action_cps_map_server',
-            action='string:${portal_url}/portal_maps/cps_map_server',
+            action='string:${portal_url}/cps_map_browser',
             condition="",
             permission=(ManagePortal,),
             category='global',

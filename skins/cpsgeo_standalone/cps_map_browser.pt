@@ -12,11 +12,16 @@
     </h1>
   </metal:block>
   <metal:block fill-slot="main">
-    <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
+    <div>
+      <div align="right">
+	<metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
+      </div>
+    </div>
     <table>
       <tr>
 	<td valign="top" style="padding:10px">
 	  <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" />
+	  <metal:block use-macro="here/cpsgeo_layers/macros/layers" />
 	</td>
 	<td valign="top"> 
 	  <table width="100%">

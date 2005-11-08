@@ -60,6 +60,7 @@ class Map(PortalContent):
         self.srs = srs
         self.format = format
         self.visible_layers = tuple(layers)
+        self.layer_infos = cap.getLayerInfo()
 
     def _getTitle(self, max_length=0):
         """Return a the title of the map
@@ -90,8 +91,7 @@ class Map(PortalContent):
         REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(),
                               self.getContent().results)
-
-
+    
     security.declareProtected(View, 'mapContext')
     def mapContext(self, REQUEST=None):
         """Return a 1.0 Web Map Context document for use with mapbuilder"""
@@ -99,6 +99,13 @@ class Map(PortalContent):
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return '<?xml version="1.0" encoding="utf-8"?>' \
                + wmc.mapToWebMapContext(self)
+
+    security.declareProtected(View, 'getLayerInfos')
+    def getLayerInfos(self):
+        if not hasattr(self, 'layer_infos'):
+            cap = self._readCapabilities()
+            self.layer_infos = cap.getLayerInfo()
+        return self.layer_infos
 
     security.declareProtected(ManagePortal, 'editMap')
     def editMap(self, url='', name='', title='', size=[], bounds=[],

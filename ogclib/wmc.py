@@ -83,6 +83,7 @@ class MapContext:
     def _getLayerListElement(self):
         layerlist = WMCElement('LayerList')
         layering = zip(self._map.layernames, self._map.layertitles)
+        layer_infos = self._map.getLayerInfos()
 
         # mapbuilder draws layers in bottom-top order
         for name, title in layering:
@@ -92,6 +93,13 @@ class MapContext:
             layer.attrib['queryable'] = '0'
             layer.attrib['hidden'] = str(
                 int(name not in self._map.visible_layers))
+
+            # Layer style
+            if layer_infos and layer_infos.get(title):
+                stylelist = WMCElement('StyleList')
+                style = layer_infos.get(title)[0]
+                stylelist.append(style)
+                layer.append(stylelist)
 
             # Server
             server = WMCElement('Server')

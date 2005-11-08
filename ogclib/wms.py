@@ -101,13 +101,12 @@ class WMSCapabilitiesInfoset:
             titles = titles + (n.text,)
         return titles
 
-    def layerlegendURLs(self):
-        legendURLs = ()
-        for each in self._infoset.findall(
-            'Capability/Layer/Layer/Style/LegendURL/OnlineResource'):
-            href_ = each.attrib['{http://www.w3.org/1999/xlink}href']
-            legendURLs += (href_,)
-        return legendURLs
+    def getLayerInfo(self):
+        info = {}
+        for layer in self._infoset.findall('Capability/Layer/Layer'):
+            if layer.findall('Title'):
+                info[layer.findall('Title')[0].text] = layer.findall('Style')
+        return info
 
 class WMSCapabilitiesReader:
     """Read and parse capabilities document into a lxml.etree infoset
@@ -121,6 +120,8 @@ class WMSCapabilitiesReader:
     def capabilities_url(self, service_url):
         """Return a capabilities url
         """
+        # XXX it can be a problem if we need to specify the map as a
+        # parameter
         if service_url.find('?') < 0:
             return '%s?service=WMS&version=%s&request=GetCapabilities' \
                     % (service_url, self.version)

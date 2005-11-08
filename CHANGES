@@ -5,6 +5,8 @@ New features:
 ~~~~~~~~~~~~~
 - back to mutliple layers on UI side.
 - remove elementtree compatibility
+- Extend the map context so that it can display layer style graphic
+legend.
 Bug fixes:
 ~~~~~~~~~~
 -

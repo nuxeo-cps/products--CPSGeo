@@ -106,11 +106,26 @@ class Reader111TestCase03(unittest.TestCase):
         f = open(filepath, 'r')
         self._cap = WMSCapabilitiesInfoset(lxml.etree.fromstring(f.read()))
     
-    def test_layerlegendURLs(self):
-        legend_urls = self._cap.layerlegendURLs()
-        self.assertEqual(len(legend_urls), 5)
-        expected = ('http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Desserte_Forrestiere&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Points_eau&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Massifs_forestiers&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Depfla&format=image/png', 'http://10.201.151.183/cgi-bin/mapserv?map=/var/www/html/donnees_mapserver/stock_mapfiles/exemple037.map&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=Communes_37&format=image/png')
-        self.assertEqual(legend_urls, expected)
+    def test_layerInfo(self):
+
+        info = self._cap.getLayerInfo()
+        self.assertEqual(len(info.keys()), 6)
+
+        titles = info.keys()
+        titles.sort()
+
+        expected = ['wms.Desserte_Forrestiere',
+                    'wms.scan25_037',
+                    'wms.Points_eau',
+                    'wms.Massifs_forestiers',
+                    'wms.Depfla',
+                    'wms.Communes_37']
+        expected.sort()
+        self.assertEqual(titles, expected)
+                                 
+        self.assertEqual(len(info.values()), 6)
+        styles = [x[0] for x in info.values() if x]
+        self.assertEqual(len(styles), 5)
 
 class WMSErrorTestCase(unittest.TestCase):
 

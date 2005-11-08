@@ -60,7 +60,6 @@ class Map(PortalContent):
         self.srs = srs
         self.format = format
         self.visible_layers = tuple(layers)
-        self.layer_infos = cap.getLayerInfo()
 
     def _getTitle(self, max_length=0):
         """Return a the title of the map
@@ -102,10 +101,8 @@ class Map(PortalContent):
 
     security.declareProtected(View, 'getLayerInfos')
     def getLayerInfos(self):
-        if not hasattr(self, 'layer_infos'):
-            cap = self._readCapabilities()
-            self.layer_infos = cap.getLayerInfo()
-        return self.layer_infos
+        cap = self._readCapabilities()
+        return cap.getLayerInfo()
 
     security.declareProtected(ManagePortal, 'editMap')
     def editMap(self, url='', name='', title='', size=[], bounds=[],

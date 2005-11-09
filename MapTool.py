@@ -100,12 +100,16 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     # ZMI
     #
 
-    manage_options = ActionProviderBase.manage_options + \
-                     ({'label': "Map browser",
-                       'action': 'manage_mapbrowserView',
-                       },
-                      ) + \
-                      CMFBTreeFolder.manage_options
+    manage_options = (
+        CMFBTreeFolder.manage_options[0],
+        ) + \
+        ActionProviderBase.manage_options + \
+        ({'label': "Map browser",
+          'action': 'manage_mapbrowserView',
+          },
+         ) + \
+         CMFBTreeFolder.manage_options[1:]
+
 
     security.declareProtected(ManagePortal, 'manage_addMapForm')
     manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', globals(),

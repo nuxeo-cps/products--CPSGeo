@@ -13,6 +13,11 @@
           var modelurl = box.options[box.selectedIndex].value;
           if (modelurl) config.loadModel('mainMap', modelurl);
       }
+      // XXX Quick hack !
+      function refresh_map() {
+          alert("Si les documents n'apparaissent pas sur la carte il vous faudra actualiser la carte");
+          config.objects.reset.select();
+      }	
       </script>
 
       <script type="text/javascript" src="cpsgeo.js" 

@@ -24,5 +24,5 @@ if request.has_key('URL'):
         URL.endswith('cps_geolocation_form') or
         URL.endswith('cps_map_browser')
         ):
-        return 'mbDoLoad(); switch_map()'
+        return 'mbDoLoad(); switch_map(); refresh_map()'
 return ''

@@ -1,4 +1,25 @@
 *******************************************
+** CPSGeo V0.4.0 [R1 build 2005/11/09-07:13 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29376
+Requires:
+~~~~~~~~~
+- lxml >= 0.8
+New features:
+~~~~~~~~~~~~~
+- back to mutliple layers on UI side.
+- Extend the map context so that it can display layer style graphic
+legends.
+- Better errors returned to user in ZMI when the url for a map is incorrect
+- Map Document (UI) : edit form allows user to define which graphic
+elements they want on the rendering.
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Better capability requests handler
+
+*******************************************
 ** CPSGeo V0.3.0 [R1 build 2005/11/07-03:46 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29038
 Requires:

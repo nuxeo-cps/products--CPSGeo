@@ -16,6 +16,21 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 # $Id: CPSPortlet.py 26680 2005-09-09 14:22:18Z janguenot $
 
+# We suppport both for now. lxml has a lot of problems running on old
+# platforms
+try:
+    import elementtree.ElementTree as etree
+    # Monkey Patch adds to the default well known namespaces
+    etree._namespace_map.update({
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#":  "rdf", 
+        "http://purl.org/rss/1.0/":                     "rss", 
+        "http://purl.org/rss/1.0/modules/taxonomy/":    "taxo", 
+        "http://purl.org/dc/elements/1.1/":             "dc", 
+        "http://purl.org/rss/1.0/modules/syndication/": "syn", 
+        "http://www.w3.org/2003/01/geo/wgs84_pos#":     "geo"})
+except ImportError:
+    import lxml.etree as etree
+
 from Products.CMFCore import utils
 from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.DirectoryView import registerDirectory

@@ -20,7 +20,7 @@
 import os
 import unittest
 
-import lxml.etree
+from Products.CPSGeo import etree
 
 from Products.CPSGeo.ogclib.wms import WMSCapabilitiesReader
 from Products.CPSGeo.ogclib.wms import WMSCapabilitiesInfoset
@@ -104,7 +104,7 @@ class Reader111TestCase03(unittest.TestCase):
             this_directory,
             'capabilities.xml')
         f = open(filepath, 'r')
-        self._cap = WMSCapabilitiesInfoset(lxml.etree.fromstring(f.read()))
+        self._cap = WMSCapabilitiesInfoset(etree.fromstring(f.read()))
     
     def test_layerInfo(self):
 

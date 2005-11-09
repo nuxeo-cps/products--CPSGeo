@@ -27,7 +27,7 @@ https://portal.opengeospatial.org/files/?artifact_id=8618
 
 """
 
-import lxml.etree
+from Products.CPSGeo import etree
 
 context_ns_uri = 'http://www.opengis.net/context'
 context_schemas_uri = 'http://schemas.opengis.net/context/1.0.0/context.xsd'
@@ -35,7 +35,7 @@ context_schemas_uri = 'http://schemas.opengis.net/context/1.0.0/context.xsd'
 def WMCElement(tag):
     """WMC based element
     """
-    return lxml.etree.Element("{%s}"%context_ns_uri + tag)
+    return etree.Element("{%s}"%context_ns_uri + tag)
 
 class MapContext:
     """ Map Context abstraction
@@ -143,7 +143,7 @@ class MapContext:
         wmc_doc_tree = self._getRootElement()
         wmc_doc_tree.append(self._getGeneralElement())
         wmc_doc_tree.append(self._getLayerListElement())
-        return lxml.etree.tostring(wmc_doc_tree)
+        return etree.tostring(wmc_doc_tree)
 
 def mapToWebMapContext(map):
     """Helper

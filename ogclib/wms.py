@@ -22,7 +22,7 @@
 
 import cgi
 import urllib
-import lxml.etree
+from Products.CPSGeo import etree
 
 class WMSError(Exception):
     """Base class for WMS module errors
@@ -36,13 +36,13 @@ class WMSError(Exception):
         """Serialize into a WMS Service Exception XML
         """
         preamble = '<?xml version="1.0" ?>'
-        report_elem = lxml.etree.Element('ServiceExceptionReport')
+        report_elem = etree.Element('ServiceExceptionReport')
         report_elem.attrib['version'] = '1.1.1'
         # Service Exception
-        exception_elem = lxml.etree.Element('ServiceException')
+        exception_elem = etree.Element('ServiceException')
         exception_elem.text = self.message
         report_elem.append(exception_elem)
-        return preamble + lxml.etree.tostring(report_elem)
+        return preamble + etree.tostring(report_elem)
 
 class WebMapService:
     """x
@@ -50,9 +50,9 @@ class WebMapService:
     def capabilities_xml(self):
         """x
         """
-        top = lxml.etree.Element('a')
+        top = etree.Element('a')
         top.text = self.getName()
-        return lxml.etree.tostring(top)
+        return etree.tostring(top)
 
 class WMSCapabilitiesInfoset:
     """High-level container for WMS Capabilities based on lxml.etree
@@ -147,5 +147,5 @@ class WMSCapabilitiesReader:
         request = self.capabilities_url(service_url)
         u = urllib.urlopen(request)
         return WMSCapabilitiesInfoset(
-            lxml.etree.fromstring(u.read()))
+            etree.fromstring(u.read()))
 

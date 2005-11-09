@@ -23,32 +23,32 @@
 # The georss module currently "lives" in ZCO, but may soon be split out into
 # a separate package
 
-import lxml.etree
+from Products.CPSGeo import etree
 
 # Convenience wrappers for the Element factory
 # --------------------------------------------
 def RDFElement(tag):
-    return lxml.etree.Element(
+    return etree.Element(
         "{http://www.w3.org/1999/02/22-rdf-syntax-ns#}" + tag)
 
 def RSSElement(tag):
-    return lxml.etree.Element(
+    return etree.Element(
         "{http://purl.org/rss/1.0/}" + tag)
 
 def TAXOElement(tag):
-    return lxml.etree.Element(
+    return etree.Element(
         "{http://purl.org/rss/1.0/modules/taxonomy/}" +e.tag)
 
 def DCElement(tag):
-    return lxml.etree.Element(
+    return etree.Element(
         "{http://purl.org/dc/elements/1.1/}" + tag)
 
 def SYNElement(tag):
-    return lxml.etree.Element(
+    return etree.Element(
         "{http://purl.org/rss/1.0/modules/syndication/}" + tag)
 
 def GEOElement(tag):
-    return lxml.etree.Element(
+    return etree.Element(
         "{http://www.w3.org/2003/01/geo/wgs84_pos#}" + tag)
 
 
@@ -119,5 +119,5 @@ def brainsToGeoRSS(title, about, brains):
           rdf.append(item)
 
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' \
-           + lxml.etree.tostring(rdf)
+           + etree.tostring(rdf)
 

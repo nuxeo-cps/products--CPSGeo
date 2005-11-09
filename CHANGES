@@ -4,7 +4,6 @@ Requires:
 New features:
 ~~~~~~~~~~~~~
 - back to mutliple layers on UI side.
-- remove elementtree compatibility
 - Extend the map context so that it can display layer style graphic
 legends.
 - Better errors returned to user in ZMI when the url for a map is incorrect

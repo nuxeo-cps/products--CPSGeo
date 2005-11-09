@@ -34,6 +34,10 @@ except ImportError:
 from Products.CMFCore import utils
 from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.DirectoryView import registerDirectory
+from Products.CMFCore.DirectoryView import registerFileExtension
+
+from Products.CMFCore.FSFile import FSFile
+registerFileExtension('xml', FSFile)
 
 import MapTool
 import Map

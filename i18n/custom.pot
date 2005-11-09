@@ -69,3 +69,18 @@ msgstr ""
 
 msgid "header_geolocation_browser"
 msgstr ""
+
+msgid "label_cpsgeo_hide_locator"
+msgstr ""
+
+msgid "label_cpsgeo_hide_layers"
+msgstr ""
+
+msgid "label_cpsgeo_hide_buttons"
+msgstr ""
+
+msgid "label_cpsgeo_hide_scale_box"
+msgstr ""
+
+msgid "label_cpsgeo_hide_cursor_track"
+msgstr ""

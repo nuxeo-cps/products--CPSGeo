@@ -1,3 +1,6 @@
-<metal:block define-macro="maplocator">
-  <div><div id="locatorMap"/></div>
+<metal:block define-macro="maplocator"
+	     tal:define="hide_locator here/hide_locator|python:False">
+  <div>
+    <div id="locatorMap" style="visibility:hidden" />
+  </div>
 </metal:block>

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2005-11-07 04:15default\n"
-"PO-Revision-Date: 2005-11-07 04:16+0100\n"
+"POT-Creation-Date: 2005-11-09 04:36default\n"
+"PO-Revision-Date: 2005-11-09 04:38+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgid "button_cpsgeo_set_location"
 msgstr "Set location"
 
 #.   <h1>
-#.   	Browser maps
+#.   	Browse maps
 #.       </h1>
 #: from ../skins/cpsgeo_standalone/cps_map_browser.pt
 msgid "header_geolocation_browser"
@@ -39,7 +39,7 @@ msgstr "Maps browser"
 msgid "header_geolocation_form"
 msgstr "Geo-locate this document"
 
-#.   <option value="">
+#.   <option condition="not:current_map_context" value="">
 #.   	--- Choose Map ---
 #.         </option>
 #: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
@@ -70,7 +70,7 @@ msgstr "Document location"
 msgid "label_cpsgeo_loading_program"
 msgstr "Loading program"
 
-#.   <span>
+#.   <span condition="not:current_map_context">
 #.       Select base map
 #.     </span>
 #: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
@@ -109,4 +109,19 @@ msgstr "Folder"
 
 msgid "label_nb_items"
 msgstr "Nb items"
+
+msgid "label_cpsgeo_hide_locator"
+msgstr "Hide the map locator on this document ?"
+
+msgid "label_cpsgeo_hide_layers"
+msgstr "Hide the map layers on this document ?"
+
+msgid "label_cpsgeo_hide_buttons"
+msgstr "Hide the map tools (zoom, drag and locate) on this document ?"
+
+msgid "label_cpsgeo_hide_scale_box"
+msgstr "Hide the map scale information on this document ?"
+
+msgid "label_cpsgeo_hide_cursor_track"
+msgstr "Hide the cursor location information on this document ?"
 

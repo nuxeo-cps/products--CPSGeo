@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2005-11-07 04:15default\n"
+"POT-Creation-Date: 2005-11-09 04:36default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -22,7 +22,7 @@ msgid "button_cpsgeo_set_location"
 msgstr ""
 
 #.   <h1>
-#.   	Browser maps
+#.   	Browse maps
 #.       </h1>
 #: from ../skins/cpsgeo_standalone/cps_map_browser.pt
 msgid "header_geolocation_browser"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "header_geolocation_form"
 msgstr ""
 
-#.   <option value="">
+#.   <option condition="not:current_map_context" value="">
 #.   	--- Choose Map ---
 #.         </option>
 #: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
@@ -66,7 +66,7 @@ msgstr ""
 msgid "label_cpsgeo_loading_program"
 msgstr ""
 
-#.   <span>
+#.   <span condition="not:current_map_context">
 #.       Select base map
 #.     </span>
 #: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
@@ -101,4 +101,19 @@ msgid "label_folder"
 msgstr ""
 
 msgid "label_nb_items"
+msgstr ""
+
+msgid "label_cpsgeo_hide_locator"
+msgstr ""
+
+msgid "label_cpsgeo_hide_layers"
+msgstr ""
+
+msgid "label_cpsgeo_hide_buttons"
+msgstr ""
+
+msgid "label_cpsgeo_hide_scale_box"
+msgstr ""
+
+msgid "label_cpsgeo_hide_cursor_track"
 msgstr ""

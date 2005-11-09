@@ -8,6 +8,8 @@ New features:
 - Extend the map context so that it can display layer style graphic
 legends.
 - Better errors returned to user in ZMI when the url for a map is incorrect
+- Map Document (UI) : edit form allows user to define which graphic
+elements they want on the rendering.
 Bug fixes:
 ~~~~~~~~~~
 -

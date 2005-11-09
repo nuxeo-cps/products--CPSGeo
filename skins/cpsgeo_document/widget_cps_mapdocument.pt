@@ -1,5 +1,10 @@
 <tal:block define="ds options/datastructure;
 		   map_id ds/map_id;
+		   global hide_locator ds/hide_locator;
+		   global hide_layers ds/hide_layers;
+		   global hide_buttons ds/hide_buttons;
+		   global hide_scale_box ds/hide_scale_box;
+		   global hide_cursor_track ds/hide_cursor_track;
 		   maptool nocall:here/portal_maps;
 		   map_context python:maptool.mapContextFor(map_id)
 		   ">
@@ -27,9 +32,18 @@
 		</td>
 	      </tr>
 	      <tr>
-		<td align="left"> <div id="mainButtonBar"/></td>
-		<td align="center" id="mapScaleText" />
-		<td align="right" id="cursorTrack" />
+		<td align="left"> 
+		  <div id="mainButtonBar" tal:condition="hide_buttons" style="visibility:hidden"/>
+		  <div id="mainButtonBar" tal:condition="not:hide_buttons"/>
+		</td>
+		<td align="center">
+		  <div id="mapScaleText" tal:condition="hide_scale_box" style="visibility:hidden"/>
+		  <div id="mapScaleText" tal:condition="not:hide_scale_box"/>
+		</td>
+		<td align="right"> 
+		  <div id="cursorTrack" tal:condition="hide_cursor_track" style="visibility:hidden"/>
+		  <div id="cursorTrack" tal:condition="not:hide_cursor_track"/>
+		</td>
 	      </tr>
 	    </table>
 	  </td>

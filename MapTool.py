@@ -23,6 +23,7 @@
 import os.path
 
 from Globals import InitializeClass
+from Globals import MessageDialog
 from AccessControl import ClassSecurityInfo
 
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
@@ -124,14 +125,24 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
                       srs=None, format=None, layers=[], REQUEST=None):
         """Add a Map to a Map tool"""
-        ob = Map(id, url, name, title, size, bounds, srs, format, layers)
-        self._setObject(id, ob)
-        if REQUEST:
-            ob = self._getOb(id)
-            REQUEST.RESPONSE.redirect(self.absolute_url() +
-                                      '/%s/manage_editMapForm' % (id))
+        try:
+            ob = Map(id, url, name, title, size, bounds, srs, format, layers)
+        except:
+            if REQUEST is not None:
+                return MessageDialog(
+                    title='Wrong URL',
+                    message='URL does not exist '
+                            'or is not a correct wms capabilities url',
+                    action='%s/manage_addMapForm' % REQUEST['URL1'])
+            return None
         else:
-            return getattr(self, id)
+            self._setObject(id, ob)
+            if REQUEST is not None:
+                ob = self._getOb(id)
+                return REQUEST.RESPONSE.redirect(
+                    self.absolute_url() + '/%s/manage_editMapForm' % (id))
+            else:
+                return getattr(self, id)
 
     def all_meta_types(self):
         return ({'name': 'CPS Cartographic Map',

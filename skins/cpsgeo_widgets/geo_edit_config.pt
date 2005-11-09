@@ -1,84 +1,94 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<MapbuilderConfig version="0.2.1" id="simpleTemplate" 
-    xmlns="http://mapbuilder.sourceforge.net/mapbuilder" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<MapbuilderConfig
+    version="0.2.1"
+    id="simpleTemplate"
+    xmlns="http://mapbuilder.sourceforge.net/mapbuilder"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tal="http://namespace.zope.org/tal"
     xsi:schemaLocation="http://mapbuilder.sourceforge.net/mapbuilder ../mapbuilder/lib/schemas/config.xsd">
-    
   <models>
     <Context id="mainMap">
-      <defaultModelUrl><dtml-var expr="portal_maps.mapContexts()[0]['path']"></defaultModelUrl>
+      <defaultModelUrl>
+	<tal:block define="mtool nocall:here/portal_maps">
+	  <span tal:replace="python:mtool.mapContexts()[0]['path']"/>
+	</tal:block>
+      </defaultModelUrl>
       <widgets>
-        <MapPane id="mainMapWidget">
-          <htmlTagId>mainMapPane</htmlTagId>
-          <mapContainerId>mainMapContainer</mapContainerId>
-        </MapPane>
-        <Loading id="loading">
-        </Loading>
-        <AoiBoxWZ id="aoiBox2">
-          <htmlTagId>mainMapPane</htmlTagId>
-          <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
+	<MapPane id="mainMapWidget">
+	  <htmlTagId>mainMapPane</htmlTagId>
+	  <mapContainerId>mainMapContainer</mapContainerId>
+	</MapPane>
+	<Loading id="loading">
+	</Loading>
+	<AoiBoxWZ id="aoiBox2">
+	  <htmlTagId>mainMapPane</htmlTagId>
+	  <stylesheet>
+	    <span tal:replace="string:${here/getBaseUrl}mapbuilder/lib/widget/GmlRenderer.xsl"/>
+	  </stylesheet>
           <lineColor>#FF0000</lineColor>
-          <lineWidth>1</lineWidth>
-          <crossSize>15</crossSize>
+	  <lineWidth>1</lineWidth>
+	  <crossSize>15</crossSize>
           <mapContainerId>mainMapContainer</mapContainerId>
-        </AoiBoxWZ>
-        <CursorTrack id="cursorTrack">
-          <mouseHandler>mainMap</mouseHandler>
+	</AoiBoxWZ>
+	<CursorTrack id="cursorTrack">
+	  <mouseHandler>mainMap</mouseHandler>
         </CursorTrack>
-        <MapScaleText id="mapScaleText"/>
+	<MapScaleText id="mapScaleText"/>
         <Legend id="contextLegend">
-          <htmlTagId>legend</htmlTagId>
-        </Legend>
+	  <htmlTagId>legend</htmlTagId>
+	</Legend>
       </widgets>
       <tools>
         <AoiMouseHandler id="mainAoi"/>
-        <DragPanHandler id="mainDragPan">
-          <enabled>false</enabled>
-        </DragPanHandler>
-        <MouseClickHandler id="mainMouseClick"/>
+	<DragPanHandler id="mainDragPan">
+	  <enabled>false</enabled>
+	</DragPanHandler>
+	<MouseClickHandler id="mainMouseClick"/>
       </tools>
     </Context>
     <Context id="locator">
       <defaultModelUrl>geo_locatorMap.xml</defaultModelUrl>
       <widgets>
-        <MapPane id="locatorMapWidget">
-          <htmlTagId>locatorMap</htmlTagId>
-          <mapContainerId>locatorContainer</mapContainerId>
-          <fixedWidth>180</fixedWidth>
-        </MapPane>
+	<MapPane id="locatorMapWidget">
+	  <htmlTagId>locatorMap</htmlTagId>
+	  <mapContainerId>locatorContainer</mapContainerId>
+	  <fixedWidth>180</fixedWidth>
+	</MapPane>
         <AoiBoxWZ id="aoiBoxLocator">
-          <htmlTagId>locatorMap</htmlTagId>
-          <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
-          <lineColor>#FF0000</lineColor>
-          <lineWidth>1</lineWidth>
-          <crossSize>15</crossSize>
-          <mapContainerId>locatorContainer</mapContainerId>
+	  <htmlTagId>locatorMap</htmlTagId>
+	  <stylesheet>
+	    <span tal:replace="string:${here/getBaseUrl}mapbuilder/lib/widget/GmlRenderer.xsl"/>
+	  </stylesheet>
+	  <lineColor>#FF0000</lineColor>
+	  <lineWidth>1</lineWidth>
+	  <crossSize>15</crossSize>
+	  <mapContainerId>locatorContainer</mapContainerId>
         </AoiBoxWZ>
       </widgets>
       <tools>
-        <AoiMouseHandler id="locatorAoi"/>
-        <ZoomToAoi id="locatorZoomToAoi">
-          <targetModel>mainMap</targetModel>
+	<AoiMouseHandler id="locatorAoi"/>
+	<ZoomToAoi id="locatorZoomToAoi">
+	  <targetModel>mainMap</targetModel>
         </ZoomToAoi>
       </tools>
     </Context>
     <FeatureCollection id="featureCollection">
       <namespace>xmlns:gml='http://www.opengis.net/gml' xmlns:wfs='http://www.opengis.net/wfs' xmlns:cps='http://www.cps-project.org/cps'</namespace>
       <widgets>
-        <GmlRendererWZ id="testGmlRenderer">
-          <htmlTagId>mainMapPane</htmlTagId>
-          <targetModel>mainMap</targetModel>
+	<GmlRendererWZ id="testGmlRenderer">
+	  <htmlTagId>mainMapPane</htmlTagId>
+	  <targetModel>mainMap</targetModel>
           <mapContainerId>mainMapContainer</mapContainerId>
-          <lineColor>#FF0000</lineColor>
-          <lineWidth>1</lineWidth>
-          <pointDiameter>10</pointDiameter>
+	  <lineColor>#FF0000</lineColor>
+	  <lineWidth>1</lineWidth>
+	  <pointDiameter>10</pointDiameter>
         </GmlRendererWZ>
-        <!--FeatureList id="featureList">
+	<!--FeatureList id="featureList">
         </FeatureList-->
-        <Widget id="docLocation">
-          <stylesheet>geo_docLocation.xsl</stylesheet>
-          <targetModel>mainMap</targetModel>
-        </Widget>
+	<Widget id="docLocation">
+	  <stylesheet>geo_docLocation.xsl</stylesheet>
+	  <targetModel>mainMap</targetModel>
+	</Widget>
       </widgets>
     </FeatureCollection>
   </models>
@@ -118,7 +128,7 @@
       <transactionResponseModel>transaction</transactionResponseModel>
       <webServiceUrl>../../../geoserver/wfs</webServiceUrl>
       <featureXpath>/gml:featureMember/cps:document/cps:location/gml:MultiPoint/gml:pointMember/gml:Point/gml:coordinates</featureXpath>
-      <defaultModelUrl>template_docLocation.xml</defaultModelUrl>
+      <defaultModelUrl>template_docLocation</defaultModelUrl>
       <targetContext>mainMap</targetContext>
     </EditPoint>
     <Reset id="reset">
@@ -128,7 +138,9 @@
       <disabledSrc>/images/ResetExtentDisable.gif</disabledSrc>
     </Reset>
   </widgets>
-  <skinDir><dtml-var getBaseUrl>mapbuilder/lib/skin/default</skinDir>
+  <skinDir>
+    <span tal:replace="string:${here/getBaseUrl}mapbuilder/lib/skin/default"/>
+  </skinDir>
   <widgetTextUrl>widgetText.xml</widgetTextUrl> <!-- relative to the skin dir -->
 </MapbuilderConfig>
 

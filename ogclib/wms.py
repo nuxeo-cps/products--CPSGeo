@@ -118,14 +118,12 @@ class WMSCapabilitiesReader:
         self.version = version
         self._infoset = None
 
-
     def capabilities_url(self, service_url):
         """Return a capabilities url
         """
-        
         qs = []
         if service_url.find('?') != -1:
-            qs = qsl(service_url.split('?')[1])
+            qs = cgi.parse_qsl(service_url.split('?')[1])
 
         params = [x[0] for x in qs]
 

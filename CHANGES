@@ -1,6 +1,6 @@
 Requires:
 ~~~~~~~~~
-- lxml > 0.7
+- lxml >= 0.8
 New features:
 ~~~~~~~~~~~~~
 - back to mutliple layers on UI side.

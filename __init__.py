@@ -36,8 +36,10 @@ from Products.CMFCore.permissions import AddPortalContent
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.DirectoryView import registerFileExtension
 
+# Register the .xml and .xslt as possible extension for the FSFile
 from Products.CMFCore.FSFile import FSFile
 registerFileExtension('xml', FSFile)
+registerFileExtension('xsl', FSFile)
 
 import MapTool
 import Map

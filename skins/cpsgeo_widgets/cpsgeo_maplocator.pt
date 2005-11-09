@@ -1,6 +1,7 @@
 <metal:block define-macro="maplocator"
 	     tal:define="hide_locator here/hide_locator|python:False">
   <div>
-    <div id="locatorMap" style="visibility:hidden" />
+    <div id="locatorMap" tal:condition="hide_locator" style="visibility:hidden" />
+    <div id="locatorMap" tal:condition="not:hide_locator"/>
   </div>
 </metal:block>

@@ -20,6 +20,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 # $Id: CPSPortlet.py 26680 2005-09-09 14:22:18Z janguenot $
 
+import cgi
 import urllib
 import lxml.etree
 
@@ -56,7 +57,7 @@ class WebMapService:
 class WMSCapabilitiesInfoset:
     """High-level container for WMS Capabilities based on lxml.etree
     """
-    
+
     def __init__(self, infoset):
         """Initialize"""
         self._infoset = infoset
@@ -66,7 +67,7 @@ class WMSCapabilitiesInfoset:
 
     def getservice(self):
         return self._infoset.find('Service')
-       
+
     def servicename(self):
         e_service = self.getservice()
         return e_service.find('Name').text
@@ -81,7 +82,7 @@ class WMSCapabilitiesInfoset:
         for f in e_getmap.getiterator('Format'):
             formats = formats + (f.text,)
         return formats
-   
+
     def layersrs(self):
         e_layer = self._infoset.find('Capability/Layer')
         srs = ()
@@ -94,7 +95,7 @@ class WMSCapabilitiesInfoset:
         for n in self._infoset.findall('Capability/Layer/Layer/Name'):
             names = names + (n.text,)
         return names
- 
+
     def layertitles(self):
         titles = ()
         for n in self._infoset.findall('Capability/Layer/Layer/Title'):
@@ -116,18 +117,26 @@ class WMSCapabilitiesReader:
         """Initialize"""
         self.version = version
         self._infoset = None
-       
+
     def capabilities_url(self, service_url):
         """Return a capabilities url
         """
-        # XXX it can be a problem if we need to specify the map as a
-        # parameter
-        if service_url.find('?') < 0:
-            return '%s?service=WMS&version=%s&request=GetCapabilities' \
-                    % (service_url, self.version)
-        if service_url.find('?') >= 0:
-            return service_url
-        
+        qs = []
+        if service_url.find('?') != -1:
+            qs = cgi.parse_qsl(service_url.split('?')[1])
+
+        params = [x[0] for x in qs]
+
+        if 'service' not in params:
+            qs.append(('service', 'WMS'))
+        if 'request' not in params:
+            qs.append(('request', 'GetCapabilities'))
+        if 'version' not in params:
+            qs.append(('version', self.version))
+
+        urlqs = urllib.urlencode(tuple(qs))
+        return service_url.split('?')[0] + '?' + urlqs
+
     def read(self, service_url):
         """Get and parse a WMS capabilities document, returning an
         instance of WMSCapabilitiesInfoset

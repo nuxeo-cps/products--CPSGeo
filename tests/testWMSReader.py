@@ -127,6 +127,43 @@ class Reader111TestCase03(unittest.TestCase):
         styles = [x[0] for x in info.values() if x]
         self.assertEqual(len(styles), 5)
 
+class WMSCapabilitiesReaderURLTestCase(unittest.TestCase):
+    
+    def test_basic(self):
+        qs = '?service=WMS&request=GetCapabilities&version=1.1.1'
+        base_url = 'http://foo/bar'
+        reader = WMSCapabilitiesReader()
+        service_url = reader.capabilities_url(base_url)
+        self.assertEqual(service_url, base_url+qs)
+
+    def test_with_map_as_parameter(self):
+        qs = '&service=WMS&request=GetCapabilities&version=1.1.1'
+        base_url = 'http://foo/bar?map=id'
+        reader = WMSCapabilitiesReader()
+        service_url = reader.capabilities_url(base_url)
+        self.assertEqual(service_url, base_url+qs)
+
+    def test_with_request(self):
+        qs = '&service=WMS&version=1.1.1'
+        base_url = 'http://foo/bar?map=id&request=GetCapabilities'
+        reader = WMSCapabilitiesReader()
+        service_url = reader.capabilities_url(base_url)
+        self.assertEqual(service_url, base_url+qs)
+
+    def test_with_version(self):
+        qs = '&service=WMS&request=GetCapabilities'
+        base_url = 'http://foo/bar?map=id&version=1.1.1'
+        reader = WMSCapabilitiesReader()
+        service_url = reader.capabilities_url(base_url)
+        self.assertEqual(service_url, base_url+qs)
+
+    def test_with_service(self):
+        qs = '&request=GetCapabilities&version=1.1.1'
+        base_url = 'http://foo/bar?service=WMS'
+        reader = WMSCapabilitiesReader()
+        service_url = reader.capabilities_url(base_url)
+        self.assertEqual(service_url, base_url+qs)
+
 class WMSErrorTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -142,6 +179,7 @@ def test_suite():
     suite.addTest(unittest.makeSuite(Reader111TestCase02))
     suite.addTest(unittest.makeSuite(Reader111TestCase03))
     suite.addTest(unittest.makeSuite(WMSErrorTestCase))
+    suite.addTest(unittest.makeSuite(WMSCapabilitiesReaderURLTestCase))
     return suite
 
 if __name__ == '__main__':

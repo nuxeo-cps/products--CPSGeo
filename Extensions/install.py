@@ -26,6 +26,8 @@ from Products.CPSInstaller.CPSInstaller import CPSInstaller
 from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
 
 CPS_SKINS = {
+    'cpsgeo_images': 'Products/CPSGeo/skins/cpsgeo_images',
+    'cpsgeo_installer': 'Products/CPSGeo/skins/cpsgeo_installer',
     'cpsgeo_cpscustom': 'Products/CPSGeo/skins/cpsgeo_cpscustom',
     'cpsgeo_config': 'Products/CPSGeo/skins/cpsgeo_config',
     'cpsgeo_standalone': 'Products/CPSGeo/skins/cpsgeo_standalone',

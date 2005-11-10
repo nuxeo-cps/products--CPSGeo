@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <gml:featureMember xmlns:cps="http://www.cps-project.org/cps" 
-		   xmlns:gml="http://www.opengis.net/gml"
-		   xmlns:tal="http://namespace.zope.org/tal">
+		   xmlns:gml="http://www.opengis.net/gml">
   <cps:document>
     <cps:location>
       <gml:MultiPoint srsName="epsg:4326">

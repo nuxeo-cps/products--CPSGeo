@@ -108,6 +108,13 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         self.assertEqual(
             self._mtool.getCoordinatesFor(self.portal.workspaces), '1,2')
 
+    def test_wrong_getCoordinates(self):
+
+        # Set coordinates for the workspaces
+        self.portal.workspaces.getContent().pos_list = ' 1 \n 2 \t'
+        self.assertEqual(
+            self._mtool.getCoordinatesFor(self.portal.workspaces), '1,2')
+
     def test_getCoordinatesForAsMember(self):
 
         self.login('member')

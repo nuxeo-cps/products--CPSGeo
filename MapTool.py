@@ -117,9 +117,9 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
             return default_
 
         if hasattr(proxy, 'getContent'):
-            pos_list = getattr(proxy.getContent(), 'pos_list', False)
-            if pos_list:
-                return pos_list.replace(' ',',')
+            pos_list = getattr(proxy.getContent(), 'pos_list', '')
+            if pos_list.strip():
+                return ','.join(pos_list.strip().split())
 
         return default_
 

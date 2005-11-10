@@ -70,9 +70,18 @@ class CPSGeoInstaller(CPSInstaller):
         """Install mapbuilder within ZODB
         """
         # XXX : split this within a skins dir
+
+        # Disable useless subscribers during installation
+        self.disableEventSubscriber('portal_trees')
+        self.disableEventSubscriber('portal_subscriptions')
+
         if 'mapbuilder' in self.portal.objectIds():
             self.portal.manage_delObjects(['mapbuilder'])
         install_lib(self.portal)
+
+        # Re-enable subscribers
+        self.enableEventSubscriber('portal_trees')
+        self.enableEventSubscriber('portal_subscriptions')
 
     def setupFlexibleTypes(self):
         """Install content types

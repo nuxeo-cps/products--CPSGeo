@@ -108,15 +108,15 @@ def brainsToGeoRSS(title, about, brains):
         # location
 
         pos_list = schema.pos_list
-        if pos_list:
-          x, y = pos_list.split()
-          long = GEOElement('long')
-          long.text = x
-          lat = GEOElement('lat')
-          lat.text = y
-          item.append(long)
-          item.append(lat)
-          rdf.append(item)
+        if pos_list and len(pos_list.strip().split()) == 2:
+            x, y = pos_list.strip().split()
+            long = GEOElement('long')
+            long.text = x
+            lat = GEOElement('lat')
+            lat.text = y
+            item.append(long)
+            item.append(lat)
+            rdf.append(item)
 
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' \
            + etree.tostring(rdf)

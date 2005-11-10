@@ -126,7 +126,7 @@
       <transactionResponseModel>transaction</transactionResponseModel>
       <webServiceUrl>../../../geoserver/wfs</webServiceUrl>
       <featureXpath>/gml:featureMember/cps:document/cps:location/gml:MultiPoint/gml:pointMember/gml:Point/gml:coordinates</featureXpath>
-      <defaultModelUrl>template_docLocation.xml</defaultModelUrl>
+      <defaultModelUrl>template_docLocation</defaultModelUrl>
       <targetContext>mainMap</targetContext>
     </EditPoint>
     <Reset id="reset">

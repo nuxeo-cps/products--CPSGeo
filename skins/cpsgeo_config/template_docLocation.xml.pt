@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <gml:featureMember xmlns:cps="http://www.cps-project.org/cps" 
-		   xmlns:gml="http://www.opengis.net/gml">
+		   xmlns:gml="http://www.opengis.net/gml"
+		   xmlns:tal="http://xml.zope.org/namespaces/tal">
   <cps:document>
     <cps:location>
       <gml:MultiPoint srsName="epsg:4326">
 	<gml:pointMember>
 	  <gml:Point>
-	    <gml:coordinates decimal="." cs="," ts=" "><dtml-var expr="portal_maps.getCoordinatesFor(PARENTS[0])"></gml:coordinates>
+	    <gml:coordinates decimal="." cs="," ts=" "><span tal:replace="python:here.portal_maps.getCoordinatesFor(here)"/></gml:coordinates>
 	  </gml:Point>
 	</gml:pointMember>
       </gml:MultiPoint>
     </cps:location>
   </cps:document>
 </gml:featureMember>
-

@@ -1,4 +1,22 @@
 *******************************************
+** CPSGeo V0.4.1 [R1 build 2005/11/10-04:47 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29429
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- fix geo localisation widget and getCoordinatesFor() method
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- register the .xml and .xsl as an FSFile extension
+- reorg of the skins layers.
+- no geolocation action for the Map Document
+
+*******************************************
 ** CPSGeo V0.4.0 [R1 build 2005/11/09-07:13 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29376
 Requires:

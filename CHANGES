@@ -6,9 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- fix geo localisation widget and getCoordinatesFor() method
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- register the .xml and .xsl as an FSFile extension
-- reorg of the skins layers.
-- no geolocation action for the Map Document
+-

@@ -8,9 +8,7 @@
 	<gml:pointMember>
 	  <gml:Point>
 	    <gml:coordinates decimal="." cs="," ts=" ">
-	      <tal:block define="mtool nocall:here/portal_maps">
-		<span tal:replace="python:mtool.getCoordinatesFor(here)" />
-	      </tal:block>
+	      <dtml-var expr="portal_maps.getCoordinatesFor(context)">
 	    </gml:coordinates>
 	  </gml:Point>
 	</gml:pointMember>

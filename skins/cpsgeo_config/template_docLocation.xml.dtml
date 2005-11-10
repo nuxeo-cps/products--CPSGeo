@@ -6,7 +6,8 @@
       <gml:MultiPoint srsName="epsg:4326">
 	<gml:pointMember>
 	  <gml:Point>
-	    <gml:coordinates decimal="." cs="," ts=" "><dtml-var expr="portal_maps.getCoordinatesFor(PARENTS[0])"></gml:coordinates>
+	    <gml:coordinates decimal="." cs="," ts=" "><dtml-var expr="portal_maps.getCoordinatesFor(PARENTS[0])">
+</gml:coordinates>
 	  </gml:Point>
 	</gml:pointMember>
       </gml:MultiPoint>

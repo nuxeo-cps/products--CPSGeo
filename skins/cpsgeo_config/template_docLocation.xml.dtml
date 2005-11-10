@@ -7,7 +7,7 @@
 	<gml:pointMember>
 	  <gml:Point>
 	    <gml:coordinates decimal="." cs="," ts=" ">
-	      <dtml-var expr="portal_maps.getCoordinatesFor(context)">
+	      <dtml-var expr="portal_maps.getCoordinatesFor(PARENTS[0])">
 	    </gml:coordinates>
 	  </gml:Point>
 	</gml:pointMember>

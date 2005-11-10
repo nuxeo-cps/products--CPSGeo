@@ -19,6 +19,8 @@
 """Map
 """
 
+import cgi
+
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 
@@ -90,7 +92,7 @@ class Map(PortalContent):
         REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(),
                               self.getContent().results)
-    
+
     security.declareProtected(View, 'mapContext')
     def mapContext(self, REQUEST=None):
         """Return a 1.0 Web Map Context document for use with mapbuilder"""
@@ -117,18 +119,21 @@ class Map(PortalContent):
             self.name = str(name)
         if title:
             self.title = str(title)
-        if size:
-            assert len(size) == 2
-            self.size = tuple(map(int, size))
-        if bounds:
-            assert len(bounds) == 4
-            self.bounds = tuple(map(float, bounds))
-        if srs:
-            self.srs = str(srs)
-        if format:
-            self.format = str(format)
-        if layers:
-            self.visible_layers = tuple(layers)
+
+        # Keep the existing parameters only if the url is the same.
+        if cgi.parse_qs(url).keys()[0] == cgi.parse_qs(self.url).keys()[0]:
+            if size:
+                assert len(size) == 2
+                self.size = tuple(map(int, size))
+            if bounds:
+                assert len(bounds) == 4
+                self.bounds = tuple(map(float, bounds))
+            if srs:
+                self.srs = str(srs)
+            if format:
+                self.format = str(format)
+            if layers:
+                self.visible_layers = tuple(layers)
 
     security.declareProtected(ManagePortal, 'manage_editMap')
     def manage_editMap(self, url='', name='', title='', size=[], bounds=[],

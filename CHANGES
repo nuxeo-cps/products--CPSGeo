@@ -9,4 +9,6 @@ Bug fixes:
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- register the .xml and .xsl as an FSFile extension
+- change all the dtml processing with zpt processing
+- reorg of the skins layers.

@@ -29,6 +29,13 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         self.login('manager')
         self._mtool = self.portal.portal_maps
 
+        members = self.portal.portal_directories.members
+        # Create a Member
+        members.createEntry(
+            {'id': 'member', 'givenName' : 'Foo',
+             'sn': 'Bar', 'roles': ['Member']})
+        self.portal.portal_membership.createMemberArea('member')
+
     def beforeTearDown(self):
         self.logout()
 
@@ -74,7 +81,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
         self.assertEqual(maps[0][0], 'map1')
         self.assertEqual(maps[0][1], 'map1 ( %s ) '%map_.title)
-    
+
     def test_mapVocabularyKey(self):
 
         maps = self.portal.getAllMapIds()
@@ -84,16 +91,53 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         url = 'http://wms.jpl.nasa.gov/wms.cgi'
         self._createMap(id_, url)
         map_ = self._mtool.map1
-        
+
         map_info_ = self.portal.getAllMapIds('map1')
         self.assertEqual(map_info_, 'map1 ( %s ) '%map_.title)
-        
+
+    def test_getCoordinatesForAsManager(self):
+
+        default_ = '0.0,0.0'
+
+        # No coordinates for now
+        self.assertEqual(
+            self._mtool.getCoordinatesFor(self.portal.workspaces), default_)
+
+        # Set coordinates for the workspaces
+        self.portal.workspaces.getContent().pos_list = '1 2'
+        self.assertEqual(
+            self._mtool.getCoordinatesFor(self.portal.workspaces), '1,2')
+
+    def test_getCoordinatesForAsMember(self):
+
+        self.login('member')
+
+        default_ = '0.0,0.0'
+
+        # No allowed so the user will get 0.0 instead of the real
+        # coordinates instead of the real one.
+        self.assertEqual(
+            self._mtool.getCoordinatesFor(self.portal.workspaces), default_)
+
+        # No coordinates
+        self.assertEqual(
+            self._mtool.getCoordinatesFor(
+            self.portal.workspaces.members.member), default_)
+
+        # Set coordinates for the workspaces
+        self.portal.workspaces.members.member.getContent().pos_list = '1 2'
+        self.assertEqual(
+            self._mtool.getCoordinatesFor(
+            self.portal.workspaces.members.member), '1,2')
+
+        self.logout()
+
     #
     # PRIVATE
     #
 
     def _createMap(self, id_, url, **kw):
-        return self._mtool.manage_addMap(id=id_, url=url)        
+        return self._mtool.manage_addMap(id=id_, url=url)
 
 def test_suite():
     suite = unittest.TestSuite()

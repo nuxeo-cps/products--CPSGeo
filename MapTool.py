@@ -1,5 +1,6 @@
 # (C) Copyright 2005 Nuxeo SARL <http://nuxeo.com>
-# Author: Sean Gillies (sgillies@frii.com)
+# Authors: Sean Gillies (sgillies@frii.com)
+#          Julien Anguenot <ja@nuxeo.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 2 as published
@@ -30,10 +31,13 @@ from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
 from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 from Products.CMFCore.ActionProviderBase import ActionProviderBase
+
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
+
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.utils import _checkPermission
 
 from georss import brainsToGeoRSS
 from Map import Map
@@ -96,6 +100,28 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
             'title': map_._getTitle(max_length=30),
             'path': map_path_
             }
+
+    security.declareProtected(View, 'getCoordinatesFor')
+    def getCoordinatesFor(self, proxy):
+        """Returns the coordinates of this proxy.
+
+        The coordiantes are stored as metadata of the object within
+        the pos_list field.
+
+        We return '0.0,0.0' as default value.
+        """
+
+        default_ = '0.0,0.0'
+
+        if not _checkPermission(View, proxy):
+            return default_
+
+        if hasattr(proxy, 'getContent'):
+            pos_list = getattr(proxy.getContent(), 'pos_list', False)
+            if pos_list:
+                return pos_list.replace(' ',',')
+
+        return default_
 
     #
     # ZMI

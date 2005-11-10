@@ -135,7 +135,7 @@ class MapToolTestCase(unittest.TestCase):
     def test_geoRSSPath(self):
         rsspath = self._maptool.geoRSSPath()
         self.assertEqual('portal_maps/getGeoRSSModel', rsspath)
-                
+
     #
     # PRIVATE
     #

@@ -43,7 +43,7 @@ geolocation_schema = {
     'pos_list': {
         'type': 'CPS String Field',
         'data': {
-            'default_expr': 'string:',
+            'default_expr': 'string:0.0 0.0',
             'is_searchabletext': 0,
             'acl_read_permissions': '',
             'acl_read_roles': '',

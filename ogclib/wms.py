@@ -146,6 +146,5 @@ class WMSCapabilitiesReader:
         """
         request = self.capabilities_url(service_url)
         u = urllib.urlopen(request)
-        return WMSCapabilitiesInfoset(
-            etree.fromstring(u.read()))
+        return WMSCapabilitiesInfoset(etree.fromstring(u.read()))
 

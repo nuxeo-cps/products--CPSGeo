@@ -7,7 +7,7 @@ Printing Maps
   below.
 
   Once everything is configured we will request a printed map from the
-  MapServer by posting the following data:
+  MapServer by posting the following data (example):
 
       map_web_template=cpsgeo_print_template.html
       layers=[map layers]+cpsdocs

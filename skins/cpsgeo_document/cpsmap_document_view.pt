@@ -1,6 +1,6 @@
 <metal:block define-macro="view">
   <metal:block use-macro="here/main_template/macros/master">
-    <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
+    <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"></metal:block>
     <metal:block fill-slot="javascript_head_slot">
       <script>
 	// URL of Mapbuilder configuration file.

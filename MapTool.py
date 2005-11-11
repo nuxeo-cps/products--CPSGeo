@@ -65,6 +65,13 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(), brains)
 
+    security.declareProtected(View, 'getMapDocumentGeoRSSModel')
+    def getMapDocumentGeoRSSModel(self, brains):
+        """Return a GeoRSS model for mapbuilder
+        """
+        REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        return brainsToGeoRSS(self.title, self.absolute_url(), brains)
+
     security.declareProtected(View, 'geoRSSPath')
     def geoRSSPath(self):
         """Return a BASEPATH2-ish path to GeoRSS doc for mapbuilder

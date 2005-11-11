@@ -81,59 +81,81 @@ class MapContext:
         return bbox
 
     def _getLayerListElement(self):
+    #
+    # Notes: Nuxeo's mapping customer seems to want a single layer in the
+    # mapbuilder client application. The best way to do that is to have a 
+    # single Layer element in the LayerList and join the external WMS layer
+    # names like:
+    # 
+    # <Layer>
+    #   <Name>layer_1,layer_2,layer_3,...</Name>
+    #   ...
+    # </Layer>
+    #
+    # The effect is a single GetMap request to the external WMS for an image
+    # with data merged from all the layers
+    #
+    # -- Sean
+    
         layerlist = WMCElement('LayerList')
-        layering = zip(self._map.layernames, self._map.layertitles)
+        #layering = zip(self._map.layernames, self._map.layertitles) 
+        # XXX: above is not needed anymore -- Sean
         layer_infos = self._map.getLayerInfos()
 
         # mapbuilder draws layers in bottom-top order
-        for name, title in layering:
+        #for name, title in layering:
+        # XXX: loop over layers is not needed -- Sean
 
-            # Layer
-            layer = WMCElement('Layer')
-            layer.attrib['queryable'] = '0'
-            layer.attrib['hidden'] = str(
-                int(name not in self._map.visible_layers))
+        # Layer
+        layer = WMCElement('Layer')
+        layer.attrib['queryable'] = '0'
+        layer.attrib['hidden'] = '0'
+        
+        #str(
+        #        int(name not in self._map.visible_layers))
 
-            # Layer style
-            if layer_infos and layer_infos.get(title):
-                stylelist = WMCElement('StyleList')
-                style = layer_infos.get(title)[0]
-                stylelist.append(style)
-                layer.append(stylelist)
+        #    # Layer style
+        #    if layer_infos and layer_infos.get(title):
+        #        stylelist = WMCElement('StyleList')
+        #        style = layer_infos.get(title)[0]
+        #        stylelist.append(style)
+        #        layer.append(stylelist)
+        # XXX: a StyleList element no longer has meaning for this aggregate
+        # layer -- Sean
 
-            # Server
-            server = WMCElement('Server')
-            server.attrib['service'] = 'OGC:WMS'
-            server.attrib['version'] = '1.1.1'
-            server.attrib['title'] = 'OGC:WMS'
+        # Server
+        server = WMCElement('Server')
+        server.attrib['service'] = 'OGC:WMS'
+        server.attrib['version'] = '1.1.1'
+        server.attrib['title'] = 'OGC:WMS'
 
-            # OnlineRessource
-            oressource = WMCElement('OnlineResource')
-            oressource.attrib[
-                '{http://www.w3.org/1999/xlink}type'] = 'simple'
-            oressource.attrib[
-                '{http://www.w3.org/1999/xlink}href'] = self._map.url
-            server.append(oressource)
-            layer.append(server)
+        # OnlineRessource
+        oressource = WMCElement('OnlineResource')
+        oressource.attrib[
+            '{http://www.w3.org/1999/xlink}type'] = 'simple'
+        oressource.attrib[
+            '{http://www.w3.org/1999/xlink}href'] = self._map.url
+        server.append(oressource)
+        layer.append(server)
 
-            # Name
-            e_name = WMCElement('Name')
-            e_name.text = name
-            layer.append(e_name)
+        # Name
+        e_name = WMCElement('Name')
+        e_name.text = ','.join(self._map.visible_layers)
+        layer.append(e_name)
 
-            # Title
-            e_title = WMCElement('Title')
-            e_title.text = title
-            layer.append(e_title)
+        # Title
+        e_title = WMCElement('Title')
+        e_title.text = 'Aggregate Layer'
+        layer.append(e_title)
 
-            # Format
-            formatlist = WMCElement('FormatList')
-            format = WMCElement('Format')
-            format.attrib['current'] = '1'
-            format.text = self._map.format
-            formatlist.append(format)
-            layer.append(formatlist)
-            layerlist.append(layer)
+        # Format
+        formatlist = WMCElement('FormatList')
+        format = WMCElement('Format')
+        format.attrib['current'] = '1'
+        format.text = self._map.format
+        formatlist.append(format)
+        layer.append(formatlist)
+        layerlist.append(layer)
 
         return layerlist
 

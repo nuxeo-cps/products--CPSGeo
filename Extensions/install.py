@@ -52,7 +52,7 @@ class CPSGeoInstaller(CPSInstaller):
         self.verifyLayouts(self.portal.getCPSGeoLayouts())
         self.verifyVocabularies(self.portal.getCPSGeoVocabularies())
         self.setupFlexibleTypes()
-        #self.setupMapBuilderLibs()
+        self.setupMapBuilderLibs()
         self.setupCPSGeoActions()
         self.extendCPSMetadata()
         self.setupTranslations()

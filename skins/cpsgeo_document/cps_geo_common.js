@@ -34,6 +34,8 @@ function update_map() {
       name_list.push(layer.selectSingleNode("wmc:Name").firstChild.nodeValue);
     }
   }
-  alert(name_list);
+  var agg_layer_name = config.objects.mainMap.doc.selectSingleNode("//wmc:Layer/wmc:Name");
+  agg_layer_name.firstChild.nodeValue = name_list.join(",");
+  config.objects.mainMap.callListeners("loadModel");
 }
 

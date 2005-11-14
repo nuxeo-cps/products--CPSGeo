@@ -5,6 +5,9 @@
 Used within a Method vocabularies
 """
 
+from zLOG import LOG, DEBUG
+LOG("CPSGeo Voc", DEBUG, key)
+
 maptool = context.portal_maps
 
 returned = []
@@ -18,6 +21,7 @@ for id_, map_ in maptool.items():
 if key is not None:
     for each in returned:
         if each[0] == key:
-            return each[1]
+            return each[0]
+    return ''
 
 return returned

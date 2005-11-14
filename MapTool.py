@@ -110,7 +110,9 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         # XXX : change the title length restriction on the display
         # later on when the widgets will be common to the standalone
         # and CPS ones
-        map_ = getattr(self, mapid)
+        map_ = getattr(self, mapid, None)
+        if map_ is None:
+            return {}
         if aggregate_layers:
             map_path_ = os.path.join(
                 utool.getRelativeContentURL(self), mapid, 'aggMapContext')

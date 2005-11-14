@@ -2,33 +2,15 @@
   <metal:block use-macro="here/main_template/macros/master">
     <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"></metal:block>
     <metal:block fill-slot="javascript_head_slot">
+      <script type="text/javascript" src="cpsgeo.js" 
+	      tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
       <script>
 	// URL of Mapbuilder configuration file.
 	var mbConfigUrl='cpsdoc_view_config.xml';    
-
-      // Work with the "map_selector" form in the body
-      function switch_map()
-      {
-          var box = document.getElementById("map_selector").map;
-          var mappath = box.options[box.selectedIndex].value;
-          if (mapath) 
-          {
-            config.loadModel('mainMap', mappath + '/aggMapContext');
-            config.loadModel('layerControl', mappath + '/mapContext');
-          }
-      }
-      // XXX Quick hack !
-      function refresh_map() {
-          alert("Si les documents n'apparaissent pas sur la carte il vous faudra actualiser la carte");
-          config.objects.reset.select();
-      }	
       </script>
 
       <script type="text/javascript" src="cpsgeo.js" 
 	      tal:attributes="src string:${here/absolute_url}/cpsgeo.js"></script>
-    <script type="text/javascript" src="cpsgeo.js" 
-	    tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
-    
       <script type="text/javascript" 
 	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
       <script type="text/javascript" src="overlib.js" 

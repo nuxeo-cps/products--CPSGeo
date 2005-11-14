@@ -26,6 +26,9 @@
 
       <script type="text/javascript" src="cpsgeo.js" 
 	      tal:attributes="src string:${here/absolute_url}/cpsgeo.js"></script>
+    <script type="text/javascript" src="cpsgeo.js" 
+	    tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
+    
       <script type="text/javascript" 
 	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
       <script type="text/javascript" src="overlib.js" 

@@ -2,11 +2,12 @@
 <MapbuilderConfig version="0.2.1" id="simpleTemplate" 
     xmlns="http://mapbuilder.sourceforge.net/mapbuilder" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
     xsi:schemaLocation="http://mapbuilder.sourceforge.net/mapbuilder ../mapbuilder/lib/schemas/config.xsd">
     
   <models>
     <Context id="layerControl">
-      <defaultModelUrl><dtml-var getBaseUrl>portal_maps/<dtml-var expr="getContent().map_id">/mapContext</defaultModelUrl>
+      <defaultModelUrl><span tal:replace="python:here.getBaseUrl()+'portal_maps/'+here.getContent().map_id+'/mapContext'"/></defaultModelUrl>
       <widgets>
         <Legend id="contextLegend">
           <htmlTagId>legend</htmlTagId>
@@ -14,7 +15,7 @@
       </widgets> 
     </Context>
     <Context id="mainMap">
-      <defaultModelUrl><dtml-var getBaseUrl>portal_maps/<dtml-var expr="getContent().map_id">/aggMapContext</defaultModelUrl>
+      <defaultModelUrl><span tal:replace="python:here.getBaseUrl()+'portal_maps/'+here.getContent().map_id+'/aggMapContext'"/></defaultModelUrl>
       <widgets>
         <MapPane id="mainMapWidget">
           <htmlTagId>mainMapPane</htmlTagId>
@@ -24,7 +25,7 @@
         </Loading>
         <AoiBoxDHTML id="aoiBox2">
           <htmlTagId>mainMapPane</htmlTagId>
-          <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/Null.xsl</stylesheet>
+          <stylesheet><span tal:replace="string:${here/getBaseUrl}mapbuilder/lib/widget/Null.xsl"/></stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
@@ -70,7 +71,7 @@
         </MapPane>
         <AoiBoxWZ id="aoiBoxLocator">
           <htmlTagId>locatorMap</htmlTagId>
-          <stylesheet><dtml-var getBaseUrl>mapbuilder/lib/widget/GmlRenderer.xsl</stylesheet>
+          <stylesheet><span tal:replace="string:${here/getBaseUrl}mapbuilder/lib/widget/GmlRenderer.xsl"/></stylesheet>
           <lineColor>#FF0000</lineColor>
           <lineWidth>1</lineWidth>
           <crossSize>15</crossSize>
@@ -118,7 +119,7 @@
       <disabledSrc>/images/ResetExtentDisable.gif</disabledSrc>
     </Reset>
   </widgets>
-  <skinDir><dtml-var getBaseUrl>mapbuilder/lib/skin/default</skinDir>
+  <skinDir><span tal:replace="string:${here/getBaseUrl}mapbuilder/lib/skin/default"/></skinDir>
   <widgetTextUrl>widgetText.xml</widgetTextUrl> <!-- relative to the skin dir -->
 </MapbuilderConfig>
 

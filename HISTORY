@@ -1,4 +1,21 @@
 *******************************************
+** CPSGeo V0.5.0 [R1 build 2005/11/14-05:28 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29511
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Italian translation
+- Layers are merged server side.
+
+*******************************************
 ** CPSGeo V0.4.1 [R1 build 2005/11/10-04:47 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29429
 Requires:

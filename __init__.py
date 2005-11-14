@@ -33,6 +33,7 @@ try:
     import elementtree.ElementTree as etree
     # Monkey Patch adds to the default well known namespaces
     etree._namespace_map.update({
+        "http://www.opengis.net/context":               "wmc",
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#":  "rdf",
         "http://purl.org/rss/1.0/":                     "rss",
         "http://purl.org/rss/1.0/modules/taxonomy/":    "taxo",

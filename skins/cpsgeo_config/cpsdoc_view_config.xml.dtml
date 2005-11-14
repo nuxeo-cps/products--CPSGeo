@@ -5,8 +5,16 @@
     xsi:schemaLocation="http://mapbuilder.sourceforge.net/mapbuilder ../mapbuilder/lib/schemas/config.xsd">
     
   <models>
-    <Context id="mainMap">
+    <Context id="layerControl">
       <defaultModelUrl><dtml-var getBaseUrl>portal_maps/<dtml-var expr="getContent().map_id">/mapContext</defaultModelUrl>
+      <widgets>
+        <Legend id="contextLegend">
+          <htmlTagId>legend</htmlTagId>
+        </Legend>
+      </widgets> 
+    </Context>
+    <Context id="mainMap">
+      <defaultModelUrl><dtml-var getBaseUrl>portal_maps/<dtml-var expr="getContent().map_id">/aggMapContext</defaultModelUrl>
       <widgets>
         <MapPane id="mainMapWidget">
           <htmlTagId>mainMapPane</htmlTagId>
@@ -26,9 +34,6 @@
           <mouseHandler>mainMap</mouseHandler>
         </CursorTrack>
         <MapScaleText id="mapScaleText"/>
-        <Legend id="contextLegend">
-          <htmlTagId>legend</htmlTagId>
-        </Legend>
       </widgets>
       <tools>
         <AoiMouseHandler id="mainAoi"/>

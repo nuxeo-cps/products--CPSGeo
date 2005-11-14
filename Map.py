@@ -101,6 +101,14 @@ class Map(PortalContent):
         return '<?xml version="1.0" encoding="utf-8"?>' \
                + wmc.mapToWebMapContext(self)
 
+    security.declareProtected(View, 'aggMapContext')
+    def aggMapContext(self, REQUEST=None):
+        """Return a 1.0 Web Map Context document for use with mapbuilder"""
+        if REQUEST:
+            REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        return '<?xml version="1.0" encoding="utf-8"?>' \
+               + wmc.mapToWebMapContext(self, True)
+
     security.declareProtected(View, 'getLayerInfos')
     def getLayerInfos(self):
         cap = self._readCapabilities()

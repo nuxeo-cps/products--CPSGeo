@@ -10,8 +10,12 @@
       function switch_map()
       {
           var box = document.getElementById("map_selector").map;
-          var modelurl = box.options[box.selectedIndex].value;
-          if (modelurl) config.loadModel('mainMap', modelurl);
+          var mappath = box.options[box.selectedIndex].value;
+          if (mapath) 
+          {
+            config.loadModel('mainMap', mappath + '/aggMapContext');
+            config.loadModel('layerControl', mappath + '/mapContext');
+          }
       }
       // XXX Quick hack !
       function refresh_map() {

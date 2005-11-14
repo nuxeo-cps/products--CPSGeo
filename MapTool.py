@@ -90,8 +90,19 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
             contexts.append(self.mapContextFor(id_))
         return contexts
 
+    security.declareProtected(View, 'aggMapContexts')
+    def aggMapContexts(self):
+        """Return a list of dicts describing map id, title, and BASEPATH2-ish
+        path to the map context
+        """
+        contexts = []
+        for id_ in list(self.keys()):
+            contexts.append(self.mapContextFor(id_, True))
+        return contexts
+
+
     security.declareProtected(View, 'mapContextFor')
-    def mapContextFor(self, mapid):
+    def mapContextFor(self, mapid, aggregate_layers=False):
         """Return a dict describing the map id, title, and BASEPATH2-ish
         path to the map context given a map id
         """
@@ -100,8 +111,12 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         # later on when the widgets will be common to the standalone
         # and CPS ones
         map_ = getattr(self, mapid)
-        map_path_ = os.path.join(
-            utool.getRelativeContentURL(self), mapid, 'mapContext')
+        if aggregate_layers:
+            map_path_ = os.path.join(
+                utool.getRelativeContentURL(self), mapid, 'aggMapContext')
+        else:
+            map_path_ = os.path.join(
+                utool.getRelativeContentURL(self), mapid, 'mapContext')
         return {
             'id': mapid,
             'title': map_._getTitle(max_length=30),

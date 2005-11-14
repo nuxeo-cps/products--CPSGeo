@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2005-11-09 04:36default\n"
+"POT-Creation-Date: 2005-11-14 04:27default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -21,6 +21,11 @@ msgstr ""
 msgid "button_cpsgeo_set_location"
 msgstr ""
 
+#.   <input name="x" onclick="update_map();" type="submit" class="standalone" value="button_cpsgeo_update_mainmap" />
+#: from ../skins/cpsgeo_widgets/cpsgeo_layers.pt
+msgid "button_cpsgeo_update_mainmap"
+msgstr ""
+
 #.   <h1>
 #.   	Browse maps
 #.       </h1>
@@ -35,7 +40,7 @@ msgstr ""
 msgid "header_geolocation_form"
 msgstr ""
 
-#.   <option condition="not:current_map_context" value="">
+#.   <option value="">
 #.   	--- Choose Map ---
 #.         </option>
 #: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
@@ -43,19 +48,22 @@ msgid "label_cpsgeo_choose_map"
 msgstr ""
 
 #.   <span>
-#.   			    WGS84 Coordinates
-#.   			  </span>
+#.   			      WGS84 Coordinates
+#.   			    </span>
 #: from ../skins/cpsgeo_document/cps_geolocation_form.pt
 msgid "label_cpsgeo_coordinates"
 msgstr ""
 
 #.   <h3>
-#.   		      Document Location
-#.   		    </h3>
+#.   			Document Location
+#.   		      </h3>
 #: from ../skins/cpsgeo_document/cps_geolocation_form.pt
 msgid "label_cpsgeo_document_location"
 msgstr ""
 
+#.   <p>Loading Program<br />
+#.   		      <img attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif" />
+#.   		      </p>
 #.   <p>
 #.   		      Loading Program
 #.   		      <br />
@@ -66,7 +74,7 @@ msgstr ""
 msgid "label_cpsgeo_loading_program"
 msgstr ""
 
-#.   <span condition="not:current_map_context">
+#.   <span>
 #.       Select base map
 #.     </span>
 #: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt

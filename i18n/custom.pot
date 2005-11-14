@@ -84,3 +84,6 @@ msgstr ""
 
 msgid "label_cpsgeo_hide_cursor_track"
 msgstr ""
+
+msgid "button_cpsgeo_update_mainmap"
+msgstr ""

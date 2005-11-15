@@ -98,6 +98,10 @@ class MapContext:
             if layer_infos and layer_infos.get(title):
                 stylelist = WMCElement('StyleList')
                 style = layer_infos.get(title)[0]
+                style.attrib['current'] = '1'
+                # Change namespace to wmc
+                for node in style.getiterator():
+                    node.tag = "{%s}"%context_ns_uri + node.tag
                 stylelist.append(style)
                 layer.append(stylelist)
 

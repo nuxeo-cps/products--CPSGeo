@@ -148,3 +148,13 @@ class WMSCapabilitiesReader:
         u = urllib.urlopen(request)
         return WMSCapabilitiesInfoset(etree.fromstring(u.read()))
 
+    def readString(self, st):
+        """Parse a WMS capabilities document, returning an
+        instance of WMSCapabilitiesInfoset
+
+        string should be an XML capabilities document
+        """
+        if not isinstance(st, str):
+            raise ValueError("String must be of type string, not %s" % type(st))
+        return WMSCapabilitiesInfoset(etree.fromstring(st))
+    

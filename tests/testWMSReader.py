@@ -127,6 +127,16 @@ class Reader111TestCase03(unittest.TestCase):
         styles = [x[0] for x in info.values() if x]
         self.assertEqual(len(styles), 5)
 
+class WMSCapabilitiesReaderFromStringTestCase(Reader111TestCase03):
+
+    def setUp(self):
+        reader = WMSCapabilitiesReader()
+        this_directory = os.path.split(__file__)[0]
+        filepath = os.path.join(
+            this_directory,
+            'capabilities.xml')
+        self._cap = reader.readString(open(filepath, 'r').read())
+
 class WMSCapabilitiesReaderURLTestCase(unittest.TestCase):
     
     def test_basic(self):
@@ -179,6 +189,7 @@ def test_suite():
     suite.addTest(unittest.makeSuite(Reader111TestCase02))
     suite.addTest(unittest.makeSuite(Reader111TestCase03))
     suite.addTest(unittest.makeSuite(WMSErrorTestCase))
+    suite.addTest(unittest.makeSuite(WMSCapabilitiesReaderFromStringTestCase))
     suite.addTest(unittest.makeSuite(WMSCapabilitiesReaderURLTestCase))
     return suite
 

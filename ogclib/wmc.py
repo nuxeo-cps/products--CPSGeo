@@ -94,15 +94,17 @@ class MapContext:
             layer.attrib['hidden'] = str(
                 int(name not in self._map.visible_layers))
 
-            # Layer style
+            # Layer styles
             if layer_infos and layer_infos.get(title):
                 stylelist = WMCElement('StyleList')
-                style = layer_infos.get(title)[0]
-                style.attrib['current'] = '1'
-                # Change namespace to wmc
-                for node in style.getiterator():
-                    node.tag = "{%s}"%context_ns_uri + node.tag
-                stylelist.append(style)
+                # Get wms `Style` nodes for a given layer
+                for e_style in layer_infos.get(title):
+                    e_style.attrib['current'] = '1'
+                    # Change namespace to wmc
+                    for node in e_style.getiterator():
+                        tag_name = node.tag[node.tag.rfind('}')+1:]
+                        node.tag = "{%s}"%context_ns_uri + tag_name
+                    stylelist.append(e_style)
                 layer.append(stylelist)
 
             # Server

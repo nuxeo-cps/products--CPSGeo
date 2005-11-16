@@ -6,7 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Fix the display of layer's legends
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Remove all dtml based templates

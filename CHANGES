@@ -1,6 +1,7 @@
 Requires:
 ~~~~~~~~~
--
+- PROJ.4 >= 4.4.8. See DEPENDENCIES.txt
+- Installation of the referencing library from PCL. See INSTALL.txt
 New features:
 ~~~~~~~~~~~~~
 -

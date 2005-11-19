@@ -1,21 +1,28 @@
 CPSGeo Installation
 ===================
 
-Sean Gillies
-sgillies@frii.com
-
 1. Extract or copy the CPSGeo product to the Zope Products directory
 
-2. Restart Zope
+2. Install PROJ.4 >= 4.4.8 (http://proj.maptools.org)
+  
+   Install the referencing module on the Python version your Zope instance 
+   is using. This module is included within CPSGeo.
+   
+   $ cd $INSTANCE_HOME/Products/CPSGeo/PCL/referencing
+   $ python setup.py build
+   $ sudo python setup.py install
+   $ sudo /sbin/ldconfig
 
-3. Install the CPSGeo Product
+3. Restart Zope
+
+4. Install the CPSGeo Product
 
    Create an External Method at the root of CPS.
    
      module:      CPSGeo.install
      function:    install
 
-4. Add a first map to portal_maps
+5. Add a first map to portal_maps
 
    in portal_maps/manage_main, add a new "CPS Cartographic Map" object. In the
    initial form, specify the id and base URL for a WMS service. For example,
@@ -28,7 +35,7 @@ sgillies@frii.com
    as the srs (spatial reference system), and select 'modis' as a default
    layer.
 
-5. Visit portal_maps/geo_location_view
+6. Visit portal_maps within CPS.
 
 
 

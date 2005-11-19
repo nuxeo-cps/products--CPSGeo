@@ -44,7 +44,8 @@ class CPSMapDocument(CPSDocument):
         if REQUEST is not None:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
             return brainsToGeoRSS(
-                proxy.Title(), proxy.absolute_url(), brains)
+                proxy.Title(), proxy.absolute_url(), brains,
+                self.portal_maps[self.getContent().map_id].srs)
         
 InitializeClass(CPSMapDocument)
 

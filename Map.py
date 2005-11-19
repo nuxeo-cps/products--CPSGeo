@@ -91,7 +91,7 @@ class Map(PortalContent):
         """
         REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
         return brainsToGeoRSS(self.title, self.absolute_url(),
-                              self.getContent().results)
+                              self.getContent().results, self.srs)
 
     security.declareProtected(View, 'mapContext')
     def mapContext(self, REQUEST=None):

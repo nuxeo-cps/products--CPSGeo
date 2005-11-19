@@ -23,6 +23,9 @@
 # The georss module currently "lives" in ZCO, but may soon be split out into
 # a separate package
 
+from cartography.referencing.srs import SpatialReference
+from cartography.referencing.transform.proj4 import ProjTransform
+
 from Products.CPSGeo import etree
 
 # Convenience wrappers for the Element factory
@@ -52,7 +55,7 @@ def GEOElement(tag):
         "{http://www.w3.org/2003/01/geo/wgs84_pos#}" + tag)
 
 
-def brainsToGeoRSS(title, about, brains):
+def brainsToGeoRSS(title, about, brains, srs):
     """Convert catalog query result brains to GeoRSS format
     
     We expect the following brain attributes:
@@ -89,7 +92,19 @@ def brainsToGeoRSS(title, about, brains):
     channel.append(chitems)
     rdf.append(channel)
     
+    # transform geo-locations from WGS84 (stored form) to the map SRS
+    locations = []
     for schema in brains:
+        pos_list = schema.pos_list
+        if pos_list:
+            x, y = pos_list.strip().split()
+            locations.append((float(x), float(y)))
+    wgs84 = SpatialReference(epsg=4326)
+    map_srs = SpatialReference(epsg=int(srs.split(':')[1]))
+    t = ProjTransform(map_srs, wgs84)
+    map_locations = t.transform(locations)
+    
+    for schema, map_location in zip(brains, map_locations):
         item = RSSElement('item')
         item.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] \
                    = schema.getURL()
@@ -105,18 +120,15 @@ def brainsToGeoRSS(title, about, brains):
         date = DCElement('date')
         date.text = schema.Date
         item.append(date)
+        
         # location
-
-        pos_list = schema.pos_list
-        if pos_list and len(pos_list.strip().split()) == 2:
-            x, y = pos_list.strip().split()
-            long = GEOElement('long')
-            long.text = x
-            lat = GEOElement('lat')
-            lat.text = y
-            item.append(long)
-            item.append(lat)
-            rdf.append(item)
+        long = GEOElement('long')
+        long.text = str(map_location[0])
+        lat = GEOElement('lat')
+        lat.text = str(map_location[1])
+        item.append(long)
+        item.append(lat)
+        rdf.append(item)
 
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' \
            + etree.tostring(rdf)

@@ -87,7 +87,7 @@ function GmlPointRenderer(widgetNode, model) {
       		return;
       	}
       	
-      point = containerProj.Forward(point);
+      //point = containerProj.Forward(point);
       point = objRef.containerModel.extent.getPL(point);
 
       var normalImageDiv = document.getElementById(itemId+"_normal");

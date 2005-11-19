@@ -3,3 +3,18 @@ $Id: $
 - CPS > 3.3.6
 - lxml 0.7 or elementtree 1.2.5+
 
+- mapbuilder 0.4
+  http://mapbuilder.sourceforge.net/
+
+- geo-referencing component of Python Cartographic Library
+  http://trac.gispython.org/projects/PCL/wiki/ReferencingTransform
+  
+  $ svn co http://svn.gispython.org/gispy/PCL/trunk PCL
+  $ cd PCL/referencing
+  $ sudo python setup.py install
+
+- PROJ.4 >= 4.4.8
+  http://proj.maptools.org
+  The PROJ.4 library is a cornerstone of open source GIS and is used by the
+  PCL geo-referencing package.
+

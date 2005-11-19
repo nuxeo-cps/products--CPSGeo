@@ -103,3 +103,14 @@ def initialize(registrar):
         tools=tools,
         icon='tool.png'
         ).initialize(registrar)
+
+    from AccessControl import allow_module, allow_class
+    # two classes from PCL's geo-referencing package for use in
+    # cps_geolocate.py
+    allow_module('cartography.referencing.srs')
+    allow_module('cartography.referencing.transform.proj4')
+    from cartography.referencing.srs import SpatialReference
+    allow_class(SpatialReference)
+    from cartography.referencing.transform.proj4 import ProjTransform
+    allow_class(ProjTransform)
+

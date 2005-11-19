@@ -32,6 +32,7 @@
         </AoiBoxDHTML>
         <CursorTrack id="cursorTrack">
           <mouseHandler>mainMap</mouseHandler>
+          <showXY>true</showXY>
         </CursorTrack>
         <MapScaleText id="mapScaleText"/>
       </widgets>

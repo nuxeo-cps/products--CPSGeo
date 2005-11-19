@@ -15,6 +15,11 @@ function switch_map() {
 function submit_location() {
   var pos = document.getElementById("doc_location").pos_list.value;
   var field = opener.document.forms[2].widget__pos_list.value = pos;
+  // XXX getSRS() is a mapbuilder Context method
+  // should get epsg:27582 for your customer's map
+  // this value then needs to get passed to cps_geolocate:method
+  // I'm not sure how you accomplish this -- Sean
+  var srs = config.objects.mainMap.getSRS();
   window.close();
 }
 
@@ -22,8 +27,6 @@ function update_map() {
   //
   // changes the mainMap model and triggers a re-draw of the main map pane
   //
-  // join names of all visible layers in the layerControl and use this
-  // string as the name of the mainMap context
   var name_list = [];
   var layers = config.objects.layerControl.doc.selectNodes("//wmc:Layer");
   for (var i=0; i<layers.length; i++)

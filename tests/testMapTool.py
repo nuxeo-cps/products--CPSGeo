@@ -27,7 +27,6 @@ from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.URLTool import URLTool
 
 from Products.CPSGeo.MapTool import MapTool
-from Products.CPSGeo.Map import Map
 
 class MapToolTestCase(unittest.TestCase):
 

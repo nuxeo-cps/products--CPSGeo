@@ -11,7 +11,9 @@ document: <a tal:define="url here/getCapabilitiesUrl" tal:attributes="href url" 
 </p>
 
 <p class="form-help">
-Default <em>size</em> and <em>bounds</em> presume a map <em>srs</em> of EPSG:4326. Please adjust these attributes to proper values.
+Please adjust the following attributes to proper values. Default <em>size</em> and <em>srs</em>. 
+The bounds are extracted from the capabilities document. 
+Select the default visible layers tha will appear at first while checking the map.
 </p>
 
 <form ACTION="manage_editMap" METHOD="post">

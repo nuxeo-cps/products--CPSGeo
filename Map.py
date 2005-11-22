@@ -19,8 +19,6 @@
 """Map
 """
 
-import cgi
-
 from Globals import InitializeClass
 from AccessControl import ClassSecurityInfo
 
@@ -121,10 +119,10 @@ class Map(PortalContent):
         if title:
             self.title = str(title)
 
-        # Keep the existing parameters only if the url is the same.
-        #if cgi.parse_qs(url).keys()[0] == cgi.parse_qs(self.url).keys()[0]:
-        # XXX: i don't understand this above -- Sean
-        if 1:
+        # Keep the existing parameters only if the url is the
+        # same because the old parameters are not necessarly relevant
+        # anymore if the user changed the url of the map.
+        if url.startswith(self.url):
             if size:
                 assert len(size) == 2
                 self.size = tuple(map(int, size))

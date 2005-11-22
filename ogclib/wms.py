@@ -112,6 +112,7 @@ class WMSCapabilitiesInfoset:
     def getBounds(self):
         # Default one is the world bounds
         bounds = (-180.000000, -90.000000, 180.000000, 90.000000)
+        # XXX need to take the good ones according to right projection.
         bounds_nodes = self._infoset.findall(
             'Capability/Layer/LatLonBoundingBox')
         if bounds_nodes:

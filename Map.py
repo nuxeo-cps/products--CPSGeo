@@ -150,7 +150,7 @@ class Map(PortalContent):
 
     manage_options = (
         {'label': 'Edit', 'action': 'manage_editMapForm'},
-        )
+        ) + PortalContent.manage_options
 
     manage_editMapForm = PageTemplateFile('zmi/map_edit_form.pt', globals(),
                                           __name__='manage_editMapForm')

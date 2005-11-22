@@ -89,6 +89,11 @@ class Reader111TestCase01(Reader111TestCaseBase):
         self._url = 'http://wms.jpl.nasa.gov/wms.cgi'
         self._cap = self._reader.read(self._url)
 
+    def test_srs(self):
+        srs = self._cap.getSRS()
+        expected = 'EPSG:4326'
+        self.assertEqual(srs, expected)
+        
 class Reader111TestCase02(Reader111TestCaseBase):
 
     def setUp(self):
@@ -131,6 +136,11 @@ class Reader111TestCase03(unittest.TestCase):
         bounds = self._cap.getBounds()
         expected_bounds = (-4.7038, 46.7215, -3.24254, 47.717)
         self.assertEqual(bounds, expected_bounds)
+
+    def test_srs(self):
+        srs = self._cap.getSRS()
+        expected = 'epsg:27582'
+        self.assertEqual(srs, expected)
 
 class WMSCapabilitiesReaderFromStringTestCase(Reader111TestCase03):
 

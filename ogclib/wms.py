@@ -125,6 +125,14 @@ class WMSCapabilitiesInfoset:
                      )))
         return bounds
 
+    def getSRS(self):
+        srs_nodes = self._infoset.findall(
+            'Capability/Layer/SRS')
+        if srs_nodes:
+            srs_node = srs_nodes[0]
+            return srs_node.text
+        return 'epsg:4326'
+            
 class WMSCapabilitiesReader:
     """Read and parse capabilities document into a lxml.etree infoset
     """

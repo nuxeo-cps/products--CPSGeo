@@ -4,7 +4,8 @@ Requires:
 - Installation of the referencing library from PCL. See INSTALL.txt
 New features:
 ~~~~~~~~~~~~~
--
+- Returns the bounds of the map at map creation time according to the
+capabilities document.
 Bug fixes:
 ~~~~~~~~~~
 -

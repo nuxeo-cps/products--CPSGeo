@@ -173,7 +173,7 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
 
     security.declareProtected(ManagePortal, 'manage_addMap')
     def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
-                      srs=None, format=None, layers=[], REQUEST=None):
+                      srs='', format=None, layers=[], REQUEST=None):
         """Add a Map to a Map tool"""
         try:
             ob = Map(id, url, name, title, size, bounds, srs, format, layers)

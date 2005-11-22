@@ -109,6 +109,22 @@ class WMSCapabilitiesInfoset:
                 info[layer.findall('Title')[0].text] = layer.findall('Style')
         return info
 
+    def getBounds(self):
+        # Default one is the world bounds
+        bounds = (-180.000000, -90.000000, 180.000000, 90.000000)
+        bounds_nodes = self._infoset.findall(
+            'Capability/Layer/LatLonBoundingBox')
+        if bounds_nodes:
+            bounds_node = bounds_nodes[0]
+            return tuple(
+                map(float,
+                    (bounds_node.attrib.get('minx', '-180.000000'),
+                     bounds_node.attrib.get('miny', '-90.000000'),
+                     bounds_node.attrib.get('maxx', '180.000000'),
+                     bounds_node.attrib.get('maxy', '90.000000')
+                     )))
+        return bounds
+
 class WMSCapabilitiesReader:
     """Read and parse capabilities document into a lxml.etree infoset
     """
@@ -157,4 +173,4 @@ class WMSCapabilitiesReader:
         if not isinstance(st, str):
             raise ValueError("String must be of type string, not %s" % type(st))
         return WMSCapabilitiesInfoset(etree.fromstring(st))
-    
+

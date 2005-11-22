@@ -127,6 +127,11 @@ class Reader111TestCase03(unittest.TestCase):
         styles = [x[0] for x in info.values() if x]
         self.assertEqual(len(styles), 5)
 
+    def test_bounds(self):
+        bounds = self._cap.getBounds()
+        expected_bounds = (-4.7038, 46.7215, -3.24254, 47.717)
+        self.assertEqual(bounds, expected_bounds)
+
 class WMSCapabilitiesReaderFromStringTestCase(Reader111TestCase03):
 
     def setUp(self):

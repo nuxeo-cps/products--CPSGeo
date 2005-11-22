@@ -27,6 +27,7 @@ from AccessControl import ClassSecurityInfo
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
 from Products.CMFCore.PortalContent import PortalContent
+
 from Products.CMFCore.permissions import View
 from Products.CMFCore.permissions import ManagePortal
 
@@ -84,14 +85,6 @@ class Map(PortalContent):
         """Return capabilities URL"""
         reader = wms.WMSCapabilitiesReader('1.1.1')
         return reader.capabilities_url(self.url)
-
-    security.declareProtected(View, 'getGeoRSSModel')
-    def getGeoRSSModel(self, ):
-        """Return a GeoRSS model for mapbuilder
-        """
-        REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
-        return brainsToGeoRSS(self.title, self.absolute_url(),
-                              self.getContent().results, self.srs)
 
     security.declareProtected(View, 'mapContext')
     def mapContext(self, REQUEST=None):

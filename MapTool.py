@@ -57,21 +57,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     def __init__(self):
         CMFBTreeFolder.__init__(self, self.id)
 
-    security.declareProtected(View, 'getGeoRSSModel')
-    def getGeoRSSModel(self, bbox=[], REQUEST=None):
-        """Return a GeoRSS model for mapbuilder
-        """
-        brains = self.search(REQUEST.form)
-        REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
-        return brainsToGeoRSS(self.title, self.absolute_url(), brains)
-
-    security.declareProtected(View, 'getMapDocumentGeoRSSModel')
-    def getMapDocumentGeoRSSModel(self, brains):
-        """Return a GeoRSS model for mapbuilder
-        """
-        REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
-        return brainsToGeoRSS(self.title, self.absolute_url(), brains)
-
     security.declareProtected(View, 'geoRSSPath')
     def geoRSSPath(self):
         """Return a BASEPATH2-ish path to GeoRSS doc for mapbuilder

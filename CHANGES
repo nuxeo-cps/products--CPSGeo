@@ -13,3 +13,4 @@ New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Deal with Lambert2 projections properly since mapbuilder approximations on
   the this kind of projection is pretty raugh.
+- Cleanup dead chicken API

@@ -39,7 +39,6 @@ from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.utils import _checkPermission
 
-from georss import brainsToGeoRSS
 from Map import Map
 
 class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):

@@ -15,9 +15,6 @@ if REQUEST is not None:
     if form.has_key('pos_list'):
         pos_list = form['pos_list']
 
-    # XXX your customer's default value
-    # the correct value needs to reach this method. see submit_location()
-    # in cps_geo_common.js -- Sean
     srs = "epsg:27582"
     if form.has_key('srs'):
         srs = form['srs']

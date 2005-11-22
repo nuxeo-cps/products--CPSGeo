@@ -13,13 +13,10 @@ function switch_map() {
 }
 
 function submit_location() {
-  var pos = document.getElementById("doc_location").pos_list.value;
-  var field = opener.document.forms[2].widget__pos_list.value = pos;
-  // XXX getSRS() is a mapbuilder Context method
-  // should get epsg:27582 for your customer's map
-  // this value then needs to get passed to cps_geolocate:method
-  // I'm not sure how you accomplish this -- Sean
+  var doc_location = document.getElementById("doc_location");
+  var pos = doc_location.pos_list.value;
   var srs = config.objects.mainMap.getSRS();
+  doc_location.srs.value = srs;
   window.close();
 }
 

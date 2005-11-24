@@ -1,5 +1,6 @@
 # (C) Copyright 2005 Nuxeo SARL <http://nuxeo.com>
-# Author: Sean Gillies (sgillies@frii.com)
+# Authors: Sean Gillies (sgillies@frii.com)
+#          Julien Anguenot <ja@nuxeo.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 2 as published
@@ -32,6 +33,9 @@ from Products.CMFCore.permissions import ManagePortal
 from ogclib import wmc
 from ogclib import wms
 
+from cartography.referencing.srs import SpatialReference
+from cartography.referencing.transform.proj4 import ProjTransform
+
 class Map(PortalContent):
 
     """Map
@@ -57,11 +61,15 @@ class Map(PortalContent):
         self.formatlist = cap.getmapformats()
         self.srslist = cap.layersrs()
         self.size = tuple(size)
-        self.bounds = cap.getBounds()
-        self.srs = srs
+        self.srs = cap.getSRS()
+        self.bounds = cap.getBounds(self.srs)
         self.format = format
         self.visible_layers = tuple(layers)
 
+    def _setBounds(self):
+        cap = self._readCapabilities()
+        self.bounds = cap.getBounds(self.srs)
+        
     def _getTitle(self, max_length=0):
         """Return a the title of the map
 
@@ -129,6 +137,8 @@ class Map(PortalContent):
             if bounds:
                 assert len(bounds) == 4
                 self.bounds = tuple(map(float, bounds))
+            else:
+                self._setBounds()
             if srs:
                 self.srs = str(srs)
             if format:

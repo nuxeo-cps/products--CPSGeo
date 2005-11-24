@@ -43,6 +43,10 @@ class MapTest(unittest.TestCase):
         self.assertEqual(map_._getTitle(), 'The title')
         self.assertEqual(map_._getTitle(max_length=3), 'The')
 
+    def test_bounds(self):
+        map_ = Map(id='map', url=self._url)
+        self.assertEqual((-180.0, -90.0, 180.0, 90.0), map_.bounds)
+
     def testMapContext(self):
         m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
                 srs='EPSG:4326', layers=['global_mosaic'])

@@ -109,20 +109,26 @@ class WMSCapabilitiesInfoset:
                 info[layer.findall('Title')[0].text] = layer.findall('Style')
         return info
 
-    def getBounds(self):
+    def getBounds(self, srs):
         # Default one is the world bounds
         bounds = (-180.000000, -90.000000, 180.000000, 90.000000)
-        # XXX need to take the good ones according to right projection.
-        bounds_nodes = self._infoset.findall(
-            'Capability/Layer/LatLonBoundingBox')
-        if bounds_nodes:
-            bounds_node = bounds_nodes[0]
+        bounds_nodes = self._infoset.findall('Capability/Layer/BoundingBox')
+        try:
+            srs_code = srs.split(':')[1]
+        except IndexError:
+            # Let's fallback on the epsg:4326
+            src_code = '4326'
+        for bounds_node in bounds_nodes:
+            n_srs_code = bounds_node.attrib.get(
+                'SRS', 'epsg:').split(':')[1]
+            if srs_code != n_srs_code:
+                continue
             return tuple(
                 map(float,
-                    (bounds_node.attrib.get('minx', '-180.000000'),
-                     bounds_node.attrib.get('miny', '-90.000000'),
-                     bounds_node.attrib.get('maxx', '180.000000'),
-                     bounds_node.attrib.get('maxy', '90.000000')
+                    (bounds_node.attrib.get('minx', -180.000000),
+                     bounds_node.attrib.get('miny', -90.000000),
+                     bounds_node.attrib.get('maxx', 180.000000),
+                     bounds_node.attrib.get('maxy', 90.000000)
                      )))
         return bounds
 

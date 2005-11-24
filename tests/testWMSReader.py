@@ -133,8 +133,8 @@ class Reader111TestCase03(unittest.TestCase):
         self.assertEqual(len(styles), 5)
 
     def test_bounds(self):
-        bounds = self._cap.getBounds()
-        expected_bounds = (-4.7038, 46.7215, -3.24254, 47.717)
+        bounds = self._cap.getBounds('epsg:27582')
+        expected_bounds = (422379, 2.1939e+06, 530821, 2.30234e+06)
         self.assertEqual(bounds, expected_bounds)
 
     def test_srs(self):

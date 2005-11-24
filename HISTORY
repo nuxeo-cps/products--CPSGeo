@@ -1,4 +1,24 @@
 *******************************************
+** CPSGeo V0.7.0 [R1 build 2005/11/24-03:53 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29873
+Requires:
+~~~~~~~~~
+- PROJ.4 >= 4.4.8. See DEPENDENCIES.txt
+- Installation of the referencing library from PCL. See INSTALL.txt
+New features:
+~~~~~~~~~~~~~
+- Returns the bounds of the map at map creation time according to the
+capabilities document.
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Deal with Lambert2 projections properly since mapbuilder approximations on
+  the this kind of projection is pretty raugh.
+- Cleanup dead chicken API
+
+*******************************************
 ** CPSGeo V0.6.0 [R1 build 2005/11/17-15:36 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 29573
 Requires:

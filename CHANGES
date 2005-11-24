@@ -1,16 +1,12 @@
 Requires:
 ~~~~~~~~~
-- PROJ.4 >= 4.4.8. See DEPENDENCIES.txt
-- Installation of the referencing library from PCL. See INSTALL.txt
+-
 New features:
 ~~~~~~~~~~~~~
-- Returns the bounds of the map at map creation time according to the
-capabilities document.
+-
 Bug fixes:
 ~~~~~~~~~~
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- Deal with Lambert2 projections properly since mapbuilder approximations on
-  the this kind of projection is pretty raugh.
-- Cleanup dead chicken API
+-

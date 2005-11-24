@@ -1,0 +1,61 @@
+1.Régler le problème  de Coordonnées
+
+  C'est implémenté. Il faut tester et nous donner des retours sur ce
+  point. C'est implémenté et le Lambert2 étendu est géré.
+
+2.Cacher la mapmonde 
+
+  C'est un pb CSS. Je m'en occupe aujourd'hui.
+
+3.gestion de l'impression de l'image de la carte + Titre et Légende
+
+  C'est implémenté. Il faut que je l'active. Idem je m'occupe de ça
+  aujourd'hui.
+
+4.Prendre les bounds en compte lors de la création d'un document type
+  document carte
+
+ C'est fait.
+
+5.revenir en AJAX dans la gestion des couches
+
+  ok je m'en occupe.
+
+  6.Cohérence de 'affichage initial de la carte avec les couches
+    sélectionnées en ZMI
+
+  1.toutes les couches sont affichées sur la carte lors de la première
+    visualisation
+
+  2.Il faut appuyer sur update main map pour avoire la bonne image
+ 
+  ok je fixe
+
+7.le bouton de géolocaliasion ne doit pas apparaître lors de
+  l'affichage d'un document de type carte (ni l'option dans la vue
+  modifiacation du document). Il doit par contre s'affichier dans lors
+  de la géolocalisation.
+
+  Ce n'est pas le cas pour le moment ? 
+
+8.Affichage de le titre de la carte 
+
+  A quel endroit ? 
+
+9.Problème de IE lors de l'affichage de la carte "Operation Not Permit"
+1.Win2K SP4 / IE 6.02 
+2.Les vues "view et /" renvoient Operation Not permitted, par contre
+  la vue cpsdocument_view renvoient une page dans laquelle la carte ne
+  se charge pas dans le cadre toutes les SKIN.
+
+  Ok je vais trouver un IE chez Nuxeo.
+
+10.point à conserver : quid de la possibilté d'avoire un document
+   flexible "carte"
+
+ ok
+
+11.Vue ZMI de portal maps dans CPS, accessible uniquement de manager,
+   voire mapmanager ?
+
+ Oui, c'est faisable.

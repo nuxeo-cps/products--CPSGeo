@@ -1,8 +1,3 @@
-1.Régler le problème  de Coordonnées
-
-  C'est implémenté. Il faut tester et nous donner des retours sur ce
-  point. C'est implémenté et le Lambert2 étendu est géré.
-
 2.Cacher la mapmonde 
 
   C'est un pb CSS. Je m'en occupe aujourd'hui.
@@ -11,11 +6,6 @@
 
   C'est implémenté. Il faut que je l'active. Idem je m'occupe de ça
   aujourd'hui.
-
-4.Prendre les bounds en compte lors de la création d'un document type
-  document carte
-
- C'est fait.
 
 5.revenir en AJAX dans la gestion des couches
 
@@ -30,13 +20,6 @@
   2.Il faut appuyer sur update main map pour avoire la bonne image
  
   ok je fixe
-
-7.le bouton de géolocaliasion ne doit pas apparaître lors de
-  l'affichage d'un document de type carte (ni l'option dans la vue
-  modifiacation du document). Il doit par contre s'affichier dans lors
-  de la géolocalisation.
-
-  Ce n'est pas le cas pour le moment ? 
 
 8.Affichage de le titre de la carte 
 

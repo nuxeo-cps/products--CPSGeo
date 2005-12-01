@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: 2005-11-14 04:27default\n"
-"PO-Revision-Date: 2005-11-14 04:28+0100\n"
+"PO-Revision-Date: 2005-12-01 17:21+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -133,4 +133,7 @@ msgstr "Cacher les informations sur l'échelle de la carte ?"
 
 msgid "label_cpsgeo_hide_cursor_track"
 msgstr "Cacher les corrdonnées du curseur ?"
+
+msgid "label_cpsmap_document_print"
+msgstr "Imprimer"
 

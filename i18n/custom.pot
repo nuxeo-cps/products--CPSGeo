@@ -87,3 +87,6 @@ msgstr ""
 
 msgid "button_cpsgeo_update_mainmap"
 msgstr ""
+
+msgid "label_cpsmap_document_print"
+msgstr ""

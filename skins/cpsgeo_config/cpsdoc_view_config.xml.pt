@@ -50,10 +50,6 @@
       <nodeSelectXpath>/rdf:RDF/rss:item</nodeSelectXpath>
       <stylesheet>popup.xsl</stylesheet>
       <widgets>
-        <Widget id="printingFeatures">
-          <stylesheet>geo_printingFeatures.xsl</stylesheet>
-          <targetModel>mainMap</targetModel>
-        </Widget>
         <GmlPointRenderer id="pointRenderer">
           <htmlTagId>mainMapPane</htmlTagId>
           <mapContainerId>mainMapContainer</mapContainerId>

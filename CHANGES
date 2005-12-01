@@ -10,3 +10,5 @@ Bug fixes:
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - #1169 Add revised Italian translation for CPSGeo
+- Remove all server side printing related stuffs. We'll handle the
+print browser side.

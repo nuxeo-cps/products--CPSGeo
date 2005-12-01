@@ -2,15 +2,12 @@
   <metal:block use-macro="here/main_template/macros/master">
     <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"></metal:block>
     <metal:block fill-slot="javascript_head_slot">
-      <script type="text/javascript" src="cpsgeo.js" 
+      <script type="text/javascript" src="cps_geo_common.js" 
 	      tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
       <script>
 	// URL of Mapbuilder configuration file.
 	var mbConfigUrl='cpsdoc_view_config.xml';    
       </script>
-
-      <script type="text/javascript" src="cpsgeo.js" 
-	      tal:attributes="src string:${here/absolute_url}/cpsgeo.js"></script>
       <script type="text/javascript" 
 	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
       <script type="text/javascript" src="overlib.js" 

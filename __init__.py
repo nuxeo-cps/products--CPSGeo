@@ -69,6 +69,7 @@ LOG(logKey, INFO, "Registers .xml extension for CMFCore.FSFile")
 registerFileExtension('xsl', FSFile)
 LOG(logKey, INFO, "Registers .xslt extension for CMFCore.FSFile")
 
+import permissions
 import MapTool
 import Map
 import CPSMapDocument

@@ -24,6 +24,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
 from Products.CPSGeo.Extensions.mapbuilder_installer import install_lib
+from Products.CPSGeo.permissions import ManagePortalMaps
 
 CPS_SKINS = {
     'cpsgeo_images': 'Products/CPSGeo/skins/cpsgeo_images',
@@ -47,6 +48,7 @@ class CPSGeoInstaller(CPSInstaller):
         self.setupMapTool()
         self.verifySkins(CPS_SKINS)
         self.resetSkinCache()
+        self.verifyNewRolesAndPermissions()
         self.verifyWidgets(self.portal.getCPSGeoWidgets())
         self.verifySchemas(self.portal.getCPSGeoSchemas())
         self.verifyLayouts(self.portal.getCPSGeoLayouts())
@@ -60,6 +62,16 @@ class CPSGeoInstaller(CPSInstaller):
         self.finalize()
         self.log("End of specific CPSGeo install")
 
+    def verifyNewRolesAndPermissions(self):
+        """Verify new Roles and permissions
+        """
+        self.verifyRoles(['PortalMapsManager'])
+        self.setupPortalPermissions({
+            ManagePortalMaps: ['Manager',
+                               'PortalMapsManager',
+                                ],
+            })
+        
     def setupMapTool(self):
         """Map Repository Tool
         """
@@ -116,7 +128,8 @@ class CPSGeoInstaller(CPSInstaller):
         actiondelmap = {
             'portal_maps': ('cps_map_server',
                             'cps_geolocation',
-                                 )
+                            'cps_manage_maps',
+                            )
         }
         self.deleteActions(actiondelmap)
 
@@ -127,6 +140,16 @@ class CPSGeoInstaller(CPSInstaller):
             action='string:${portal_url}/cps_map_browser',
             condition="",
             permission=(ManagePortal,),
+            category='global',
+            visible=1)
+
+        # category : global
+        self.portal['portal_maps'].addAction(
+            id='cps_manage_maps',
+            name='action_cps_manage_maps',
+            action='string:${portal_url}/cps_manage_maps_form',
+            condition="",
+            permission=(ManagePortalMaps,),
             category='global',
             visible=1)
 

@@ -28,13 +28,14 @@ from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from Products.CMFCore.PortalContent import PortalContent
 
 from Products.CMFCore.permissions import View
-from Products.CMFCore.permissions import ManagePortal
 
 from ogclib import wmc
 from ogclib import wms
 
 from cartography.referencing.srs import SpatialReference
 from cartography.referencing.transform.proj4 import ProjTransform
+
+from permissions import ManagePortalMaps
 
 class Map(PortalContent):
 
@@ -44,7 +45,8 @@ class Map(PortalContent):
     and the default screen size and spatial bounding box.
     """
 
-    meta_type = portal_type = 'CPS Cartographic Map'
+    meta_type = 'CPS Cartographic Map'
+    portal_type = meta_type
 
     security = ClassSecurityInfo()
 
@@ -113,7 +115,7 @@ class Map(PortalContent):
         cap = self._readCapabilities()
         return cap.getLayerInfo()
 
-    security.declareProtected(ManagePortal, 'editMap')
+    security.declareProtected(ManagePortalMaps, 'editMap')
     def editMap(self, url='', name='', title='', size=[], bounds=[],
                 srs='', format=None, layers=[]):
         """edit map attributes"""
@@ -146,7 +148,7 @@ class Map(PortalContent):
             if layers:
                 self.visible_layers = tuple(layers)
 
-    security.declareProtected(ManagePortal, 'manage_editMap')
+    security.declareProtected(ManagePortalMaps, 'manage_editMap')
     def manage_editMap(self, url='', name='', title='', size=[], bounds=[],
                 srs='', format=None, layers=[], REQUEST=None):
         """web front end to editMap"""

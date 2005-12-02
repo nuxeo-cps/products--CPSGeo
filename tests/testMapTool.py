@@ -23,10 +23,10 @@ import unittest
 
 from OFS.Folder import Folder
 
-from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.URLTool import URLTool
 
 from Products.CPSGeo.MapTool import MapTool
+from Products.CPSGeo.permissions import ManagePortalMaps
 
 class MapToolTestCase(unittest.TestCase):
 
@@ -43,7 +43,7 @@ class MapToolTestCase(unittest.TestCase):
         self.assertEqual(self._maptool.all_meta_types(),
                          ({'name': 'CPS Cartographic Map',
                            'action': 'manage_addMapForm',
-                           'permission': ManagePortal},
+                           'permission': ManagePortalMaps},
                           ))
         self.assertEqual(0, len(self._maptool))
 

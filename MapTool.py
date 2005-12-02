@@ -32,12 +32,13 @@ from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from Products.CMFCore.CMFBTreeFolder import CMFBTreeFolder
 from Products.CMFCore.ActionProviderBase import ActionProviderBase
 
-from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
 
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.utils import _checkPermission
+
+from permissions import ManagePortalMaps
 
 from Map import Map
 
@@ -146,16 +147,16 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
          CMFBTreeFolder.manage_options[1:]
 
 
-    security.declareProtected(ManagePortal, 'manage_addMapForm')
+    security.declareProtected(ManagePortalMaps, 'manage_addMapForm')
     manage_addMapForm = PageTemplateFile('zmi/map_create_form.pt', globals(),
                                          __name__='manage_addMapForm')
 
-    security.declareProtected(ManagePortal, 'manage_geoLocationView')
+    security.declareProtected(ManagePortalMaps, 'manage_geoLocationView')
     manage_mapbrowserView = PageTemplateFile(
         'skins/cpsgeo_standalone/mapbrowser_view.pt', globals(),
         __name__='manage_mapbrowserView')
 
-    security.declareProtected(ManagePortal, 'manage_addMap')
+    security.declareProtected(ManagePortalMaps, 'manage_addMap')
     def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
                       srs='', format=None, layers=[], REQUEST=None):
         """Add a Map to a Map tool"""
@@ -181,7 +182,7 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
     def all_meta_types(self):
         return ({'name': 'CPS Cartographic Map',
                  'action': 'manage_addMapForm',
-                 'permission': ManagePortal},
+                 'permission': ManagePortalMaps},
                 )
 
 InitializeClass(MapTool)

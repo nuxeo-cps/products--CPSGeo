@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "POT-Creation-Date: 2005-11-14 04:27default\n"
-"PO-Revision-Date: 2005-12-01 17:21+0100\n"
+"PO-Revision-Date: 2005-12-02 17:52+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -133,4 +133,7 @@ msgstr ""
 
 msgid "label_cpsmap_document_print"
 msgstr "Imprimer"
+
+msgid "action_cps_manage_maps"
+msgstr "Gérer les cartes"
 

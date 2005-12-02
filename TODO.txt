@@ -1,15 +1,9 @@
 2.Cacher la mapmonde 
 
-  C'est un pb CSS. Je m'en occupe aujourd'hui.
-
 3.gestion de l'impression de l'image de la carte + Titre et Légende
 
   C'est implémenté. Il faut que je l'active. Idem je m'occupe de ça
   aujourd'hui.
-
-5.revenir en AJAX dans la gestion des couches
-
-  ok je m'en occupe.
 
   6.Cohérence de 'affichage initial de la carte avec les couches
     sélectionnées en ZMI
@@ -19,11 +13,8 @@
 
   2.Il faut appuyer sur update main map pour avoire la bonne image
  
-  ok je fixe
+8.Affichage de le titre de la carte sur le document carte
 
-8.Affichage de le titre de la carte 
-
-  A quel endroit ? 
 
 9.Problème de IE lors de l'affichage de la carte "Operation Not Permit"
 1.Win2K SP4 / IE 6.02 
@@ -31,14 +22,8 @@
   la vue cpsdocument_view renvoient une page dans laquelle la carte ne
   se charge pas dans le cadre toutes les SKIN.
 
-  Ok je vais trouver un IE chez Nuxeo.
-
 10.point à conserver : quid de la possibilté d'avoire un document
    flexible "carte"
 
- ok
-
 11.Vue ZMI de portal maps dans CPS, accessible uniquement de manager,
    voire mapmanager ?
-
- Oui, c'est faisable.

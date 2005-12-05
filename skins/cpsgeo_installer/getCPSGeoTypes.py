@@ -69,6 +69,14 @@ cps_map_document_type = {
           'permission': ('Change permissions',),
           'category': 'object',
           'visible': True,},
+         {'id': 'print',
+          'name': 'action_print',
+          'action': 'string:javascript:print_map_document();',
+          'condition': '',
+          'permission': ('View',),
+          'category': 'object',
+          'visible': True,},
+
     )
 }
 

@@ -16,8 +16,10 @@
     <metal:block fill-slot="header">
     </metal:block>
 
-  <metal:block fill-slot="main">
-    <tal:block tal:content="structure rendered_main|python:here.getContent().render(proxy=here)" />
-  </metal:block>
+    <metal:block fill-slot="main">
+      <div id="map_doc_body">
+	<tal:block tal:content="structure rendered_main|python:here.getContent().render(proxy=here)" />
+      </div>
+    </metal:block>
   </metal:block>
 </metal:block>

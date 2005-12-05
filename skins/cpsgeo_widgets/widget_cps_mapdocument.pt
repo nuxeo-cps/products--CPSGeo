@@ -13,8 +13,12 @@
   </div>
 <table>
   <tr>
-    <td valign="top" style="padding:10px">
+    <td valign="top" style="padding:10px" colspan="2" align="left">
 	<metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" />
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding:10px">
 	<metal:block use-macro="here/cpsgeo_layers/macros/layers" />
     </td>
     <td valign="top">

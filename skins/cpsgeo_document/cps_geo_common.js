@@ -39,3 +39,32 @@ function update_map() {
   config.objects.mainMap.callListeners("loadModel");
 }
 
+function print_map_document() {
+  var popup = window.open("cpsmap_document_print", "cpsmap_document_print", "toolbar=0, scrollbars=1, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=800, height=600");
+  if (!popup.opener) {
+    popup.opener = window;
+  }
+}
+
+function updateFromParent() {
+
+  // Copy only the elements we want on the report
+  var divs2copy = new Array("mainMapPane",
+			    "legend",
+			    "widget__map_id_widget");
+  for (var i=0; i<divs2copy.length; i++) {
+    var id_ = divs2copy[i];
+    var orig_html = opener.document.getElementById(id_).innerHTML;
+    var dest = document.getElementById(id_);
+    dest.innerHTML = orig_html;
+  }
+  
+  // Remove the dirt
+  var submit = document.getElementById("layers_submit");
+  submit.type = "hidden";
+
+}
+
+
+
+

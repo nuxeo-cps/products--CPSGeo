@@ -80,7 +80,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         map_ = self._mtool.map1
 
         self.assertEqual(maps[0][0], 'map1')
-        self.assertEqual(maps[0][1], 'map1 ( %s ) '%map_.title)
+        self.assertEqual(maps[0][1], map_.title)
 
     def test_mapVocabularyKey(self):
 
@@ -93,7 +93,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         map_ = self._mtool.map1
 
         map_info_ = self.portal.getAllMapIds('map1')
-        self.assertEqual(map_info_, 'map1 ( %s ) '%map_.title)
+        self.assertEqual(map_info_, map_.title)
 
     def test_getCoordinatesForAsManager(self):
 

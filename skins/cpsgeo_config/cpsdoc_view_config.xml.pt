@@ -58,7 +58,7 @@
         </GmlPointRenderer>
       </widgets>
     </GeoRSS>
-    <Context id="locator">
+    <Context id="locator" tal:condition="not:python:here.getContent().hide_locator">
       <defaultModelUrl>geo_locatorMap.xml</defaultModelUrl>
       <widgets>
         <MapPane id="locatorMapWidget">

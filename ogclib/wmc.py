@@ -162,8 +162,6 @@ class AggregateMapContext(MapContext):
 
     def _getLayerListElement(self):
         layerlist = WMCElement('LayerList')
-        #layering = zip(self._map.layernames, self._map.layertitles)
-        layer_infos = self._map.getLayerInfos()
 
         # Layer
         layer = WMCElement('Layer')
@@ -185,7 +183,7 @@ class AggregateMapContext(MapContext):
 
         # Name
         e_name = WMCElement('Name')
-        e_name.text = ','.join(self._map.layernames)
+        e_name.text = ','.join(self._map.visible_layers)
         layer.append(e_name)
 
         # Title

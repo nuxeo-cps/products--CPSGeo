@@ -3,16 +3,10 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Print map document
+-
 Bug fixes:
 ~~~~~~~~~~
-- Display on the title of the maps on the Map Document view and select box
-- Fix the ability to hide document locator on Map Document.
-- Fix the initial display of aggregated layers. It should *only* merge
-the layers the user specified within the map options
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- #1169 Add revised Italian translation for CPSGeo
-- Remove all server side printing related stuffs. We'll handle the
-print browser side.
-- CPSGeo.permissions declares specific CPSGeo permissions
+-

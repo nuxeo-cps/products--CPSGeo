@@ -37,6 +37,9 @@ from cartography.referencing.transform.proj4 import ProjTransform
 
 from permissions import ManagePortalMaps
 
+DEFAULT_SIZE = (480, 240) # pixels
+DEFAULT_BOUNDS = (-180.000000, -90.000000, 180.000000, 90.000000) # WGS84
+
 class Map(PortalContent):
 
     """Map
@@ -50,8 +53,8 @@ class Map(PortalContent):
 
     security = ClassSecurityInfo()
 
-    def __init__(self, id, url, name=None, title=None, size=(),
-                 bounds=(), srs='', format=None, layers=[]):
+    def __init__(self, id, url, name=None, title=None, size=DEFAULT_SIZE,
+                 bounds=DEFAULT_BOUNDS, srs='', format=None, layers=[]):
         """Initialize"""
         # fix url
         self.url = url.rstrip('?&')
@@ -116,8 +119,8 @@ class Map(PortalContent):
         return cap.getLayerInfo()
 
     security.declareProtected(ManagePortalMaps, 'editMap')
-    def editMap(self, url='', name='', title='', size=[], bounds=[],
-                srs='', format=None, layers=[]):
+    def editMap(self, url='', name='', title='', size=DEFAULT_SIZE,
+                bounds=DEFAULT_BOUNDS, srs='', format=None, layers=[]):
         """edit map attributes"""
 
         # Here, reinit the map by fetching back the map from the server
@@ -149,8 +152,9 @@ class Map(PortalContent):
                 self.visible_layers = tuple(layers)
 
     security.declareProtected(ManagePortalMaps, 'manage_editMap')
-    def manage_editMap(self, url='', name='', title='', size=[], bounds=[],
-                srs='', format=None, layers=[], REQUEST=None):
+    def manage_editMap(self, url='', name='', title='', size=DEFAULT_SIZE,
+                       bounds=DEFAULT_BOUNDS, srs='', format=None, layers=[],
+                       REQUEST=None):
         """web front end to editMap"""
         self.editMap(url=url, name=name, title=title, size=size, bounds=bounds,
                      srs=srs, format=format, layers=layers)

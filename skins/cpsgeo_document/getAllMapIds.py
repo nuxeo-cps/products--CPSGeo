@@ -12,10 +12,7 @@ maptool = context.portal_maps
 
 returned = []
 for id_, map_ in maptool.items():
-    label = id_ \
-            + ' ( ' \
-            + getattr(map_, 'title', 'UNKNOWN') \
-            +  ' ) '
+    label = getattr(map_, 'title', 'UNKNOWN')
     returned.append((id_, label))
 
 if key is not None:

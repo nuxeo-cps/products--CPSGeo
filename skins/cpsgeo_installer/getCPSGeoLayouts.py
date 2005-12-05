@@ -45,7 +45,7 @@ map_document_layout = {
                 'title': '',
                 'fields': ('map_id',),
                 'is_required': True,
-                'label': 'label_cpsgeo_map_id',
+                'label': '',
                 'label_edit': 'label_cpsgeo_map_id',
                 'description': '',
                 'help': '',

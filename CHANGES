@@ -6,7 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Display on the title of the maps on the Map Document view and select box
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - #1169 Add revised Italian translation for CPSGeo

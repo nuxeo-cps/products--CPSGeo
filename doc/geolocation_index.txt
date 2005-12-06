@@ -1,7 +1,9 @@
+$Id: $
+
 Geolocation and Cataloging
 
-    To rapidly find and map geolocated documents, new metadata and index will
-    be required for portal_maps.
+    To rapidly find and map geolocated documents, new metadata and
+    index are added. They extended CPS default metadata.
 
 Metadata
 
@@ -10,12 +12,9 @@ Metadata
 
 Indexing
 
-    I propose that geolocated documents be tracked by a FieldIndex on the
-    pos_list_dimension field. We will name this index "geolocation". This will
-    allow the MapTool to find geolocated documents like::
-
-        brains = self.portal_catalog(geolocation={'query': 1, 'range': 'min'})
+    A new index, a FielIndex one, is added to the portal_catalog that
+    holds the coordinates of a given document. This is available as
+    well as metadata of the catalog search items.
 
       
-
     

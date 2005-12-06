@@ -92,9 +92,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         path to the map context given a map id
         """
         utool = getToolByName(self, 'portal_url')
-        # XXX : change the title length restriction on the display
-        # later on when the widgets will be common to the standalone
-        # and CPS ones
         map_ = getattr(self, mapid, None)
         if map_ is None:
             return {}
@@ -104,6 +101,9 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         else:
             map_path_ = os.path.join(
                 utool.getRelativeContentURL(self), mapid, 'mapContext')
+        # XXX : change the title length restriction on the display
+        # later on when the widgets will be common to the standalone
+        # and CPS ones
         return {
             'id': mapid,
             'title': map_._getTitle(max_length=30),

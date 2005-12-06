@@ -79,6 +79,46 @@ map_document_schema = {
             'write_process_expr': '',
         },
     },
+    'bounds': {
+        'type': 'CPS String Field',
+        'data': {
+            'default_expr':
+            "python:portal.getMapBoundsFor(datamodel['map_id'])",
+            'is_searchabletext': 0,
+            'acl_read_permissions': '',
+            'acl_read_roles': '',
+            'acl_read_expr': '',
+            'acl_write_permissions': '',
+            'acl_write_roles': '',
+            'acl_write_expr': '',
+            'read_ignore_storage': 0,
+            'read_process_expr':
+            'python:bounds or portal.getMapBoundsFor(map_id)',
+            'read_process_dependent_fields': ('map_id', 'bounds'),
+            'write_ignore_storage': 0,
+            'write_process_expr': '',
+        },
+    },
+    'size': {
+        'type': 'CPS String Field',
+        'data': {
+            'default_expr':
+            "python:portal.getMapSizeFor(datamodel['map_id'])",
+            'is_searchabletext': 0,
+            'acl_read_permissions': '',
+            'acl_read_roles': '',
+            'acl_read_expr': '',
+            'acl_write_permissions': '',
+            'acl_write_roles': '',
+            'acl_write_expr': '',
+            'read_ignore_storage': 0,
+            'read_process_expr':
+            'python:size or portal.getMapSizeFor(map_id)',
+            'read_process_dependent_fields': ('map_id', 'size'),
+            'write_ignore_storage': 0,
+            'write_process_expr': '',
+        },
+    },
     'results': {
         'type': 'CPS String List Field',
         'data': {

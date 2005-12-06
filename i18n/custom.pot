@@ -93,3 +93,11 @@ msgstr ""
 
 msgid "label_cpsmap_document_print"
 msgstr ""
+
+msgid "label_cpsgeo_bounds"
+msgstr ""
+
+msgid "label_cpsgeo_size"
+msgstr ""
+
+

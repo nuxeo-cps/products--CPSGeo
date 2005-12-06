@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
 "POT-Creation-Date: 2005-11-14 04:27default\n"
-"PO-Revision-Date: 2005-12-02 17:56+0100\n"
+"PO-Revision-Date: 2005-12-06 06:25+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -138,4 +138,10 @@ msgstr "Print"
 
 msgid "action_cps_manage_maps"
 msgstr "Manage maps"
+
+msgid "label_cpsgeo_bounds"
+msgstr "Bounds for this map document"
+
+msgid "label_cpsgeo_size"
+msgstr "Size for this map document"
 

@@ -137,3 +137,10 @@ msgstr "Imprimer"
 msgid "action_cps_manage_maps"
 msgstr "Gérer les cartes"
 
+#, fuzzy
+msgid "label_cpsgeo_bounds"
+msgstr "Cacher les outils (zoom, localisation et déplacement) ?"
+
+#, fuzzy
+msgid "label_cpsgeo_size"
+msgstr "Identifiant de la carte"

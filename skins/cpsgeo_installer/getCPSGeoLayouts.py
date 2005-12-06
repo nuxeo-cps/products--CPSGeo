@@ -303,6 +303,28 @@ map_document_layout = {
                 'display_false': 'No',
             },
         },
+        'bounds': {
+            'type': 'String Widget',
+            'data': {
+                'fields': ('bounds'),
+                'is_i18n': True,
+                'label': 'label_cpsgeo_bounds',
+                'label_edit': 'label_cpsgeo_bounds',
+                'hidden_layout_modes': ('create', 'view',),
+                'display_width': 50,
+            },
+        },
+        'size': {
+            'type': 'String Widget',
+            'data': {
+                'fields': ('size'),
+                'is_i18n': True,
+                'label': 'label_cpsgeo_size',
+                'label_edit': 'label_cpsgeo_size',
+                'hidden_layout_modes': ('create', 'view',),
+                'display_width': 50,
+            },
+        },
     },
     'layout': {
         'style_prefix': 'layout_default_',
@@ -314,6 +336,10 @@ map_document_layout = {
         'ncols': 1,
         'rows': [
             [{'widget_id': 'map_id', 'ncols': 1},
+            ],
+            [{'widget_id': 'bounds', 'ncols': 1},
+             ],
+            [{'widget_id': 'size', 'ncols': 1},
             ],
             [{'widget_id': 'hide_locator', 'ncols': 1},
             ],

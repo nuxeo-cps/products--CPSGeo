@@ -139,6 +139,62 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
         self.logout()
 
+    def test_getMapSizeFor(self):
+
+        # Python script
+
+        self.login('manager')
+
+        id_ = 'map1'
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._createMap(id_, url)
+
+        size = self.portal.getMapSizeFor('map1')
+        self.assertEqual(size, '480 240')
+
+    def test_getMapSizeFor_does_not_exist(self):
+
+        # Python script
+
+        self.login('manager')
+
+        size = self.portal.getMapSizeFor('xxx')
+        self.assertEqual(size, '')
+
+        size = self.portal.getMapSizeFor('')
+        self.assertEqual(size, '')
+
+        size = self.portal.getMapSizeFor()
+        self.assertEqual(size, '')
+
+    def test_getMapBoundsFor(self):
+
+        # Python script
+
+        self.login('manager')
+
+        id_ = 'map1'
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._createMap(id_, url)
+
+        bounds = self.portal.getMapBoundsFor('map1')
+        self.assertEqual(bounds, '-180.0 -90.0 180.0 90.0')
+        
+    def test_getMapBoundsFor_does_not_exist(self):
+    
+        # Python script
+
+        self.login('manager')
+
+        bounds = self.portal.getMapBoundsFor('xxx')
+        self.assertEqual(bounds, '')
+
+        bounds = self.portal.getMapBoundsFor('')
+        self.assertEqual(bounds, '')
+
+        bounds = self.portal.getMapBoundsFor()
+        self.assertEqual(bounds, '')
+        
     #
     # PRIVATE
     #

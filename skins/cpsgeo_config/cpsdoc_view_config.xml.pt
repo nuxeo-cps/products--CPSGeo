@@ -7,7 +7,7 @@
     
   <models>
     <Context id="layerControl">
-      <defaultModelUrl><span tal:replace="python:here.getBaseUrl()+'portal_maps/'+here.getContent().map_id+'/mapContext'"/></defaultModelUrl>
+      <defaultModelUrl><span tal:replace="python:here.portal_url.getRelativeContentURL(here) + '/getMapContext'"/></defaultModelUrl>
       <widgets>
         <Legend id="contextLegend">
           <htmlTagId>legend</htmlTagId>
@@ -15,7 +15,7 @@
       </widgets> 
     </Context>
     <Context id="mainMap">
-      <defaultModelUrl><span tal:replace="python:here.getBaseUrl()+'portal_maps/'+here.getContent().map_id+'/aggMapContext'"/></defaultModelUrl>
+      <defaultModelUrl><span tal:replace="python:here.portal_url.getRelativeContentURL(here) + '/getAggregatedMapContext'"/></defaultModelUrl>
       <widgets>
         <MapPane id="mainMapWidget">
           <htmlTagId>mainMapPane</htmlTagId>

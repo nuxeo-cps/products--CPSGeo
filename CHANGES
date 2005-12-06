@@ -3,7 +3,7 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- Default bounds and size can be overriden for a given map document
 Bug fixes:
 ~~~~~~~~~~
 -

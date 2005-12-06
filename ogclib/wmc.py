@@ -93,7 +93,7 @@ class MapContext:
         try:
             assert len(size) == 2
         except AssertionError:
-            raise WMCError("%s is a wrong size format"%size)
+            raise WMCError("%s is a wrong size format"%str(size))
 
         window.attrib['width'] = str(size[0])
         window.attrib['height'] = str(size[1])
@@ -118,7 +118,7 @@ class MapContext:
             # example : EPSG:4326
             assert len(srs.split(':')) == 2
         except AssertionError:
-            raise WMCError("%s is a wrong SRS format"%srs)
+            raise WMCError("%s is a wrong SRS format"%str(srs))
 
         bbox.attrib['SRS'] = srs
 
@@ -130,7 +130,7 @@ class MapContext:
         try:
             assert len(bounds) == 4
         except AssertionError:
-            raise WMCError("%s is a wrong bounds format"%bounds)
+            raise WMCError("%s is a wrong bounds format"%str(bounds))
 
         bbox.attrib['minx'] = str(bounds[0])
         bbox.attrib['miny'] = str(bounds[1])

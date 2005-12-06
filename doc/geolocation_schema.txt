@@ -1,7 +1,8 @@
+$Id: $
 
 Schema Name
 
-    We shall call this schema "geolocation". 
+    This schema is "geolocation" and is merged within the CPS default metadata.
     
 Origins in GML
 
@@ -34,6 +35,9 @@ Schema for CPS
             the latitude North of the equator.  A PosList for a location near
             Paris would be "2.4 48.73", and for Denver: "-105.0 39.75"
 
+    Note, for now only the `pos_list` field is used by CPS. In fact,
+    we are preforming conversions to EPSG:4326 coordinates system
+    before storing.
 
 PosList Widget and Layout
 
@@ -65,4 +69,6 @@ PosList Widget and Layout
         
         Display width : int
             25
+
+  Same thing for the layout here, this merged within the CPS metadata layout.
 

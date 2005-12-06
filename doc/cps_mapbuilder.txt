@@ -4,8 +4,16 @@ CPS and Mapbuilder
 
 Developer Notes
 
-Author: Sean Gillies, sgillies@frii.com
+Authors: Sean Gillies, sgillies@frii.com
+         Julien Anguenot, ja@nuxeo.com
 
+Status 
+
+  Draft, not complete.
+
+Revision
+
+$Id: $
 
 1. Mapbuilder Overview
 ======================
@@ -27,10 +35,16 @@ Mapbuilder's design is described in detail at
 1.1 Configuration File
 ----------------------
 
-Models, widgets, and their association are configured by a mapbuilder
-configuration file. Below is an excerpt from 
+Models, widgets, and their association are configured by mapbuilder
+configuration files. 
 
-  CPSGeo/skins/cpsgeo_widgets/geo_edit_config.xml.dtml,
+We got three mapbuilder config files in use : 
+
+CPSGeo/skins/cpsgeo_config/geo_view_config.xml.pt
+CPSGeo/skins/cpsgeo_config/geo_edit_config.xml.pt
+CPSGeo/skins/cpsgeo_config/cpsdoc_view_config.xml.pt
+
+Below is an excerpt from one of them :
 
 which configures the document geo-locating application::
 
@@ -60,29 +74,49 @@ mapbuilder/lib/tool. Widget output is tied to DIVs in a web page through the
 1.2 Loading the Configuration
 -----------------------------
 
-This configuration file is specified in
+The configuration is loaded upon load of HTML. Once loaded, all configured
+models can be accessed via a global "config" object. 
 
-  CPSGeo/skins/cpsgeo_document/cpsgeo_document.pt
+See for instance the files below that are loading configuration : 
 
-and is loaded upon load of that HTML. Once loaded, all configured models can be accessed via a global "config" object.
+ CPSGeo/skins/cpsgeo_document/cps_geolocation_form.pt
+ CPSGeo/skins/cpsgeo_document/cpsmap_document_view.pt
+ CPSGeo/skins/cpsgeo_standalone/cps_map_browser.pt
 
+They are actually simply including javascript files that will in
+result load the configuration.
 
 2. Mapbuilder Installation and Setup
 ====================================
 
-The initial release of CPSGeo uses Mapbuiler 0.4 with two modifications. The
-mapbuilder source must be mounted at CPSGeo/skins/mapbuilder so that a 
-CPSGeo/skins/mapbuilder/lib directory exists. In
-CPSGeo/skins/mapbuilder-patches are the two mods: a modified GmlPointRenderer
-widget, and a new FeatureBase widget.
+The initial release of CPSGeo uses Mapbuiler 0.4 with two
+modifications. The mapbuilder source must be mounted at
+CPSGeo/skins/mapbuilder so that a CPSGeo/skins/mapbuilder/lib
+directory exists. In CPSGeo/skins/mapbuilder-patches are the two mods:
+a modified GmlPointRenderer widget, and a new FeatureBase widget.
+
+As well, mapbuilder 0.4 does not allow to specify the Zoom factor, in
+and out, within the config file. Thus 2 mapbuilder files are patched
+to adress this issue. The default zoom factor for CPSGeo is 1.5
+instead of 4. ZoomIn.js and ZoomOut.js. We can expect to have this
+possiblity within mappbuilder-1.0.
+
+2 other libraries are patched to avoid useless javascript
+popups. Proj.js and Config.js. The reason is that when doscument
+search results are showed on a map document and the one of those
+documents is not within the map bounds it raises a popup saying so
+which is useless.
+
+The patches are documented within the external method itself.
 
 2.1 Installer Script
 --------------------
 
-CPSGeo/Extensions/mapbuilder_installer.py contains an install_lib() function
-for loading mapbuilder and the two mods into a mapbuilder/lib folder in the
-CPS root. This function should be used in a Zope External Method and called in
-the context of the CPS root.
+CPSGeo/Extensions/mapbuilder_installer.py contains an install_lib()
+function for loading mapbuilder and the two mods into a mapbuilder/lib
+folder in the CPS root. This function is called by the CPSGeo main
+installer in the context of the CPS root. Note, this external method
+is reponsible for patching the mapbuilder libs (see above)
 
 
 3. CPSGeo Mapbuilder Applications
@@ -162,6 +196,9 @@ getGeoRSSModel() skin method called in the context of a CPSGeo Map Document.
 The source for that method is at
 
   CPSGeo/skins/cpsgeo_document/getGeoRSSModel.py
+
+This is actually calling a getGeoRSSModel() method on the
+CPSMapDocument within the proxy context itself.
 
 A GmlPointRenderer widget (id="pointRenderer") is responsible for rendering
 items of this GeoRSS model onto the main map pane using a document icon. A

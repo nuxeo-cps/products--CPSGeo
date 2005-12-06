@@ -44,8 +44,9 @@ class MapContext:
     context
     """
 
-    def __init__(self, map_):
+    def __init__(self, map_, **kw):
         self._map = map_
+        self._kw = kw
 
     def _getRootElement(self):
         root = WMCElement('ViewContext')
@@ -72,12 +73,31 @@ class MapContext:
         return window
 
     def _getBoundingBoxElement(self):
+        """Construct the bounding box element
+
+        bounds and SRS are extracted from the map instance except if
+        they have been passed explicitly at MapContext constuction time
+        """
+
         bbox = WMCElement('BoundingBox')
-        bbox.attrib['SRS'] = str(self._map.srs.split()[0])
-        bbox.attrib['minx'] = str(self._map.bounds[0])
-        bbox.attrib['miny'] = str(self._map.bounds[1])
-        bbox.attrib['maxx'] = str(self._map.bounds[2])
-        bbox.attrib['maxy'] = str(self._map.bounds[3])
+
+        if self._kw.get('SRS'):
+            srs = self._kw.get('SRS')
+        else:
+            srs = self._map.srs
+
+        bbox.attrib['SRS'] = str(srs.split()[0])
+
+        if self._kw.get('bounds'):
+            bounds = self._kw.get('bounds').split()
+        else:
+            bounds = self._map.bounds
+
+        bbox.attrib['minx'] = str(bounds[0])
+        bbox.attrib['miny'] = str(bounds[1])
+        bbox.attrib['maxx'] = str(bounds[2])
+        bbox.attrib['maxy'] = str(bounds[3])
+
         return bbox
 
     def _getLayerListElement(self):
@@ -199,18 +219,21 @@ class AggregateMapContext(MapContext):
         formatlist.append(format)
         layer.append(formatlist)
         layerlist.append(layer)
-        
+
         return layerlist
 
 
-def mapToWebMapContext(map, aggregate_layers=False):
+def mapToWebMapContext(map, aggregate_layers=False, **kw):
     """Helper
 
     if the second argument evaluates to True, then all map layers are
     aggregated into a single map context layer.
+
+    **kw contains parameters to use intead of the default ones from
+      the Map instance within the tool (i.e : such as bounds, size, etc...)
     """
     if aggregate_layers:
-        return AggregateMapContext(map)()
+        return AggregateMapContext(map, **kw)()
     else:
-        return MapContext(map)()
+        return MapContext(map, **kw)()
 

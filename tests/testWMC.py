@@ -47,6 +47,10 @@ class WMCTestCase(unittest.TestCase):
         self.assertEqual(ebounds.get('maxx'), '0')
         self.assertEqual(ebounds.get('maxy'), '0')
 
+    def test_contex_bounds_with_incorrect_initial_value(self):
+        map_context = wmc.MapContext(self._map, bounds='0 0 0')
+        self.assertRaises(wmc.WMCError, map_context._getBoundingBoxElement)
+
     def test_contex_srs(self):
         map_context = wmc.MapContext(self._map)
         ebounds = map_context._getBoundingBoxElement()
@@ -56,6 +60,10 @@ class WMCTestCase(unittest.TestCase):
         map_context = wmc.MapContext(self._map, SRS='EPSG:XXXX')
         ebounds = map_context._getBoundingBoxElement()
         self.assertEqual(ebounds.get('SRS'), 'EPSG:XXXX')
+
+    def test_contex_srs_with_initial_incorrect_value(self):
+        map_context = wmc.MapContext(self._map, SRS='XXXX')
+        self.assertRaises(wmc.WMCError, map_context._getBoundingBoxElement)
 
 def test_suite():
     suite = unittest.TestSuite()

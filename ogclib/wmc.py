@@ -32,6 +32,11 @@ from Products.CPSGeo import etree
 context_ns_uri = 'http://www.opengis.net/context'
 context_schemas_uri = 'http://schemas.opengis.net/context/1.0.0/context.xsd'
 
+class WMCError(Exception):
+    """Base class for WMC errors
+    """
+    pass
+
 def WMCElement(tag):
     """WMC based element
     """
@@ -85,13 +90,24 @@ class MapContext:
             srs = self._kw.get('SRS')
         else:
             srs = self._map.srs
+            
+        try:
+            # example : EPSG:4326
+            assert len(srs.split(':')) == 2
+        except AssertionError:
+            raise WMCError("%s is a wrong SRS format"%srs)
 
-        bbox.attrib['SRS'] = str(srs.split()[0])
+        bbox.attrib['SRS'] = srs
 
         if self._kw.get('bounds'):
             bounds = self._kw.get('bounds').split()
         else:
             bounds = self._map.bounds
+
+        try:
+            assert len(bounds) == 4
+        except AssertionError:
+            raise WMCError("%s is a wrong bounds format"%bounds)
 
         bbox.attrib['minx'] = str(bounds[0])
         bbox.attrib['miny'] = str(bounds[1])

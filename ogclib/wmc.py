@@ -24,7 +24,6 @@
 
 Specification can be found over there :
 https://portal.opengeospatial.org/files/?artifact_id=8618
-
 """
 
 from Products.CPSGeo import etree
@@ -50,6 +49,12 @@ class MapContext:
     """
 
     def __init__(self, map_, **kw):
+        """Construct a MapContext instance from a Map instance
+
+        kws contains properties that will he taken into account to
+        generate the WMC. Those override the default properties of the
+        Map instance.
+        """
         self._map = map_
         self._kw = kw
 
@@ -205,12 +210,11 @@ class MapContext:
         wmc_doc_tree.append(self._getLayerListElement())
         return etree.tostring(wmc_doc_tree)
 
-
 class AggregateMapContext(MapContext):
     """ Map Context abstraction
 
     It uses a Map representation as input and export it as as map
-    context -- with aggregation of all layers accomplished through
+    context -- with aggregation of all selected layers accomplished through
     overload of the Layer/Name property
     """
 
@@ -256,18 +260,19 @@ class AggregateMapContext(MapContext):
 
         return layerlist
 
-
-def mapToWebMapContext(map, aggregate_layers=False, **kw):
+def mapToWebMapContext(map, aggregate_layers=False, kws=None):
     """Helper
 
     if the second argument evaluates to True, then all map layers are
     aggregated into a single map context layer.
 
-    **kw contains parameters to use intead of the default ones from
-      the Map instance within the tool (i.e : such as bounds, size, etc...)
+    kws contains parameters to use intead of the default ones from the
+    Map instance within the tool (i.e : such as bounds, size, etc...)
     """
+    if kws is None:
+        kws = {}
     if aggregate_layers:
-        return AggregateMapContext(map, **kw)()
+        return AggregateMapContext(map, **kws)()
     else:
-        return MapContext(map, **kw)()
+        return MapContext(map, **kws)()
 

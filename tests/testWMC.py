@@ -23,15 +23,10 @@ import unittest
 from Products.CPSGeo.Map import Map
 from Products.CPSGeo.ogclib import wmc
 
-class MapContextTestCase(unittest.TestCase):
-
-    def setUp(self):
-        self._this_directory = os.path.split(__file__)[0]
-        url = 'http://wms.jpl.nasa.gov/wms.cgi'
-        self._map = Map('map', url)
+class WMCBaseTestCase(unittest.TestCase):
 
     def test_contex_bounds(self):
-        map_context = wmc.MapContext(self._map)
+        map_context = self._makeOneContext()
         ebounds = map_context._getBoundingBoxElement()
         self.assertEqual(ebounds.get('minx'), '-180.0')
         self.assertEqual(ebounds.get('miny'), '-90.0')
@@ -39,7 +34,7 @@ class MapContextTestCase(unittest.TestCase):
         self.assertEqual(ebounds.get('maxy'), '90.0')
 
     def test_contex_bounds_with_initial_value(self):
-        map_context = wmc.MapContext(self._map, bounds='0 0 0 0')
+        map_context = self._makeOneContext(bounds='0 0 0 0')
         ebounds = map_context._getBoundingBoxElement()
         self.assertEqual(ebounds.get('minx'), '0')
         self.assertEqual(ebounds.get('miny'), '0')
@@ -47,42 +42,63 @@ class MapContextTestCase(unittest.TestCase):
         self.assertEqual(ebounds.get('maxy'), '0')
 
     def test_contex_bounds_with_incorrect_initial_value(self):
-        map_context = wmc.MapContext(self._map, bounds='0 0 0')
+        map_context = self._makeOneContext(bounds='0 0 0')
         self.assertRaises(wmc.WMCError, map_context._getBoundingBoxElement)
 
     def test_contex_srs(self):
-        map_context = wmc.MapContext(self._map)
+        map_context = self._makeOneContext()
         ebounds = map_context._getBoundingBoxElement()
         self.assertEqual(ebounds.get('SRS'), 'EPSG:4326')
 
     def test_contex_srs_with_initial_value(self):
-        map_context = wmc.MapContext(self._map, SRS='EPSG:XXXX')
+        map_context = self._makeOneContext(SRS='EPSG:XXXX')
         ebounds = map_context._getBoundingBoxElement()
         self.assertEqual(ebounds.get('SRS'), 'EPSG:XXXX')
 
     def test_contex_srs_with_initial_incorrect_value(self):
-        map_context = wmc.MapContext(self._map, SRS='XXXX')
+        map_context = self._makeOneContext(SRS='XXXX')
         self.assertRaises(wmc.WMCError, map_context._getBoundingBoxElement)
 
     def test_contex_size(self):
-        map_context = wmc.MapContext(self._map)
+        map_context = self._makeOneContext()
         ebounds = map_context._getWindowElement()
         self.assertEqual(ebounds.get('width'), '480')
         self.assertEqual(ebounds.get('height'), '240')
 
     def test_contex_size_with_initial_value(self):
-        map_context = wmc.MapContext(self._map, size='800 600')
+        map_context = self._makeOneContext(size='800 600')
         ebounds = map_context._getWindowElement()
         self.assertEqual(ebounds.get('width'), '800')
         self.assertEqual(ebounds.get('height'), '600')
 
     def test_contex_size_with_initial_incorrect_value(self):
-        map_context = wmc.MapContext(self._map, size='800')
+        map_context = self._makeOneContext(size='800')
         self.assertRaises(wmc.WMCError, map_context._getWindowElement)
+
+class MapContextTestCase(WMCBaseTestCase):
+
+    def setUp(self):
+        self._this_directory = os.path.split(__file__)[0]
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._map = Map('map', url)
+
+    def _makeOneContext(self, **kw):
+        return wmc.MapContext(self._map, **kw)
+
+class AggMapContextTestCase(WMCBaseTestCase):
+
+    def setUp(self):
+        self._this_directory = os.path.split(__file__)[0]
+        url = 'http://wms.jpl.nasa.gov/wms.cgi'
+        self._map = Map('map', url)
+
+    def _makeOneContext(self, **kw):
+        return wmc.AggregateMapContext(self._map, **kw)
 
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(MapContextTestCase))
+    suite.addTest(unittest.makeSuite(AggMapContextTestCase))
     return suite
 
 if __name__ == '__main__':

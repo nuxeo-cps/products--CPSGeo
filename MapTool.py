@@ -41,6 +41,8 @@ from Products.CMFCore.utils import _checkPermission
 from permissions import ManagePortalMaps
 
 from Map import Map
+from Map import DEFAULT_SIZE
+from Map import DEFAULT_BOUNDS
 
 class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
 
@@ -157,8 +159,9 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         __name__='manage_mapbrowserView')
 
     security.declareProtected(ManagePortalMaps, 'manage_addMap')
-    def manage_addMap(self, id, url, name='', title='', size=[], bounds=[],
-                      srs='', format=None, layers=[], REQUEST=None):
+    def manage_addMap(self, id, url, name='', title='', size=DEFAULT_SIZE,
+                      bounds=DEFAULT_BOUNDS, srs='', format=None, layers=[],
+                      REQUEST=None):
         """Add a Map to a Map tool"""
         try:
             ob = Map(id, url, name, title, size, bounds, srs, format, layers)

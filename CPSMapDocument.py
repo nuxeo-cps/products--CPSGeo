@@ -24,6 +24,7 @@ from AccessControl import ClassSecurityInfo
 from Globals import InitializeClass
 
 from Products.CMFCore.permissions import View
+from Products.CMFCore.utils import getToolByName
 
 from Products.CPSDocument.CPSDocument import CPSDocument
 from Products.CPSGeo.georss import brainsToGeoRSS
@@ -37,15 +38,51 @@ class CPSMapDocument(CPSDocument):
 
     security = ClassSecurityInfo()
 
+    #
+    # PUBLIC
+    #
+
     security.declareProtected(View, 'getGeoRSSModel')
     def getGeoRSSModel(self, proxy, REQUEST=None):
-        dm = self.getDataModel()
-        brains = proxy.getSearchWidgetContents(dm)[0]
+        """Return a georss document for this Map Document.
+
+        http://www.georss.org/
+        """
         if REQUEST is not None:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+            dm = self.getDataModel()
+            brains = proxy.getSearchWidgetContents(dm)[0]
+            map_ = self._getMapInstance()
             return brainsToGeoRSS(
-                proxy.Title(), proxy.absolute_url(), brains,
-                self.portal_maps[self.getContent().map_id].srs)
+                proxy.Title(), proxy.absolute_url(), brains, map_.srs)
+
+    security.declareProtected(View, 'getWebMapContext')
+    def getWebMapContext(self, aggregate_layers=False, REQUEST=None):
+        """Return a 1.0 Web Map Context document for use with mapbuilder
+
+        It will extract MapDocument parameters to override default map
+        parameters
+        """
+        if REQUEST is not None:
+            map_ = self._getMapInstance()
+            kwargs = {
+                'bounds' : getattr(self, 'bounds', ''),
+                'size'   : getattr(self, 'size', ''),
+                }
+            if aggregate_layers:
+                return map_.aggMapContext(kwargs, REQUEST)
+            else:
+                return map_.mapContext(kwargs, REQUEST)
+
+    #
+    # PRIVATE
+    #
+
+    def _getMapInstance(self):
+        """Return a `Map` instance from the map repository
+        """
+        maptool = getToolByName(self, 'portal_maps')
+        return maptool.get(self.map_id)
         
 InitializeClass(CPSMapDocument)
 

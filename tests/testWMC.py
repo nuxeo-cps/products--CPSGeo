@@ -20,11 +20,10 @@
 import os
 import unittest
 
-from Products.CPSGeo import etree
 from Products.CPSGeo.Map import Map
 from Products.CPSGeo.ogclib import wmc
 
-class WMCTestCase(unittest.TestCase):
+class MapContextTestCase(unittest.TestCase):
 
     def setUp(self):
         self._this_directory = os.path.split(__file__)[0]
@@ -65,9 +64,25 @@ class WMCTestCase(unittest.TestCase):
         map_context = wmc.MapContext(self._map, SRS='XXXX')
         self.assertRaises(wmc.WMCError, map_context._getBoundingBoxElement)
 
+    def test_contex_size(self):
+        map_context = wmc.MapContext(self._map)
+        ebounds = map_context._getWindowElement()
+        self.assertEqual(ebounds.get('width'), '480')
+        self.assertEqual(ebounds.get('height'), '240')
+
+    def test_contex_size_with_initial_value(self):
+        map_context = wmc.MapContext(self._map, size='800 600')
+        ebounds = map_context._getWindowElement()
+        self.assertEqual(ebounds.get('width'), '800')
+        self.assertEqual(ebounds.get('height'), '600')
+
+    def test_contex_size_with_initial_incorrect_value(self):
+        map_context = wmc.MapContext(self._map, size='800')
+        self.assertRaises(wmc.WMCError, map_context._getWindowElement)
+
 def test_suite():
     suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(WMCTestCase))
+    suite.addTest(unittest.makeSuite(MapContextTestCase))
     return suite
 
 if __name__ == '__main__':

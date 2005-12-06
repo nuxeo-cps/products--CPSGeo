@@ -72,9 +72,27 @@ class MapContext:
         return general
 
     def _getWindowElement(self):
+        """Construct the Window element defining the size of the map.
+
+        size is extracted from the map instance except if they have
+        been passed explicitly at MapContext constuction time
+        """
         window = WMCElement('Window')
-        window.attrib['width'] = str(self._map.size[0])
-        window.attrib['height'] = str(self._map.size[1])
+
+        if self._kw.get('size'):
+            size = self._kw.get('size').split()
+        else:
+            size = self._map.size
+
+        # example : (800, 600)
+        try:
+            assert len(size) == 2
+        except AssertionError:
+            raise WMCError("%s is a wrong size format"%size)
+
+        window.attrib['width'] = str(size[0])
+        window.attrib['height'] = str(size[1])
+
         return window
 
     def _getBoundingBoxElement(self):

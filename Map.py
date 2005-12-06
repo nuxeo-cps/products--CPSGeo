@@ -98,20 +98,28 @@ class Map(PortalContent):
         return reader.capabilities_url(self.url)
 
     security.declareProtected(View, 'mapContext')
-    def mapContext(self, REQUEST=None):
-        """Return a 1.0 Web Map Context document for use with mapbuilder"""
+    def mapContext(self, kws=None, REQUEST=None):
+        """Return a 1.0 Web Map Context document for use with mapbuilder
+        """
         if REQUEST:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        if kws is None:
+            kws = {}
         return '<?xml version="1.0" encoding="utf-8"?>' \
-               + wmc.mapToWebMapContext(self)
+               + wmc.mapToWebMapContext(self, False, kws)
 
     security.declareProtected(View, 'aggMapContext')
-    def aggMapContext(self, REQUEST=None):
-        """Return a 1.0 Web Map Context document for use with mapbuilder"""
+    def aggMapContext(self, kws=None, REQUEST=None):
+        """Return a 1.0 Web Map Context document for use with mapbuilder
+
+        This WMC aggregates the layers server side.
+        """
         if REQUEST:
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
+        if kws is None:
+            kws = {}
         return '<?xml version="1.0" encoding="utf-8"?>' \
-               + wmc.mapToWebMapContext(self, True)
+               + wmc.mapToWebMapContext(self, True, kws)
 
     security.declareProtected(View, 'getLayerInfos')
     def getLayerInfos(self):

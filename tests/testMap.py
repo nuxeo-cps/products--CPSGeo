@@ -47,20 +47,61 @@ class MapTest(unittest.TestCase):
         map_ = Map(id='map', url=self._url)
         self.assertEqual((-180.0, -90.0, 180.0, 90.0), map_.bounds)
 
-    def testMapContext(self):
+    def test_map_context(self):
         m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
                 srs='EPSG:4326', layers=['global_mosaic'])
         wmc = m.mapContext()
+        # XXX
 
-        f = open('/tmp/context.xml', 'w')
-        f.write(wmc)
-        f.close()
-        #os.system('rm -f /tmp/context.xml')
+    def test_agg_map_context(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.aggMapContext()
+        # XXX
 
-        ##expected_path = os.path.join(
-        ##    self._this_directory,
-        ##    'context.xml')
-        ##self.assertEqual(wmc, open(expected_path, 'r').read())
+    def test_map_context_with_bounds(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.mapContext(kws={'bounds':'0 0 0 0'})
+        self.assert_(wmc.find("minx='0'"))
+        self.assert_(wmc.find("miny='0'"))
+        self.assert_(wmc.find("maxx='0'"))
+        self.assert_(wmc.find("maxy='0'"))
+
+    def test_agg_map_context_with_bounds(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.aggMapContext(kws={'bounds':'0 0 0 0'})
+        self.assert_(wmc.find("minx='0'"))
+        self.assert_(wmc.find("miny='0'"))
+        self.assert_(wmc.find("maxx='0'"))
+        self.assert_(wmc.find("maxy='0'"))
+
+    def test_map_context_with_srs(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.mapContext(kws={'srs':'EPSG:NUXEO'})
+        self.assert_(wmc.find("SRS='NUXEO'"))
+
+    def test_agg_map_context_with_srs(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.aggMapContext(kws={'srs':'EPSG:NUXEO'})
+        self.assert_(wmc.find("SRS='NUXEO'"))
+
+    def test_map_context_with_size(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.mapContext(kws={'size':'800 600'})
+        self.assert_(wmc.find('height="800"'))
+        self.assert_(wmc.find('width="600"'))
+
+    def test_agg_map_context_with_size(self):
+        m = Map('map1', self._url, size=[640, 480], bounds=[-120,25,-80,55],
+                srs='EPSG:4326', layers=['global_mosaic'])
+        wmc = m.aggMapContext(kws={'size':'800 600'})
+        self.assert_(wmc.find('height="800"'))
+        self.assert_(wmc.find('width="600"'))
 
 def test_suite():
     suite = unittest.TestSuite()

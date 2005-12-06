@@ -1,7 +1,11 @@
 <metal:block define-macro="view">
   <metal:block use-macro="here/main_template/macros/master">
     <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"></metal:block>
-    <metal:block fill-slot="javascript_head_slot">
+    <metal:block fill-slot="javascript_head_slot"
+	       tal:define="base_dir python:utool() + '/mapbuilder/lib'">
+    <tal:block replace="structure string:<script type='text/javascript'>
+      var baseDir = '${base_dir}';
+      </script>" />
       <script type="text/javascript" src="cps_geo_common.js" 
 	      tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
       <script>

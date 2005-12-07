@@ -1,9 +1,15 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
+  <head tal:define="base_dir python:here.portal_url.getPortalPath() + '/mapbuilder/lib';
+		    base_url here/cpsskins_getBaseUrl;">
     <title>CPSGeo Map Browser</title>
+    <metal:block use-macro="here/header_lib_header/macros/header|here/header_lib/macros/header"/>
+    <tal:block replace="structure string:<script type='text/javascript'>
+      var baseDir = '${base_dir}';
+      </script>" />
     <script type="text/javascript" src="cps_geo_common.js"
-	    tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"/>
+	    tal:attributes="src python:here.portal_url.getPortalPath() + '/cps_geo_common.js'"/>
     <script type="text/javascript"
 	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"/>
   </head>

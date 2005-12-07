@@ -80,6 +80,14 @@ def install_lib(self):
     orig = getattr(mb_lib.model, 'Config.js')
     orig.manage_edit(data=patched_content, title='')
 
+    # Change XSLT transfo to reverse the order of the layers since
+    # mapbuilder actually reversed them
+    patchfile = open(os.path.join(mb_dir, 'mapbuilder-patches',
+                                   'Legend.xsl'), 'r')
+    patched_content = patchfile.read()
+    orig = getattr(mb_lib.widget, 'Legend.xsl')
+    orig.manage_edit(data=patched_content, title='')
+
     # Now, add all cps document icons from Products/CPSDocuments/skins/
     # to the mapbuilder default skin folder
     icon_dir = os.path.join(os.environ['INSTANCE_HOME'], 'Products',

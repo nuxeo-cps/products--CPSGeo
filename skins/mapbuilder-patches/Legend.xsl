@@ -81,10 +81,10 @@ $Name: mapbuilder-lib-0_4 $
 <!-- Visiblity -->
       <td>
         <xsl:if test="@hidden='0'">
-          <input type="checkbox" checked="true" id="legend_{wmc:Name}" onclick="{$context}.setHidden('{wmc:Name}',!document.getElementById('legend_{wmc:Name}').checked)"/>
+          <input type="checkbox" checked="true" id="legend_{wmc:Name}" onclick="{$context}.setHidden('{wmc:Name}',!document.getElementById('legend_{wmc:Name}').checked); update_map();"/>
         </xsl:if>
         <xsl:if test="@hidden='1'">
-          <input type="checkbox" id="legend_{wmc:Name}" onclick="{$context}.setHidden('{wmc:Name}',! document.getElementById('legend_{wmc:Name}').checked)"/>
+          <input type="checkbox" id="legend_{wmc:Name}" onclick="{$context}.setHidden('{wmc:Name}',! document.getElementById('legend_{wmc:Name}').checked);update_map();"/>
         </xsl:if>
       </td>
       <td>

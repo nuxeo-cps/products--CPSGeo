@@ -2,22 +2,8 @@
 	     tal:define="hide_layers here/hide_layers|python:False">
   <div tal:condition="hide_layers" style="visibility:hidden">
     <div id="legend" style="width: 200px; height: 400px; overflow: scroll;" />
-    <div align="left">
-			<input type="submit" id="layers_submit" 
-			       value="button_cpsgeo_update_mainmap" 
-			       class="standalone"
-			       i18n:attributes="value"
-			       onclick="update_map();"/>
-    </div>
   </div>
   <div tal:condition="not:hide_layers">
     <div id="legend" style="width: 200px; height: 400px; overflow: scroll;" />
-    <div align="left">
-			<input type="submit" id="layers_submit" 
-			       value="button_cpsgeo_update_mainmap" 
-			       class="standalone"
-			       i18n:attributes="value"
-			       onclick="update_map();"/>
-    </div>
   </div>
 </metal:block>

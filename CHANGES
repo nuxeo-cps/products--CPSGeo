@@ -6,6 +6,7 @@ New features:
 - Default bounds and size can be overriden for a given map document
 - Change XSLT transform to reverse the order of the layers since
 mapserver actually reversed them.
+- Layer control is AJAX again
 
 Bug fixes:
 ~~~~~~~~~~

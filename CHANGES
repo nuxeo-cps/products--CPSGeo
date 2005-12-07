@@ -6,7 +6,7 @@ New features:
 - Default bounds and size can be overriden for a given map document
 Bug fixes:
 ~~~~~~~~~~
--
+- First step toward IE compatibility
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Update devel docs

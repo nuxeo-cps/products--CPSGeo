@@ -143,22 +143,12 @@ class CPSGeoInstaller(CPSInstaller):
             category='global',
             visible=1)
 
-##        # category : global
-##        self.portal['portal_maps'].addAction(
-##            id='cps_manage_maps',
-##            name='action_cps_manage_maps',
-##            action='string:${portal_url}/cps_manage_maps_form',
-##            condition="",
-##            permission=(ManagePortalMaps,),
-##            category='global',
-##            visible=0)
-
         # category : object
         self.portal['portal_maps'].addAction(
             id='cps_geolocation',
             name='action_cps_geolocation',
             action='string:${object_url}/cps_geolocation_form',
-            condition="python:object != portal and getattr(object, 'portal_type', '') != 'CPS Map Document'",
+            condition="python:object != portal",
             permission=(ModifyPortalContent,),
             category='object',
             visible=1)

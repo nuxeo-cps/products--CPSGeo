@@ -22,7 +22,7 @@ if request.has_key('URL'):
     if (URL is not None and
         URL.endswith('cpsmap_document_view') or
         URL.endswith('cps_geolocation_form') or
-        URL.endswith('cps_map_browser')
+        URL.endswith('cpsgeo_manage_maps_form')
         ):
         return 'mbDoLoad(); switch_map();'
 return ''

@@ -137,7 +137,7 @@ class CPSGeoInstaller(CPSInstaller):
         self.portal['portal_maps'].addAction(
             id='cps_manage_maps',
             name='action_cps_manage_maps',
-            action='string:${portal_url}/cps_map_browser',
+            action='string:${portal_url}/cpsgeo_manage_maps_form',
             condition="",
             permission=(ManagePortal,),
             category='global',

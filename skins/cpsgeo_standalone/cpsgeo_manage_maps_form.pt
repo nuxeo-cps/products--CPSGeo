@@ -54,8 +54,13 @@
 	      <td colspan="3" align="right">
 		<div id="manage_map">
 		  <h3>
-		    <a href="javascript:editMap()">
-		      Edit Map
+		    <a href="javascript:editMap()" i18n:translate="action_edit_map">
+		      Edit this map
+		    </a>
+		  </h3>
+		  <h3>
+		    <a href="javascript:addMap()" i18n:translate="action_add_map">
+		      Add a new map
 		    </a>
 		  </h3>
 		</div>

@@ -16,16 +16,13 @@
       </h1>
     </metal:block>
     <metal:block fill-slot="main">
-      <div>
-	<div align="right">
-	  <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
-	</div>
+      <div align="right">
+	<metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
       </div>
       <table>
 	<tr>
 	  <td valign="top" style="padding:10px">
-	    <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" />
-	    <br/>
+	    <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" /><br/>
 	    <metal:block use-macro="here/cpsgeo_layers/macros/layers" />
 	  </td>
 	  <td valign="top"> 
@@ -50,18 +47,7 @@
 	      </tr>
 	      <tr>
 		<td colspan="3" align="right">
-		  <div id="manage_map">
-		    <h3>
-		      <a href="javascript:editMap()" i18n:translate="action_edit_map">
-			Edit this map
-		      </a>
-		    </h3>
-		    <h3>
-		      <a href="javascript:addMap()" i18n:translate="action_add_map">
-			Add a new map
-		      </a>
-		    </h3>
-		  </div>
+		  <metal:block use-macro="here/cpsgeo_admin/macros/actions"/>
 		</td>
 	      </tr>
 	    </table>

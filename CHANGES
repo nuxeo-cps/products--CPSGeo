@@ -7,7 +7,7 @@ New features:
 - Change XSLT transform to reverse the order of the layers since
 mapserver actually reversed them.
 - Layer control is AJAX again
-
+- Add / edit map from CPS for Manager and PortalMapManager
 Bug fixes:
 ~~~~~~~~~~
 - First step toward IE compatibility

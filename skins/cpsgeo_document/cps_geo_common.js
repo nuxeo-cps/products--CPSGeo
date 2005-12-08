@@ -82,5 +82,15 @@ function updateParentAfterEdit() {
   window.opener.location.reload(true);
 }
 
+function addMap() {
+  // Add a new map within a poup
+  var popup = window.open("cps_map_add", "cps_map_add", 
+			  "toolbar=0, scrollbars=1, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=800, height=600");
+  if (!popup.opener) {
+    popup.opener = window;
+  }
+}
+
+
 
 

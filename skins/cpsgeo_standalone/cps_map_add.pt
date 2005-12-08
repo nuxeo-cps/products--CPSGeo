@@ -1,0 +1,13 @@
+<tal:block define="emptybody python:True">
+<metal:block use-macro="here/main_template/macros/master">
+  <metal:block fill-slot="javascript_head_slot">
+    <script type="text/javascript" src="cps_geo_common.js" 
+	    tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
+  </metal:block>
+  <metal:block fill-slot="main">
+    <div id="add_map">
+      <metal:block use-macro="here/cpsgeo_add_map/macros/add_map"/>
+    </div>
+  </metal:block>
+</metal:block>
+</tal:block>

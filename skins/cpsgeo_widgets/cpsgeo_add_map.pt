@@ -1,0 +1,25 @@
+<metal:block define-macro="add_map">
+  <div class="document">
+    <form id="add_map" action="." method="post"
+    	tal:attributes="action string:${here/absolute_url}/doAddMap">
+
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_url"/>
+        </div>
+        <div class="field">
+	  <input type="text" name="url" size="73"/>
+	</div>
+      </div>
+    
+      <p>
+	<input class="standalone" type="submit" value="action_add_map"
+	       i18n:attributes="value"
+	       />
+	<input type="button" onclick="updateParentAfterEdit();" class="standalone"
+	       value="button_back"
+	       i18n:attributes="value" />
+      </p>
+    </form>
+  </div>
+</metal:block>

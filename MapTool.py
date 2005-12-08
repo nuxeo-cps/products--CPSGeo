@@ -134,6 +134,15 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
 
         return default_
 
+    security.declareProtected(ManagePortalMaps, 'addMap')
+    def addMap(self, url):
+        """Add a new map given a WMS URL
+        """
+        id_ = self.generateId(prefix='map', suffix='', rand_ceiling=999999999)
+        ob = Map(id_, url)
+        self._setObject(id_, ob)
+        return id_
+
     #
     # ZMI
     #

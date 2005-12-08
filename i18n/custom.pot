@@ -126,3 +126,6 @@ msgstr ""
 
 msgid "action_edit_map"
 msgstr ""
+
+msgid "action_add_map"
+msgstr ""

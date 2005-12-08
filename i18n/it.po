@@ -179,4 +179,8 @@ msgstr "Couches visibles par défaut"
 
 #, fuzzy
 msgid "action_edit_map"
-msgstr "Gérer les cartes"
+msgstr "Modifier cette carte"
+
+#, fuzzy
+msgid "action_add_map"
+msgstr "Modifier cette carte"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
 "POT-Creation-Date: 2005-11-14 04:27default\n"
-"PO-Revision-Date: 2005-12-08 06:18+0100\n"
+"PO-Revision-Date: 2005-12-08 06:21+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,4 +171,7 @@ msgstr "Map visible layers"
 
 msgid "action_edit_map"
 msgstr "Edit this map"
+
+msgid "action_add_map"
+msgstr "Add a new map"
 

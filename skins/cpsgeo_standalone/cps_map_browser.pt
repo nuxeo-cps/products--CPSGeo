@@ -50,6 +50,17 @@
 	      </table>
 	      </td>
 	    </tr>
+	    <tr>
+	      <td colspan="3" align="right">
+		<div id="manage_map">
+		  <h3>
+		    <a href="javascript:editMap()">
+		      Edit Map
+		    </a>
+		  </h3>
+		</div>
+	      </td>
+	    </tr>
 	  </table>
 	</td>
       </tr>

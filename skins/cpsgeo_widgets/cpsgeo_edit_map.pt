@@ -1,0 +1,115 @@
+<metal:block define-macro="edit_map"
+	     tal:define="mappath request/mappath;
+			 map_id python:mappath and mappath.split('/')[1] or None;">
+  <div class="document" 
+       tal:condition="map_id"
+       tal:define="map_instance python:map_id and here.portal_maps[map_id] or False">
+    <form id="edit_map" action="." method="post"
+    	tal:attributes="action string:${map_instance/absolute_url}${map_id}">
+
+      <input type="hidden" name="map_id" value=""
+	     tal:attributes="value map_id"/>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_url"/>
+        </div>
+        <div class="field">
+    	<input type="text" name="url" size="73"
+    	       tal:attributes="value map_instance/url | nothing"/>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_name"/>
+        </div>
+        <div class="field">
+    	<input type="text" name="name" size="20" 
+    	       tal:attributes="value map_instance/name | nothing"/>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_title"/>
+        </div>
+        <div class="field">
+    	<input type="text" name="title" size="20" 
+    	       tal:attributes="value map_instance/title | nothing"/>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_format"/>
+        </div>
+        <div class="field">
+    	<select name="format" size="2">
+    	  <option tal:condition="map_instance/format" selected tal:content="map_instance/format">CURRENT FORMAT</option>
+    	  <option tal:repeat="format map_instance/formatlist" tal:content="format">FORMAT</option>
+    	</select>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_size"/>
+        </div>
+        <div class="field">
+    	<input tal:condition="map_instance/size" type="text" name="size:tokens"
+              size="9"
+    	    tal:attributes="value python:'%d %d' % map_instance.size"/>
+          <input tal:condition="not:map_instance/size" type="text" name="size:tokens" size="9" value="480 240"/>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_srs"/>
+        </div>
+        <div class="field">
+           <select name="srs" size="2">
+            <option tal:condition="map_instance/srs" selected tal:content="map_instance/srs">CURRENT SRS</option>
+            <option tal:repeat="srs map_instance/srslist" tal:content="srs">SRS</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+	  <span i18n:translate="label_cpsgeo_edit_map_bounds"/>
+        </div>
+        <div class="field">
+    	<input tal:condition="map_instance/bounds" type="text" name="bounds:tokens"
+    	       size="50"
+    	       tal:attributes="value python:'%f %f %f %f' % map_instance.bounds"/>
+    	<input tal:condition="not:map_instance/bounds" type="text" name="bounds:tokens"
+    	       size="50" value="-180.0 -90.0 180.0 90.0"/>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="label">
+    	<span i18n:translate="label_cpsgeo_edit_map_visible_layers"/>
+        </div>
+	<div class="field">
+	  <select name="layers:list" MULTIPLE size="12">
+	    <span tal:repeat="layername map_instance/layernames">
+	      <option tal:condition="python:layername in map_instance.visible_layers" selected tal:content="layername">LAYER</option>
+	      <option tal:condition="python:layername not in map_instance.visible_layers" tal:content="layername">LAYER</option>
+	    </span>
+	  </select>
+	</div>
+      </div>
+      <p>
+	<input class="standalone" type="submit" value="action_submit"
+	       i18n:attributes="value"
+	       name="editMap:method"/>
+	<input type="button" onclick="updateParentAfterEdit();" class="standalone"
+	       value="button_back"
+	       i18n:attributes="value" />
+      </p>
+    </form>
+  </div>
+</metal:block>

@@ -135,23 +135,23 @@ class CPSGeoInstaller(CPSInstaller):
 
         # category : global
         self.portal['portal_maps'].addAction(
-            id='cps_map_server',
-            name='action_cps_map_server',
+            id='cps_manage_maps',
+            name='action_cps_manage_maps',
             action='string:${portal_url}/cps_map_browser',
             condition="",
             permission=(ManagePortal,),
             category='global',
             visible=1)
 
-        # category : global
-        self.portal['portal_maps'].addAction(
-            id='cps_manage_maps',
-            name='action_cps_manage_maps',
-            action='string:${portal_url}/cps_manage_maps_form',
-            condition="",
-            permission=(ManagePortalMaps,),
-            category='global',
-            visible=1)
+##        # category : global
+##        self.portal['portal_maps'].addAction(
+##            id='cps_manage_maps',
+##            name='action_cps_manage_maps',
+##            action='string:${portal_url}/cps_manage_maps_form',
+##            condition="",
+##            permission=(ManagePortalMaps,),
+##            category='global',
+##            visible=0)
 
         # category : object
         self.portal['portal_maps'].addAction(

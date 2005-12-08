@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: 2005-11-14 04:27default\n"
-"PO-Revision-Date: 2005-12-06 06:26+0100\n"
+"PO-Revision-Date: 2005-12-08 05:54+0100\n"
 "Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -145,4 +145,28 @@ msgstr "Limites pour ce document carte"
 
 msgid "label_cpsgeo_size"
 msgstr "Taille de la carte sur ce document carte"
+
+msgid "label_cpsgeo_edit_map_url"
+msgstr "WMS URL"
+
+msgid "label_cpsgeo_edit_map_name"
+msgstr "Nom de la carte"
+
+msgid "label_cpsgeo_edit_map_title"
+msgstr "Titre de la carte"
+
+msgid "label_cpsgeo_edit_map_format"
+msgstr "Format de la carte"
+
+msgid "label_cpsgeo_edit_map_size"
+msgstr "Taille de la carte"
+
+msgid "label_cpsgeo_edit_map_srs"
+msgstr "Projection de la carte"
+
+msgid "label_cpsgeo_edit_map_bounds"
+msgstr "Limites de la carte"
+
+msgid "label_cpsgeo_edit_map_visible_layers"
+msgstr "Couches visibles par défaut"
 

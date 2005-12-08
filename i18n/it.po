@@ -139,8 +139,40 @@ msgstr "Gérer les cartes"
 
 #, fuzzy
 msgid "label_cpsgeo_bounds"
-msgstr "Cacher les outils (zoom, localisation et déplacement) ?"
+msgstr "Limites pour ce document carte"
 
 #, fuzzy
 msgid "label_cpsgeo_size"
+msgstr "Taille de la carte sur ce document carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_url"
 msgstr "Identifiant de la carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_name"
+msgstr "Identifiant de la carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_title"
+msgstr "Identifiant de la carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_format"
+msgstr "Identifiant de la carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_size"
+msgstr "Identifiant de la carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_srs"
+msgstr "Identifiant de la carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_bounds"
+msgstr "Limites pour ce document carte"
+
+#, fuzzy
+msgid "label_cpsgeo_edit_map_visible_layers"
+msgstr "Cacher la liste des couches ?"

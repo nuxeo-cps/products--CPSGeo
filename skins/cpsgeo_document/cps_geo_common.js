@@ -65,6 +65,22 @@ function updateFromParent() {
 
 }
 
+function editMap() {
+  // Edit a map within a poup
+  var box = document.getElementById("map_selector").map;
+  var mappath = box.options[box.selectedIndex].value;  
+  var args = "?mappath="+mappath;
+  var popup = window.open("cps_map_edit"+args, "cps_map_edit", 
+			  "toolbar=0, scrollbars=1, location=0, statusbar=0, menubar=0, resizable=1, dependent=1, width=800, height=600");
+  if (!popup.opener) {
+    popup.opener = window;
+  }
+}
+
+function updateParentAfterEdit() {
+  window.close();
+  window.opener.location.reload(true);
+}
 
 
 

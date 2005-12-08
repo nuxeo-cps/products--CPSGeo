@@ -100,4 +100,27 @@ msgstr ""
 msgid "label_cpsgeo_size"
 msgstr ""
 
+msgid "label_cpsgeo_edit_map_url"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_name"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_title"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_format"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_size"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_srs"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_bounds"
+msgstr ""
+
+msgid "label_cpsgeo_edit_map_visible_layers"
+msgstr ""
 

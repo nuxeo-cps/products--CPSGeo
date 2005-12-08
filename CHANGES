@@ -3,17 +3,10 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Default bounds and size can be overriden for a given map document
-- Change XSLT transform to reverse the order of the layers since
-mapserver actually reversed them.
-- Layer control is AJAX again
-- Add / edit map from CPS for Manager and PortalMapManager
-- Map Document can be geo-localized
+-
 Bug fixes:
 ~~~~~~~~~~
-- First step toward IE compatibility
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- Update devel docs
-- cleanup the product.
-
+-

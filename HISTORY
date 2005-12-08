@@ -1,4 +1,27 @@
 *******************************************
+** CPSGeo V0.9.0 [R1 build 2005/12/08-06:36 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30414
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Default bounds and size can be overriden for a given map document
+- Change XSLT transform to reverse the order of the layers since
+mapserver actually reversed them.
+- Layer control is AJAX again
+- Add / edit map from CPS for Manager and PortalMapManager
+- Map Document can be geo-localized
+Bug fixes:
+~~~~~~~~~~
+- First step toward IE compatibility
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Update devel docs
+- cleanup the product.
+
+
+*******************************************
 ** CPSGeo V0.8.0 [R1 build 2005/12/05-05:21 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30275
 Requires:

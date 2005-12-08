@@ -147,32 +147,36 @@ msgstr "Taille de la carte sur ce document carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_url"
-msgstr "Identifiant de la carte"
+msgstr "WMS URL"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_name"
-msgstr "Identifiant de la carte"
+msgstr "Nom de la carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_title"
-msgstr "Identifiant de la carte"
+msgstr "Titre de la carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_format"
-msgstr "Identifiant de la carte"
+msgstr "Format de la carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_size"
-msgstr "Identifiant de la carte"
+msgstr "Taille de la carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_srs"
-msgstr "Identifiant de la carte"
+msgstr "Projection de la carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_bounds"
-msgstr "Limites pour ce document carte"
+msgstr "Limites de la carte"
 
 #, fuzzy
 msgid "label_cpsgeo_edit_map_visible_layers"
-msgstr "Cacher la liste des couches ?"
+msgstr "Couches visibles par défaut"
+
+#, fuzzy
+msgid "action_edit_map"
+msgstr "Gérer les cartes"

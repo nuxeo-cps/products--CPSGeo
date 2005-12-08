@@ -124,3 +124,5 @@ msgstr ""
 msgid "label_cpsgeo_edit_map_visible_layers"
 msgstr ""
 
+msgid "action_edit_map"
+msgstr ""

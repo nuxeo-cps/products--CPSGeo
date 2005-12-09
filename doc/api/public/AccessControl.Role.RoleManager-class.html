@@ -1,0 +1,1841 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>AccessControl.Role.RoleManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;AccessControl ::
+        Module&nbsp;Role ::
+        Class&nbsp;RoleManager
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/AccessControl.Role.RoleManager-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="AccessControl.Role.RoleManager-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type RoleManager</h2>
+
+<pre class="base-tree">
+ <a href="__builtin__.object-class.html"><code>object</code></a> --+    
+          |    
+       <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+
+              |
+<a href="AccessControl.PermissionMapping.RoleManager-class.html"><code>RoleManager</code></a> --+
+              |
+             <b>RoleManager</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="OFS.Folder.Folder-class.html"><code>Folder</code></a>,
+    <a href="OFS.SimpleItem.SimpleItem-class.html"><code>SimpleItem</code></a></dd></dl>
+
+<hr/>
+
+An object that has configurable permissions
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="ac_inherited_permissions"></a><span class="summary-sig"><span class="summary-sig-name">ac_inherited_permissions</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>all</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#access_debug_info" class="summary-sig-name"><code>access_debug_info</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return debug info.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#acquiredRolesAreUsedBy" class="summary-sig-name"><code>acquiredRolesAreUsedBy</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission</span>)</span></code>
+<br />
+Used by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get_local_group_roles"></a><span class="summary-sig"><span class="summary-sig-name">get_local_group_roles</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get_local_roles"></a><span class="summary-sig"><span class="summary-sig-name">get_local_roles</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get_local_roles_for_groupid"></a><span class="summary-sig"><span class="summary-sig-name">get_local_roles_for_groupid</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get_local_roles_for_userid"></a><span class="summary-sig"><span class="summary-sig-name">get_local_roles_for_userid</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get_valid_groupids"></a><span class="summary-sig"><span class="summary-sig-name">get_valid_groupids</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get_valid_userids"></a><span class="summary-sig"><span class="summary-sig-name">get_valid_userids</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="has_local_group_roles"></a><span class="summary-sig"><span class="summary-sig-name">has_local_group_roles</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="has_local_roles"></a><span class="summary-sig"><span class="summary-sig-name">has_local_roles</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredPermissions" class="summary-sig-name"><code>manage_acquiredPermissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permissions</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the permissions that acquire.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalGroupRoles" class="summary-sig-name"><code>manage_addLocalGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add local group roles to a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalRoles" class="summary-sig-name"><code>manage_addLocalRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Set local roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_changePermissions" class="summary-sig-name"><code>manage_changePermissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change all permissions settings, called by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_defined_roles" class="summary-sig-name"><code>manage_defined_roles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>submit</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Called by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalGroupRoles" class="summary-sig-name"><code>manage_delLocalGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Remove all local group roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalRoles" class="summary-sig-name"><code>manage_delLocalRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Remove all local roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="manage_editRoles"></a><span class="summary-sig"><span class="summary-sig-name">manage_editRoles</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>acl_type</span>,
+          <span class=summary-sig-arg>acl_roles</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_permission" class="summary-sig-name"><code>manage_permission</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission_to_manage</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>acquire</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the settings for the given permission.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_role" class="summary-sig-name"><code>manage_role</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>role_to_manage</span>,
+          <span class=summary-sig-arg>permissions</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the permissions given to the given role.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalGroupRoles" class="summary-sig-name"><code>manage_setLocalGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Set local group roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalRoles" class="summary-sig-name"><code>manage_setLocalRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Set local roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#permission_settings" class="summary-sig-name"><code>permission_settings</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission</span>)</span></code>
+<br />
+Return user-role permission settings.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#permissionsOfRole" class="summary-sig-name"><code>permissionsOfRole</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>role</span>)</span></code>
+<br />
+Used by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="possible_permissions"></a><span class="summary-sig"><span class="summary-sig-name">possible_permissions</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#rolesOfPermission" class="summary-sig-name"><code>rolesOfPermission</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission</span>)</span></code>
+<br />
+Used by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#userdefined_roles" class="summary-sig-name"><code>userdefined_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return list of user-defined roles.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="users_with_local_role"></a><span class="summary-sig"><span class="summary-sig-name">users_with_local_role</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>role</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#valid_roles" class="summary-sig-name"><code>valid_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return list of valid roles.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#validate_roles" class="summary-sig-name"><code>validate_roles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>roles</span>)</span></code>
+<br />
+Return true if all given roles are valid.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#valid_roles" class="summary-sig-name"><code>validRoles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return list of valid roles.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from RoleManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_getPermissionMapping" class="summary-sig-name"><code>manage_getPermissionMapping</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the permission mapping for the object
+
+This is a list of dictionaries with:
+
+  permission_name -- The name of the native object permission
+
+  class_permission -- The class permission the permission is
+     mapped to.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_setPermissionMapping" class="summary-sig-name"><code>manage_setPermissionMapping</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission_names</span>,
+          <span class=summary-sig-arg>class_permissions</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the permission mapping</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from SimpleGroupRolesPlugin</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#addGroupsOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesAddGroups</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>addgroups</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add groups for local roles on self</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#deleteGroupsOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesDeleteGroups</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>delgroups</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Remove groups from the local roles on self</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#getGroupsOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesGetGroups</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#setGroupRolesOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesSetGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>grouprolesmapping</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_local_group_roles__"><code>__ac_local_group_roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_local_roles__"><code>__ac_local_roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Change permissions', ('manage_access', 'permission_settings', 'ac_inherited_permissions', 'manage_roleForm', 'manage_role', 'manage_acquiredForm', 'manage_acquiredPermissions', 'manage_permissionForm', 'manage_permission', 'manage_changePermissions', 'permissionsOfRole', 'rolesOfPermission', 'acquiredRolesAreUsedBy', 'manage_defined_roles', 'userdefined_roles', 'manage_listLocalRoles', 'manage_editLocalRoles', 'manage_setLocalRoles', 'manage_addLocalRoles', 'manage_delLocalRoles')),)"><code>(('Change&nbsp;permissions',&nbsp;('manage_ac<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_roles__"><code>__ac_roles__</code></a></b> = <span title="('Manager', 'Owner', 'Anonymous', 'Authenticated')"><code>('Manager',&nbsp;'Owner',&nbsp;'Anonymous',&nbsp;'Authen<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy AccessControl.Role.RoleManager&gt;"><code>&lt;implementedBy&nbsp;AccessControl.Role.Role<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76aec4c&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#ac_inherited_permissions__roles__"><code>ac_inherited_permissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#access_debug_info__roles__"><code>access_debug_info__roles__</code></a></b> = <span title="()"><code>()                          </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#aclAChecked"><code>aclAChecked</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                         </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#aclEChecked"><code>aclEChecked</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                         </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#aclPChecked"><code>aclPChecked</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                         </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#acquiredRolesAreUsedBy__roles__"><code>acquiredRolesAreUsedBy__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#get_local_group_roles__roles__"><code>get_local_group_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#get_local_roles_for_groupid__roles__"><code>get_local_roles_for_groupid__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;o<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#get_valid_groupids__roles__"><code>get_valid_groupids__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#has_local_group_roles__roles__"><code>has_local_group_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_access"><code>manage_access</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5d5f4cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_access__roles__"><code>manage_access__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb5f<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredForm"><code>manage_acquiredForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c5cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredForm__roles__"><code>manage_acquiredForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredPermissions__roles__"><code>manage_acquiredPermissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalGroupRoles__roles__"><code>manage_addLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalRoles__roles__"><code>manage_addLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_changePermissions__roles__"><code>manage_changePermissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_defined_roles__roles__"><code>manage_defined_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalGroupRoles__roles__"><code>manage_delLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalRoles__roles__"><code>manage_delLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalGroupRoles"><code>manage_editLocalGroupRoles</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5ffac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalGroupRoles__roles__"><code>manage_editLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalRoles"><code>manage_editLocalRoles</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c7cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalRoles__roles__"><code>manage_editLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editRoles__roles__"><code>manage_editRoles__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                 </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_listLocalRoles"><code>manage_listLocalRoles</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5fe4c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_listLocalRoles__roles__"><code>manage_listLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_access', 'filter': &lt;function _isNotBeingUsedAsAMethod at 0xb78811ec&gt;, 'help': ('OFSP', 'Security.stx'), 'label': 'Security'}, {'action': 'manage_access', 'filter': &lt;function _isBeingUsedAsAMethod at 0xb7878764&gt;, 'help': ('OFSP', 'Security_Define-Permissions.stx'), 'label': 'Define Permissions'})"><code>({'action':&nbsp;'manage_access',&nbsp;'filter':&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permission__roles__"><code>manage_permission__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissionForm"><code>manage_permissionForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c66c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissionForm__roles__"><code>manage_permissionForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissions"><code>manage_permissions</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5fbec&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissions__roles__"><code>manage_permissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_role__roles__"><code>manage_role__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_roleForm"><code>manage_roleForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb7871b4c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_roleForm__roles__"><code>manage_roleForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalGroupRoles__roles__"><code>manage_setLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalRoles__roles__"><code>manage_setLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_simpleGroupRolesLocalGroups"><code>manage_simpleGroupRolesLocalGroups</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5d2102c&gt;"><code>&lt;App.special_dtml.D<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#permission_settings__roles__"><code>permission_settings__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#permissionMappingPossibleValues"><code>permissionMappingPossibleValues</code></a></b> = <span title="'&lt;Special Object Used to Force Acquisition&gt;'"><code><span class="variable-quote">'</span>&lt;Special&nbsp;Object&nbsp;Used&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#permissionsOfRole__roles__"><code>permissionsOfRole__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#rolesOfPermission__roles__"><code>rolesOfPermission__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#selectedRoles"><code>selectedRoles</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                       </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#smallRolesWidget"><code>smallRolesWidget</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#userdefined_roles__roles__"><code>userdefined_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from RoleManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="AccessControl.PermissionMapping.RoleManager-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76aec2c&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_getPermissionMapping__roles__"><code>manage_getPermissionMapping__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)      </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_setPermissionMapping__roles__"><code>manage_setPermissionMapping__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)      </code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="access_debug_info"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">access_debug_info</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return debug info.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="acquiredRolesAreUsedBy"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">acquiredRolesAreUsedBy</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>permission</span>)</span>
+  </h3>
+  Used by management screen.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_acquiredPermissions"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_acquiredPermissions</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>permissions</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Change the permissions that acquire.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addLocalGroupRoles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addLocalGroupRoles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>groupid</span>,
+          <span class=sig-arg>roles</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add local group roles to a user.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addLocalRoles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addLocalRoles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>userid</span>,
+          <span class=sig-arg>roles</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Set local roles for a user.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_changePermissions"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_changePermissions</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>)</span>
+  </h3>
+  Change all permissions settings, called by management screen.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_defined_roles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_defined_roles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>submit</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Called by management screen.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_delLocalGroupRoles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_delLocalGroupRoles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>groupids</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Remove all local group roles for a user.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_delLocalRoles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_delLocalRoles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>userids</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Remove all local roles for a user.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_permission"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_permission</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>permission_to_manage</span>,
+          <span class=sig-arg>roles</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>acquire</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Change the settings for the given permission.</p>
+  If optional arg acquire is true, then the roles for the permission 
+  are acquired, in addition to the ones specified, otherwise the 
+  permissions are restricted to only the designated roles.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_role"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_role</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>role_to_manage</span>,
+          <span class=sig-arg>permissions</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Change the permissions given to the given role.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_setLocalGroupRoles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_setLocalGroupRoles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>groupid</span>,
+          <span class=sig-arg>roles</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Set local group roles for a user.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_setLocalRoles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_setLocalRoles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>userid</span>,
+          <span class=sig-arg>roles</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Set local roles for a user.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="permission_settings"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">permission_settings</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>permission</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Return user-role permission settings.</p>
+  If 'permission' is passed to the method then only the settings for 
+  'permission' is returned.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="permissionsOfRole"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">permissionsOfRole</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>role</span>)</span>
+  </h3>
+  Used by management screen.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="rolesOfPermission"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">rolesOfPermission</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>permission</span>)</span>
+  </h3>
+  Used by management screen.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="userdefined_roles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">userdefined_roles</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return list of user-defined roles.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="valid_roles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">valid_roles</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return list of valid roles.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="validate_roles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">validate_roles</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>roles</span>)</span>
+  </h3>
+  Return true if all given roles are valid.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="valid_roles"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">validRoles</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return list of valid roles.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_local_group_roles__"></a>
+<h3>__ac_local_group_roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_local_roles__"></a>
+<h3>__ac_local_roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Change permissions', ('manage_access', 'permission_settings', 'ac_inherited_permissions', 'manage_roleForm', 'manage_role', 'manage_acquiredForm', 'manage_acquiredPermissions', 'manage_permissionForm', 'manage_permission', 'manage_changePermissions', 'permissionsOfRole', 'rolesOfPermission', 'acquiredRolesAreUsedBy', 'manage_defined_roles', 'userdefined_roles', 'manage_listLocalRoles', 'manage_editLocalRoles', 'manage_setLocalRoles', 'manage_addLocalRoles', 'manage_delLocalRoles')),)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Change permissions',
+  ('manage_access',
+   'permission_settings',
+   'ac_inherited_permissions',
+   'manage_roleForm',
+   'manage_role',
+   'manage_acquiredForm',
+   'manage_acquiredPermissions',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_roles__"></a>
+<h3>__ac_roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager', 'Owner', 'Anonymous', 'Authenticated')">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager', 'Owner', 'Anonymous', 'Authenticated')                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy AccessControl.Role.RoleManager&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy AccessControl.Role.RoleManager&gt;                         </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76aec4c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb76aec4c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="ac_inherited_permissions__roles__"></a>
+<h3>ac_inherited_permissions__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="access_debug_info__roles__"></a>
+<h3>access_debug_info__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="aclAChecked"></a>
+<h3>aclAChecked</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="aclEChecked"></a>
+<h3>aclEChecked</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="aclPChecked"></a>
+<h3>aclPChecked</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="acquiredRolesAreUsedBy__roles__"></a>
+<h3>acquiredRolesAreUsedBy__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="get_local_group_roles__roles__"></a>
+<h3>get_local_group_roles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="get_local_roles_for_groupid__roles__"></a>
+<h3>get_local_roles_for_groupid__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="get_valid_groupids__roles__"></a>
+<h3>get_valid_groupids__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="has_local_group_roles__roles__"></a>
+<h3>has_local_group_roles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_access"></a>
+<h3>manage_access</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5d5f4cc&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5d5f4cc&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_access__roles__"></a>
+<h3>manage_access__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_acquiredForm"></a>
+<h3>manage_acquiredForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb787c5cc&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb787c5cc&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_acquiredForm__roles__"></a>
+<h3>manage_acquiredForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_acquiredPermissions__roles__"></a>
+<h3>manage_acquiredPermissions__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addLocalGroupRoles__roles__"></a>
+<h3>manage_addLocalGroupRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addLocalRoles__roles__"></a>
+<h3>manage_addLocalRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_changePermissions__roles__"></a>
+<h3>manage_changePermissions__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_defined_roles__roles__"></a>
+<h3>manage_defined_roles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_delLocalGroupRoles__roles__"></a>
+<h3>manage_delLocalGroupRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_delLocalRoles__roles__"></a>
+<h3>manage_delLocalRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editLocalGroupRoles"></a>
+<h3>manage_editLocalGroupRoles</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5ffac&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5e5ffac&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editLocalGroupRoles__roles__"></a>
+<h3>manage_editLocalGroupRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editLocalRoles"></a>
+<h3>manage_editLocalRoles</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb787c7cc&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb787c7cc&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editLocalRoles__roles__"></a>
+<h3>manage_editLocalRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editRoles__roles__"></a>
+<h3>manage_editRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_listLocalRoles"></a>
+<h3>manage_listLocalRoles</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5fe4c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5e5fe4c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_listLocalRoles__roles__"></a>
+<h3>manage_listLocalRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_access', 'filter': &lt;function _isNotBeingUsedAsAMethod at 0xb78811ec&gt;, 'help': ('OFSP', 'Security.stx'), 'label': 'Security'}, {'action': 'manage_access', 'filter': &lt;function _isBeingUsedAsAMethod at 0xb7878764&gt;, 'help': ('OFSP', 'Security_Define-Permissions.stx'), 'label': 'Define Permissions'})">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_access',
+  'filter': &lt;function _isNotBeingUsedAsAMethod at 0xb78811ec&gt;,
+  'help': ('OFSP', 'Security.stx'),
+  'label': 'Security'},
+ {'action': 'manage_access',
+  'filter': &lt;function _isBeingUsedAsAMethod at 0xb7878764&gt;,
+  'help': ('OFSP', 'Security_Define-Permissions.stx'),
+  'label': 'Define Permissions'})                                      </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_permission__roles__"></a>
+<h3>manage_permission__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_permissionForm"></a>
+<h3>manage_permissionForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb787c66c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb787c66c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_permissionForm__roles__"></a>
+<h3>manage_permissionForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_permissions"></a>
+<h3>manage_permissions</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5fbec&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5e5fbec&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_permissions__roles__"></a>
+<h3>manage_permissions__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_role__roles__"></a>
+<h3>manage_role__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_roleForm"></a>
+<h3>manage_roleForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb7871b4c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb7871b4c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_roleForm__roles__"></a>
+<h3>manage_roleForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_setLocalGroupRoles__roles__"></a>
+<h3>manage_setLocalGroupRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb5f4ab60&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb5f4ab60&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_setLocalRoles__roles__"></a>
+<h3>manage_setLocalRoles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_simpleGroupRolesLocalGroups"></a>
+<h3>manage_simpleGroupRolesLocalGroups</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5d2102c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5d2102c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="permission_settings__roles__"></a>
+<h3>permission_settings__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="permissionMappingPossibleValues"></a>
+<h3>permissionMappingPossibleValues</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'&lt;Special Object Used to Force Acquisition&gt;'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>&lt;Special Object Used to Force Acquisition&gt;<span class="variable-quote">'</span>                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="permissionsOfRole__roles__"></a>
+<h3>permissionsOfRole__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="rolesOfPermission__roles__"></a>
+<h3>rolesOfPermission__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="selectedRoles"></a>
+<h3>selectedRoles</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="smallRolesWidget"></a>
+<h3>smallRolesWidget</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="userdefined_roles__roles__"></a>
+<h3>userdefined_roles__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb78c6c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb78c6c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:17 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

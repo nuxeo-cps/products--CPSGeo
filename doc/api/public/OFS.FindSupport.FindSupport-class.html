@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>OFS.FindSupport.FindSupport</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;OFS ::
+        Module&nbsp;FindSupport ::
+        Class&nbsp;FindSupport
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/OFS.FindSupport.FindSupport-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="OFS.FindSupport.FindSupport-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type FindSupport</h2>
+
+<pre class="base-tree">
+<a href="__builtin__.object-class.html"><code>object</code></a> --+    
+         |    
+      <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+
+             |
+            <b>FindSupport</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="OFS.Folder.Folder-class.html"><code>Folder</code></a></dd></dl>
+
+<hr/>
+
+Find support for Zope Folders
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.FindSupport.FindSupport-class.html#ZopeFind" class="summary-sig-name"><code>PrincipiaFind</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>obj</span>,
+          <span class=summary-sig-arg>obj_ids</span>,
+          <span class=summary-sig-arg>obj_metatypes</span>,
+          <span class=summary-sig-arg>obj_searchterm</span>,
+          <span class=summary-sig-arg>obj_expr</span>,
+          <span class=summary-sig-arg>obj_mtime</span>,
+          <span class=summary-sig-arg>obj_mspec</span>,
+          <span class=summary-sig-arg>obj_permission</span>,
+          <span class=summary-sig-arg>obj_roles</span>,
+          <span class=summary-sig-arg>search_sub</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>result</span>,
+          <span class=summary-sig-arg>pre</span>)</span></code>
+<br />
+Zope Find interface</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.FindSupport.FindSupport-class.html#ZopeFind" class="summary-sig-name"><code>ZopeFind</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>obj</span>,
+          <span class=summary-sig-arg>obj_ids</span>,
+          <span class=summary-sig-arg>obj_metatypes</span>,
+          <span class=summary-sig-arg>obj_searchterm</span>,
+          <span class=summary-sig-arg>obj_expr</span>,
+          <span class=summary-sig-arg>obj_mtime</span>,
+          <span class=summary-sig-arg>obj_mspec</span>,
+          <span class=summary-sig-arg>obj_permission</span>,
+          <span class=summary-sig-arg>obj_roles</span>,
+          <span class=summary-sig-arg>search_sub</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>result</span>,
+          <span class=summary-sig-arg>pre</span>)</span></code>
+<br />
+Zope Find interface</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.FindSupport.FindSupport-class.html#ZopeFindAndApply" class="summary-sig-name"><code>ZopeFindAndApply</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>obj</span>,
+          <span class=summary-sig-arg>obj_ids</span>,
+          <span class=summary-sig-arg>obj_metatypes</span>,
+          <span class=summary-sig-arg>obj_searchterm</span>,
+          <span class=summary-sig-arg>obj_expr</span>,
+          <span class=summary-sig-arg>obj_mtime</span>,
+          <span class=summary-sig-arg>obj_mspec</span>,
+          <span class=summary-sig-arg>obj_permission</span>,
+          <span class=summary-sig-arg>obj_roles</span>,
+          <span class=summary-sig-arg>search_sub</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>result</span>,
+          <span class=summary-sig-arg>pre</span>,
+          <span class=summary-sig-arg>apply_func</span>,
+          <span class=summary-sig-arg>apply_path</span>)</span></code>
+<br />
+Zope Find interface and apply</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('View management screens', ('manage_findForm', 'manage_findFrame', 'ZopeFindAndApply', 'manage_findAdv', 'PrincipiaFind', 'ZopeFind', 'manage_findResult')),)"><code>(('View&nbsp;management&nbsp;screens',&nbsp;('mana<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy OFS.FindSupport.FindSupport&gt;"><code>&lt;implementedBy&nbsp;OFS.FindSupport.FindSup<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674bac&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674bac&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findAdv"><code>manage_findAdv</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77c872c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findAdv__roles__"><code>manage_findAdv__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findForm"><code>manage_findForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77c840c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findForm__roles__"><code>manage_findForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findFrame"><code>manage_findFrame</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb780cfac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findFrame__roles__"><code>manage_findFrame__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findResult"><code>manage_findResult</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77afa6c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_findResult__roles__"><code>manage_findResult__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_findForm', 'help': ('OFSP', 'Find.stx'), 'label': 'Find'},)"><code>({'action':&nbsp;'manage_findForm',&nbsp;'help':&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#PrincipiaFind__roles__"><code>PrincipiaFind__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#ZopeFind__roles__"><code>ZopeFind__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e7d0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.FindSupport.FindSupport-class.html#ZopeFindAndApply__roles__"><code>ZopeFindAndApply__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e7d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="ZopeFind"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">PrincipiaFind</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>obj</span>,
+          <span class=sig-arg>obj_ids</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_metatypes</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_searchterm</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_expr</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_mtime</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_mspec</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_permission</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_roles</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>search_sub</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>result</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>pre</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Zope Find interface
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ZopeFind"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ZopeFind</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>obj</span>,
+          <span class=sig-arg>obj_ids</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_metatypes</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_searchterm</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_expr</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_mtime</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_mspec</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_permission</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_roles</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>search_sub</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>result</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>pre</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Zope Find interface
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ZopeFindAndApply"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ZopeFindAndApply</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>obj</span>,
+          <span class=sig-arg>obj_ids</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_metatypes</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_searchterm</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_expr</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_mtime</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_mspec</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_permission</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>obj_roles</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>search_sub</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>result</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>pre</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>apply_func</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>apply_path</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Zope Find interface and apply
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('View management screens', ('manage_findForm', 'manage_findFrame', 'ZopeFindAndApply', 'manage_findAdv', 'PrincipiaFind', 'ZopeFind', 'manage_findResult')),)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('View management screens',
+  ('manage_findForm',
+   'manage_findFrame',
+   'ZopeFindAndApply',
+   'manage_findAdv',
+   'PrincipiaFind',
+   'ZopeFind',
+   'manage_findResult')),)                                             </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy OFS.FindSupport.FindSupport&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy OFS.FindSupport.FindSupport&gt;                            </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__providedBy__"></a>
+<h3>__providedBy__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674bac&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb7674bac&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674bac&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb7674bac&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findAdv"></a>
+<h3>manage_findAdv</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb77c872c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb77c872c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findAdv__roles__"></a>
+<h3>manage_findAdv__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findForm"></a>
+<h3>manage_findForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb77c840c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb77c840c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findForm__roles__"></a>
+<h3>manage_findForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findFrame"></a>
+<h3>manage_findFrame</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb780cfac&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb780cfac&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findFrame__roles__"></a>
+<h3>manage_findFrame__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findResult"></a>
+<h3>manage_findResult</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb77afa6c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb77afa6c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_findResult__roles__"></a>
+<h3>manage_findResult__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_findForm', 'help': ('OFSP', 'Find.stx'), 'label': 'Find'},)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_findForm', 'help': ('OFSP', 'Find.stx'), 'label': <span class="variable-linewrap">\</span>
+'Find'},)                                                              </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="PrincipiaFind__roles__"></a>
+<h3>PrincipiaFind__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="ZopeFind__roles__"></a>
+<h3>ZopeFind__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="ZopeFindAndApply__roles__"></a>
+<h3>ZopeFindAndApply__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e7d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e7d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:10 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

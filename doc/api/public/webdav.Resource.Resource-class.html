@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>webdav.Resource.Resource</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;webdav ::
+        Module&nbsp;Resource ::
+        Class&nbsp;Resource
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/webdav.Resource.Resource-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="webdav.Resource.Resource-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type Resource</h2>
+
+<pre class="base-tree">
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+    
+              |    
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+
+                  |
+<a href="webdav.EtagSupport.EtagSupport-class.html"><code>EtagSupport</code></a> --+   |
+              |   |
+   <a href="webdav.Lockable.LockableItem-class.html"><code>LockableItem</code></a> --+
+                  |
+                 <b>Resource</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="webdav.Collection.Collection-class.html"><code>Collection</code></a>,
+    <a href="OFS.SimpleItem.Item-class.html"><code>Item</code></a></dd></dl>
+
+<hr/>
+
+The Resource mixin class provides basic WebDAV support for 
+non-collection objects. It provides default implementations for most 
+supported WebDAV HTTP methods, however certain methods such as PUT should 
+be overridden to ensure correct behavior in the context of the object 
+type.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#COPY" class="summary-sig-name"><code>COPY</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Create a duplicate of the source resource whose state and behavior 
+match that of the source resource as closely as possible.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="dav__init"></a><span class="summary-sig"><span class="summary-sig-name">dav__init</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>request</span>,
+          <span class=summary-sig-arg>response</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="dav__simpleifhandler"></a><span class="summary-sig"><span class="summary-sig-name">dav__simpleifhandler</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>request</span>,
+          <span class=summary-sig-arg>response</span>,
+          <span class=summary-sig-arg>method</span>,
+          <span class=summary-sig-arg>col</span>,
+          <span class=summary-sig-arg>url</span>,
+          <span class=summary-sig-arg>refresh</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="dav__validate"></a><span class="summary-sig"><span class="summary-sig-name">dav__validate</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>methodname</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#DELETE" class="summary-sig-name"><code>DELETE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Delete a resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#HEAD" class="summary-sig-name"><code>HEAD</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve resource information without a response body.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="listDAVObjects"></a><span class="summary-sig"><span class="summary-sig-name">listDAVObjects</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#LOCK" class="summary-sig-name"><code>LOCK</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Lock a resource</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#manage_DAVget" class="summary-sig-name"><code>manage_DAVget</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Gets the document source</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#MKCOL" class="summary-sig-name"><code>MKCOL</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Create a new collection resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#MOVE" class="summary-sig-name"><code>MOVE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Move a resource to a new location.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#OPTIONS" class="summary-sig-name"><code>OPTIONS</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve communication options.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PROPFIND" class="summary-sig-name"><code>PROPFIND</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve properties defined on the resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PROPPATCH" class="summary-sig-name"><code>PROPPATCH</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Set and/or remove properties defined on the resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PUT" class="summary-sig-name"><code>PUT</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Replace the GET response entity of an existing resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#TRACE" class="summary-sig-name"><code>TRACE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Return the HTTP message received back to the client as the entity-body 
+of a 200 (OK) response.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#UNLOCK" class="summary-sig-name"><code>UNLOCK</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Remove an existing lock on a resource.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LockableItem</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_clearLocks" class="summary-sig-name"><code>wl_clearLocks</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_delLock" class="summary-sig-name"><code>wl_delLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_getLock" class="summary-sig-name"><code>wl_getLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_hasLock" class="summary-sig-name"><code>wl_hasLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>token</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_isLocked" class="summary-sig-name"><code>wl_isLocked</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockItems" class="summary-sig-name"><code>wl_lockItems</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockmapping" class="summary-sig-name"><code>wl_lockmapping</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>,
+          <span class=summary-sig-arg>create</span>)</span></code>
+<br />
+if 'killinvalids' is 1, locks who are no longer valid will be 
+deleted</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockTokens" class="summary-sig-name"><code>wl_lockTokens</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockValues" class="summary-sig-name"><code>wl_lockValues</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_setLock" class="summary-sig-name"><code>wl_setLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>,
+          <span class=summary-sig-arg>lock</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from EtagSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__etag" class="summary-sig-name"><code>http__etag</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>readonly</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__parseMatchList" class="summary-sig-name"><code>http__parseMatchList</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>header</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__processMatchHeaders" class="summary-sig-name"><code>http__processMatchHeaders</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__refreshEtag" class="summary-sig-name"><code>http__refreshEtag</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('View', ('HEAD',)), ('WebDAV access', ('PROPFIND', 'manage_DAVget', 'listDAVObjects'), ('Authenticated', 'Manager')), ('Manage properties', ('PROPPATCH',)), ('Delete objects', ('DELETE',)), ('WebDAV Lock items', ('LOCK',)), ('WebDAV Unlock items', ('UNLOCK',)))"><code>(('View',&nbsp;('HEAD',)),&nbsp;('WebDAV&nbsp;acce<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__dav_resource__"><code>__dav_resource__</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__http_methods__"><code>__http_methods__</code></a></b> = <span title="('GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'TRACE', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'COPY', 'MOVE', 'LOCK', 'UNLOCK')"><code>('GET',&nbsp;'HEAD',&nbsp;'POST',&nbsp;'PUT',&nbsp;'DELET<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy webdav.Resource.Resource&gt;"><code>&lt;implementedBy&nbsp;webdav.Resource.Resourc<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76ae28c&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#COPY__roles__"><code>COPY__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#DELETE__roles__"><code>DELETE__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e128&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e128&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#HEAD__roles__"><code>HEAD__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0e0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e0e0&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#listDAVObjects__roles__"><code>listDAVObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#LOCK__roles__"><code>LOCK__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e140&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e140&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#manage_DAVget__roles__"><code>manage_DAVget__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#MOVE__roles__"><code>MOVE__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#OPTIONS__roles__"><code>OPTIONS__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#PROPFIND__roles__"><code>PROPFIND__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e0f8<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#PROPPATCH__roles__"><code>PROPPATCH__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e110&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e11<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#TRACE__roles__"><code>TRACE__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#UNLOCK__roles__"><code>UNLOCK__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e158&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e158&gt;  </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LockableItem</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_clearLocks__roles__"><code>wl_clearLocks__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c20&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_delLock__roles__"><code>wl_delLock__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d10&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_getLock__roles__"><code>wl_getLock__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_grantLockToUser__roles__"><code>wl_grantLockToUser__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_isLocked__roles__"><code>wl_isLocked__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_isLockedByUser__roles__"><code>wl_isLockedByUser__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockItems__roles__"><code>wl_lockItems__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockmapping__roles__"><code>wl_lockmapping__roles__</code></a></b> = <span title="()"><code>()                             </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockTokens__roles__"><code>wl_lockTokens__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockValues__roles__"><code>wl_lockValues__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_setLock__roles__"><code>wl_setLock__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from EtagSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.EtagSupport.EtagSupport-class.html#__implements__"><code>__implements__</code></a></b> = <span title="(&lt;Interface webdav.EtagSupport.EtagBaseInterface at b7883b8c&gt;,)"><code>(&lt;Interface&nbsp;webdav.EtagSupport.EtagBase<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="webdav.EtagSupport.EtagSupport-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76ae0cc&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="COPY"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">COPY</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Create a duplicate of the source resource whose state and behavior 
+  match that of the source resource as closely as possible. Though we may 
+  later try to make a copy appear seamless across namespaces (e.g. from 
+  Zope to Apache), COPY is currently only supported within the Zope 
+  namespace.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="DELETE"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">DELETE</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Delete a resource. For non-collection resources, DELETE may return 
+  either 200 or 204 (No Content) to indicate success.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="HEAD"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">HEAD</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Retrieve resource information without a response body.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="LOCK"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">LOCK</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Lock a resource
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_DAVget"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_DAVget</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Gets the document source
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="MKCOL"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">MKCOL</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Create a new collection resource. If called on an existing resource, 
+  MKCOL must fail with 405 (Method Not Allowed).
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="MOVE"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">MOVE</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Move a resource to a new location. Though we may later try to make a 
+  move appear seamless across namespaces (e.g. from Zope to Apache), MOVE 
+  is currently only supported within the Zope namespace.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="OPTIONS"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">OPTIONS</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Retrieve communication options.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="PROPFIND"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">PROPFIND</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Retrieve properties defined on the resource.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="PROPPATCH"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">PROPPATCH</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Set and/or remove properties defined on the resource.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="PUT"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">PUT</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Replace the GET response entity of an existing resource. Because 
+  this is often object-dependent, objects which handle PUT should 
+  override the default PUT implementation with an object-specific 
+  implementation. By default, PUT requests fail with a 405 (Method Not 
+  Allowed).
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="TRACE"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">TRACE</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Return the HTTP message received back to the client as the 
+  entity-body of a 200 (OK) response. This will often usually be 
+  intercepted by the web server in use. If not, the TRACE request will 
+  fail with a 405 (Method Not Allowed), since it is not often possible to 
+  reproduce the HTTP request verbatim from within the Zope 
+  environment.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="UNLOCK"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">UNLOCK</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>RESPONSE</span>)</span>
+  </h3>
+  Remove an existing lock on a resource.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('View', ('HEAD',)), ('WebDAV access', ('PROPFIND', 'manage_DAVget', 'listDAVObjects'), ('Authenticated', 'Manager')), ('Manage properties', ('PROPPATCH',)), ('Delete objects', ('DELETE',)), ('WebDAV Lock items', ('LOCK',)), ('WebDAV Unlock items', ('UNLOCK',)))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('View', ('HEAD',)),
+ ('WebDAV access',
+  ('PROPFIND', 'manage_DAVget', 'listDAVObjects'),
+  ('Authenticated', 'Manager')),
+ ('Manage properties', ('PROPPATCH',)),
+ ('Delete objects', ('DELETE',)),
+ ('WebDAV Lock items', ('LOCK',)),
+ ('WebDAV Unlock items', ('UNLOCK',)))                                 </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__dav_resource__"></a>
+<h3>__dav_resource__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>int</code>
+
+      </dd>
+<span title="1">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__http_methods__"></a>
+<h3>__http_methods__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'TRACE', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'COPY', 'MOVE', 'LOCK', 'UNLOCK')">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('GET',
+ 'HEAD',
+ 'POST',
+ 'PUT',
+ 'DELETE',
+ 'OPTIONS',
+ 'TRACE',
+ 'PROPFIND',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy webdav.Resource.Resource&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy webdav.Resource.Resource&gt;                               </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76ae28c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb76ae28c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="COPY__roles__"></a>
+<h3>COPY__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Anonymous',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Anonymous',)                                                         </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="DELETE__roles__"></a>
+<h3>DELETE__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e128&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e128&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="HEAD__roles__"></a>
+<h3>HEAD__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e0e0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e0e0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="listDAVObjects__roles__"></a>
+<h3>listDAVObjects__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="LOCK__roles__"></a>
+<h3>LOCK__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e140&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e140&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_DAVget__roles__"></a>
+<h3>manage_DAVget__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="MOVE__roles__"></a>
+<h3>MOVE__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Anonymous',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Anonymous',)                                                         </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="OPTIONS__roles__"></a>
+<h3>OPTIONS__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="PROPFIND__roles__"></a>
+<h3>PROPFIND__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="PROPPATCH__roles__"></a>
+<h3>PROPPATCH__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e110&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e110&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="TRACE__roles__"></a>
+<h3>TRACE__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="UNLOCK__roles__"></a>
+<h3>UNLOCK__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e158&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e158&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:11 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

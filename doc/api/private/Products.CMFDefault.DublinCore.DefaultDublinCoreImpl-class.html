@@ -1,0 +1,2464 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Products.CMFDefault.DublinCore.DefaultDublinCoreImpl</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Products ::
+        Package&nbsp;CMFDefault ::
+        Module&nbsp;DublinCore ::
+        Class&nbsp;DefaultDublinCoreImpl
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type DefaultDublinCoreImpl</h2>
+
+<pre class="base-tree">
+           <a href="__builtin__.object-class.html"><code>object</code></a> --+        
+                    |        
+                 <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+    
+                        |    
+         <a href="OFS.ZDOM.Node-class.html"><code>Node</code></a> --+       |    
+                |       |    
+          <a href="OFS.ZDOM.Element-class.html"><code>Element</code></a> --+   |    
+                    |   |    
+<a href="OFS.ZDOM.ElementWithAttributes-class.html"><code>ElementWithAttributes</code></a> --+    
+                        |    
+          <a href="OFS.PropertyManager.PropertyManager-class.html"><code>PropertyManager</code></a> --+
+                            |
+                           <b>DefaultDublinCoreImpl</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CPSDocument.CPSDocument.CPSDocument-class.html"><code>CPSDocument</code></a></dd></dl>
+
+<hr/>
+
+Mix-in class which provides Dublin Core methods.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__init__"></a><span class="summary-sig"><span class="summary-sig-name">__init__</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>subject</span>,
+          <span class=summary-sig-arg>description</span>,
+          <span class=summary-sig-arg>contributors</span>,
+          <span class=summary-sig-arg>effective_date</span>,
+          <span class=summary-sig-arg>expiration_date</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>language</span>,
+          <span class=summary-sig-arg>rights</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#addCreator" class="summary-sig-name"><code>addCreator</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>creator</span>)</span></code>
+<br />
+Add creator to Dublin Core creators.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#content_type" class="summary-sig-name"><code>content_type</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+WebDAV needs this to do the Right Thing (TM).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Contributors" class="summary-sig-name"><code>Contributors</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Deprecated alias of listContributors.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="Coverage"></a><span class="summary-sig"><span class="summary-sig-name">Coverage</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#created" class="summary-sig-name"><code>created</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource created.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#CreationDate" class="summary-sig-name"><code>CreationDate</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource created.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Creator" class="summary-sig-name"><code>Creator</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Creator element - resource author.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Date" class="summary-sig-name"><code>Date</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - default date.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Description" class="summary-sig-name"><code>Description</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Description element - resource summary.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#editMetadata" class="summary-sig-name"><code>editMetadata</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>subject</span>,
+          <span class=summary-sig-arg>description</span>,
+          <span class=summary-sig-arg>contributors</span>,
+          <span class=summary-sig-arg>effective_date</span>,
+          <span class=summary-sig-arg>expiration_date</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>language</span>,
+          <span class=summary-sig-arg>rights</span>)</span></code>
+<br />
+Need to add check for webDAV locked resource for TTW methods.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#effective" class="summary-sig-name"><code>effective</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource becomes effective.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#EffectiveDate" class="summary-sig-name"><code>EffectiveDate</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource becomes effective.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#ExpirationDate" class="summary-sig-name"><code>ExpirationDate</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource expires.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#expires" class="summary-sig-name"><code>expires</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource expires.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Format" class="summary-sig-name"><code>Format</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Format element - resource format.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#getMetadataHeaders" class="summary-sig-name"><code>getMetadataHeaders</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return RFC-822-style headers.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Identifier" class="summary-sig-name"><code>Identifier</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Identifier element - resource ID.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#isEffective" class="summary-sig-name"><code>isEffective</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>date</span>)</span></code>
+<br />
+Is the date within the resource's effective range?</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Language" class="summary-sig-name"><code>Language</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Language element - resource language.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#listContributors" class="summary-sig-name"><code>listContributors</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Contributor elements - resource collaborators.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#listCreators" class="summary-sig-name"><code>listCreators</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+List Dublin Core Creator elements - resource authors.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#manage_editMetadata" class="summary-sig-name"><code>manage_editMetadata</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>subject</span>,
+          <span class=summary-sig-arg>description</span>,
+          <span class=summary-sig-arg>contributors</span>,
+          <span class=summary-sig-arg>effective_date</span>,
+          <span class=summary-sig-arg>expiration_date</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>language</span>,
+          <span class=summary-sig-arg>rights</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Update metadata from the ZMI.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#ModificationDate" class="summary-sig-name"><code>ModificationDate</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource last modified.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#modified" class="summary-sig-name"><code>modified</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Date element - date resource last modified.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#notifyModified" class="summary-sig-name"><code>notifyModified</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Take appropriate action after the resource has been modified.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Publisher" class="summary-sig-name"><code>Publisher</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Publisher element - resource publisher.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="Relation"></a><span class="summary-sig"><span class="summary-sig-name">Relation</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Rights" class="summary-sig-name"><code>Rights</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Rights element - resource copyright.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setContributors" class="summary-sig-name"><code>setContributors</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>contributors</span>)</span></code>
+<br />
+Set Dublin Core Contributor elements - resource collaborators.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="setCoverage"></a><span class="summary-sig"><span class="summary-sig-name">setCoverage</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>coverage</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setCreators" class="summary-sig-name"><code>setCreators</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>creators</span>)</span></code>
+<br />
+Set Dublin Core Creator elements - resource authors.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setDescription" class="summary-sig-name"><code>setDescription</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>description</span>)</span></code>
+<br />
+Set Dublin Core Description element - resource summary.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setEffectiveDate" class="summary-sig-name"><code>setEffectiveDate</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>effective_date</span>)</span></code>
+<br />
+Set Dublin Core Date element - date resource becomes effective.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setExpirationDate" class="summary-sig-name"><code>setExpirationDate</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>expiration_date</span>)</span></code>
+<br />
+Set Dublin Core Date element - date resource expires.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setFormat" class="summary-sig-name"><code>setFormat</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>format</span>)</span></code>
+<br />
+Set Dublin Core Format element - resource format.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setLanguage" class="summary-sig-name"><code>setLanguage</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>language</span>)</span></code>
+<br />
+Set Dublin Core Language element - resource language.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setModificationDate" class="summary-sig-name"><code>setModificationDate</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>modification_date</span>)</span></code>
+<br />
+Set the date when the resource was last modified.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="setRelation"></a><span class="summary-sig"><span class="summary-sig-name">setRelation</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>relation</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setRights" class="summary-sig-name"><code>setRights</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>rights</span>)</span></code>
+<br />
+Set Dublin Core Rights element - resource copyright.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="setSource"></a><span class="summary-sig"><span class="summary-sig-name">setSource</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>source</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setSubject" class="summary-sig-name"><code>setSubject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>subject</span>)</span></code>
+<br />
+Set Dublin Core Subject element - resource keywords.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setTitle" class="summary-sig-name"><code>setTitle</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>title</span>)</span></code>
+<br />
+Set Dublin Core Title element - resource name.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="Source"></a><span class="summary-sig"><span class="summary-sig-name">Source</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Subject" class="summary-sig-name"><code>Subject</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Subject element - resource keywords.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Title" class="summary-sig-name"><code>Title</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Title element - resource name.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Type" class="summary-sig-name"><code>Type</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Dublin Core Type element - resource type.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_datify"></a><span class="summary-sig"><span class="summary-sig-name">_datify</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>attrib</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#_editMetadata" class="summary-sig-name"><code>_editMetadata</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>subject</span>,
+          <span class=summary-sig-arg>description</span>,
+          <span class=summary-sig-arg>contributors</span>,
+          <span class=summary-sig-arg>effective_date</span>,
+          <span class=summary-sig-arg>expiration_date</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>language</span>,
+          <span class=summary-sig-arg>rights</span>)</span></code>
+<br />
+Update the editable metadata for this resource.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from PropertyManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#getProperty" class="summary-sig-name"><code>getProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>d</span>)</span></code>
+<br />
+Get the property 'id'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#getPropertyType" class="summary-sig-name"><code>getPropertyType</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Get the type of property 'id'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#hasProperty" class="summary-sig-name"><code>hasProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Return true if object has a property 'id'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_addProperty" class="summary-sig-name"><code>manage_addProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>,
+          <span class=summary-sig-arg>type</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add a new property via the web.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changeProperties" class="summary-sig-name"><code>manage_changeProperties</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Change existing object properties.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changePropertyTypes" class="summary-sig-name"><code>manage_changePropertyTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>old_ids</span>,
+          <span class=summary-sig-arg>props</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Replace one set of properties with another</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_delProperties" class="summary-sig-name"><code>manage_delProperties</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Delete one or more properties specified by 'ids'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_editProperties" class="summary-sig-name"><code>manage_editProperties</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Edit object properties via the web.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propdict" class="summary-sig-name"><code>propdict</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyIds" class="summary-sig-name"><code>propertyIds</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a list of property ids.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyItems" class="summary-sig-name"><code>propertyItems</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a list of (id,property) tuples.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyLabel" class="summary-sig-name"><code>propertyLabel</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Return a label for the given property id</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyMap" class="summary-sig-name"><code>propertyMap</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a tuple of mappings, giving meta-data for properties.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyValues" class="summary-sig-name"><code>propertyValues</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a list of actual property objects.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#valid_property_id" class="summary-sig-name"><code>valid_property_id</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_delProperty" class="summary-sig-name"><code>_delProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_delPropValue" class="summary-sig-name"><code>_delPropValue</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_propertyMap" class="summary-sig-name"><code>_propertyMap</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a tuple of mappings, giving meta-data for properties.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_setProperty" class="summary-sig-name"><code>_setProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>,
+          <span class=summary-sig-arg>type</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_setPropValue" class="summary-sig-name"><code>_setPropValue</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_updateProperty" class="summary-sig-name"><code>_updateProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_wrapperCheck" class="summary-sig-name"><code>_wrapperCheck</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from ElementWithAttributes</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttribute" class="summary-sig-name"><code>getAttribute</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an attribute value by name.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttributeNode" class="summary-sig-name"><code>getAttributeNode</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an Attr node by name or None if there is no such 
+attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttributes" class="summary-sig-name"><code>getAttributes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NamedNodeMap containing the attributes of this node (if it 
+is an element) or None otherwise.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Element</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getChildNodes" class="summary-sig-name"><code>getChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NodeList that contains all children of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getElementsByTagName" class="summary-sig-name"><code>getElementsByTagName</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tagname</span>)</span></code>
+<br />
+Returns a NodeList of all the Elements with a given tag name in the 
+order in which they would be encountered in a preorder traversal of the 
+Document tree.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getFirstChild" class="summary-sig-name"><code>getFirstChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The first child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getLastChild" class="summary-sig-name"><code>getLastChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The last child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNextSibling" class="summary-sig-name"><code>getNextSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeName" class="summary-sig-name"><code>getNodeName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeType" class="summary-sig-name"><code>getNodeType</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+A code representing the type of the node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getParentNode" class="summary-sig-name"><code>getParentNode</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The parent of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getPreviousSibling" class="summary-sig-name"><code>getPreviousSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getTagName" class="summary-sig-name"><code>getTagName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of the element</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getNodeValue" class="summary-sig-name"><code>getNodeValue</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The value of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getOwnerDocument" class="summary-sig-name"><code>getOwnerDocument</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The Document object associated with this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#hasChildNodes" class="summary-sig-name"><code>hasChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns true if the node has any children, false if it doesn't.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Modify portal content', ('setTitle', 'editMetadata', 'setSource', 'setDescription', 'setFormat', 'setExpirationDate', 'manage_metadata', 'setCoverage', 'setModificationDate', 'manage_editMetadata', 'setLanguage', 'setRights', 'setCreators', 'setEffectiveDate', 'setContributors', 'setSubject', 'setRelation', 'addCreator')), ('View', ('listContributors', 'Title', 'getMetadataHeaders', 'Format', 'Type', 'Identifier', 'Description', 'listCreators', 'ModificationDate', 'Contributors', 'ExpirationDate', 'Publisher', 'EffectiveDate', 'Rights', 'expires', 'Date', 'Language', 'effective', 'create..."><code>(('Modify&nbsp;portal&nbsp;content',&nbsp;('setTit<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy Products.CMFDefault.DublinCore.DefaultDublinCoreImpl&gt;"><code>&lt;implementedBy&nbsp;Products.CMFDefault.Dub<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#__implements__"><code>__implements__</code></a></b> = <span title="(&lt;Interface Products.CMFCore.interfaces.DublinCore.DublinCore at b739b2cc&gt;, &lt;Interface Products.CMFCore.interfaces.DublinCore.CatalogableDublinCore at b739b56c&gt;, &lt;Interface Products.CMFCore.interfaces.DublinCore.MutableDublinCore at b739b5cc&gt;)"><code>(&lt;Interface&nbsp;Products.CMFCore.interfaces<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88f8c&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#_datify__roles__"><code>_datify__roles__</code></a></b> = <span title="()"><code>()                                    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#_editMetadata__roles__"><code>_editMetadata__roles__</code></a></b> = <span title="()"><code>()                              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#addCreator__roles__"><code>addCreator__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Contributors__roles__"><code>Contributors__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e1<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#coverage"><code>coverage</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                            </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Coverage__roles__"><code>Coverage__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#created__roles__"><code>created__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt; </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#CreationDate__roles__"><code>CreationDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e1<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Creator__roles__"><code>Creator__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt; </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Date__roles__"><code>Date__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Description__roles__"><code>Description__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#editMetadata__roles__"><code>editMetadata__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e1<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#effective__roles__"><code>effective__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c9<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#EffectiveDate__roles__"><code>EffectiveDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#ExpirationDate__roles__"><code>ExpirationDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#expires__roles__"><code>expires__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt; </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Format__roles__"><code>Format__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#getMetadataHeaders__roles__"><code>getMetadataHeaders__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Identifier__roles__"><code>Identifier__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#isEffective__roles__"><code>isEffective__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Language__roles__"><code>Language__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#listContributors__roles__"><code>listContributors__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#listCreators__roles__"><code>listCreators__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e1<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#manage_editMetadata__roles__"><code>manage_editMetadata__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#manage_metadata"><code>manage_metadata</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb739422c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#manage_metadata__roles__"><code>manage_metadata__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#modification_date"><code>modification_date</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#ModificationDate__roles__"><code>ModificationDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#modified__roles__"><code>modified__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#notifyModified__roles__"><code>notifyModified__roles__</code></a></b> = <span title="()"><code>()                             </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Publisher__roles__"><code>Publisher__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c9<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#relation"><code>relation</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                            </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Relation__roles__"><code>Relation__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Rights__roles__"><code>Rights__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setContributors__roles__"><code>setContributors__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setCoverage__roles__"><code>setCoverage__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setCreators__roles__"><code>setCreators__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setDescription__roles__"><code>setDescription__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setEffectiveDate__roles__"><code>setEffectiveDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setExpirationDate__roles__"><code>setExpirationDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setFormat__roles__"><code>setFormat__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15d7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setLanguage__roles__"><code>setLanguage__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setModificationDate__roles__"><code>setModificationDate__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setRelation__roles__"><code>setRelation__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setRights__roles__"><code>setRights__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15d7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setSource__roles__"><code>setSource__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15d7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setSubject__roles__"><code>setSubject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#setTitle__roles__"><code>setTitle__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15d70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15d70<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#source"><code>source</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Source__roles__"><code>Source__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Subject__roles__"><code>Subject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt; </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Title__roles__"><code>Title__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt;   </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#Type__roles__"><code>Type__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb6e15c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb6e15c98&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DateTime</code></font></td>
+<td><b><a href="../private/Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#__CEILING_DATE"><code>_DefaultDublinCoreImpl__CEILING_DATE</code></a></b> = <span title="DateTime('2999/12/31')"><code>DateTime('2999/12<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DateTime</code></font></td>
+<td><b><a href="../private/Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html#__FLOOR_DATE"><code>_DefaultDublinCoreImpl__FLOOR_DATE</code></a></b> = <span title="DateTime('1969/12/31')"><code>DateTime('1969/12/3<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from PropertyManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__propsets__"><code>__propsets__</code></a></b> = <span title="()"><code>()                                        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__roles__"><code>__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e710&gt;        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#getProperty__roles__"><code>getProperty__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#getPropertyType__roles__"><code>getPropertyType__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#hasProperty__roles__"><code>hasProperty__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_addProperty__roles__"><code>manage_addProperty__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changeProperties__roles__"><code>manage_changeProperties__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changePropertyTypes__roles__"><code>manage_changePropertyTypes__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_delProperties__roles__"><code>manage_delProperties__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_editProperties__roles__"><code>manage_editProperties__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_propertiesForm', 'help': ('OFSP', 'Properties.stx'), 'label': 'Properties'},)"><code>({'action':&nbsp;'manage_propertiesForm',&nbsp;'h<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertiesForm"><code>manage_propertiesForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77a552c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertiesForm__roles__"><code>manage_propertiesForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertyTypeForm"><code>manage_propertyTypeForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb780cf0c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertyTypeForm__roles__"><code>manage_propertyTypeForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyIds__roles__"><code>propertyIds__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyItems__roles__"><code>propertyItems__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyMap__roles__"><code>propertyMap__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>vps</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertysheets"><code>propertysheets</code></a></b> = <span title="&lt;OFS.PropertySheets.vps object at 0xb77a9c6c&gt;"><code>&lt;OFS.PropertySheets.vps&nbsp;object&nbsp;at&nbsp;0xb77<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyValues__roles__"><code>propertyValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#title"><code>title</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                               </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_properties"><code>_properties</code></a></b> = <span title="({'type': 'string', 'id': 'title', 'mode': 'wd'},)"><code>({'type':&nbsp;'string',&nbsp;'id':&nbsp;'title',&nbsp;'mode':<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_reserved_names"><code>_reserved_names</code></a></b> = <span title="()"><code>()                                     </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.ZDOM.Node-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76ae6ac&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="addCreator"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addCreator</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>creator</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add creator to Dublin Core creators.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="content_type"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">content_type</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  WebDAV needs this to do the Right Thing (TM).
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Contributors"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Contributors</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Deprecated alias of listContributors.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="created"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">created</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource created.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="CreationDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">CreationDate</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource created.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Creator"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Creator</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Creator element - resource author.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Date"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Date</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - default date.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Description"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Description</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Description element - resource summary.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="editMetadata"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">editMetadata</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>subject</span>=<span class=sig-default>()</span>,
+          <span class=sig-arg>description</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>contributors</span>=<span class=sig-default>()</span>,
+          <span class=sig-arg>effective_date</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>expiration_date</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>format</span>=<span class=sig-default>'text/html'</span>,
+          <span class=sig-arg>language</span>=<span class=sig-default>'en-US'</span>,
+          <span class=sig-arg>rights</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Need to add check for webDAV locked resource for TTW methods.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="effective"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">effective</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource becomes effective.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="EffectiveDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">EffectiveDate</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource becomes effective.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ExpirationDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ExpirationDate</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource expires.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="expires"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">expires</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource expires.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Format"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Format</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Format element - resource format.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getMetadataHeaders"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getMetadataHeaders</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return RFC-822-style headers.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Identifier"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Identifier</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Identifier element - resource ID.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="isEffective"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">isEffective</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>date</span>)</span>
+  </h3>
+  Is the date within the resource's effective range?
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Language"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Language</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Language element - resource language.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="listContributors"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">listContributors</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Contributor elements - resource collaborators.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="listCreators"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">listCreators</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  List Dublin Core Creator elements - resource authors.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_editMetadata"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_editMetadata</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>title</span>,
+          <span class=sig-arg>subject</span>,
+          <span class=sig-arg>description</span>,
+          <span class=sig-arg>contributors</span>,
+          <span class=sig-arg>effective_date</span>,
+          <span class=sig-arg>expiration_date</span>,
+          <span class=sig-arg>format</span>,
+          <span class=sig-arg>language</span>,
+          <span class=sig-arg>rights</span>,
+          <span class=sig-arg>REQUEST</span>)</span>
+  </h3>
+  Update metadata from the ZMI.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ModificationDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ModificationDate</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource last modified.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="modified"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">modified</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Date element - date resource last modified.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="notifyModified"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">notifyModified</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  <p>Take appropriate action after the resource has been modified.</p>
+  Update creators and modification_date.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Publisher"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Publisher</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Publisher element - resource publisher.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Rights"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Rights</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Rights element - resource copyright.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setContributors"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setContributors</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>contributors</span>)</span>
+  </h3>
+  Set Dublin Core Contributor elements - resource collaborators.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setCreators"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setCreators</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>creators</span>)</span>
+  </h3>
+  Set Dublin Core Creator elements - resource authors.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setDescription"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setDescription</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>description</span>)</span>
+  </h3>
+  Set Dublin Core Description element - resource summary.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setEffectiveDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setEffectiveDate</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>effective_date</span>)</span>
+  </h3>
+  Set Dublin Core Date element - date resource becomes effective.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setExpirationDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setExpirationDate</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>expiration_date</span>)</span>
+  </h3>
+  Set Dublin Core Date element - date resource expires.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setFormat"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setFormat</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>format</span>)</span>
+  </h3>
+  Set Dublin Core Format element - resource format.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setLanguage"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setLanguage</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>language</span>)</span>
+  </h3>
+  Set Dublin Core Language element - resource language.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setModificationDate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setModificationDate</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>modification_date</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Set the date when the resource was last modified.</p>
+  When called without an argument, sets the date to now.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setRights"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setRights</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>rights</span>)</span>
+  </h3>
+  Set Dublin Core Rights element - resource copyright.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setSubject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setSubject</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>subject</span>)</span>
+  </h3>
+  Set Dublin Core Subject element - resource keywords.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setTitle"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setTitle</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>title</span>)</span>
+  </h3>
+  Set Dublin Core Title element - resource name.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Subject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Subject</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Subject element - resource keywords.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Title"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Title</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Title element - resource name.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="Type"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">Type</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Dublin Core Type element - resource type.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_editMetadata"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_editMetadata</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>subject</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>description</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>contributors</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>effective_date</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>expiration_date</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>format</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>language</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>rights</span>=<span class=sig-default>[]</span>)</span>
+  </h3>
+  Update the editable metadata for this resource.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Modify portal content', ('setTitle', 'editMetadata', 'setSource', 'setDescription', 'setFormat', 'setExpirationDate', 'manage_metadata', 'setCoverage', 'setModificationDate', 'manage_editMetadata', 'setLanguage', 'setRights', 'setCreators', 'setEffectiveDate', 'setContributors', 'setSubject', 'setRelation', 'addCreator')), ('View', ('listContributors', 'Title', 'getMetadataHeaders', 'Format', 'Type', 'Identifier', 'Description', 'listCreators', 'ModificationDate', 'Contributors', 'ExpirationDate', 'Publisher', 'EffectiveDate', 'Rights', 'expires', 'Date', 'Language', 'effective', 'create...">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Modify portal content',
+  ('setTitle',
+   'editMetadata',
+   'setSource',
+   'setDescription',
+   'setFormat',
+   'setExpirationDate',
+   'manage_metadata',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy Products.CMFDefault.DublinCore.DefaultDublinCoreImpl&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy Products.CMFDefault.DublinCore.DefaultDublinCoreImpl&gt;   </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implements__"></a>
+<h3>__implements__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(&lt;Interface Products.CMFCore.interfaces.DublinCore.DublinCore at b739b2cc&gt;, &lt;Interface Products.CMFCore.interfaces.DublinCore.CatalogableDublinCore at b739b56c&gt;, &lt;Interface Products.CMFCore.interfaces.DublinCore.MutableDublinCore at b739b5cc&gt;)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(&lt;Interface Products.CMFCore.interfaces.DublinCore.DublinCore at b739b<span class="variable-linewrap">\</span>
+2cc&gt;,
+ &lt;Interface Products.CMFCore.interfaces.DublinCore.CatalogableDublinCo<span class="variable-linewrap">\</span>
+re at b739b56c&gt;,
+ &lt;Interface Products.CMFCore.interfaces.DublinCore.MutableDublinCore a<span class="variable-linewrap">\</span>
+t b739b5cc&gt;)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88f8c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb5f88f8c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_datify__roles__"></a>
+<h3>_datify__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_editMetadata__roles__"></a>
+<h3>_editMetadata__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="addCreator__roles__"></a>
+<h3>addCreator__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Contributors__roles__"></a>
+<h3>Contributors__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="coverage"></a>
+<h3>coverage</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Coverage__roles__"></a>
+<h3>Coverage__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="created__roles__"></a>
+<h3>created__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="CreationDate__roles__"></a>
+<h3>CreationDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Creator__roles__"></a>
+<h3>Creator__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Date__roles__"></a>
+<h3>Date__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Description__roles__"></a>
+<h3>Description__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="editMetadata__roles__"></a>
+<h3>editMetadata__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="effective__roles__"></a>
+<h3>effective__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="EffectiveDate__roles__"></a>
+<h3>EffectiveDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="ExpirationDate__roles__"></a>
+<h3>ExpirationDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="expires__roles__"></a>
+<h3>expires__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Format__roles__"></a>
+<h3>Format__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getMetadataHeaders__roles__"></a>
+<h3>getMetadataHeaders__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Identifier__roles__"></a>
+<h3>Identifier__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="isEffective__roles__"></a>
+<h3>isEffective__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Language__roles__"></a>
+<h3>Language__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="listContributors__roles__"></a>
+<h3>listContributors__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="listCreators__roles__"></a>
+<h3>listCreators__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editMetadata__roles__"></a>
+<h3>manage_editMetadata__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_metadata"></a>
+<h3>manage_metadata</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb739422c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb739422c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_metadata__roles__"></a>
+<h3>manage_metadata__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="modification_date"></a>
+<h3>modification_date</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="ModificationDate__roles__"></a>
+<h3>ModificationDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="modified__roles__"></a>
+<h3>modified__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="notifyModified__roles__"></a>
+<h3>notifyModified__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Publisher__roles__"></a>
+<h3>Publisher__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="relation"></a>
+<h3>relation</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Relation__roles__"></a>
+<h3>Relation__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Rights__roles__"></a>
+<h3>Rights__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setContributors__roles__"></a>
+<h3>setContributors__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setCoverage__roles__"></a>
+<h3>setCoverage__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setCreators__roles__"></a>
+<h3>setCreators__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setDescription__roles__"></a>
+<h3>setDescription__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setEffectiveDate__roles__"></a>
+<h3>setEffectiveDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setExpirationDate__roles__"></a>
+<h3>setExpirationDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setFormat__roles__"></a>
+<h3>setFormat__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setLanguage__roles__"></a>
+<h3>setLanguage__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setModificationDate__roles__"></a>
+<h3>setModificationDate__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setRelation__roles__"></a>
+<h3>setRelation__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setRights__roles__"></a>
+<h3>setRights__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setSource__roles__"></a>
+<h3>setSource__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setSubject__roles__"></a>
+<h3>setSubject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setTitle__roles__"></a>
+<h3>setTitle__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15d70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15d70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="source"></a>
+<h3>source</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Source__roles__"></a>
+<h3>Source__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Subject__roles__"></a>
+<h3>Subject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Title__roles__"></a>
+<h3>Title__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="Type__roles__"></a>
+<h3>Type__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb6e15c98&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb6e15c98&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_DefaultDublinCoreImpl__CEILING_DATE"></a>
+<h3>_DefaultDublinCoreImpl__CEILING_DATE</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DateTime</code>
+
+      </dd>
+<span title="DateTime('2999/12/31')">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+DateTime('2999/12/31')                                                 </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_DefaultDublinCoreImpl__FLOOR_DATE"></a>
+<h3>_DefaultDublinCoreImpl__FLOOR_DATE</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DateTime</code>
+
+      </dd>
+<span title="DateTime('1969/12/31')">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+DateTime('1969/12/31')                                                 </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:18 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

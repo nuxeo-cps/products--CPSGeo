@@ -1,0 +1,1958 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CPSGeo.Map.Map</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="CPSGeo-module.html">Package&nbsp;CPSGeo</a> ::
+        <a href="CPSGeo.Map-module.html">Module&nbsp;Map</a> ::
+        Class&nbsp;Map
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/CPSGeo.Map.Map-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="CPSGeo.Map.Map-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type Map</h2>
+
+<pre class="base-tree">
+             <a href="__builtin__.object-class.html"><code>object</code></a> --+            
+                      |            
+                   <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+        
+                          |        
+            <a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html"><code>CMFCatalogAware</code></a> --+    
+                              |    
+                <a href="Products.CMFCore.DynamicType.DynamicType-class.html"><code>DynamicType</code></a> --+    
+                              |    
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+           |    
+                  |           |    
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+       |    
+                      |       |    
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+       |       |    
+              |       |       |    
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |       |    
+                  |   |       |    
+         <a href="OFS.CopySupport.CopySource-class.html"><code>CopySource</code></a> --+       |    
+                      |       |    
+           <a href="OFS.ZDOM.Node-class.html"><code>Node</code></a> --+   |       |    
+                  |   |       |    
+            <a href="OFS.ZDOM.Element-class.html"><code>Element</code></a> --+       |    
+                      |       |    
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+       |       |    
+              |       |       |    
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |       |    
+                  |   |       |    
+              <a href="AccessControl.Owned.Owned-class.html"><code>Owned</code></a> --+       |    
+                      |       |    
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+       |       |    
+              |       |       |    
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |       |    
+                  |   |       |    
+<a href="webdav.EtagSupport.EtagSupport-class.html"><code>EtagSupport</code></a> --+   |   |       |    
+              |   |   |       |    
+   <a href="webdav.Lockable.LockableItem-class.html"><code>LockableItem</code></a> --+   |       |    
+                  |   |       |    
+           <a href="webdav.Resource.Resource-class.html"><code>Resource</code></a> --+       |    
+                      |       |    
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+       |       |    
+              |       |       |    
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |       |    
+                  |   |       |    
+               <a href="App.Management.Tabs-class.html"><code>Tabs</code></a> --+       |    
+                      |       |    
+        <a href="OFS.Traversable.Traversable-class.html"><code>Traversable</code></a> --+       |    
+                      |       |    
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+       |       |    
+              |       |       |    
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |       |    
+                  |   |       |    
+        <a href="App.Undo.UndoSupport-class.html"><code>UndoSupport</code></a> --+       |    
+                      |       |    
+                   <a href="OFS.SimpleItem.Item-class.html"><code>Item</code></a> --+   |    
+                          |   |    
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |   |    
+                  |       |   |    
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |   |    
+                      |   |   |    
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+   |   |   |    
+                  |   |   |   |    
+         <a href="persistent.Persistent-class.html"><code>Persistent</code></a> --+   |   |    
+                      |   |   |    
+             <a href="Persistence.Persistent-class.html"><code>Persistent</code></a> --+   |    
+                          |   |    
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |   |    
+                  |       |   |    
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |   |    
+                      |   |   |    
+        <a href="AccessControl.PermissionMapping.RoleManager-class.html"><code>RoleManager</code></a> --+   |   |    
+                      |   |   |    
+            <a href="AccessControl.Role.RoleManager-class.html"><code>RoleManager</code></a> --+   |    
+                          |   |    
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |   |    
+                  |       |   |    
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |   |    
+                      |   |   |    
+               <a href="../private/Acquisition._Acquisition.Acquirer-class.html"><code>Acquirer</code></a> --+   |    
+                          |   |    
+                 <a href="OFS.SimpleItem.SimpleItem-class.html"><code>SimpleItem</code></a> --+    
+                              |    
+                  <a href="Products.CMFCore.PortalContent.PortalContent-class.html"><code>PortalContent</code></a> --+
+                                  |
+                                 <b>Map</b>
+</pre><br />
+
+<hr/>
+
+<p>Map</p>
+Defines a set of cartographic layers from an external web map service, 
+and the default screen size and spatial bounding box.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="CPSGeo.Map.Map-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>url</span>,
+          <span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>size</span>,
+          <span class=summary-sig-arg>bounds</span>,
+          <span class=summary-sig-arg>srs</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>layers</span>)</span></code>
+<br />
+Initialize</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="CPSGeo.Map.Map-class.html#aggMapContext" class="summary-sig-name"><code>aggMapContext</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>kws</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Return a 1.0 Web Map Context document for use with mapbuilder</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="CPSGeo.Map.Map-class.html#editMap" class="summary-sig-name"><code>editMap</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>url</span>,
+          <span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>size</span>,
+          <span class=summary-sig-arg>bounds</span>,
+          <span class=summary-sig-arg>srs</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>layers</span>)</span></code>
+<br />
+edit map attributes</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="CPSGeo.Map.Map-class.html#getCapabilitiesUrl" class="summary-sig-name"><code>getCapabilitiesUrl</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return capabilities URL</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="getLayerInfos"></a><span class="summary-sig"><span class="summary-sig-name">getLayerInfos</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="CPSGeo.Map.Map-class.html#manage_editMap" class="summary-sig-name"><code>manage_editMap</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>url</span>,
+          <span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>size</span>,
+          <span class=summary-sig-arg>bounds</span>,
+          <span class=summary-sig-arg>srs</span>,
+          <span class=summary-sig-arg>format</span>,
+          <span class=summary-sig-arg>layers</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+web front end to editMap</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="CPSGeo.Map.Map-class.html#mapContext" class="summary-sig-name"><code>mapContext</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>kws</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Return a 1.0 Web Map Context document for use with mapbuilder</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from PortalContent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.PortalContent.PortalContent-class.html#__call__" class="summary-sig-name"><code>__call__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Invokes the default view.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.PortalContent.PortalContent-class.html#failIfLocked" class="summary-sig-name"><code>failIfLocked</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Check if isLocked via webDav</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.PortalContent.PortalContent-class.html#SearchableText" class="summary-sig-name"><code>SearchableText</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a concatination of all searchable text.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.PortalContent.PortalContent-class.html#view" class="summary-sig-name"><code>view</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the default view even if index_html is overridden.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from DynamicType</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#__before_publishing_traverse__" class="summary-sig-name"><code>__before_publishing_traverse__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>arg1</span>,
+          <span class=summary-sig-arg>arg2</span>)</span></code>
+<br />
+Pre-traversal hook.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getPortalTypeName" class="summary-sig-name"><code>_getPortalTypeName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the portal type name that can be passed to portal_types.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getActionInfo" class="summary-sig-name"><code>getActionInfo</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>action_chain</span>,
+          <span class=summary-sig-arg>check_visibility</span>,
+          <span class=summary-sig-arg>check_condition</span>)</span></code>
+<br />
+Get an Action info mapping specified by a chain of actions.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getIcon" class="summary-sig-name"><code>getIcon</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>relative_to_portal</span>)</span></code>
+<br />
+Using this method allows the content class creator to grab icons on 
+the fly instead of using a fixed attribute on the class.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getPortalTypeName" class="summary-sig-name"><code>getPortalTypeName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the portal type name that can be passed to portal_types.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getTypeInfo" class="summary-sig-name"><code>getTypeInfo</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the TypeInformation object specified by the portal type.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CMFCatalogAware</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterAdd" class="summary-sig-name"><code>_cps_old_manage_afterAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+<br />
+Add self to the catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_beforeDelete" class="summary-sig-name"><code>_cps_old_manage_beforeDelete</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+<br />
+Remove self from the catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#indexObject" class="summary-sig-name"><code>indexObject</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Index the object in the portal catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterAdd" class="summary-sig-name"><code>manage_afterAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+manage_afterAdd patched for event service notification.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterClone" class="summary-sig-name"><code>manage_afterClone</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>)</span></code>
+<br />
+Add self to the workflow.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterCMFAdd" class="summary-sig-name"><code>manage_afterCMFAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+<br />
+Notify object and event service of CMF add finalization.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_beforeDelete" class="summary-sig-name"><code>manage_beforeDelete</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+manage_beforeDelete patched for event service notification.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_workflowsTab" class="summary-sig-name"><code>manage_workflowsTab</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>manage_tabs_message</span>)</span></code>
+<br />
+Tab displaying the current workflows for the content object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#notifyWorkflowCreated" class="summary-sig-name"><code>notifyWorkflowCreated</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Notify the workflow that self was just created.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueIds" class="summary-sig-name"><code>opaqueIds</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return opaque ids (subelements that are contained using something that 
+is not an ObjectManager).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueItems" class="summary-sig-name"><code>opaqueItems</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return opaque items (subelements that are contained using something 
+that is not an ObjectManager).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueValues" class="summary-sig-name"><code>opaqueValues</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return opaque values (subelements that are contained using something 
+that is not an ObjectManager).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObject" class="summary-sig-name"><code>reindexObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>idxs</span>)</span></code>
+<br />
+Reindex the object in the portal catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObjectSecurity" class="summary-sig-name"><code>reindexObjectSecurity</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>skip_self</span>)</span></code>
+<br />
+Reindex security-related indexes on the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#unindexObject" class="summary-sig-name"><code>unindexObject</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Unindex the object from the portal catalog.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Item</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#__len__" class="summary-sig-name"><code>__len__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Show the physical path of the object and its context if available.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getContent" class="summary-sig-name"><code>getContent</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>lang</span>)</span></code>
+<br />
+Return the object itself.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getDefaultLanguage" class="summary-sig-name"><code>getDefaultLanguage</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the default language.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getDocid" class="summary-sig-name"><code>getDocid</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+No Docid.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getEditableContent" class="summary-sig-name"><code>getEditableContent</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>lang</span>)</span></code>
+<br />
+Return the object itself.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getFromLanguageRevisions" class="summary-sig-name"><code>getFromLanguageRevisions</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+No mapping.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getId" class="summary-sig-name"><code>getId</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the id of the object as a string.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getLanguage" class="summary-sig-name"><code>getLanguage</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>lang</span>)</span></code>
+<br />
+Get the selected language.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getLanguageRevisions" class="summary-sig-name"><code>getLanguageRevisions</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+No mapping.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getProxyLanguages" class="summary-sig-name"><code>getProxyLanguages</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+return all available languages.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#getRevision" class="summary-sig-name"><code>getRevision</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>lang</span>)</span></code>
+<br />
+Get the best revision.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getIcon" class="summary-sig-name"><code>icon</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>relative_to_portal</span>)</span></code>
+<br />
+Using this method allows the content class creator to grab icons on 
+the fly instead of using a fixed attribute on the class.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#isProxyArchived" class="summary-sig-name"><code>isProxyArchived</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Is the proxy archived.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#manage" class="summary-sig-name"><code>manage</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>URL1</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#manage_editedDialog" class="summary-sig-name"><code>manage_editedDialog</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**args</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#manage_FTPlist" class="summary-sig-name"><code>manage_FTPlist</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Directory listing for FTP.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#manage_FTPstat" class="summary-sig-name"><code>manage_FTPstat</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Psuedo stat, used by FTP for directory listings.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#objectValues" class="summary-sig-name"><code>objectIds</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#objectValues" class="summary-sig-name"><code>objectItems</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#objectValues" class="summary-sig-name"><code>objectValues</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#raise_standardErrorMessage" class="summary-sig-name"><code>raise_standardErrorMessage</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>client</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>error_type</span>,
+          <span class=summary-sig-arg>error_value</span>,
+          <span class=summary-sig-arg>tb</span>,
+          <span class=summary-sig-arg>error_tb</span>,
+          <span class=summary-sig-arg>error_message</span>,
+          <span class=summary-sig-arg>tagSearch</span>,
+          <span class=summary-sig-arg>error_log_url</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#this" class="summary-sig-name"><code>this</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#title_and_id" class="summary-sig-name"><code>title_and_id</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the title if it is not blank and the id otherwise.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#title_or_id" class="summary-sig-name"><code>title_or_id</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the title if it is not blank and the id otherwise.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#tpURL" class="summary-sig-name"><code>tpURL</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.SimpleItem.Item-class.html#tpValues" class="summary-sig-name"><code>tpValues</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Resource</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#COPY" class="summary-sig-name"><code>COPY</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Create a duplicate of the source resource whose state and behavior 
+match that of the source resource as closely as possible.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#dav__init" class="summary-sig-name"><code>dav__init</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>request</span>,
+          <span class=summary-sig-arg>response</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#dav__simpleifhandler" class="summary-sig-name"><code>dav__simpleifhandler</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>request</span>,
+          <span class=summary-sig-arg>response</span>,
+          <span class=summary-sig-arg>method</span>,
+          <span class=summary-sig-arg>col</span>,
+          <span class=summary-sig-arg>url</span>,
+          <span class=summary-sig-arg>refresh</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#dav__validate" class="summary-sig-name"><code>dav__validate</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>methodname</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#DELETE" class="summary-sig-name"><code>DELETE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Delete a resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#HEAD" class="summary-sig-name"><code>HEAD</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve resource information without a response body.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#listDAVObjects" class="summary-sig-name"><code>listDAVObjects</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#LOCK" class="summary-sig-name"><code>LOCK</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Lock a resource</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#manage_DAVget" class="summary-sig-name"><code>manage_DAVget</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Gets the document source</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#MKCOL" class="summary-sig-name"><code>MKCOL</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Create a new collection resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#MOVE" class="summary-sig-name"><code>MOVE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Move a resource to a new location.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#OPTIONS" class="summary-sig-name"><code>OPTIONS</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve communication options.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PROPFIND" class="summary-sig-name"><code>PROPFIND</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve properties defined on the resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PROPPATCH" class="summary-sig-name"><code>PROPPATCH</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Set and/or remove properties defined on the resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PUT" class="summary-sig-name"><code>PUT</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Replace the GET response entity of an existing resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#TRACE" class="summary-sig-name"><code>TRACE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Return the HTTP message received back to the client as the entity-body 
+of a 200 (OK) response.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#UNLOCK" class="summary-sig-name"><code>UNLOCK</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Remove an existing lock on a resource.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LockableItem</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_clearLocks" class="summary-sig-name"><code>wl_clearLocks</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_delLock" class="summary-sig-name"><code>wl_delLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_getLock" class="summary-sig-name"><code>wl_getLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_hasLock" class="summary-sig-name"><code>wl_hasLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>token</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_isLocked" class="summary-sig-name"><code>wl_isLocked</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockItems" class="summary-sig-name"><code>wl_lockItems</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockmapping" class="summary-sig-name"><code>wl_lockmapping</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>,
+          <span class=summary-sig-arg>create</span>)</span></code>
+<br />
+if 'killinvalids' is 1, locks who are no longer valid will be 
+deleted</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockTokens" class="summary-sig-name"><code>wl_lockTokens</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockValues" class="summary-sig-name"><code>wl_lockValues</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_setLock" class="summary-sig-name"><code>wl_setLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>,
+          <span class=summary-sig-arg>lock</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from EtagSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__etag" class="summary-sig-name"><code>http__etag</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>readonly</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__parseMatchList" class="summary-sig-name"><code>http__parseMatchList</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>header</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__processMatchHeaders" class="summary-sig-name"><code>http__processMatchHeaders</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__refreshEtag" class="summary-sig-name"><code>http__refreshEtag</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CopySource</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopySource-class.html#cb_isCopyable" class="summary-sig-name"><code>cb_isCopyable</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopySource-class.html#cb_isMoveable" class="summary-sig-name"><code>cb_isMoveable</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopySource-class.html#cb_userHasCopyOrMovePermission" class="summary-sig-name"><code>cb_userHasCopyOrMovePermission</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Tabs</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#class_manage_path" class="summary-sig-name"><code>class_manage_path</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#filtered_manage_options" class="summary-sig-name"><code>filtered_manage_options</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#manage_workspace" class="summary-sig-name"><code>manage_workspace</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Dispatch to first interface in manage_options</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#tabs_path_default" class="summary-sig-name"><code>tabs_path_default</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>unquote</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#tabs_path_info" class="summary-sig-name"><code>tabs_path_info</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>script</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>quote</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Traversable</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#absolute_url" class="summary-sig-name"><code>absolute_url</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>relative</span>)</span></code>
+<br />
+Return the absolute URL of the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#absolute_url_path" class="summary-sig-name"><code>absolute_url_path</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the path portion of the absolute URL of the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#getPhysicalPath" class="summary-sig-name"><code>getPhysicalPath</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the physical path of the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#restrictedTraverse" class="summary-sig-name"><code>restrictedTraverse</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#unrestrictedTraverse" class="summary-sig-name"><code>unrestrictedTraverse</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>default</span>,
+          <span class=summary-sig-arg>restricted</span>)</span></code>
+<br />
+Lookup an object by path.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#virtual_url_path" class="summary-sig-name"><code>virtual_url_path</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a URL for the object, relative to the site root.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Element</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getAttribute" class="summary-sig-name"><code>getAttribute</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an attribute value by name.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getAttributeNode" class="summary-sig-name"><code>getAttributeNode</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an Attr node by name or None if there is no such 
+attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getChildNodes" class="summary-sig-name"><code>getChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NodeList that contains all children of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getElementsByTagName" class="summary-sig-name"><code>getElementsByTagName</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tagname</span>)</span></code>
+<br />
+Returns a NodeList of all the Elements with a given tag name in the 
+order in which they would be encountered in a preorder traversal of the 
+Document tree.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getFirstChild" class="summary-sig-name"><code>getFirstChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The first child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getLastChild" class="summary-sig-name"><code>getLastChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The last child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNextSibling" class="summary-sig-name"><code>getNextSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeName" class="summary-sig-name"><code>getNodeName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeType" class="summary-sig-name"><code>getNodeType</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+A code representing the type of the node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getParentNode" class="summary-sig-name"><code>getParentNode</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The parent of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getPreviousSibling" class="summary-sig-name"><code>getPreviousSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getTagName" class="summary-sig-name"><code>getTagName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of the element</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getAttributes" class="summary-sig-name"><code>getAttributes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NamedNodeMap containing the attributes of this node (if it 
+is an element) or None otherwise.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getNodeValue" class="summary-sig-name"><code>getNodeValue</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The value of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getOwnerDocument" class="summary-sig-name"><code>getOwnerDocument</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The Document object associated with this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#hasChildNodes" class="summary-sig-name"><code>hasChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns true if the node has any children, false if it doesn't.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Owned</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#changeOwnership" class="summary-sig-name"><code>changeOwnership</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>user</span>,
+          <span class=summary-sig-arg>recursive</span>)</span></code>
+<br />
+Change the ownership to the given user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#getOwner" class="summary-sig-name"><code>getOwner</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>info</span>,
+          <span class=summary-sig-arg>aq_get</span>,
+          <span class=summary-sig-arg>UnownableOwner</span>,
+          <span class=summary-sig-arg>getSecurityManager</span>)</span></code>
+<br />
+Get the owner</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#getOwnerTuple" class="summary-sig-name"><code>getOwnerTuple</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a tuple, (userdb_path, user_id) for the owner.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#getWrappedOwner" class="summary-sig-name"><code>getWrappedOwner</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the owner, modestly wrapped in the user folder.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#manage_changeOwnershipType" class="summary-sig-name"><code>manage_changeOwnershipType</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>explicit</span>,
+          <span class=summary-sig-arg>RESPONSE</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the type (implicit or explicit) of ownership.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#manage_fixupOwnershipAfterAdd" class="summary-sig-name"><code>manage_fixupOwnershipAfterAdd</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#manage_takeOwnership" class="summary-sig-name"><code>manage_takeOwnership</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>,
+          <span class=summary-sig-arg>recursive</span>)</span></code>
+<br />
+Take ownership (responsibility) for an object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#owner_info" class="summary-sig-name"><code>owner_info</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get ownership info for display</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Owned.Owned-class.html#userCanTakeOwnership" class="summary-sig-name"><code>userCanTakeOwnership</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from UndoSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Undo.UndoSupport-class.html#get_request_var_or_attr" class="summary-sig-name"><code>get_request_var_or_attr</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Undo.UndoSupport-class.html#manage_undo_transactions" class="summary-sig-name"><code>manage_undo_transactions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>transaction_info</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Undo.UndoSupport-class.html#undoable_transactions" class="summary-sig-name"><code>undoable_transactions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first_transaction</span>,
+          <span class=summary-sig-arg>last_transaction</span>,
+          <span class=summary-sig-arg>PrincipiaUndoBatchSize</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#default__class_init__" class="summary-sig-name"><code>__class_init__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#bobobase_modification_time" class="summary-sig-name"><code>bobobase_modification_time</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#locked_in_version" class="summary-sig-name"><code>locked_in_version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Was the object modified in any version?</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#modified_in_version" class="summary-sig-name"><code>modified_in_version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Was the object modified in this version?</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from RoleManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#ac_inherited_permissions" class="summary-sig-name"><code>ac_inherited_permissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>all</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#access_debug_info" class="summary-sig-name"><code>access_debug_info</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return debug info.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#acquiredRolesAreUsedBy" class="summary-sig-name"><code>acquiredRolesAreUsedBy</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission</span>)</span></code>
+<br />
+Used by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#get_local_group_roles" class="summary-sig-name"><code>get_local_group_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#get_local_roles" class="summary-sig-name"><code>get_local_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#get_local_roles_for_groupid" class="summary-sig-name"><code>get_local_roles_for_groupid</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#get_local_roles_for_userid" class="summary-sig-name"><code>get_local_roles_for_userid</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#get_valid_groupids" class="summary-sig-name"><code>get_valid_groupids</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#get_valid_userids" class="summary-sig-name"><code>get_valid_userids</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#has_local_group_roles" class="summary-sig-name"><code>has_local_group_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#has_local_roles" class="summary-sig-name"><code>has_local_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredPermissions" class="summary-sig-name"><code>manage_acquiredPermissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permissions</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the permissions that acquire.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalGroupRoles" class="summary-sig-name"><code>manage_addLocalGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add local group roles to a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalRoles" class="summary-sig-name"><code>manage_addLocalRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Set local roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_changePermissions" class="summary-sig-name"><code>manage_changePermissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change all permissions settings, called by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_defined_roles" class="summary-sig-name"><code>manage_defined_roles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>submit</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Called by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalGroupRoles" class="summary-sig-name"><code>manage_delLocalGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Remove all local group roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalRoles" class="summary-sig-name"><code>manage_delLocalRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Remove all local roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_editRoles" class="summary-sig-name"><code>manage_editRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>acl_type</span>,
+          <span class=summary-sig-arg>acl_roles</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_permission" class="summary-sig-name"><code>manage_permission</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission_to_manage</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>acquire</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the settings for the given permission.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_role" class="summary-sig-name"><code>manage_role</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>role_to_manage</span>,
+          <span class=summary-sig-arg>permissions</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the permissions given to the given role.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalGroupRoles" class="summary-sig-name"><code>manage_setLocalGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>groupid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Set local group roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalRoles" class="summary-sig-name"><code>manage_setLocalRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>userid</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Set local roles for a user.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#permission_settings" class="summary-sig-name"><code>permission_settings</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission</span>)</span></code>
+<br />
+Return user-role permission settings.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#permissionsOfRole" class="summary-sig-name"><code>permissionsOfRole</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>role</span>)</span></code>
+<br />
+Used by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#possible_permissions" class="summary-sig-name"><code>possible_permissions</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#rolesOfPermission" class="summary-sig-name"><code>rolesOfPermission</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission</span>)</span></code>
+<br />
+Used by management screen.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#userdefined_roles" class="summary-sig-name"><code>userdefined_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return list of user-defined roles.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#users_with_local_role" class="summary-sig-name"><code>users_with_local_role</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>role</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#valid_roles" class="summary-sig-name"><code>valid_roles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return list of valid roles.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#validate_roles" class="summary-sig-name"><code>validate_roles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>roles</span>)</span></code>
+<br />
+Return true if all given roles are valid.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.Role.RoleManager-class.html#valid_roles" class="summary-sig-name"><code>validRoles</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return list of valid roles.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from RoleManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_getPermissionMapping" class="summary-sig-name"><code>manage_getPermissionMapping</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the permission mapping for the object
+
+This is a list of dictionaries with:
+
+  permission_name -- The name of the native object permission
+
+  class_permission -- The class permission the permission is
+     mapped to.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_setPermissionMapping" class="summary-sig-name"><code>manage_setPermissionMapping</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permission_names</span>,
+          <span class=summary-sig-arg>class_permissions</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Change the permission mapping</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from SimpleGroupRolesPlugin</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#addGroupsOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesAddGroups</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>addgroups</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add groups for local roles on self</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#deleteGroupsOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesDeleteGroups</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>delgroups</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Remove groups from the local roles on self</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#getGroupsOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesGetGroups</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.PluggableUserFolder.SimpleGroupRoles.SimpleGroupRolesPlugin-class.html#setGroupRolesOnObject" class="summary-sig-name"><code>manage_simpleGroupRolesSetGroupRoles</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>grouprolesmapping</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Manage Portal Maps', ('manage_editMap', 'editMap')), ('View', ('aggMapContext', 'getLayerInfos', 'mapContext', 'getCapabilitiesURL')))"><code>(('Manage&nbsp;Portal&nbsp;Maps',&nbsp;('manage_ed<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#aggMapContext__roles__"><code>aggMapContext__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582fd70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb58<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#editMap__roles__"><code>editMap__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582fd58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb582fd58&gt; </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#getCapabilitiesURL__roles__"><code>getCapabilitiesURL__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582fd70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#getLayerInfos__roles__"><code>getLayerInfos__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582fd70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb58<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#manage_editMap__roles__"><code>manage_editMap__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582fd58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb5<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PageTemplateFile</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#manage_editMapForm"><code>manage_editMapForm</code></a></b> = <span title="&lt;PageTemplateFile at manage_editMapForm&gt;"><code>&lt;PageTemplateFile&nbsp;at&nbsp;manage_editMap<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_editMapForm', 'label': 'Edit'}, {'action': 'manage_metadata', 'label': 'Dublin Core'}, {'action': 'manage_edit', 'label': 'Edit'}, {'action': 'view', 'label': 'View'}, {'action': 'manage_workflowsTab', 'label': 'Workflows'}, {'action': 'manage_UndoForm', 'help': ('OFSP', 'Undo.stx'), 'label': 'Undo'}, {'action': 'manage_owner', 'filter': &lt;function ownableFilter at 0xb7878c6c&gt;, 'help': ('OFSP', 'Ownership.stx'), 'label': 'Ownership'}, {'action': 'manage_access', 'help': ('OFSP', 'Security.stx'), 'label': 'Security'})"><code>({'action':&nbsp;'manage_editMapForm',&nbsp;'labe<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#mapContext__roles__"><code>mapContext__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582fd70&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb582fd<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#meta_type"><code>meta_type</code></a></b> = <span title="'CPS Cartographic Map'"><code><span class="variable-quote">'</span>CPS&nbsp;Cartographic&nbsp;Map<span class="variable-quote">'</span>                       </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="CPSGeo.Map.Map-class.html#portal_type"><code>portal_type</code></a></b> = <span title="'CPS Cartographic Map'"><code><span class="variable-quote">'</span>CPS&nbsp;Cartographic&nbsp;Map<span class="variable-quote">'</span>                     </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from PortalContent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy Products.CMFCore.PortalContent.PortalContent&gt;"><code>&lt;implementedBy&nbsp;Products.CMFCore.Portal<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#__implements__"><code>__implements__</code></a></b> = <span title="(&lt;Interface Products.CMFCore.interfaces.Contentish.Contentish at b7554e4c&gt;, &lt;Interface webdav.WriteLockInterface.WriteLockInterface at b7883d6c&gt;, &lt;Interface Products.CMFCore.interfaces.Dynamic.DynamicType at b7608b6c&gt;)"><code>(&lt;Interface&nbsp;Products.CMFCore.interfaces<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88dac&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#__roles__"><code>__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b4d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b4d0&gt;        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#index_html"><code>index_html</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#isPortalContent"><code>isPortalContent</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#manage_FTPget__roles__"><code>manage_FTPget__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b4b8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb76<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#manage_FTPlist__roles__"><code>manage_FTPlist__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b4b8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#manage_FTPstat__roles__"><code>manage_FTPstat__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b4b8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#SearchableText__roles__"><code>SearchableText__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b4d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.PortalContent.PortalContent-class.html#view__roles__"><code>view__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b4d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b4d0&gt;    </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from DynamicType</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.CMFCore.DynamicType.DynamicType-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88d6c&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getActionInfo__roles__"><code>getActionInfo__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getIcon__roles__"><code>getIcon__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getPortalTypeName__roles__"><code>getPortalTypeName__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFCore.DynamicType.DynamicType-class.html#getTypeInfo__roles__"><code>getTypeInfo__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CMFCore.DynamicType.DynamicType-class.html#icon__roles__"><code>icon__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CMFCatalogAware</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#indexObject__roles__"><code>indexObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterAdd__roles__"><code>manage_afterAdd__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterClone__roles__"><code>manage_afterClone__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_beforeDelete__roles__"><code>manage_beforeDelete__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_workflowsTab__roles__"><code>manage_workflowsTab__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b320&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#notifyWorkflowCreated__roles__"><code>notifyWorkflowCreated__roles__</code></a></b> = <span title="()"><code>()                      </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueIds__roles__"><code>opaqueIds__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b2d8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b2d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueItems__roles__"><code>opaqueItems__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b2d8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueValues__roles__"><code>opaqueValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b2d8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObject__roles__"><code>reindexObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb76<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObjectSecurity__roles__"><code>reindexObjectSecurity__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#unindexObject__roles__"><code>unindexObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb76<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Item</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#__allow_access_to_unprotected_subobjects__"><code>__allow_access_to_unprotected_subobjects__</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#__name__"><code>__name__</code></a></b> = <span title="'Item'"><code><span class="variable-quote">'</span>Item<span class="variable-quote">'</span>                                        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#__propsets__"><code>__propsets__</code></a></b> = <span title="()"><code>()                                        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getContent__roles__"><code>getContent__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c5<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getDefaultLanguage__roles__"><code>getDefaultLanguage__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getDocid__roles__"><code>getDocid__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c578<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getEditableContent__roles__"><code>getEditableContent__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c4b8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getFromLanguageRevisions__roles__"><code>getFromLanguageRevisions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getId__roles__"><code>getId__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getLanguage__roles__"><code>getLanguage__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getLanguageRevisions__roles__"><code>getLanguageRevisions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getProxyLanguages__roles__"><code>getProxyLanguages__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#getRevision__roles__"><code>getRevision__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c578&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#icon"><code>icon</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                                </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#id"><code>id</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                                  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#isPrincipiaFolderish"><code>isPrincipiaFolderish</code></a></b> = <span title="0">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#isProxyArchived__roles__"><code>isProxyArchived__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#isTopLevelPrincipiaApplicationObject"><code>isTopLevelPrincipiaApplicationObject</code></a></b> = <span title="0">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#manage__roles__"><code>manage__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#manage_editedDialog__roles__"><code>manage_editedDialog__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#REQUEST"><code>REQUEST</code></a></b> = <span title="'&lt;Special Object Used to Force Acquisition&gt;'"><code><span class="variable-quote">'</span>&lt;Special&nbsp;Object&nbsp;Used&nbsp;to&nbsp;Force&nbsp;Acquisition&gt;<span class="variable-quote">'</span>   </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.SimpleItem.Item-class.html#title"><code>title</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                               </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Resource</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__dav_resource__"><code>__dav_resource__</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__http_methods__"><code>__http_methods__</code></a></b> = <span title="('GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'TRACE', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'COPY', 'MOVE', 'LOCK', 'UNLOCK')"><code>('GET',&nbsp;'HEAD',&nbsp;'POST',&nbsp;'PUT',&nbsp;'DELET<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#COPY__roles__"><code>COPY__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#DELETE__roles__"><code>DELETE__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e128&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e128&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#HEAD__roles__"><code>HEAD__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0e0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e0e0&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#listDAVObjects__roles__"><code>listDAVObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#LOCK__roles__"><code>LOCK__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e140&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e140&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#manage_DAVget__roles__"><code>manage_DAVget__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#MOVE__roles__"><code>MOVE__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#OPTIONS__roles__"><code>OPTIONS__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#PROPFIND__roles__"><code>PROPFIND__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e0f8<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#PROPPATCH__roles__"><code>PROPPATCH__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e110&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e11<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#TRACE__roles__"><code>TRACE__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#UNLOCK__roles__"><code>UNLOCK__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e158&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e158&gt;  </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LockableItem</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_clearLocks__roles__"><code>wl_clearLocks__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c20&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_delLock__roles__"><code>wl_delLock__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d10&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_getLock__roles__"><code>wl_getLock__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_grantLockToUser__roles__"><code>wl_grantLockToUser__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_isLocked__roles__"><code>wl_isLocked__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_isLockedByUser__roles__"><code>wl_isLockedByUser__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockItems__roles__"><code>wl_lockItems__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockmapping__roles__"><code>wl_lockmapping__roles__</code></a></b> = <span title="()"><code>()                             </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockTokens__roles__"><code>wl_lockTokens__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockValues__roles__"><code>wl_lockValues__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_setLock__roles__"><code>wl_setLock__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Tabs</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#class_manage_path__roles__"><code>class_manage_path__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#filtered_manage_options__roles__"><code>filtered_manage_options__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#manage_tabs"><code>manage_tabs</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77c850c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb77<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#manage_tabs__roles__"><code>manage_tabs__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#manage_workspace__roles__"><code>manage_workspace__roles__</code></a></b> = <span title="('Authenticated',)"><code>('Authenticated',)           </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Traversable</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#absolute_url__roles__"><code>absolute_url__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#absolute_url_path__roles__"><code>absolute_url_path__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#getPhysicalPath__roles__"><code>getPhysicalPath__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#getPhysicalRoot"><code>getPhysicalRoot</code></a></b> = <span title="'&lt;Special Object Used to Force Acquisition&gt;'"><code><span class="variable-quote">'</span>&lt;Special&nbsp;Object&nbsp;Used&nbsp;to&nbsp;Force&nbsp;Acquisi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#getPhysicalRoot__roles__"><code>getPhysicalRoot__roles__</code></a></b> = <span title="()"><code>()                            </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#restrictedTraverse__roles__"><code>restrictedTraverse__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#unrestrictedTraverse__roles__"><code>unrestrictedTraverse__roles__</code></a></b> = <span title="()"><code>()                       </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#virtual_url_path__roles__"><code>virtual_url_path__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Owned</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#changeOwnership__roles__"><code>changeOwnership__roles__</code></a></b> = <span title="()"><code>()                            </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#getOwner__roles__"><code>getOwner__roles__</code></a></b> = <span title="()"><code>()                                   </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#getOwnerTuple__roles__"><code>getOwnerTuple__roles__</code></a></b> = <span title="()"><code>()                              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#getWrappedOwner__roles__"><code>getWrappedOwner__roles__</code></a></b> = <span title="()"><code>()                            </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#manage_changeOwnershipType__roles__"><code>manage_changeOwnershipType__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6f50&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#manage_fixupOwnershipAfterAdd__roles__"><code>manage_fixupOwnershipAfterAdd__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#manage_owner"><code>manage_owner</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c2ec&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#manage_owner__roles__"><code>manage_owner__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6f08&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#manage_takeOwnership__roles__"><code>manage_takeOwnership__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6f50&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Owned.Owned-class.html#owner_info__roles__"><code>owner_info__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6f08&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6f<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from UndoSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Undo.UndoSupport-class.html#manage_undo_transactions__roles__"><code>manage_undo_transactions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6e48&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Undo.UndoSupport-class.html#manage_UndoForm"><code>manage_UndoForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb78711cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Undo.UndoSupport-class.html#manage_UndoForm__roles__"><code>manage_UndoForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6e48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Undo.UndoSupport-class.html#undoable_transactions__roles__"><code>undoable_transactions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6e48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from RoleManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_local_group_roles__"><code>__ac_local_group_roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_local_roles__"><code>__ac_local_roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#__ac_roles__"><code>__ac_roles__</code></a></b> = <span title="('Manager', 'Owner', 'Anonymous', 'Authenticated')"><code>('Manager',&nbsp;'Owner',&nbsp;'Anonymous',&nbsp;'Authen<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#ac_inherited_permissions__roles__"><code>ac_inherited_permissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#access_debug_info__roles__"><code>access_debug_info__roles__</code></a></b> = <span title="()"><code>()                          </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#aclAChecked"><code>aclAChecked</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                         </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#aclEChecked"><code>aclEChecked</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                         </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#aclPChecked"><code>aclPChecked</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                         </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#acquiredRolesAreUsedBy__roles__"><code>acquiredRolesAreUsedBy__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#get_local_group_roles__roles__"><code>get_local_group_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#get_local_roles_for_groupid__roles__"><code>get_local_roles_for_groupid__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;o<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#get_valid_groupids__roles__"><code>get_valid_groupids__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#has_local_group_roles__roles__"><code>has_local_group_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_access"><code>manage_access</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5d5f4cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_access__roles__"><code>manage_access__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb5f<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredForm"><code>manage_acquiredForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c5cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredForm__roles__"><code>manage_acquiredForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_acquiredPermissions__roles__"><code>manage_acquiredPermissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalGroupRoles__roles__"><code>manage_addLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_addLocalRoles__roles__"><code>manage_addLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_changePermissions__roles__"><code>manage_changePermissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_defined_roles__roles__"><code>manage_defined_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalGroupRoles__roles__"><code>manage_delLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_delLocalRoles__roles__"><code>manage_delLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalGroupRoles"><code>manage_editLocalGroupRoles</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5ffac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalGroupRoles__roles__"><code>manage_editLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalRoles"><code>manage_editLocalRoles</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c7cc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editLocalRoles__roles__"><code>manage_editLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_editRoles__roles__"><code>manage_editRoles__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                 </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_listLocalRoles"><code>manage_listLocalRoles</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5fe4c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_listLocalRoles__roles__"><code>manage_listLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permission__roles__"><code>manage_permission__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissionForm"><code>manage_permissionForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb787c66c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissionForm__roles__"><code>manage_permissionForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissions"><code>manage_permissions</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5e5fbec&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_permissions__roles__"><code>manage_permissions__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_role__roles__"><code>manage_role__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_roleForm"><code>manage_roleForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb7871b4c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_roleForm__roles__"><code>manage_roleForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalGroupRoles__roles__"><code>manage_setLocalGroupRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb5f4ab60&gt;"><code>&lt;PermissionRole&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_setLocalRoles__roles__"><code>manage_setLocalRoles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#manage_simpleGroupRolesLocalGroups"><code>manage_simpleGroupRolesLocalGroups</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5d2102c&gt;"><code>&lt;App.special_dtml.D<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#permission_settings__roles__"><code>permission_settings__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#permissionMappingPossibleValues"><code>permissionMappingPossibleValues</code></a></b> = <span title="'&lt;Special Object Used to Force Acquisition&gt;'"><code><span class="variable-quote">'</span>&lt;Special&nbsp;Object&nbsp;Used&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#permissionsOfRole__roles__"><code>permissionsOfRole__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#rolesOfPermission__roles__"><code>rolesOfPermission__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#selectedRoles"><code>selectedRoles</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                       </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#smallRolesWidget"><code>smallRolesWidget</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="AccessControl.Role.RoleManager-class.html#userdefined_roles__roles__"><code>userdefined_roles__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c98&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from RoleManager</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_getPermissionMapping__roles__"><code>manage_getPermissionMapping__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)      </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="AccessControl.PermissionMapping.RoleManager-class.html#manage_setPermissionMapping__roles__"><code>manage_setPermissionMapping__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)      </code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>url</span>,
+          <span class=sig-arg>name</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>size</span>=<span class=sig-default>(480,&nbsp;240)</span>,
+          <span class=sig-arg>bounds</span>=<span class=sig-default>(-180.0,&nbsp;-90.0,&nbsp;180.0,&nbsp;90.0)</span>,
+          <span class=sig-arg>srs</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>format</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>layers</span>=<span class=sig-default>[]</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  Initialize
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__init__"><code>__builtin__.object.__init__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="aggMapContext"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">aggMapContext</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>kws</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Return a 1.0 Web Map Context document for use with mapbuilder</p>
+  This WMC aggregates the layers server side.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="editMap"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">editMap</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>url</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>name</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>size</span>=<span class=sig-default>(480,&nbsp;240)</span>,
+          <span class=sig-arg>bounds</span>=<span class=sig-default>(-180.0,&nbsp;-90.0,&nbsp;180.0,&nbsp;90.0)</span>,
+          <span class=sig-arg>srs</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>format</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>layers</span>=<span class=sig-default>[]</span>)</span>
+  </h3>
+  edit map attributes
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getCapabilitiesUrl"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getCapabilitiesUrl</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return capabilities URL
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_editMap"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_editMap</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>url</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>name</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>size</span>=<span class=sig-default>(480,&nbsp;240)</span>,
+          <span class=sig-arg>bounds</span>=<span class=sig-default>(-180.0,&nbsp;-90.0,&nbsp;180.0,&nbsp;90.0)</span>,
+          <span class=sig-arg>srs</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>format</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>layers</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  web front end to editMap
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="mapContext"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">mapContext</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>kws</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Return a 1.0 Web Map Context document for use with mapbuilder
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Manage Portal Maps', ('manage_editMap', 'editMap')), ('View', ('aggMapContext', 'getLayerInfos', 'mapContext', 'getCapabilitiesURL')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Manage Portal Maps', ('manage_editMap', 'editMap')),
+ ('View',
+  ('aggMapContext', 'getLayerInfos', 'mapContext', 'getCapabilitiesURL<span class="variable-linewrap">\</span>
+')))                                                                   </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="aggMapContext__roles__"></a>
+<h3>aggMapContext__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582fd70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582fd70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="editMap__roles__"></a>
+<h3>editMap__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582fd58&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582fd58&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getCapabilitiesURL__roles__"></a>
+<h3>getCapabilitiesURL__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582fd70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582fd70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getLayerInfos__roles__"></a>
+<h3>getLayerInfos__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582fd70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582fd70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editMap__roles__"></a>
+<h3>manage_editMap__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582fd58&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582fd58&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editMapForm"></a>
+<h3>manage_editMapForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PageTemplateFile</code>
+
+      </dd>
+<span title="&lt;PageTemplateFile at manage_editMapForm&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PageTemplateFile at manage_editMapForm&gt;                               </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_editMapForm', 'label': 'Edit'}, {'action': 'manage_metadata', 'label': 'Dublin Core'}, {'action': 'manage_edit', 'label': 'Edit'}, {'action': 'view', 'label': 'View'}, {'action': 'manage_workflowsTab', 'label': 'Workflows'}, {'action': 'manage_UndoForm', 'help': ('OFSP', 'Undo.stx'), 'label': 'Undo'}, {'action': 'manage_owner', 'filter': &lt;function ownableFilter at 0xb7878c6c&gt;, 'help': ('OFSP', 'Ownership.stx'), 'label': 'Ownership'}, {'action': 'manage_access', 'help': ('OFSP', 'Security.stx'), 'label': 'Security'})">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_editMapForm', 'label': 'Edit'},
+ {'action': 'manage_metadata', 'label': 'Dublin Core'},
+ {'action': 'manage_edit', 'label': 'Edit'},
+ {'action': 'view', 'label': 'View'},
+ {'action': 'manage_workflowsTab', 'label': 'Workflows'},
+ {'action': 'manage_UndoForm', 'help': ('OFSP', 'Undo.stx'), 'label': <span class="variable-linewrap">\</span>
+'Undo'},
+ {'action': 'manage_owner',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="mapContext__roles__"></a>
+<h3>mapContext__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582fd70&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582fd70&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="meta_type"></a>
+<h3>meta_type</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'CPS Cartographic Map'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>CPS Cartographic Map<span class="variable-quote">'</span>                                                 </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="portal_type"></a>
+<h3>portal_type</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'CPS Cartographic Map'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>CPS Cartographic Map<span class="variable-quote">'</span>                                                 </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:12 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

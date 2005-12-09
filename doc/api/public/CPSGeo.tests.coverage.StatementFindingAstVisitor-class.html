@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CPSGeo.tests.coverage.StatementFindingAstVisitor</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="CPSGeo-module.html">Package&nbsp;CPSGeo</a> ::
+        <a href="CPSGeo.tests-module.html">Package&nbsp;tests</a> ::
+        <a href="CPSGeo.tests.coverage-module.html">Module&nbsp;coverage</a> ::
+        Class&nbsp;StatementFindingAstVisitor
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/CPSGeo.tests.coverage.StatementFindingAstVisitor-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="CPSGeo.tests.coverage.StatementFindingAstVisitor-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class StatementFindingAstVisitor</h2>
+
+<pre class="base-tree">
+<a href="compiler.visitor.ASTVisitor-class.html"><code>ASTVisitor</code></a> --+
+             |
+            <b>StatementFindingAstVisitor</b>
+</pre><br />
+
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__init__"></a><span class="summary-sig"><span class="summary-sig-name">__init__</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>statements</span>,
+          <span class=summary-sig-arg>excluded</span>,
+          <span class=summary-sig-arg>suite_spots</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="recordNodeLine"></a><span class="summary-sig"><span class="summary-sig-name">default</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doCode"></a><span class="summary-sig"><span class="summary-sig-name">doCode</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doElse"></a><span class="summary-sig"><span class="summary-sig-name">doElse</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>prevsuite</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doPlainWordSuite"></a><span class="summary-sig"><span class="summary-sig-name">doPlainWordSuite</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>prevsuite</span>,
+          <span class=summary-sig-arg>suite</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doRecursive"></a><span class="summary-sig"><span class="summary-sig-name">doRecursive</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">doStatement</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doSuite"></a><span class="summary-sig"><span class="summary-sig-name">doSuite</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>intro</span>,
+          <span class=summary-sig-arg>body</span>,
+          <span class=summary-sig-arg>exclude</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="getFirstLine"></a><span class="summary-sig"><span class="summary-sig-name">getFirstLine</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="getLastLine"></a><span class="summary-sig"><span class="summary-sig-name">getLastLine</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="recordAndDispatch"></a><span class="summary-sig"><span class="summary-sig-name">recordAndDispatch</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="recordLine"></a><span class="summary-sig"><span class="summary-sig-name">recordLine</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>lineno</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="recordNodeLine"></a><span class="summary-sig"><span class="summary-sig-name">recordNodeLine</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitAssert</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitAssign</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitAssTuple</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doCode"></a><span class="summary-sig"><span class="summary-sig-name">visitClass</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitDecorators</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitDiscard</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="visitFor"></a><span class="summary-sig"><span class="summary-sig-name">visitFor</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doCode"></a><span class="summary-sig"><span class="summary-sig-name">visitFunction</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="visitGlobal"></a><span class="summary-sig"><span class="summary-sig-name">visitGlobal</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="visitIf"></a><span class="summary-sig"><span class="summary-sig-name">visitIf</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doRecursive"></a><span class="summary-sig"><span class="summary-sig-name">visitModule</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitPrint</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitPrintnl</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitRaise</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doRecursive"></a><span class="summary-sig"><span class="summary-sig-name">visitStmt</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="doStatement"></a><span class="summary-sig"><span class="summary-sig-name">visitSubscript</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="visitTryExcept"></a><span class="summary-sig"><span class="summary-sig-name">visitTryExcept</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="visitTryFinally"></a><span class="summary-sig"><span class="summary-sig-name">visitTryFinally</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="visitWhile"></a><span class="summary-sig"><span class="summary-sig-name">visitWhile</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from ASTVisitor</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="compiler.visitor.ASTVisitor-class.html#dispatch" class="summary-sig-name"><code>dispatch</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>node</span>,
+          <span class="summary-sig-vararg">*args</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="compiler.visitor.ASTVisitor-class.html#preorder" class="summary-sig-name"><code>preorder</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tree</span>,
+          <span class=summary-sig-arg>visitor</span>,
+          <span class="summary-sig-vararg">*args</span>)</span></code>
+<br />
+Do preorder walk of tree using visitor</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from ASTVisitor</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="compiler.visitor.ASTVisitor-class.html#VERBOSE"><code>VERBOSE</code></a></b> = <span title="0">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:10 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Products.CPSDocument.CPSDocument.CPSDocumentMixin</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Products ::
+        Package&nbsp;CPSDocument ::
+        Module&nbsp;CPSDocument ::
+        Class&nbsp;CPSDocumentMixin
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type CPSDocumentMixin</h2>
+
+<pre class="base-tree">
+<a href="__builtin__.object-class.html"><code>object</code></a> --+    
+         |    
+      <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+
+             |
+            <b>CPSDocumentMixin</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CPSDocument.CPSDocument.CPSDocument-class.html"><code>CPSDocument</code></a></dd></dl>
+
+<hr/>
+
+<p>Mixin giving CPS Document behaviour.</p>
+This means that the definition for the document's fields and layout 
+and widgets is indirected through its definition in the Types Tool, and 
+from there to the Schemas Tool.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#edit" class="summary-sig-name"><code>edit</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>mapping</span>,
+          <span class=summary-sig-arg>proxy</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Edit the document.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#exportAsXML" class="summary-sig-name"><code>exportAsXML</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>proxy</span>)</span></code>
+<br />
+Export as XML.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleAddWidget" class="summary-sig-name"><code>flexibleAddWidget</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>layout_id</span>,
+          <span class=summary-sig-arg>wtid</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Add a new widget to the flexible part of the document.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleChangeLayout" class="summary-sig-name"><code>flexibleChangeLayout</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>layout_id</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Change the layout.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleDelWidgetRows" class="summary-sig-name"><code>flexibleDelWidgetRows</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>layout_id</span>,
+          <span class=summary-sig-arg>rows</span>)</span></code>
+<br />
+Delete widget rows from the flexible part of the document.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleDelWidgets" class="summary-sig-name"><code>flexibleDelWidgets</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>layout_id</span>,
+          <span class=summary-sig-arg>widget_ids</span>)</span></code>
+<br />
+Delete widgets from the flexible part of the document.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#get_size" class="summary-sig-name"><code>get_size</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the size of the data.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#getAdditionalContentInfo" class="summary-sig-name"><code>getAdditionalContentInfo</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>proxy</span>)</span></code>
+<br />
+Return a dictionary used in getContentInfo.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#getDataModel" class="summary-sig-name"><code>getDataModel</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>proxy</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Return the data model.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="postCommitHook"></a><span class="summary-sig"><span class="summary-sig-name">postCommitHook</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>datamodel</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#render" class="summary-sig-name"><code>render</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Render the object according to a layout mode.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#renderEdit" class="summary-sig-name"><code>renderEdit</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Modify the object from the request (if present), and return the HTML 
+rendering.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#renderEditDetailed" class="summary-sig-name"><code>renderEditDetailed</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Modify the object from the request (if present), and return the HTML 
+rendering and some detailed information.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#SearchableText" class="summary-sig-name"><code>SearchableText</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Searchable text for CMF full-text indexing.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#validateStoreRender" class="summary-sig-name"><code>validateStoreRender</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Modify the object from request, store data, and renders to new 
+mode.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Modify portal content', ('edit', 'flexibleChangeLayout', 'flexibleDelWidgets', 'flexibleDelWidgetRows', 'flexibleAddWidget')), ('View', ('getAdditionalContentInfo', 'renderEditDetailed', 'renderEdit', 'validateStoreRender', 'SearchableText', 'get_size', 'render', 'exportAsXML', 'getDataModel')))"><code>(('Modify&nbsp;portal&nbsp;content',&nbsp;('edit',<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#_compute_size__roles__"><code>_compute_size__roles__</code></a></b> = <span title="()"><code>()                              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#edit__roles__"><code>edit__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2ce48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2ce48&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#exportAsXML__roles__"><code>exportAsXML__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleAddWidget__roles__"><code>flexibleAddWidget__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2ce48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleChangeLayout__roles__"><code>flexibleChangeLayout__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2ce48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleDelWidgetRows__roles__"><code>flexibleDelWidgetRows__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2ce48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#flexibleDelWidgets__roles__"><code>flexibleDelWidgets__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2ce48&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#get_size__roles__"><code>get_size__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c368<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#getAdditionalContentInfo__roles__"><code>getAdditionalContentInfo__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#getDataModel__roles__"><code>getDataModel__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#postCommitHook__roles__"><code>postCommitHook__roles__</code></a></b> = <span title="()"><code>()                             </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#render__roles__"><code>render__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c368&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#renderEdit__roles__"><code>renderEdit__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7b2c3<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#renderEditDetailed__roles__"><code>renderEditDetailed__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#SearchableText__roles__"><code>SearchableText__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CPSDocument.CPSDocument.CPSDocumentMixin-class.html#validateStoreRender__roles__"><code>validateStoreRender__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb7b2c368&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="edit"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">edit</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>mapping</span>=<span class=sig-default>{}</span>,
+          <span class=sig-arg>proxy</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Edit the document.</p>
+  <p>The mapping and the keyword arguments describe fields, not 
+  widgets.</p>
+  <p>An optional 'proxy' arg can be given, it will be passed to the 
+  layouts and the backend.</p>
+  This method assumes that self really is editable, thus is not a 
+  frozen document.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="exportAsXML"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">exportAsXML</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>proxy</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Export as XML.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="flexibleAddWidget"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">flexibleAddWidget</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>layout_id</span>,
+          <span class=sig-arg>wtid</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Add a new widget to the flexible part of the document.</p>
+  Returns the widget id.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="flexibleChangeLayout"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">flexibleChangeLayout</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>layout_id</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Change the layout.</p>
+  Can move a row up or down.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="flexibleDelWidgetRows"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">flexibleDelWidgetRows</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>layout_id</span>,
+          <span class=sig-arg>rows</span>)</span>
+  </h3>
+  Delete widget rows from the flexible part of the document.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="flexibleDelWidgets"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">flexibleDelWidgets</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>layout_id</span>,
+          <span class=sig-arg>widget_ids</span>)</span>
+  </h3>
+  Delete widgets from the flexible part of the document.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="get_size"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">get_size</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  <p>Return the size of the data.</p>
+  <p>This is informative only, for display purposes. It's used by the ZMI 
+  for instance, and also by CPS folder listing.</p>
+  NB: get_size() is part of the Zope and CMF API.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getAdditionalContentInfo"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getAdditionalContentInfo</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>proxy</span>)</span>
+  </h3>
+  Return a dictionary used in getContentInfo.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getDataModel"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getDataModel</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>proxy</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Return the data model.</p>
+  Modifying the returned data model has no effect on the structure of 
+  the document. For modifications to have any effects the data model has 
+  to be committed.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="render"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">render</span>(<span class=sig-arg>self</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Render the object according to a layout mode.</p>
+  Arguments are layout_mode, layout_id, proxy.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="renderEdit"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">renderEdit</span>(<span class=sig-arg>self</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Modify the object from the request (if present), and return the HTML 
+  rendering.</p>
+  See renderEditDetailed for more.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="renderEditDetailed"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">renderEditDetailed</span>(<span class=sig-arg>self</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Modify the object from the request (if present), and return the HTML 
+  rendering and some detailed information.</p>
+  <p>Arguments are request, layout_mode, layout_mode_er, layout_id, 
+  proxy.</p>
+  <p>Renders in layout_mode, or layout_mode_err if a validation error 
+  occurred.</p>
+  An optional 'proxy' arg can be given, it will be passed to the 
+  layouts and the backend.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="SearchableText"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">SearchableText</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  <p>Searchable text for CMF full-text indexing.</p>
+  Indexes all fields marked as indexable.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="validateStoreRender"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">validateStoreRender</span>(<span class=sig-arg>self</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Modify the object from request, store data, and renders to new 
+  mode.</p>
+  <p>Arguments are request, layout_mode, layout_mode_ok, layout_mode_err, 
+  layout_id, proxy.</p>
+  <p>If no request was passed, renders layout_mode.</p>
+  <p>If request was passed, renders layout_mode_ok, or layout_mode_err if 
+  validation failed.</p>
+  An optional 'proxy' arg can be given, it will be passed to the 
+  layouts and the backend.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Modify portal content', ('edit', 'flexibleChangeLayout', 'flexibleDelWidgets', 'flexibleDelWidgetRows', 'flexibleAddWidget')), ('View', ('getAdditionalContentInfo', 'renderEditDetailed', 'renderEdit', 'validateStoreRender', 'SearchableText', 'get_size', 'render', 'exportAsXML', 'getDataModel')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Modify portal content',
+  ('edit',
+   'flexibleChangeLayout',
+   'flexibleDelWidgets',
+   'flexibleDelWidgetRows',
+   'flexibleAddWidget')),
+ ('View',
+  ('getAdditionalContentInfo',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_compute_size__roles__"></a>
+<h3>_compute_size__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="edit__roles__"></a>
+<h3>edit__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2ce48&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2ce48&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="exportAsXML__roles__"></a>
+<h3>exportAsXML__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="flexibleAddWidget__roles__"></a>
+<h3>flexibleAddWidget__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2ce48&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2ce48&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="flexibleChangeLayout__roles__"></a>
+<h3>flexibleChangeLayout__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2ce48&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2ce48&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="flexibleDelWidgetRows__roles__"></a>
+<h3>flexibleDelWidgetRows__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2ce48&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2ce48&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="flexibleDelWidgets__roles__"></a>
+<h3>flexibleDelWidgets__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2ce48&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2ce48&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="get_size__roles__"></a>
+<h3>get_size__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getAdditionalContentInfo__roles__"></a>
+<h3>getAdditionalContentInfo__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getDataModel__roles__"></a>
+<h3>getDataModel__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="postCommitHook__roles__"></a>
+<h3>postCommitHook__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="render__roles__"></a>
+<h3>render__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="renderEdit__roles__"></a>
+<h3>renderEdit__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="renderEditDetailed__roles__"></a>
+<h3>renderEditDetailed__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="SearchableText__roles__"></a>
+<h3>SearchableText__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="validateStoreRender__roles__"></a>
+<h3>validateStoreRender__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb7b2c368&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb7b2c368&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:11 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

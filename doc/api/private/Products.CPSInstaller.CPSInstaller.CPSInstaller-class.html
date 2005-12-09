@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Products.CPSInstaller.CPSInstaller.CPSInstaller</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Products ::
+        Package&nbsp;CPSInstaller ::
+        Module&nbsp;CPSInstaller ::
+        Class&nbsp;CPSInstaller
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class CPSInstaller</h2>
+
+<pre class="base-tree">
+<a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html"><code>CMFInstaller</code></a> --+
+               |
+              <b>CPSInstaller</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="CPSGeo.Extensions.install.CPSGeoInstaller-class.html"><code>CPSGeoInstaller</code></a></dd></dl>
+
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="createWorkflow"></a><span class="summary-sig"><span class="summary-sig-name">createWorkflow</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>wfdef</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#deleteBoxes" class="summary-sig-name"><code>deleteBoxes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>boxes_id</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Delete boxes with the id listed in boxes_id that are located in 
+box_container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#disableEventSubscriber" class="summary-sig-name"><code>disableEventSubscriber</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>subscriber_name</span>)</span></code>
+<br />
+Disable an event subscriber by name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#enableEventSubscriber" class="summary-sig-name"><code>enableEventSubscriber</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>subscriber_name</span>)</span></code>
+<br />
+Enable an event subscriber by name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="finalize"></a><span class="summary-sig"><span class="summary-sig-name">finalize</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="flagRebuildTreeCache"></a><span class="summary-sig"><span class="summary-sig-name">flagRebuildTreeCache</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>treename</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#getBoxContainer" class="summary-sig-name"><code>getBoxContainer</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>create</span>)</span></code>
+<br />
+Get a box container and create it if not found and asked for.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#getPortletContainer" class="summary-sig-name"><code>getPortletContainer</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>create</span>)</span></code>
+<br />
+Get a portlets container and create it if not found and asked for.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="loadConfigurationFile"></a><span class="summary-sig"><span class="summary-sig-name">loadConfigurationFile</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>filename</span>,
+          <span class=summary-sig-arg>section</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="runExternalUpdater"></a><span class="summary-sig"><span class="summary-sig-name">runExternalUpdater</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>module</span>,
+          <span class=summary-sig-arg>script</span>,
+          <span class=summary-sig-arg>method</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="setupProduct"></a><span class="summary-sig"><span class="summary-sig-name">setupProduct</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>product</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="setupQuickInstaller"></a><span class="summary-sig"><span class="summary-sig-name">setupQuickInstaller</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#setupTranslations" class="summary-sig-name"><code>setupTranslations</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>product_name</span>,
+          <span class=summary-sig-arg>message_catalog</span>)</span></code>
+<br />
+Load the .po files of the given product.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyBoxContainer" class="summary-sig-name"><code>verifyBoxContainer</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Verify the existence of the box container and create it if not 
+found.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyBoxes" class="summary-sig-name"><code>verifyBoxes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>boxes</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Verify the existence of given boxes in the object's box container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyDirectories"></a><span class="summary-sig"><span class="summary-sig-name">verifyDirectories</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>directories</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyEventSubscribers"></a><span class="summary-sig"><span class="summary-sig-name">verifyEventSubscribers</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>subscribers</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyFlexibleTypes"></a><span class="summary-sig"><span class="summary-sig-name">verifyFlexibleTypes</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_data</span>,
+          <span class=summary-sig-arg>doc_roots</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyLayouts" class="summary-sig-name"><code>verifyLayouts</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>layouts</span>)</span></code>
+<br />
+Add layouts if they don't exist</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyLocalWorkflowChains" class="summary-sig-name"><code>verifyLocalWorkflowChains</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>wfchains</span>,
+          <span class=summary-sig-arg>destructive</span>,
+          <span class=summary-sig-arg>under_sub_add</span>)</span></code>
+<br />
+Set up the local workflows on object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyMessageCatalog" class="summary-sig-name"><code>verifyMessageCatalog</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>catalog_id</span>,
+          <span class=summary-sig-arg>title</span>)</span></code>
+<br />
+Set up a specialized message catalog for your product</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyPortletContainer" class="summary-sig-name"><code>verifyPortletContainer</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Verify the existence of the portlet container and create it if not 
+found.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyPortlets" class="summary-sig-name"><code>verifyPortlets</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>portlets</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Verify the existence of given portet in the object's portlet 
+container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyRoles"></a><span class="summary-sig"><span class="summary-sig-name">verifyRoles</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>roles</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifySchemas" class="summary-sig-name"><code>verifySchemas</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>schemas</span>)</span></code>
+<br />
+Add schemas if they don't exist</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyTreeCacheTypes"></a><span class="summary-sig"><span class="summary-sig-name">verifyTreeCacheTypes</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>treename</span>,
+          <span class=summary-sig-arg>type_names</span>,
+          <span class=summary-sig-arg>meta_types</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyVocabularies" class="summary-sig-name"><code>verifyVocabularies</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>vocabularies</span>)</span></code>
+<br />
+Add vocabularies if they don't exist</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyWfScripts"></a><span class="summary-sig"><span class="summary-sig-name">verifyWfScripts</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>workflow</span>,
+          <span class=summary-sig-arg>scripts</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyWfStates"></a><span class="summary-sig"><span class="summary-sig-name">verifyWfStates</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>workflow</span>,
+          <span class=summary-sig-arg>states</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyWfTransitions"></a><span class="summary-sig"><span class="summary-sig-name">verifyWfTransitions</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>workflow</span>,
+          <span class=summary-sig-arg>transitions</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyWfVariables"></a><span class="summary-sig"><span class="summary-sig-name">verifyWfVariables</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>workflow</span>,
+          <span class=summary-sig-arg>variables</span>,
+          <span class=summary-sig-arg>state_var</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyWidgets" class="summary-sig-name"><code>verifyWidgets</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>widgets</span>)</span></code>
+<br />
+Add widgets if they don't exist</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyWorkflow"></a><span class="summary-sig"><span class="summary-sig-name">verifyWorkflow</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>wfdef</span>,
+          <span class=summary-sig-arg>wfstates</span>,
+          <span class=summary-sig-arg>wftransitions</span>,
+          <span class=summary-sig-arg>wfscripts</span>,
+          <span class=summary-sig-arg>wfvariables</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#verifyWorkflowAssociations" class="summary-sig-name"><code>verifyWorkflowAssociations</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_data</span>,
+          <span class=summary-sig-arg>doc_roots</span>)</span></code>
+<br />
+type_data is a structure as the one returned by getDocumentTypes; 
+doc_roots represents the document roots in the portal tree and it is a 
+structure as the one returned by getDocumentRoots</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_CPSFinalize"></a><span class="summary-sig"><span class="summary-sig-name">_CPSFinalize</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_getSubscriberObject"></a><span class="summary-sig"><span class="summary-sig-name">_getSubscriberObject</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>subscriber_name</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CMFInstaller</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>context</span>,
+          <span class=summary-sig-arg>product_name</span>)</span></code>
+<br />
+CMFInstaller initialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addAction" class="summary-sig-name"><code>addAction</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>properties</span>)</span></code>
+<br />
+Adds an action to an object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addCalendarTypes" class="summary-sig-name"><code>addCalendarTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_ids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addPortalCatalogIndex" class="summary-sig-name"><code>addPortalCatalogIndex</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>type</span>,
+          <span class=summary-sig-arg>extra</span>,
+          <span class=summary-sig-arg>destructive</span>)</span></code>
+<br />
+Adds an index on portal_catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addPortalCatalogMetadata" class="summary-sig-name"><code>addPortalCatalogMetadata</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>default_value</span>)</span></code>
+<br />
+Adds a metadata in the portal_catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addZCTextIndexLexicon" class="summary-sig-name"><code>addZCTextIndexLexicon</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>)</span></code>
+<br />
+Add a ZCTextIndex Lexicon.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#allowContentTypes" class="summary-sig-name"><code>allowContentTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>allowed_types</span>,
+          <span class=summary-sig-arg>allowed_in</span>)</span></code>
+<br />
+Allow a list of types in a list of types</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#cleanupPortalTypes" class="summary-sig-name"><code>cleanupPortalTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>types_to_keep</span>,
+          <span class=summary-sig-arg>types_to_delete</span>)</span></code>
+<br />
+Delete unneeded portal types</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#deleteActions" class="summary-sig-name"><code>deleteActions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>deletemap</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#deleteSkins" class="summary-sig-name"><code>deleteSkins</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>skinlist</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#flagCatalogForReindex" class="summary-sig-name"><code>flagCatalogForReindex</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>indexid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#flagCatalogForReindexMetadata" class="summary-sig-name"><code>flagCatalogForReindexMetadata</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>metadataid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#flagReindexSecurity" class="summary-sig-name"><code>flagReindexSecurity</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#flagSkinCacheReset" class="summary-sig-name"><code>flagSkinCacheReset</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#flush" class="summary-sig-name"><code>flush</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#getActionIndex" class="summary-sig-name"><code>getActionIndex</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>action_id</span>,
+          <span class=summary-sig-arg>action_provider</span>)</span></code>
+<br />
+Return the action index owned by an action provider or -1 is the 
+action doesn't exist.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#getTool" class="summary-sig-name"><code>getTool</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+<br />
+Gets the tool by id</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#hasAction" class="summary-sig-name"><code>hasAction</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tool</span>,
+          <span class=summary-sig-arg>actionid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#hideActions" class="summary-sig-name"><code>hideActions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>hidemap</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#importSetupProfile" class="summary-sig-name"><code>importSetupProfile</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>profile_id</span>,
+          <span class=summary-sig-arg>steps</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#isMainInstaller" class="summary-sig-name"><code>isMainInstaller</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#log" class="summary-sig-name"><code>log</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>message</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#logOK" class="summary-sig-name"><code>logOK</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#logResult" class="summary-sig-name"><code>logResult</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#portalHas" class="summary-sig-name"><code>portalHas</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#reindexCatalog" class="summary-sig-name"><code>reindexCatalog</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#reindexSecurity" class="summary-sig-name"><code>reindexSecurity</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#removeCalendarTypes" class="summary-sig-name"><code>removeCalendarTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_ids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#resetSkinCache" class="summary-sig-name"><code>resetSkinCache</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#setupPortalPermissions" class="summary-sig-name"><code>setupPortalPermissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permissions</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Sets up the permissions of an object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#setupSetupTool" class="summary-sig-name"><code>setupSetupTool</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyAction" class="summary-sig-name"><code>verifyAction</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tool</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyActionProvider" class="summary-sig-name"><code>verifyActionProvider</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>action_provider</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyActions" class="summary-sig-name"><code>verifyActions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>actionslist</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyContentTypes" class="summary-sig-name"><code>verifyContentTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_dict</span>,
+          <span class=summary-sig-arg>destructive</span>)</span></code>
+<br />
+Checks the content_types...</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifySkins" class="summary-sig-name"><code>verifySkins</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>skins</span>)</span></code>
+<br />
+Install or update skins.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyTool" class="summary-sig-name"><code>verifyTool</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>toolid</span>,
+          <span class=summary-sig-arg>product</span>,
+          <span class=summary-sig-arg>meta_type</span>,
+          <span class=summary-sig-arg>ttype</span>)</span></code>
+<br />
+Verify is there is a tool on the portal from the given product with 
+the given meta_type and the (optional) given type.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyVHM" class="summary-sig-name"><code>verifyVHM</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Verify that a Virtual Host Monster exist at root of Zope.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#_CMFFinalize" class="summary-sig-name"><code>_CMFFinalize</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Does all the things that only needs to be done once</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#_reindexIndexes" class="summary-sig-name"><code>_reindexIndexes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>indexes</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#SECTIONS_ID"><code>SECTIONS_ID</code></a></b> = <span title="'sections'"><code><span class="variable-quote">'</span>sections<span class="variable-quote">'</span>                                 </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html#WORKSPACES_ID"><code>WORKSPACES_ID</code></a></b> = <span title="'workspaces'"><code><span class="variable-quote">'</span>workspaces<span class="variable-quote">'</span>                             </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CMFInstaller</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#product_name"><code>product_name</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="deleteBoxes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">deleteBoxes</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>boxes_id</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Delete boxes with the id listed in boxes_id that are located in 
+  box_container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="disableEventSubscriber"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">disableEventSubscriber</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>subscriber_name</span>)</span>
+  </h3>
+  <p>Disable an event subscriber by name</p>
+  subscriber_name -&gt; portal_trees for instance
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="enableEventSubscriber"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">enableEventSubscriber</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>subscriber_name</span>)</span>
+  </h3>
+  <p>Enable an event subscriber by name</p>
+  subscriber_name -&gt; portal_trees for instance
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getBoxContainer"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getBoxContainer</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>object</span>,
+          <span class=sig-arg>create</span>=<span class=sig-default>0</span>)</span>
+  </h3>
+  Get a box container and create it if not found and asked for.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getPortletContainer"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getPortletContainer</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>create</span>=<span class=sig-default>0</span>)</span>
+  </h3>
+  Get a portlets container and create it if not found and asked 
+  for.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setupTranslations"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setupTranslations</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>product_name</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>message_catalog</span>=<span class=sig-default>'default'</span>)</span>
+  </h3>
+  <p>Load the .po files of the given product.</p>
+  <p>The .po files contain the translation messages which are used for 
+  the i18n of a product.</p>
+  The current mechanism relies on Localizer and by default loads the 
+  .po files into the Localizer/default Message Catalog.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyBoxContainer"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyBoxContainer</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Verify the existence of the box container and create it if not 
+  found.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyBoxes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyBoxes</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>boxes</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Verify the existence of given boxes in the object's box container. 
+  If not found, a box is instantiated. Existing boxes are not 
+  affected.</p>
+  boxes is a dictionary with keys begins the box ids, and values being 
+  the dictionary given by the export tab. The default object is the 
+  portal itself.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyLayouts"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyLayouts</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>layouts</span>)</span>
+  </h3>
+  <p>Add layouts if they don't exist</p>
+  The layouts parameter is a dictionary of layout definitions. The 
+  layout definition is what you get when you go to the 'Export' tab of a 
+  layout.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyLocalWorkflowChains"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyLocalWorkflowChains</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>object</span>,
+          <span class=sig-arg>wfchains</span>,
+          <span class=sig-arg>destructive</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>under_sub_add</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+<pre class="literalblock">
+Set up the local workflows on object.
+
+wfchains = {
+    '&lt;Portal Type&gt;': '&lt;workflow_id&gt;',
+}
+
+if under_sub_add is set a Below Workflow Chain is added
+</pre>
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyMessageCatalog"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyMessageCatalog</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>catalog_id</span>,
+          <span class=sig-arg>title</span>)</span>
+  </h3>
+  Set up a specialized message catalog for your product
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyPortletContainer"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyPortletContainer</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Verify the existence of the portlet container and create it if not 
+  found.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyPortlets"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyPortlets</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>portlets</span>=<span class=sig-default>()</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Verify the existence of given portet in the object's portlet 
+  container. If not found, a portlet is instantiated. Existing portlets 
+  are not affected.</p>
+  <p>'portlets' is a tuple with the dictionaries given by the export tab 
+  as entries. The default object is the portal itself.</p>
+  return the list a new portlet ids.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifySchemas"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifySchemas</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>schemas</span>)</span>
+  </h3>
+  <p>Add schemas if they don't exist</p>
+  The schemas parameter is a dictionary of schema definitions. The 
+  schema definition is what you get when you go to the 'Export' tab of a 
+  schema.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyVocabularies"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyVocabularies</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>vocabularies</span>)</span>
+  </h3>
+  <p>Add vocabularies if they don't exist</p>
+  The vocabularies parameter is a dictionary of vocabulary 
+  definitions. The vocabulary definition is what you get when you go to 
+  the 'Export' tab of a vocabulary.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyWidgets"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyWidgets</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>widgets</span>)</span>
+  </h3>
+  <p>Add widgets if they don't exist</p>
+  The widgets parameter is a dictionary of widget definitions. The 
+  widget definition is what you get when you go to the 'Export' tab of a 
+  widget.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyWorkflowAssociations"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyWorkflowAssociations</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>type_data</span>,
+          <span class=sig-arg>doc_roots</span>)</span>
+  </h3>
+  type_data is a structure as the one returned by getDocumentTypes; 
+  doc_roots represents the document roots in the portal tree and it is a 
+  structure as the one returned by getDocumentRoots
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="SECTIONS_ID"></a>
+<h3>SECTIONS_ID</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'sections'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>sections<span class="variable-quote">'</span>                                                             </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="WORKSPACES_ID"></a>
+<h3>WORKSPACES_ID</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'workspaces'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>workspaces<span class="variable-quote">'</span>                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:13 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

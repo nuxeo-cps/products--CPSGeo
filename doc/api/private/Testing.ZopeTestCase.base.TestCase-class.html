@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Testing.ZopeTestCase.base.TestCase</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Testing ::
+        Package&nbsp;ZopeTestCase ::
+        Module&nbsp;base ::
+        Class&nbsp;TestCase
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/Testing.ZopeTestCase.base.TestCase-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Testing.ZopeTestCase.base.TestCase-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type TestCase</h2>
+
+<pre class="base-tree">
+  <a href="Testing.ZopeTestCase.profiler.Profiled-class.html"><code>Profiled</code></a> --+
+             |
+<a href="__builtin__.object-class.html"><code>object</code></a> --+   |
+         |   |
+  <a href="unittest.TestCase-class.html"><code>TestCase</code></a> --+
+             |
+            <b>TestCase</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Testing.ZopeTestCase.PortalTestCase.PortalTestCase-class.html"><code>PortalTestCase</code></a>,
+    <a href="Testing.ZopeTestCase.ZopeTestCase.ZopeTestCase-class.html"><code>ZopeTestCase</code></a></dd></dl>
+
+<hr/>
+
+Base test case for Zope testing
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#afterClear" class="summary-sig-name"><code>afterClear</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Called after the fixture has been cleared.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#afterSetUp" class="summary-sig-name"><code>afterSetUp</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Called after setUp() has completed.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#beforeClose" class="summary-sig-name"><code>beforeClose</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Called before the ZODB connection is closed, at the end of 
+tearDown().</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#beforeSetUp" class="summary-sig-name"><code>beforeSetUp</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Called before the ZODB connection is opened, at the start of 
+setUp().</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#beforeTearDown" class="summary-sig-name"><code>beforeTearDown</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Called before tearDown() is executed.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#logout" class="summary-sig-name"><code>logout</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Logs out.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#setUp" class="summary-sig-name"><code>setUp</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Sets up the fixture.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.base.TestCase-class.html#tearDown" class="summary-sig-name"><code>tearDown</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Tears down the fixture.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Testing.ZopeTestCase.base.TestCase-class.html#_app" class="summary-sig-name"><code>_app</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the app object for a test.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Testing.ZopeTestCase.base.TestCase-class.html#_clear" class="summary-sig-name"><code>_clear</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>call_close_hook</span>)</span></code>
+<br />
+Clears the fixture.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Testing.ZopeTestCase.base.TestCase-class.html#_close" class="summary-sig-name"><code>_close</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Closes the ZODB connection.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Testing.ZopeTestCase.base.TestCase-class.html#_setup" class="summary-sig-name"><code>_setup</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Sets up the fixture.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Profiled</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.profiler.Profiled-class.html#__call__" class="summary-sig-name"><code>__call__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>result</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Testing.ZopeTestCase.profiler.Profiled-class.html#runcall" class="summary-sig-name"><code>runcall</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from TestCase</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>methodName</span>)</span></code>
+<br />
+Create an instance of the class that will use the named test method 
+when executed.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnless" class="summary-sig-name"><code>assert_</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>expr</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail the test unless the expression is true.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessAlmostEqual" class="summary-sig-name"><code>assertAlmostEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>places</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are unequal as determined by their difference 
+rounded to the given number of decimal places (default 7) and comparing 
+to zero.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessAlmostEqual" class="summary-sig-name"><code>assertAlmostEquals</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>places</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are unequal as determined by their difference 
+rounded to the given number of decimal places (default 7) and comparing 
+to zero.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessEqual" class="summary-sig-name"><code>assertEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are unequal as determined by the '==' 
+operator.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessEqual" class="summary-sig-name"><code>assertEquals</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are unequal as determined by the '==' 
+operator.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIfAlmostEqual" class="summary-sig-name"><code>assertNotAlmostEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>places</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are equal as determined by their difference 
+rounded to the given number of decimal places (default 7) and comparing 
+to zero.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIfAlmostEqual" class="summary-sig-name"><code>assertNotAlmostEquals</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>places</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are equal as determined by their difference 
+rounded to the given number of decimal places (default 7) and comparing 
+to zero.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIfEqual" class="summary-sig-name"><code>assertNotEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are equal as determined by the '==' 
+operator.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIfEqual" class="summary-sig-name"><code>assertNotEquals</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are equal as determined by the '==' 
+operator.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessRaises" class="summary-sig-name"><code>assertRaises</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>excClass</span>,
+          <span class=summary-sig-arg>callableObj</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kwargs</span>)</span></code>
+<br />
+Fail unless an exception of class excClass is thrown by callableObj 
+when invoked with arguments args and keyword arguments kwargs.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#countTestCases" class="summary-sig-name"><code>countTestCases</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#debug" class="summary-sig-name"><code>debug</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Run the test without collecting errors in a TestResult</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#defaultTestResult" class="summary-sig-name"><code>defaultTestResult</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#fail" class="summary-sig-name"><code>fail</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail immediately, with the given message.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIf" class="summary-sig-name"><code>failIf</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>expr</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail the test if the expression is true.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIfAlmostEqual" class="summary-sig-name"><code>failIfAlmostEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>places</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are equal as determined by their difference 
+rounded to the given number of decimal places (default 7) and comparing 
+to zero.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failIfEqual" class="summary-sig-name"><code>failIfEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are equal as determined by the '==' 
+operator.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnless" class="summary-sig-name"><code>failUnless</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>expr</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail the test unless the expression is true.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessAlmostEqual" class="summary-sig-name"><code>failUnlessAlmostEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>places</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are unequal as determined by their difference 
+rounded to the given number of decimal places (default 7) and comparing 
+to zero.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessEqual" class="summary-sig-name"><code>failUnlessEqual</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>first</span>,
+          <span class=summary-sig-arg>second</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Fail if the two objects are unequal as determined by the '==' 
+operator.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#failUnlessRaises" class="summary-sig-name"><code>failUnlessRaises</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>excClass</span>,
+          <span class=summary-sig-arg>callableObj</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kwargs</span>)</span></code>
+<br />
+Fail unless an exception of class excClass is thrown by callableObj 
+when invoked with arguments args and keyword arguments kwargs.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#id" class="summary-sig-name"><code>id</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#run" class="summary-sig-name"><code>run</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>result</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="unittest.TestCase-class.html#shortDescription" class="summary-sig-name"><code>shortDescription</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a one-line description of the test, or None if no description 
+has been provided.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Testing.ZopeTestCase.base.TestCase-class.html#__implements__"><code>__implements__</code></a></b> = <span title="(&lt;Interface Testing.ZopeTestCase.interfaces.IZopeTestCase at b581836c&gt;, (&lt;Interface Testing.ZopeTestCase.interfaces.IProfiled at b58186ac&gt;,))"><code>(&lt;Interface&nbsp;Testing.ZopeTestCase.interf<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="afterClear"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">afterClear</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Called after the fixture has been cleared. Note that this may occur 
+  during setUp() *and* tearDown().
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="afterSetUp"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">afterSetUp</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Called after setUp() has completed. This is far and away the most 
+  useful hook.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="beforeClose"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">beforeClose</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Called before the ZODB connection is closed, at the end of 
+  tearDown(). By default aborts the transaction.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="beforeSetUp"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">beforeSetUp</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Called before the ZODB connection is opened, at the start of 
+  setUp(). By default begins a new transaction.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="beforeTearDown"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">beforeTearDown</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Called before tearDown() is executed. Note that tearDown() is not 
+  called if setUp() fails.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="logout"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">logout</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Logs out.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setUp"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setUp</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Sets up the fixture. Do not override, use the hooks instead.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="unittest.TestCase-class.html#setUp"><code>unittest.TestCase.setUp</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="tearDown"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">tearDown</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Tears down the fixture. Do not override, use the hooks instead.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="unittest.TestCase-class.html#tearDown"><code>unittest.TestCase.tearDown</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_app"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_app</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the app object for a test.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_clear"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_clear</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>call_close_hook</span>=<span class=sig-default>0</span>)</span>
+  </h3>
+  Clears the fixture.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_close"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_close</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Closes the ZODB connection.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_setup"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_setup</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Sets up the fixture. Framework authors may override.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implements__"></a>
+<h3>__implements__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(&lt;Interface Testing.ZopeTestCase.interfaces.IZopeTestCase at b581836c&gt;, (&lt;Interface Testing.ZopeTestCase.interfaces.IProfiled at b58186ac&gt;,))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(&lt;Interface Testing.ZopeTestCase.interfaces.IZopeTestCase at b581836c&gt;<span class="variable-linewrap">\</span>
+,
+ (&lt;Interface Testing.ZopeTestCase.interfaces.IProfiled at b58186ac&gt;,)) </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:09 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

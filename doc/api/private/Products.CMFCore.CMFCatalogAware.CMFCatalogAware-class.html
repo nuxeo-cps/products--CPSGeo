@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Products.CMFCore.CMFCatalogAware.CMFCatalogAware</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Products ::
+        Package&nbsp;CMFCore ::
+        Module&nbsp;CMFCatalogAware ::
+        Class&nbsp;CMFCatalogAware
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type CMFCatalogAware</h2>
+
+<pre class="base-tree">
+<a href="__builtin__.object-class.html"><code>object</code></a> --+    
+         |    
+      <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+
+             |
+            <b>CMFCatalogAware</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CPSDocument.CPSDocument.CPSDocument-class.html"><code>CPSDocument</code></a>,
+    <a href="Products.CMFCore.PortalContent.PortalContent-class.html"><code>PortalContent</code></a>,
+    <a href="Products.CMFCore.PortalFolder.PortalFolderBase-class.html"><code>PortalFolderBase</code></a></dd></dl>
+
+<hr/>
+
+Mix-in for notifying portal_catalog and portal_workflow
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterAdd" class="summary-sig-name"><code>_cps_old_manage_afterAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+<br />
+Add self to the catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_beforeDelete" class="summary-sig-name"><code>_cps_old_manage_beforeDelete</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+<br />
+Remove self from the catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#indexObject" class="summary-sig-name"><code>indexObject</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Index the object in the portal catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterAdd" class="summary-sig-name"><code>manage_afterAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+manage_afterAdd patched for event service notification.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterClone" class="summary-sig-name"><code>manage_afterClone</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>)</span></code>
+<br />
+Add self to the workflow.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterCMFAdd" class="summary-sig-name"><code>manage_afterCMFAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+<br />
+Notify object and event service of CMF add finalization.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_beforeDelete" class="summary-sig-name"><code>manage_beforeDelete</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+manage_beforeDelete patched for event service notification.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_workflowsTab" class="summary-sig-name"><code>manage_workflowsTab</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>manage_tabs_message</span>)</span></code>
+<br />
+Tab displaying the current workflows for the content object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#notifyWorkflowCreated" class="summary-sig-name"><code>notifyWorkflowCreated</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Notify the workflow that self was just created.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueIds" class="summary-sig-name"><code>opaqueIds</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return opaque ids (subelements that are contained using something that 
+is not an ObjectManager).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueItems" class="summary-sig-name"><code>opaqueItems</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return opaque items (subelements that are contained using something 
+that is not an ObjectManager).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueValues" class="summary-sig-name"><code>opaqueValues</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return opaque values (subelements that are contained using something 
+that is not an ObjectManager).</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObject" class="summary-sig-name"><code>reindexObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>idxs</span>)</span></code>
+<br />
+Reindex the object in the portal catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObjectSecurity" class="summary-sig-name"><code>reindexObjectSecurity</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>skip_self</span>)</span></code>
+<br />
+Reindex security-related indexes on the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#unindexObject" class="summary-sig-name"><code>unindexObject</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Unindex the object from the portal catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#__recurse" class="summary-sig-name"><code>__recurse</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>,
+          <span class="summary-sig-vararg">*args</span>)</span></code>
+<br />
+Recurse in both normal and opaque subobjects.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_getCatalogTool"></a><span class="summary-sig"><span class="summary-sig-name">_getCatalogTool</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_getWorkflowTool"></a><span class="summary-sig"><span class="summary-sig-name">_getWorkflowTool</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Access contents information', ('opaqueItems', 'opaqueIds', 'opaqueValues')), ('Manage portal', ('manage_workflowsTab',)), ('Modify portal content', ('reindexObjectSecurity', 'indexObject', 'reindexObject', 'unindexObject')))"><code>(('Access&nbsp;contents&nbsp;information',&nbsp;('<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy Products.CMFCore.CMFCatalogAware.CMFCatalogAware&gt;"><code>&lt;implementedBy&nbsp;Products.CMFCore.CMFCat<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88b4c&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88b4c&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#indexObject__roles__"><code>indexObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterAdd__roles__"><code>manage_afterAdd__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_afterClone__roles__"><code>manage_afterClone__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_beforeDelete__roles__"><code>manage_beforeDelete__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_workflowsTab', 'label': 'Workflows'},)"><code>({'action':&nbsp;'manage_workflowsTab',&nbsp;'lab<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#manage_workflowsTab__roles__"><code>manage_workflowsTab__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b320&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#notifyWorkflowCreated__roles__"><code>notifyWorkflowCreated__roles__</code></a></b> = <span title="()"><code>()                      </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueIds__roles__"><code>opaqueIds__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b2d8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b2d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueItems__roles__"><code>opaqueItems__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b2d8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#opaqueValues__roles__"><code>opaqueValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b2d8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObject__roles__"><code>reindexObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb76<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#reindexObjectSecurity__roles__"><code>reindexObjectSecurity__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#unindexObject__roles__"><code>unindexObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b350&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb76<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="../private/Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#_cmf_security_indexes"><code>_cmf_security_indexes</code></a></b> = <span title="('allowedRolesAndUsers', 'localUsersWithRoles')"><code>('allowedRolesAndUsers',&nbsp;'localU<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="../private/Products.CMFCore.CMFCatalogAware.CMFCatalogAware-class.html#_manage_workflowsTab"><code>_manage_workflowsTab</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb7596a0c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="manage_afterAdd"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_cps_old_manage_afterAdd</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>item</span>,
+          <span class=sig-arg>container</span>)</span>
+  </h3>
+  Add self to the catalog. (Called when the object is created or 
+  moved.)
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_beforeDelete"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_cps_old_manage_beforeDelete</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>item</span>,
+          <span class=sig-arg>container</span>)</span>
+  </h3>
+  Remove self from the catalog. (Called when the object is deleted or 
+  moved.)
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="indexObject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">indexObject</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Index the object in the portal catalog.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_afterAdd"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_afterAdd</span>(<span class=sig-arg>self</span>,
+          <span class="sig-vararg">*args</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  manage_afterAdd patched for event service notification.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_afterClone"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_afterClone</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>item</span>)</span>
+  </h3>
+  Add self to the workflow. (Called when the object is cloned.)
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_afterCMFAdd"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_afterCMFAdd</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>item</span>,
+          <span class=sig-arg>container</span>)</span>
+  </h3>
+  Notify object and event service of CMF add finalization.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_beforeDelete"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_beforeDelete</span>(<span class=sig-arg>self</span>,
+          <span class="sig-vararg">*args</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  manage_beforeDelete patched for event service notification.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_workflowsTab"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_workflowsTab</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>manage_tabs_message</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Tab displaying the current workflows for the content object.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="notifyWorkflowCreated"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">notifyWorkflowCreated</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Notify the workflow that self was just created.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="opaqueIds"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">opaqueIds</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return opaque ids (subelements that are contained using something 
+  that is not an ObjectManager).
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="opaqueItems"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">opaqueItems</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return opaque items (subelements that are contained using something 
+  that is not an ObjectManager).
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="opaqueValues"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">opaqueValues</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return opaque values (subelements that are contained using something 
+  that is not an ObjectManager).
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="reindexObject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">reindexObject</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>idxs</span>=<span class=sig-default>[]</span>)</span>
+  </h3>
+  <p>Reindex the object in the portal catalog. If idxs is present, only 
+  those indexes are reindexed. The metadata is always updated.</p>
+  Also update the modification date of the object, unless specific 
+  indexes were requested.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="reindexObjectSecurity"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">reindexObjectSecurity</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>skip_self</span>=<span class=sig-default>False</span>)</span>
+  </h3>
+  <p>Reindex security-related indexes on the object.</p>
+  <p>Recurses in the children to reindex them too.</p>
+  If skip_self is True, only the children will be reindexed. This is a 
+  useful optimization if the object itself has just been fully reindexed, 
+  as there's no need to reindex its security twice.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="unindexObject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">unindexObject</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Unindex the object from the portal catalog.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__recurse"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__recurse</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>name</span>,
+          <span class="sig-vararg">*args</span>)</span>
+  </h3>
+  Recurse in both normal and opaque subobjects.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Access contents information', ('opaqueItems', 'opaqueIds', 'opaqueValues')), ('Manage portal', ('manage_workflowsTab',)), ('Modify portal content', ('reindexObjectSecurity', 'indexObject', 'reindexObject', 'unindexObject')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Access contents information', ('opaqueItems', 'opaqueIds', 'opaqueV<span class="variable-linewrap">\</span>
+alues')),
+ ('Manage portal', ('manage_workflowsTab',)),
+ ('Modify portal content',
+  ('reindexObjectSecurity', 'indexObject', 'reindexObject', 'unindexOb<span class="variable-linewrap">\</span>
+ject')))                                                               </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy Products.CMFCore.CMFCatalogAware.CMFCatalogAware&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy Products.CMFCore.CMFCatalogAware.CMFCatalogAware&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__providedBy__"></a>
+<h3>__providedBy__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88b4c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb5f88b4c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5f88b4c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb5f88b4c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="indexObject__roles__"></a>
+<h3>indexObject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b350&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b350&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_afterAdd__roles__"></a>
+<h3>manage_afterAdd__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_afterClone__roles__"></a>
+<h3>manage_afterClone__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_beforeDelete__roles__"></a>
+<h3>manage_beforeDelete__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_workflowsTab', 'label': 'Workflows'},)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_workflowsTab', 'label': 'Workflows'},)             </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_workflowsTab__roles__"></a>
+<h3>manage_workflowsTab__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b320&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b320&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="notifyWorkflowCreated__roles__"></a>
+<h3>notifyWorkflowCreated__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="opaqueIds__roles__"></a>
+<h3>opaqueIds__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b2d8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b2d8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="opaqueItems__roles__"></a>
+<h3>opaqueItems__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b2d8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b2d8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="opaqueValues__roles__"></a>
+<h3>opaqueValues__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b2d8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b2d8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="reindexObject__roles__"></a>
+<h3>reindexObject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b350&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b350&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="reindexObjectSecurity__roles__"></a>
+<h3>reindexObjectSecurity__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b350&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b350&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="unindexObject__roles__"></a>
+<h3>unindexObject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b350&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b350&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_cmf_security_indexes"></a>
+<h3>_cmf_security_indexes</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('allowedRolesAndUsers', 'localUsersWithRoles')">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('allowedRolesAndUsers', 'localUsersWithRoles')                        </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_manage_workflowsTab"></a>
+<h3>_manage_workflowsTab</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb7596a0c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb7596a0c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:13 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

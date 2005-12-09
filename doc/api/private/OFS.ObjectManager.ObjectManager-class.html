@@ -1,0 +1,2326 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>OFS.ObjectManager.ObjectManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;OFS ::
+        Module&nbsp;ObjectManager ::
+        Class&nbsp;ObjectManager
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/OFS.ObjectManager.ObjectManager-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="OFS.ObjectManager.ObjectManager-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type ObjectManager</h2>
+
+<pre class="base-tree">
+     <a href="__builtin__.object-class.html"><code>object</code></a> --+            
+              |            
+           <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+        
+                  |        
+<a href="webdav.EtagSupport.EtagSupport-class.html"><code>EtagSupport</code></a> --+   |        
+              |   |        
+   <a href="webdav.Lockable.LockableItem-class.html"><code>LockableItem</code></a> --+        
+                  |        
+           <a href="webdav.Resource.Resource-class.html"><code>Resource</code></a> --+    
+                      |    
+             <a href="webdav.Collection.Collection-class.html"><code>Collection</code></a> --+
+                          |
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |
+                  |       |
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |
+                      |   |
+          <a href="OFS.CopySupport.CopyContainer-class.html"><code>CopyContainer</code></a> --+
+                          |
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |
+                  |       |
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |
+                      |   |
+             <a href="App.Management.Navigation-class.html"><code>Navigation</code></a> --+
+                          |
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |
+                  |       |
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |
+                      |   |
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+   |   |
+                  |   |   |
+         <a href="persistent.Persistent-class.html"><code>Persistent</code></a> --+   |
+                      |   |
+             <a href="Persistence.Persistent-class.html"><code>Persistent</code></a> --+
+                          |
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |
+                  |       |
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |
+                      |   |
+                   <a href="App.Management.Tabs-class.html"><code>Tabs</code></a> --+
+                          |
+            <a href="OFS.Traversable.Traversable-class.html"><code>Traversable</code></a> --+
+                          |
+         <a href="__builtin__.object-class.html"><code>object</code></a> --+       |
+                  |       |
+               <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+   |
+                      |   |
+               <a href="../private/Acquisition._Acquisition.Acquirer-class.html"><code>Acquirer</code></a> --+
+                          |
+                         <b>ObjectManager</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="OFS.Folder.Folder-class.html"><code>Folder</code></a></dd></dl>
+
+<hr/>
+
+<p>Generic object manager</p>
+This class provides core behavior for collections of heterogeneous 
+objects.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__class_init__"></a><span class="summary-sig"><span class="summary-sig-name">__class_init__</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__getitem__"></a><span class="summary-sig"><span class="summary-sig-name">__getitem__</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>key</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="checkValidId"></a><span class="summary-sig"><span class="summary-sig-name">_checkId</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>allow_dup</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="manage_afterAdd"></a><span class="summary-sig"><span class="summary-sig-name">_cps_old_manage_afterAdd</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="OFS_manage_beforeDelete"></a><span class="summary-sig"><span class="summary-sig-name">_cps_old_manage_beforeDelete</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>,
+          <span class=summary-sig-arg>container</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="OFS_delObject"></a><span class="summary-sig"><span class="summary-sig-name">_delObject</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>dp</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLDocument" class="summary-sig-name"><code>addDTMLDocument</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>submit</span>)</span></code>
+<br />
+Add a DTML Document object with the contents of file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLMethod" class="summary-sig-name"><code>addDTMLMethod</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>submit</span>)</span></code>
+<br />
+Add a DTML Method object with the contents of file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="all_meta_types"></a><span class="summary-sig"><span class="summary-sig-name">all_meta_types</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>interfaces</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="filtered_meta_types"></a><span class="summary-sig"><span class="summary-sig-name">filtered_meta_types</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>user</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="list_imports"></a><span class="summary-sig"><span class="summary-sig-name">list_imports</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLMethod" class="summary-sig-name"><code>manage_addDocument</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>submit</span>)</span></code>
+<br />
+Add a DTML Method object with the contents of file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLDocument" class="summary-sig-name"><code>manage_addDTMLDocument</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>submit</span>)</span></code>
+<br />
+Add a DTML Document object with the contents of file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLMethod" class="summary-sig-name"><code>manage_addDTMLMethod</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>submit</span>)</span></code>
+<br />
+Add a DTML Method object with the contents of file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addFile" class="summary-sig-name"><code>manage_addFile</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>precondition</span>,
+          <span class=summary-sig-arg>content_type</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add a new File object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addFolder" class="summary-sig-name"><code>manage_addFolder</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>createPublic</span>,
+          <span class=summary-sig-arg>createUserF</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add a new Folder object with id *id*.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addImage" class="summary-sig-name"><code>manage_addImage</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>precondition</span>,
+          <span class=summary-sig-arg>content_type</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add a new Image object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addOrderedFolder" class="summary-sig-name"><code>manage_addOrderedFolder</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>createPublic</span>,
+          <span class=summary-sig-arg>createUserF</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add a new ordered Folder object with id *id*.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="manage_addSiteRoot"></a><span class="summary-sig"><span class="summary-sig-name">manage_addSiteRoot</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>title</span>,
+          <span class=summary-sig-arg>base</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**ignored</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="manage_addUserFolder"></a><span class="summary-sig"><span class="summary-sig-name">manage_addUserFolder</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>dtself</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**ignored</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_afterAdd" class="summary-sig-name"><code>manage_afterAdd</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+manage_afterAdd patched for event service notification.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="manage_afterClone"></a><span class="summary-sig"><span class="summary-sig-name">manage_afterClone</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>item</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_beforeDelete" class="summary-sig-name"><code>manage_beforeDelete</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+manage_beforeDelete patched for event service notification.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_delObjects" class="summary-sig-name"><code>manage_delObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Delete a subordinate object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_exportObject" class="summary-sig-name"><code>manage_exportObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>download</span>,
+          <span class=summary-sig-arg>toxml</span>,
+          <span class=summary-sig-arg>RESPONSE</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Exports an object to a file and returns that file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_FTPlist" class="summary-sig-name"><code>manage_FTPlist</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Directory listing for FTP.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_FTPstat" class="summary-sig-name"><code>manage_FTPstat</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Psuedo stat, used by FTP for directory listings.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_hasId" class="summary-sig-name"><code>manage_hasId</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+check if the folder has an object with REQUEST['id']</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ObjectManager.ObjectManager-class.html#manage_importObject" class="summary-sig-name"><code>manage_importObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>file</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>set_owner</span>)</span></code>
+<br />
+Import an object from a file</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectIds"></a><span class="summary-sig"><span class="summary-sig-name">objectIds</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectIds_d"></a><span class="summary-sig"><span class="summary-sig-name">objectIds_d</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectItems"></a><span class="summary-sig"><span class="summary-sig-name">objectItems</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectItems_d"></a><span class="summary-sig"><span class="summary-sig-name">objectItems_d</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectMap"></a><span class="summary-sig"><span class="summary-sig-name">objectMap</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectMap_d"></a><span class="summary-sig"><span class="summary-sig-name">objectMap_d</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectValues"></a><span class="summary-sig"><span class="summary-sig-name">objectValues</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectValues_d"></a><span class="summary-sig"><span class="summary-sig-name">objectValues_d</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="superValues"></a><span class="summary-sig"><span class="summary-sig-name">superValues</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="tpValues"></a><span class="summary-sig"><span class="summary-sig-name">tpValues</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_delOb"></a><span class="summary-sig"><span class="summary-sig-name">_delOb</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_getOb"></a><span class="summary-sig"><span class="summary-sig-name">_getOb</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_importObjectFromFile"></a><span class="summary-sig"><span class="summary-sig-name">_importObjectFromFile</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>filepath</span>,
+          <span class=summary-sig-arg>verify</span>,
+          <span class=summary-sig-arg>set_owner</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_setOb"></a><span class="summary-sig"><span class="summary-sig-name">_setOb</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_setObject"></a><span class="summary-sig"><span class="summary-sig-name">_setObject</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>roles</span>,
+          <span class=summary-sig-arg>user</span>,
+          <span class=summary-sig-arg>set_owner</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_subobject_permissions"></a><span class="summary-sig"><span class="summary-sig-name">_subobject_permissions</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CopyContainer</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_clone" class="summary-sig-name"><code>_cps_old_manage_clone</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ob</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_pasteObjects" class="summary-sig-name"><code>_cps_old_manage_pasteObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>cb_copy_data</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Paste previously copied objects into the current object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameObject" class="summary-sig-name"><code>_cps_old_manage_renameObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>new_id</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Rename a particular sub-object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#cb_dataItems" class="summary-sig-name"><code>cb_dataItems</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#cb_dataValid" class="summary-sig-name"><code>cb_dataValid</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_clone" class="summary-sig-name"><code>manage_clone</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ob</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_CopyContainerAllItems" class="summary-sig-name"><code>manage_CopyContainerAllItems</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_CopyContainerFirstItem" class="summary-sig-name"><code>manage_CopyContainerFirstItem</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_copyObjects" class="summary-sig-name"><code>manage_copyObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Put a reference to the objects named in ids in the clip board</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_cutObjects" class="summary-sig-name"><code>manage_cutObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Put a reference to the objects named in ids in the clip board</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_pasteObjects" class="summary-sig-name"><code>manage_pasteObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>cb_copy_data</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Paste an object from a cut or copy.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameObject" class="summary-sig-name"><code>manage_renameObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>new_id</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameObjects" class="summary-sig-name"><code>manage_renameObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>new_ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Rename several sub-objects</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#cb_dataValid" class="summary-sig-name"><code>validClipData</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.CopySupport.CopyContainer-class.html#_get_id" class="summary-sig-name"><code>_get_id</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.CopySupport.CopyContainer-class.html#_verifyObjectPaste" class="summary-sig-name"><code>_verifyObjectPaste</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>validate_src</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Navigation</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Navigation-class.html#manage_zmi_logout" class="summary-sig-name"><code>manage_zmi_logout</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Logout current user</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Tabs</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#class_manage_path" class="summary-sig-name"><code>class_manage_path</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#filtered_manage_options" class="summary-sig-name"><code>filtered_manage_options</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#manage_workspace" class="summary-sig-name"><code>manage_workspace</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Dispatch to first interface in manage_options</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#tabs_path_default" class="summary-sig-name"><code>tabs_path_default</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>unquote</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="App.Management.Tabs-class.html#tabs_path_info" class="summary-sig-name"><code>tabs_path_info</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>script</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>quote</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Acquirer</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Acquisition._Acquisition.Acquirer-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/Acquisition._Acquisition.Acquirer-class.html#__of__" class="summary-sig-name"><code>__of__</code></a>(<span class=summary-sig-arg>context</span>)</span></code>
+<br />
+__of__(context) -- return the object in a context</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#bobobase_modification_time" class="summary-sig-name"><code>bobobase_modification_time</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#locked_in_version" class="summary-sig-name"><code>locked_in_version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Was the object modified in any version?</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#modified_in_version" class="summary-sig-name"><code>modified_in_version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Was the object modified in this version?</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_activate" class="summary-sig-name"><code>_p_activate</code></a>()</span></code>
+<br />
+_p_activate() -- Activate the object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_deactivate" class="summary-sig-name"><code>_p_deactivate</code></a>()</span></code>
+<br />
+_p_deactivate() -- Deactivate the object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_delattr" class="summary-sig-name"><code>_p_delattr</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+This method should be called by subclass __delattr__ implementations 
+before doing anything else.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_getattr" class="summary-sig-name"><code>_p_getattr</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+The method unghostifies the object, if necessary.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_invalidate" class="summary-sig-name"><code>_p_invalidate</code></a>()</span></code>
+<br />
+_p_invalidate() -- Invalidate the object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_setattr" class="summary-sig-name"><code>_p_setattr</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+<br />
+This method should be called by subclass __setattr__ implementations 
+before doing anything else.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Collection</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Collection.Collection-class.html#dav__init" class="summary-sig-name"><code>dav__init</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>request</span>,
+          <span class=summary-sig-arg>response</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Collection.Collection-class.html#DELETE" class="summary-sig-name"><code>DELETE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Delete a collection resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Collection.Collection-class.html#HEAD" class="summary-sig-name"><code>HEAD</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve resource information without a response body.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Collection.Collection-class.html#listDAVObjects" class="summary-sig-name"><code>listDAVObjects</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Collection.Collection-class.html#PUT" class="summary-sig-name"><code>PUT</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+The PUT method has no inherent meaning for collection resources, 
+though collections are not specifically forbidden to handle PUT 
+requests.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Resource</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#COPY" class="summary-sig-name"><code>COPY</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Create a duplicate of the source resource whose state and behavior 
+match that of the source resource as closely as possible.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#dav__simpleifhandler" class="summary-sig-name"><code>dav__simpleifhandler</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>request</span>,
+          <span class=summary-sig-arg>response</span>,
+          <span class=summary-sig-arg>method</span>,
+          <span class=summary-sig-arg>col</span>,
+          <span class=summary-sig-arg>url</span>,
+          <span class=summary-sig-arg>refresh</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#dav__validate" class="summary-sig-name"><code>dav__validate</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>methodname</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#LOCK" class="summary-sig-name"><code>LOCK</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Lock a resource</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#manage_DAVget" class="summary-sig-name"><code>manage_DAVget</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Gets the document source</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#MKCOL" class="summary-sig-name"><code>MKCOL</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Create a new collection resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#MOVE" class="summary-sig-name"><code>MOVE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Move a resource to a new location.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#OPTIONS" class="summary-sig-name"><code>OPTIONS</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve communication options.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PROPFIND" class="summary-sig-name"><code>PROPFIND</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Retrieve properties defined on the resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#PROPPATCH" class="summary-sig-name"><code>PROPPATCH</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Set and/or remove properties defined on the resource.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#TRACE" class="summary-sig-name"><code>TRACE</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Return the HTTP message received back to the client as the entity-body 
+of a 200 (OK) response.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Resource.Resource-class.html#UNLOCK" class="summary-sig-name"><code>UNLOCK</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>RESPONSE</span>)</span></code>
+<br />
+Remove an existing lock on a resource.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LockableItem</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_clearLocks" class="summary-sig-name"><code>wl_clearLocks</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_delLock" class="summary-sig-name"><code>wl_delLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_getLock" class="summary-sig-name"><code>wl_getLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_hasLock" class="summary-sig-name"><code>wl_hasLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>token</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_isLocked" class="summary-sig-name"><code>wl_isLocked</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockItems" class="summary-sig-name"><code>wl_lockItems</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockmapping" class="summary-sig-name"><code>wl_lockmapping</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>,
+          <span class=summary-sig-arg>create</span>)</span></code>
+<br />
+if 'killinvalids' is 1, locks who are no longer valid will be 
+deleted</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockTokens" class="summary-sig-name"><code>wl_lockTokens</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_lockValues" class="summary-sig-name"><code>wl_lockValues</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>killinvalids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.Lockable.LockableItem-class.html#wl_setLock" class="summary-sig-name"><code>wl_setLock</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>locktoken</span>,
+          <span class=summary-sig-arg>lock</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from EtagSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__etag" class="summary-sig-name"><code>http__etag</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>readonly</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__parseMatchList" class="summary-sig-name"><code>http__parseMatchList</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>header</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__processMatchHeaders" class="summary-sig-name"><code>http__processMatchHeaders</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="webdav.EtagSupport.EtagSupport-class.html#http__refreshEtag" class="summary-sig-name"><code>http__refreshEtag</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Traversable</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#absolute_url" class="summary-sig-name"><code>absolute_url</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>relative</span>)</span></code>
+<br />
+Return the absolute URL of the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#absolute_url_path" class="summary-sig-name"><code>absolute_url_path</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return the path portion of the absolute URL of the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#getPhysicalPath" class="summary-sig-name"><code>getPhysicalPath</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get the physical path of the object.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#restrictedTraverse" class="summary-sig-name"><code>restrictedTraverse</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#unrestrictedTraverse" class="summary-sig-name"><code>unrestrictedTraverse</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>path</span>,
+          <span class=summary-sig-arg>default</span>,
+          <span class=summary-sig-arg>restricted</span>)</span></code>
+<br />
+Lookup an object by path.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.Traversable.Traversable-class.html#virtual_url_path" class="summary-sig-name"><code>virtual_url_path</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a URL for the object, relative to the site root.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('View management screens', ('manage_main',)), ('Access contents information', ('objectIds', 'objectValues', 'objectItems', ''), ('Anonymous', 'Manager')), ('Delete objects', ('manage_delObjects',)), ('FTP access', ('manage_FTPstat', 'manage_FTPlist')), ('Import/Export objects', ('manage_importObject', 'manage_importExportForm', 'manage_exportObject')))"><code>(('View&nbsp;management&nbsp;screens',&nbsp;('mana<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy OFS.ObjectManager.ObjectManager&gt;"><code>&lt;implementedBy&nbsp;OFS.ObjectManager.Objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674aec&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#__roles__"><code>__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e698&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e698&gt;        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLDocument__roles__"><code>addDTMLDocument__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f800&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#addDTMLMethod__roles__"><code>addDTMLMethod__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f740&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb58<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#isAnObjectManager"><code>isAnObjectManager</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#isPrincipiaFolderish"><code>isPrincipiaFolderish</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addDocument__roles__"><code>manage_addDocument__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f740&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addDTMLDocument__roles__"><code>manage_addDTMLDocument__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f800&gt;"><code>&lt;PermissionRole&nbsp;object<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addDTMLMethod__roles__"><code>manage_addDTMLMethod__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f740&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addFile__roles__"><code>manage_addFile__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f848&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb5<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addFolder__roles__"><code>manage_addFolder__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f6c8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addImage__roles__"><code>manage_addImage__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f890&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addOrderedFolder__roles__"><code>manage_addOrderedFolder__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f878&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ProductDispatcher</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addProduct"><code>manage_addProduct</code></a></b> = <span title="&lt;App.FactoryDispatcher.ProductDispatcher object at 0xb77a04ec&gt;"><code>&lt;App.FactoryDispatcher.ProductDispat<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addSiteRoot__roles__"><code>manage_addSiteRoot__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f4d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addSiteRootForm"><code>manage_addSiteRootForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5ce988c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addSiteRootForm__roles__"><code>manage_addSiteRootForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f4d0&gt;"><code>&lt;PermissionRole&nbsp;object<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_addUserFolder__roles__"><code>manage_addUserFolder__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f7e8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_afterAdd__roles__"><code>manage_afterAdd__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_afterClone__roles__"><code>manage_afterClone__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_beforeDelete__roles__"><code>manage_beforeDelete__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_delObjects__roles__"><code>manage_delObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e6b0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_exportObject__roles__"><code>manage_exportObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e6c8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_FTPlist__roles__"><code>manage_FTPlist__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e5a8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_FTPstat__roles__"><code>manage_FTPstat__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e5a8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_hasId__roles__"><code>manage_hasId__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                     </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_importExportForm"><code>manage_importExportForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77a054c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_importExportForm__roles__"><code>manage_importExportForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e6c8&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_importObject__roles__"><code>manage_importObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e6c8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_index_main"><code>manage_index_main</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb779de0c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_index_main__roles__"><code>manage_index_main__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)                </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_main"><code>manage_main</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5dd790c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb5d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_main__roles__"><code>manage_main__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e560&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_main', 'help': ('OFSP', 'ObjectManager_Contents.stx'), 'label': 'Contents'},)"><code>({'action':&nbsp;'manage_main',&nbsp;'help':&nbsp;('OF<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#meta_type"><code>meta_type</code></a></b> = <span title="'Object Manager'"><code><span class="variable-quote">'</span>Object&nbsp;Manager<span class="variable-quote">'</span>                             </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#meta_types"><code>meta_types</code></a></b> = <span title="()"><code>()                                          </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#objectIds__roles__"><code>objectIds__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e698&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e69<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#objectItems__roles__"><code>objectItems__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e698&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#objectValues__roles__"><code>objectValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e698&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#SiteRootAdd"><code>SiteRootAdd</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb5ce988c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb5c<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.ObjectManager.ObjectManager-class.html#SiteRootAdd__roles__"><code>SiteRootAdd__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb582f4d0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb582f<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="../private/OFS.ObjectManager.ObjectManager-class.html#_objects"><code>_objects</code></a></b> = <span title="()"><code>()                                            </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CopyContainer</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674b4c&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_clone__roles__"><code>manage_clone__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_CopyContainerAllItems__roles__"><code>manage_CopyContainerAllItems__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)     </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_CopyContainerFirstItem__roles__"><code>manage_CopyContainerFirstItem__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_copyObjects__roles__"><code>manage_copyObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e1e8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_cutObjects__roles__"><code>manage_cutObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e200&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_pasteObjects__roles__"><code>manage_pasteObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e1e8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameForm"><code>manage_renameForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77f8d2c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameForm__roles__"><code>manage_renameForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e1e8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameObject__roles__"><code>manage_renameObject__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e1e8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameObjects__roles__"><code>manage_renameObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e1e8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Navigation</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage"><code>manage</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786ccac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb786ccac<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage__roles__"><code>manage__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6db8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6db8&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_copyright"><code>manage_copyright</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb7449fac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_copyright__roles__"><code>manage_copyright__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_form_title"><code>manage_form_title</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786ce8c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_form_title__roles__"><code>manage_form_title__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_menu"><code>manage_menu</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786cb2c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_menu__roles__"><code>manage_menu__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6db8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_page_footer"><code>manage_page_footer</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786ce2c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_page_footer__roles__"><code>manage_page_footer__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6db8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_page_header"><code>manage_page_header</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786caac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_page_header__roles__"><code>manage_page_header__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6db8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_page_style.css"><code>manage_page_style.css</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786cf8c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_page_style.css__roles__"><code>manage_page_style.css__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_top_frame"><code>manage_top_frame</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786cc4c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_top_frame__roles__"><code>manage_top_frame__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6db8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_zmi_logout__roles__"><code>manage_zmi_logout__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_zmi_prefs"><code>manage_zmi_prefs</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786cfac&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#manage_zmi_prefs__roles__"><code>manage_zmi_prefs__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#zope_quick_start"><code>zope_quick_start</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb786cbcc&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Navigation-class.html#zope_quick_start__roles__"><code>zope_quick_start__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Tabs</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#class_manage_path__roles__"><code>class_manage_path__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#filtered_manage_options__roles__"><code>filtered_manage_options__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#manage_tabs"><code>manage_tabs</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77c850c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb77<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#manage_tabs__roles__"><code>manage_tabs__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="App.Management.Tabs-class.html#manage_workspace__roles__"><code>manage_workspace__roles__</code></a></b> = <span title="('Authenticated',)"><code>('Authenticated',)           </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_changed"><code>_p_changed</code></a></b> = <span title="&lt;attribute '_p_changed' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_changed'&nbsp;of&nbsp;'persistent.Pers<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_jar"><code>_p_jar</code></a></b> = <span title="&lt;attribute '_p_jar' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_jar'&nbsp;of&nbsp;'persistent.Persistent'&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_mtime"><code>_p_mtime</code></a></b> = <span title="&lt;attribute '_p_mtime' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_mtime'&nbsp;of&nbsp;'persistent.Persiste<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_oid"><code>_p_oid</code></a></b> = <span title="&lt;attribute '_p_oid' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_oid'&nbsp;of&nbsp;'persistent.Persistent'&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_serial"><code>_p_serial</code></a></b> = <span title="&lt;attribute '_p_serial' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_serial'&nbsp;of&nbsp;'persistent.Persis<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_state"><code>_p_state</code></a></b> = <span title="&lt;attribute '_p_state' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_state'&nbsp;of&nbsp;'persistent.Persiste<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Collection</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="webdav.Collection.Collection-class.html#__dav_collection__"><code>__dav_collection__</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Resource</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__dav_resource__"><code>__dav_resource__</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#__http_methods__"><code>__http_methods__</code></a></b> = <span title="('GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'TRACE', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'COPY', 'MOVE', 'LOCK', 'UNLOCK')"><code>('GET',&nbsp;'HEAD',&nbsp;'POST',&nbsp;'PUT',&nbsp;'DELET<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#COPY__roles__"><code>COPY__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#DELETE__roles__"><code>DELETE__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e128&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e128&gt;  </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#HEAD__roles__"><code>HEAD__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0e0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e0e0&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#listDAVObjects__roles__"><code>listDAVObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#LOCK__roles__"><code>LOCK__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e140&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e140&gt;    </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#manage_DAVget__roles__"><code>manage_DAVget__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#MOVE__roles__"><code>MOVE__roles__</code></a></b> = <span title="('Anonymous',)"><code>('Anonymous',)                           </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#OPTIONS__roles__"><code>OPTIONS__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#PROPFIND__roles__"><code>PROPFIND__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e0f8<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#PROPPATCH__roles__"><code>PROPPATCH__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e110&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e11<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#TRACE__roles__"><code>TRACE__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Resource.Resource-class.html#UNLOCK__roles__"><code>UNLOCK__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e158&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e158&gt;  </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from LockableItem</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_clearLocks__roles__"><code>wl_clearLocks__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6c20&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_delLock__roles__"><code>wl_delLock__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d10&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_getLock__roles__"><code>wl_getLock__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_grantLockToUser__roles__"><code>wl_grantLockToUser__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_isLocked__roles__"><code>wl_isLocked__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_isLockedByUser__roles__"><code>wl_isLockedByUser__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockItems__roles__"><code>wl_lockItems__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockmapping__roles__"><code>wl_lockmapping__roles__</code></a></b> = <span title="()"><code>()                             </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockTokens__roles__"><code>wl_lockTokens__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_lockValues__roles__"><code>wl_lockValues__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="webdav.Lockable.LockableItem-class.html#wl_setLock__roles__"><code>wl_setLock__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb78c6d58&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78c6d<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from EtagSupport</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="webdav.EtagSupport.EtagSupport-class.html#__implements__"><code>__implements__</code></a></b> = <span title="(&lt;Interface webdav.EtagSupport.EtagBaseInterface at b7883b8c&gt;,)"><code>(&lt;Interface&nbsp;webdav.EtagSupport.EtagBase<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Traversable</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#absolute_url__roles__"><code>absolute_url__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#absolute_url_path__roles__"><code>absolute_url_path__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#getPhysicalPath__roles__"><code>getPhysicalPath__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#getPhysicalRoot"><code>getPhysicalRoot</code></a></b> = <span title="'&lt;Special Object Used to Force Acquisition&gt;'"><code><span class="variable-quote">'</span>&lt;Special&nbsp;Object&nbsp;Used&nbsp;to&nbsp;Force&nbsp;Acquisi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#getPhysicalRoot__roles__"><code>getPhysicalRoot__roles__</code></a></b> = <span title="()"><code>()                            </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#restrictedTraverse__roles__"><code>restrictedTraverse__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#unrestrictedTraverse__roles__"><code>unrestrictedTraverse__roles__</code></a></b> = <span title="()"><code>()                       </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="OFS.Traversable.Traversable-class.html#virtual_url_path__roles__"><code>virtual_url_path__roles__</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="addDTMLDocument"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addDTMLDocument</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>file</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>submit</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add a DTML Document object with the contents of file. If 'file' is 
+  empty, default document text is used.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addDTMLMethod"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addDTMLMethod</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>file</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>submit</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add a DTML Method object with the contents of file. If 'file' is 
+  empty, default document text is used.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addDTMLMethod"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addDocument</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>file</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>submit</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add a DTML Method object with the contents of file. If 'file' is 
+  empty, default document text is used.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addDTMLDocument"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addDTMLDocument</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>file</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>submit</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add a DTML Document object with the contents of file. If 'file' is 
+  empty, default document text is used.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addDTMLMethod"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addDTMLMethod</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>file</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>submit</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Add a DTML Method object with the contents of file. If 'file' is 
+  empty, default document text is used.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addFile"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addFile</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>file</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>precondition</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>content_type</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Add a new File object.</p>
+  Creates a new File object 'id' with the contents of 'file'
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addFolder"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addFolder</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>createPublic</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>createUserF</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Add a new Folder object with id *id*.</p>
+  If the 'createPublic' and 'createUserF' parameters are set to any 
+  true value, an 'index_html' and a 'UserFolder' objects are created 
+  respectively in the new folder.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addImage"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addImage</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>file</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>precondition</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>content_type</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Add a new Image object.</p>
+  Creates a new Image object 'id' with the contents of 'file'.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addOrderedFolder"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addOrderedFolder</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>createPublic</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>createUserF</span>=<span class=sig-default>0</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Add a new ordered Folder object with id *id*.</p>
+  If the 'createPublic' and 'createUserF' parameters are set to any 
+  true value, an 'index_html' and a 'UserFolder' objects are created 
+  respectively in the new folder.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_afterAdd"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_afterAdd</span>(<span class=sig-arg>self</span>,
+          <span class="sig-vararg">*args</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  manage_afterAdd patched for event service notification.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_beforeDelete"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_beforeDelete</span>(<span class=sig-arg>self</span>,
+          <span class="sig-vararg">*args</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  manage_beforeDelete patched for event service notification.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_delObjects"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_delObjects</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Delete a subordinate object</p>
+  The objects specified in 'ids' get deleted.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_exportObject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_exportObject</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>download</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>toxml</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>RESPONSE</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Exports an object to a file and returns that file.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_FTPlist"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_FTPlist</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>)</span>
+  </h3>
+  Directory listing for FTP.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_FTPstat"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_FTPstat</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>)</span>
+  </h3>
+  Psuedo stat, used by FTP for directory listings.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_hasId"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_hasId</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>)</span>
+  </h3>
+  check if the folder has an object with REQUEST['id']
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_importObject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_importObject</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>file</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>set_owner</span>=<span class=sig-default>1</span>)</span>
+  </h3>
+  Import an object from a file
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('View management screens', ('manage_main',)), ('Access contents information', ('objectIds', 'objectValues', 'objectItems', ''), ('Anonymous', 'Manager')), ('Delete objects', ('manage_delObjects',)), ('FTP access', ('manage_FTPstat', 'manage_FTPlist')), ('Import/Export objects', ('manage_importObject', 'manage_importExportForm', 'manage_exportObject')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('View management screens', ('manage_main',)),
+ ('Access contents information',
+  ('objectIds', 'objectValues', 'objectItems', ''),
+  ('Anonymous', 'Manager')),
+ ('Delete objects', ('manage_delObjects',)),
+ ('FTP access', ('manage_FTPstat', 'manage_FTPlist')),
+ ('Import/Export objects',
+  ('manage_importObject', 'manage_importExportForm', 'manage_exportObj<span class="variable-linewrap">\</span>
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy OFS.ObjectManager.ObjectManager&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy OFS.ObjectManager.ObjectManager&gt;                        </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb7674aec&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb7674aec&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__roles__"></a>
+<h3>__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e698&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e698&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="addDTMLDocument__roles__"></a>
+<h3>addDTMLDocument__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f800&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f800&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="addDTMLMethod__roles__"></a>
+<h3>addDTMLMethod__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f740&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f740&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="isAnObjectManager"></a>
+<h3>isAnObjectManager</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>int</code>
+
+      </dd>
+<span title="1">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="isPrincipiaFolderish"></a>
+<h3>isPrincipiaFolderish</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>int</code>
+
+      </dd>
+<span title="1">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addDocument__roles__"></a>
+<h3>manage_addDocument__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f740&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f740&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addDTMLDocument__roles__"></a>
+<h3>manage_addDTMLDocument__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f800&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f800&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addDTMLMethod__roles__"></a>
+<h3>manage_addDTMLMethod__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f740&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f740&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addFile__roles__"></a>
+<h3>manage_addFile__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f848&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f848&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addFolder__roles__"></a>
+<h3>manage_addFolder__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f6c8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f6c8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addImage__roles__"></a>
+<h3>manage_addImage__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f890&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f890&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addOrderedFolder__roles__"></a>
+<h3>manage_addOrderedFolder__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f878&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f878&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addProduct"></a>
+<h3>manage_addProduct</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ProductDispatcher</code>
+
+      </dd>
+<span title="&lt;App.FactoryDispatcher.ProductDispatcher object at 0xb77a04ec&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.FactoryDispatcher.ProductDispatcher object at 0xb77a04ec&gt;         </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addSiteRoot__roles__"></a>
+<h3>manage_addSiteRoot__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f4d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f4d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addSiteRootForm"></a>
+<h3>manage_addSiteRootForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5ce988c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5ce988c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addSiteRootForm__roles__"></a>
+<h3>manage_addSiteRootForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f4d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f4d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addUserFolder__roles__"></a>
+<h3>manage_addUserFolder__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f7e8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f7e8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_afterAdd__roles__"></a>
+<h3>manage_afterAdd__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_afterClone__roles__"></a>
+<h3>manage_afterClone__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_beforeDelete__roles__"></a>
+<h3>manage_beforeDelete__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_delObjects__roles__"></a>
+<h3>manage_delObjects__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e6b0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e6b0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_exportObject__roles__"></a>
+<h3>manage_exportObject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e6c8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e6c8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_FTPlist__roles__"></a>
+<h3>manage_FTPlist__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e5a8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e5a8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_FTPstat__roles__"></a>
+<h3>manage_FTPstat__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e5a8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e5a8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_hasId__roles__"></a>
+<h3>manage_hasId__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_importExportForm"></a>
+<h3>manage_importExportForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb77a054c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb77a054c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_importExportForm__roles__"></a>
+<h3>manage_importExportForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e6c8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e6c8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_importObject__roles__"></a>
+<h3>manage_importObject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e6c8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e6c8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_index_main"></a>
+<h3>manage_index_main</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb779de0c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb779de0c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_index_main__roles__"></a>
+<h3>manage_index_main__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_main"></a>
+<h3>manage_main</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5dd790c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5dd790c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_main__roles__"></a>
+<h3>manage_main__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e560&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e560&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_main', 'help': ('OFSP', 'ObjectManager_Contents.stx'), 'label': 'Contents'},)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_main',
+  'help': ('OFSP', 'ObjectManager_Contents.stx'),
+  'label': 'Contents'},)                                               </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="meta_type"></a>
+<h3>meta_type</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'Object Manager'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>Object Manager<span class="variable-quote">'</span>                                                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="meta_types"></a>
+<h3>meta_types</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectIds__roles__"></a>
+<h3>objectIds__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e698&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e698&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectItems__roles__"></a>
+<h3>objectItems__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e698&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e698&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectValues__roles__"></a>
+<h3>objectValues__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e698&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e698&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="SiteRootAdd"></a>
+<h3>SiteRootAdd</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb5ce988c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb5ce988c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="SiteRootAdd__roles__"></a>
+<h3>SiteRootAdd__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb582f4d0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb582f4d0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_objects"></a>
+<h3>_objects</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:13 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

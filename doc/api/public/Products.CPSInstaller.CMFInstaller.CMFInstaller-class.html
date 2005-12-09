@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Products.CPSInstaller.CMFInstaller.CMFInstaller</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Products ::
+        Package&nbsp;CPSInstaller ::
+        Module&nbsp;CMFInstaller ::
+        Class&nbsp;CMFInstaller
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class CMFInstaller</h2>
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CPSInstaller.CPSInstaller.CPSInstaller-class.html"><code>CPSInstaller</code></a></dd></dl>
+
+<hr/>
+
+Base class for product-specific installers
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>context</span>,
+          <span class=summary-sig-arg>product_name</span>)</span></code>
+<br />
+CMFInstaller initialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addAction" class="summary-sig-name"><code>addAction</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>,
+          <span class=summary-sig-arg>properties</span>)</span></code>
+<br />
+Adds an action to an object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="addCalendarTypes"></a><span class="summary-sig"><span class="summary-sig-name">addCalendarTypes</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_ids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addPortalCatalogIndex" class="summary-sig-name"><code>addPortalCatalogIndex</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>type</span>,
+          <span class=summary-sig-arg>extra</span>,
+          <span class=summary-sig-arg>destructive</span>)</span></code>
+<br />
+Adds an index on portal_catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addPortalCatalogMetadata" class="summary-sig-name"><code>addPortalCatalogMetadata</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>default_value</span>)</span></code>
+<br />
+Adds a metadata in the portal_catalog.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#addZCTextIndexLexicon" class="summary-sig-name"><code>addZCTextIndexLexicon</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>title</span>)</span></code>
+<br />
+Add a ZCTextIndex Lexicon.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#allowContentTypes" class="summary-sig-name"><code>allowContentTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>allowed_types</span>,
+          <span class=summary-sig-arg>allowed_in</span>)</span></code>
+<br />
+Allow a list of types in a list of types</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#cleanupPortalTypes" class="summary-sig-name"><code>cleanupPortalTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>types_to_keep</span>,
+          <span class=summary-sig-arg>types_to_delete</span>)</span></code>
+<br />
+Delete unneeded portal types</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="deleteActions"></a><span class="summary-sig"><span class="summary-sig-name">deleteActions</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>deletemap</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="deleteSkins"></a><span class="summary-sig"><span class="summary-sig-name">deleteSkins</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>skinlist</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="finalize"></a><span class="summary-sig"><span class="summary-sig-name">finalize</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="flagCatalogForReindex"></a><span class="summary-sig"><span class="summary-sig-name">flagCatalogForReindex</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>indexid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="flagCatalogForReindexMetadata"></a><span class="summary-sig"><span class="summary-sig-name">flagCatalogForReindexMetadata</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>metadataid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="flagReindexSecurity"></a><span class="summary-sig"><span class="summary-sig-name">flagReindexSecurity</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="flagSkinCacheReset"></a><span class="summary-sig"><span class="summary-sig-name">flagSkinCacheReset</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="flush"></a><span class="summary-sig"><span class="summary-sig-name">flush</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#getActionIndex" class="summary-sig-name"><code>getActionIndex</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>action_id</span>,
+          <span class=summary-sig-arg>action_provider</span>)</span></code>
+<br />
+Return the action index owned by an action provider or -1 is the 
+action doesn't exist.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#getTool" class="summary-sig-name"><code>getTool</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+<br />
+Gets the tool by id</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="hasAction"></a><span class="summary-sig"><span class="summary-sig-name">hasAction</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tool</span>,
+          <span class=summary-sig-arg>actionid</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="hideActions"></a><span class="summary-sig"><span class="summary-sig-name">hideActions</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>hidemap</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="importSetupProfile"></a><span class="summary-sig"><span class="summary-sig-name">importSetupProfile</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>profile_id</span>,
+          <span class=summary-sig-arg>steps</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="isMainInstaller"></a><span class="summary-sig"><span class="summary-sig-name">isMainInstaller</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="log"></a><span class="summary-sig"><span class="summary-sig-name">log</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>message</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="logOK"></a><span class="summary-sig"><span class="summary-sig-name">logOK</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="logResult"></a><span class="summary-sig"><span class="summary-sig-name">logResult</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="portalHas"></a><span class="summary-sig"><span class="summary-sig-name">portalHas</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="reindexCatalog"></a><span class="summary-sig"><span class="summary-sig-name">reindexCatalog</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="reindexSecurity"></a><span class="summary-sig"><span class="summary-sig-name">reindexSecurity</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="removeCalendarTypes"></a><span class="summary-sig"><span class="summary-sig-name">removeCalendarTypes</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_ids</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="resetSkinCache"></a><span class="summary-sig"><span class="summary-sig-name">resetSkinCache</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#setupPortalPermissions" class="summary-sig-name"><code>setupPortalPermissions</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>permissions</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+<br />
+Sets up the permissions of an object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="setupSetupTool"></a><span class="summary-sig"><span class="summary-sig-name">setupSetupTool</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyAction"></a><span class="summary-sig"><span class="summary-sig-name">verifyAction</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tool</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyActionProvider"></a><span class="summary-sig"><span class="summary-sig-name">verifyActionProvider</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>action_provider</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyActions"></a><span class="summary-sig"><span class="summary-sig-name">verifyActions</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>actionslist</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyContentTypes" class="summary-sig-name"><code>verifyContentTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>type_dict</span>,
+          <span class=summary-sig-arg>destructive</span>)</span></code>
+<br />
+Checks the content_types...</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="verifyRoles"></a><span class="summary-sig"><span class="summary-sig-name">verifyRoles</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>roles</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifySkins" class="summary-sig-name"><code>verifySkins</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>skins</span>)</span></code>
+<br />
+Install or update skins.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyTool" class="summary-sig-name"><code>verifyTool</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>toolid</span>,
+          <span class=summary-sig-arg>product</span>,
+          <span class=summary-sig-arg>meta_type</span>,
+          <span class=summary-sig-arg>ttype</span>)</span></code>
+<br />
+Verify is there is a tool on the portal from the given product with 
+the given meta_type and the (optional) given type.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#verifyVHM" class="summary-sig-name"><code>verifyVHM</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Verify that a Virtual Host Monster exist at root of Zope.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>NoneType</code></font></td>
+<td><b><a href="Products.CPSInstaller.CMFInstaller.CMFInstaller-class.html#product_name"><code>product_name</code></a></b> = <span title="None">None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__init__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>context</span>,
+          <span class=sig-arg>product_name</span>=<span class=sig-default>None</span>)</span>
+    <br /><i>(Constructor)</i>
+  </h3>
+  <p>CMFInstaller initialization</p>
+  <p>context is used to pass the portal root.</p>
+  <p>product_name should be set as a class attribute when subclassing, 
+  but must be passed if you are not subclassing the installer.</p>
+  _v_main_installer should be se to 0 if this installer is called from 
+  another installer to prevent multiple reindexing of catalogs and 
+  similar actions that only needs to be done once.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addAction"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addAction</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>object</span>,
+          <span class=sig-arg>properties</span>)</span>
+  </h3>
+  <p>Adds an action to an object</p>
+  Fixes up some properties first.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addPortalCatalogIndex"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addPortalCatalogIndex</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>type</span>,
+          <span class=sig-arg>extra</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>destructive</span>=<span class=sig-default>False</span>)</span>
+  </h3>
+  Adds an index on portal_catalog.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addPortalCatalogMetadata"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addPortalCatalogMetadata</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>default_value</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Adds a metadata in the portal_catalog.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="addZCTextIndexLexicon"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addZCTextIndexLexicon</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>title</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Add a ZCTextIndex Lexicon.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="allowContentTypes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">allowContentTypes</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>allowed_types</span>,
+          <span class=sig-arg>allowed_in</span>)</span>
+  </h3>
+  <p>Allow a list of types in a list of types</p>
+  makes sure that the types in the list allowed_types will be allowed 
+  as content types in the types in the list allowed_in
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="cleanupPortalTypes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">cleanupPortalTypes</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>types_to_keep</span>=<span class=sig-default>[]</span>,
+          <span class=sig-arg>types_to_delete</span>=<span class=sig-default>[]</span>)</span>
+  </h3>
+  Delete unneeded portal types
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getActionIndex"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getActionIndex</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>action_id</span>,
+          <span class=sig-arg>action_provider</span>)</span>
+  </h3>
+  Return the action index owned by an action provider or -1 is the 
+  action doesn't exist.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getTool"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getTool</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>default</span>=<span class=sig-default>[]</span>)</span>
+  </h3>
+  <p>Gets the tool by id</p>
+  If No default is given, it will raise an error.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setupPortalPermissions"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setupPortalPermissions</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>permissions</span>,
+          <span class=sig-arg>object</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Sets up the permissions of an object</p>
+  <p>Uses the portal object if no other object is given.</p>
+  permissions is a dict: {'permission': ['list', 'of', 'roles'],}
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyContentTypes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyContentTypes</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>type_dict</span>,
+          <span class=sig-arg>destructive</span>=<span class=sig-default>0</span>)</span>
+  </h3>
+<pre class="literalblock">
+Checks the content_types
+
+type_dict is:
+{'typeid': {'allowed_content_types': ('type1', 'type2'),
+            'typeinfo_name': 'Product: Typename',
+            'add_meta_type': 'Factory-based Type Information',
+           }
+}
+</pre>
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifySkins"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifySkins</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>skins</span>)</span>
+  </h3>
+  <p>Install or update skins.</p>
+  &lt;skins&gt; parameter is a dictionary of {&lt;skin_name&gt;: 
+  &lt;skin_path&gt;),}
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyTool"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyTool</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>toolid</span>,
+          <span class=sig-arg>product</span>,
+          <span class=sig-arg>meta_type</span>,
+          <span class=sig-arg>ttype</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Verify is there is a tool on the portal from the given product with 
+  the given meta_type and the (optional) given type.</p>
+  If there isn't any such tool, it creates one, in place of another 
+  tool if needed.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="verifyVHM"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">verifyVHM</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  <p>Verify that a Virtual Host Monster exist at root of Zope.</p>
+  That's not necessary, but admin friendly.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="product_name"></a>
+<h3>product_name</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>NoneType</code>
+
+      </dd>
+<span title="None">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:11 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

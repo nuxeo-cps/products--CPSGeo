@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>OFS.PropertyManager.PropertyManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;OFS ::
+        Module&nbsp;PropertyManager ::
+        Class&nbsp;PropertyManager
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/OFS.PropertyManager.PropertyManager-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="OFS.PropertyManager.PropertyManager-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type PropertyManager</h2>
+
+<pre class="base-tree">
+           <a href="__builtin__.object-class.html"><code>object</code></a> --+    
+                    |    
+                 <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+
+                        |
+         <a href="OFS.ZDOM.Node-class.html"><code>Node</code></a> --+       |
+                |       |
+          <a href="OFS.ZDOM.Element-class.html"><code>Element</code></a> --+   |
+                    |   |
+<a href="OFS.ZDOM.ElementWithAttributes-class.html"><code>ElementWithAttributes</code></a> --+
+                        |
+                       <b>PropertyManager</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CMFDefault.DublinCore.DefaultDublinCoreImpl-class.html"><code>DefaultDublinCoreImpl</code></a>,
+    <a href="OFS.Folder.Folder-class.html"><code>Folder</code></a>,
+    <a href="Products.CMFCore.utils.SimpleItemWithProperties-class.html"><code>SimpleItemWithProperties</code></a></dd></dl>
+
+<hr/>
+
+<p>The PropertyManager mixin class provides an object with transparent 
+property management. An object which wants to have properties should 
+inherit from PropertyManager.</p>
+An object may specify that it has one or more predefined properties, 
+by specifying an _properties structure in its class:
+<pre class="literalblock">
+ _properties=({'id':'title', 'type': 'string', 'mode': 'w'},
+              {'id':'color', 'type': 'string', 'mode': 'w'},
+              )
+</pre>
+<p>The _properties structure is a sequence of dictionaries, where each 
+dictionary represents a predefined property. Note that if a predefined 
+property is defined in the _properties structure, you must provide an 
+attribute with that name in your class or instance that contains the 
+default value of the predefined property.</p>
+<p>Each entry in the _properties structure must have at least an 'id' and 
+a 'type' key. The 'id' key contains the name of the property, and the 
+'type' key contains a string representing the object's type. The 'type' 
+string must be one of the values: 'float', 'int', 'long', 'string', 
+'lines', 'text', 'date', 'tokens', 'selection', or 'multiple 
+section'.</p>
+<p>For 'selection' and 'multiple selection' properties, there is an 
+addition item in the property dictionay, 'select_variable' which provides 
+the name of a property or method which returns a list of strings from 
+which the selection(s) can be chosen.</p>
+<p>Each entry in the _properties structure may *optionally* provide a 
+'mode' key, which specifies the mutability of the property. The 'mode' 
+string, if present, must contain 0 or more characters from the set 
+'w','d'.</p>
+<p>A 'w' present in the mode string indicates that the value of the 
+property may be changed by the user. A 'd' indicates that the user can 
+delete the property. An empty mode string indicates that the property and 
+its value may be shown in property listings, but that it is read-only and 
+may not be deleted.</p>
+<p>Entries in the _properties structure which do not have a 'mode' key 
+are assumed to have the mode 'wd' (writeable and deleteable).</p>
+To fully support property management, including the system-provided 
+tabs and user interfaces for working with properties, an object which 
+inherits from PropertyManager should include the following entry in its 
+manage_options structure:
+<pre class="literalblock">
+ {'label':'Properties', 'action':'manage_propertiesForm',}
+</pre>
+to ensure that a 'Properties' tab is displayed in its management 
+interface. Objects that inherit from PropertyManager should also include 
+the following entry in its __ac_permissions__ structure:
+<pre class="literalblock">
+ ('Manage properties', ('manage_addProperty',
+                        'manage_editProperties',
+                        'manage_delProperties',
+                        'manage_changeProperties',)),
+</pre>
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#getProperty" class="summary-sig-name"><code>getProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>d</span>)</span></code>
+<br />
+Get the property 'id'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#getPropertyType" class="summary-sig-name"><code>getPropertyType</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Get the type of property 'id'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#hasProperty" class="summary-sig-name"><code>hasProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Return true if object has a property 'id'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_addProperty" class="summary-sig-name"><code>manage_addProperty</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>,
+          <span class=summary-sig-arg>type</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Add a new property via the web.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changeProperties" class="summary-sig-name"><code>manage_changeProperties</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+<br />
+Change existing object properties.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changePropertyTypes" class="summary-sig-name"><code>manage_changePropertyTypes</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>old_ids</span>,
+          <span class=summary-sig-arg>props</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Replace one set of properties with another</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_delProperties" class="summary-sig-name"><code>manage_delProperties</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Delete one or more properties specified by 'ids'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#manage_editProperties" class="summary-sig-name"><code>manage_editProperties</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Edit object properties via the web.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="propdict"></a><span class="summary-sig"><span class="summary-sig-name">propdict</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyIds" class="summary-sig-name"><code>propertyIds</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a list of property ids.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyItems" class="summary-sig-name"><code>propertyItems</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a list of (id,property) tuples.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyLabel" class="summary-sig-name"><code>propertyLabel</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Return a label for the given property id</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyMap" class="summary-sig-name"><code>propertyMap</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a tuple of mappings, giving meta-data for properties.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.PropertyManager.PropertyManager-class.html#propertyValues" class="summary-sig-name"><code>propertyValues</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a list of actual property objects.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="valid_property_id"></a><span class="summary-sig"><span class="summary-sig-name">valid_property_id</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_delProperty"></a><span class="summary-sig"><span class="summary-sig-name">_delProperty</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_delPropValue"></a><span class="summary-sig"><span class="summary-sig-name">_delPropValue</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_propertyMap" class="summary-sig-name"><code>_propertyMap</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a tuple of mappings, giving meta-data for properties.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_setProperty"></a><span class="summary-sig"><span class="summary-sig-name">_setProperty</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>,
+          <span class=summary-sig-arg>type</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_setPropValue"></a><span class="summary-sig"><span class="summary-sig-name">_setPropValue</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_updateProperty"></a><span class="summary-sig"><span class="summary-sig-name">_updateProperty</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="_wrapperCheck"></a><span class="summary-sig"><span class="summary-sig-name">_wrapperCheck</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>object</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from ElementWithAttributes</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttribute" class="summary-sig-name"><code>getAttribute</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an attribute value by name.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttributeNode" class="summary-sig-name"><code>getAttributeNode</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an Attr node by name or None if there is no such 
+attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttributes" class="summary-sig-name"><code>getAttributes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NamedNodeMap containing the attributes of this node (if it 
+is an element) or None otherwise.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Element</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getChildNodes" class="summary-sig-name"><code>getChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NodeList that contains all children of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getElementsByTagName" class="summary-sig-name"><code>getElementsByTagName</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tagname</span>)</span></code>
+<br />
+Returns a NodeList of all the Elements with a given tag name in the 
+order in which they would be encountered in a preorder traversal of the 
+Document tree.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getFirstChild" class="summary-sig-name"><code>getFirstChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The first child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getLastChild" class="summary-sig-name"><code>getLastChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The last child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNextSibling" class="summary-sig-name"><code>getNextSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeName" class="summary-sig-name"><code>getNodeName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeType" class="summary-sig-name"><code>getNodeType</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+A code representing the type of the node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getParentNode" class="summary-sig-name"><code>getParentNode</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The parent of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getPreviousSibling" class="summary-sig-name"><code>getPreviousSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getTagName" class="summary-sig-name"><code>getTagName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of the element</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getNodeValue" class="summary-sig-name"><code>getNodeValue</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The value of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getOwnerDocument" class="summary-sig-name"><code>getOwnerDocument</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The Document object associated with this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#hasChildNodes" class="summary-sig-name"><code>hasChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns true if the node has any children, false if it doesn't.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Manage properties', ('manage_addProperty', 'manage_editProperties', 'manage_delProperties', 'manage_changeProperties', 'manage_propertiesForm', 'manage_propertyTypeForm', 'manage_changePropertyTypes')), ('Access contents information', ('hasProperty', 'propertyIds', 'propertyValues', 'propertyItems', 'getProperty', 'getPropertyType', 'propertyMap', ''), ('Anonymous', 'Manager')))"><code>(('Manage&nbsp;properties',&nbsp;('manage_add<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy OFS.PropertyManager.PropertyManager&gt;"><code>&lt;implementedBy&nbsp;OFS.PropertyManager.Pro<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__propsets__"><code>__propsets__</code></a></b> = <span title="()"><code>()                                        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76568cc&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#__roles__"><code>__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e710&gt;        </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#getProperty__roles__"><code>getProperty__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#getPropertyType__roles__"><code>getPropertyType__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#hasProperty__roles__"><code>hasProperty__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_addProperty__roles__"><code>manage_addProperty__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changeProperties__roles__"><code>manage_changeProperties__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_changePropertyTypes__roles__"><code>manage_changePropertyTypes__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_delProperties__roles__"><code>manage_delProperties__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_editProperties__roles__"><code>manage_editProperties__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_propertiesForm', 'help': ('OFSP', 'Properties.stx'), 'label': 'Properties'},)"><code>({'action':&nbsp;'manage_propertiesForm',&nbsp;'h<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertiesForm"><code>manage_propertiesForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb77a552c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertiesForm__roles__"><code>manage_propertiesForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertyTypeForm"><code>manage_propertyTypeForm</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb780cf0c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;obj<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#manage_propertyTypeForm__roles__"><code>manage_propertyTypeForm__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e548&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyIds__roles__"><code>propertyIds__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyItems__roles__"><code>propertyItems__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb78<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyMap__roles__"><code>propertyMap__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb784e<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>vps</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertysheets"><code>propertysheets</code></a></b> = <span title="&lt;OFS.PropertySheets.vps object at 0xb77a9c6c&gt;"><code>&lt;OFS.PropertySheets.vps&nbsp;object&nbsp;at&nbsp;0xb77<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#propertyValues__roles__"><code>propertyValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb784e710&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="OFS.PropertyManager.PropertyManager-class.html#title"><code>title</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                               </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_properties"><code>_properties</code></a></b> = <span title="({'type': 'string', 'id': 'title', 'mode': 'wd'},)"><code>({'type':&nbsp;'string',&nbsp;'id':&nbsp;'title',&nbsp;'mode':<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="../private/OFS.PropertyManager.PropertyManager-class.html#_reserved_names"><code>_reserved_names</code></a></b> = <span title="()"><code>()                                     </code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.ZDOM.Node-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76ae6ac&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="getProperty"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getProperty</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>d</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Get the property 'id'.</p>
+  Returns the optional second argument or None if no such property is 
+  found.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getPropertyType"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getPropertyType</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>)</span>
+  </h3>
+  <p>Get the type of property 'id'.</p>
+  Returns None if no such property exists.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="hasProperty"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">hasProperty</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>)</span>
+  </h3>
+  Return true if object has a property 'id'.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_addProperty"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_addProperty</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>value</span>,
+          <span class=sig-arg>type</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Add a new property via the web.</p>
+  Sets a new property with the given id, type, and value.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_changeProperties"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_changeProperties</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>,
+          <span class="sig-kwarg">**kw</span>)</span>
+  </h3>
+  <p>Change existing object properties.</p>
+  Change object properties by passing either a mapping object of 
+  name:value pairs {'foo':6} or passing name=value parameters
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_changePropertyTypes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_changePropertyTypes</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>old_ids</span>,
+          <span class=sig-arg>props</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  <p>Replace one set of properties with another</p>
+  Delete all properties that have ids in old_ids, then add a property 
+  for each item in props. Each item has a new_id, new_value, and 
+  new_type. The type of new_value should match new_type.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_delProperties"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_delProperties</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Delete one or more properties specified by 'ids'.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_editProperties"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_editProperties</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>)</span>
+  </h3>
+  <p>Edit object properties via the web.</p>
+  The purpose of this method is to change all property values, even 
+  those not listed in REQUEST; otherwise checkboxes that get turned off 
+  will be ignored. Use manage_changeProperties() instead for most 
+  situations.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="propertyIds"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">propertyIds</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return a list of property ids.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="propertyItems"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">propertyItems</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return a list of (id,property) tuples.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="propertyLabel"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">propertyLabel</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>)</span>
+  </h3>
+  Return a label for the given property id
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="propertyMap"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">propertyMap</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  <p>Return a tuple of mappings, giving meta-data for properties.</p>
+  Return copies of the real definitions for security.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="propertyValues"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">propertyValues</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return a list of actual property objects.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_propertyMap"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_propertyMap</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return a tuple of mappings, giving meta-data for properties.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Manage properties', ('manage_addProperty', 'manage_editProperties', 'manage_delProperties', 'manage_changeProperties', 'manage_propertiesForm', 'manage_propertyTypeForm', 'manage_changePropertyTypes')), ('Access contents information', ('hasProperty', 'propertyIds', 'propertyValues', 'propertyItems', 'getProperty', 'getPropertyType', 'propertyMap', ''), ('Anonymous', 'Manager')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Manage properties',
+  ('manage_addProperty',
+   'manage_editProperties',
+   'manage_delProperties',
+   'manage_changeProperties',
+   'manage_propertiesForm',
+   'manage_propertyTypeForm',
+   'manage_changePropertyTypes')),
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy OFS.PropertyManager.PropertyManager&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy OFS.PropertyManager.PropertyManager&gt;                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__propsets__"></a>
+<h3>__propsets__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76568cc&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb76568cc&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__roles__"></a>
+<h3>__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getProperty__roles__"></a>
+<h3>getProperty__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getPropertyType__roles__"></a>
+<h3>getPropertyType__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="hasProperty__roles__"></a>
+<h3>hasProperty__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_addProperty__roles__"></a>
+<h3>manage_addProperty__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_changeProperties__roles__"></a>
+<h3>manage_changeProperties__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_changePropertyTypes__roles__"></a>
+<h3>manage_changePropertyTypes__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_delProperties__roles__"></a>
+<h3>manage_delProperties__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_editProperties__roles__"></a>
+<h3>manage_editProperties__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_propertiesForm', 'help': ('OFSP', 'Properties.stx'), 'label': 'Properties'},)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_propertiesForm',
+  'help': ('OFSP', 'Properties.stx'),
+  'label': 'Properties'},)                                             </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_propertiesForm"></a>
+<h3>manage_propertiesForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb77a552c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb77a552c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_propertiesForm__roles__"></a>
+<h3>manage_propertiesForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_propertyTypeForm"></a>
+<h3>manage_propertyTypeForm</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb780cf0c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb780cf0c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_propertyTypeForm__roles__"></a>
+<h3>manage_propertyTypeForm__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e548&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e548&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="propertyIds__roles__"></a>
+<h3>propertyIds__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="propertyItems__roles__"></a>
+<h3>propertyItems__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="propertyMap__roles__"></a>
+<h3>propertyMap__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="propertysheets"></a>
+<h3>propertysheets</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>vps</code>
+
+      </dd>
+<span title="&lt;OFS.PropertySheets.vps object at 0xb77a9c6c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;OFS.PropertySheets.vps object at 0xb77a9c6c&gt;                          </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="propertyValues__roles__"></a>
+<h3>propertyValues__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb784e710&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb784e710&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="title"></a>
+<h3>title</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_properties"></a>
+<h3>_properties</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'type': 'string', 'id': 'title', 'mode': 'wd'},)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'type': 'string', 'id': 'title', 'mode': 'wd'},)                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_reserved_names"></a>
+<h3>_reserved_names</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="()">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+()                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:10 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

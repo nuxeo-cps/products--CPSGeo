@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>OFS.ZDOM.ElementWithAttributes</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;OFS ::
+        Module&nbsp;ZDOM ::
+        Class&nbsp;ElementWithAttributes
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/OFS.ZDOM.ElementWithAttributes-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="OFS.ZDOM.ElementWithAttributes-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class ElementWithAttributes</h2>
+
+<pre class="base-tree">
+<a href="OFS.ZDOM.Node-class.html"><code>Node</code></a> --+    
+       |    
+ <a href="OFS.ZDOM.Element-class.html"><code>Element</code></a> --+
+           |
+          <b>ElementWithAttributes</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="OFS.PropertyManager.PropertyManager-class.html"><code>PropertyManager</code></a></dd></dl>
+
+<hr/>
+
+<p>Elements that allow DOM access to Zope properties of type 
+'string'.</p>
+Note: This sub-class should only be used by PropertyManagers
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttribute" class="summary-sig-name"><code>getAttribute</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an attribute value by name.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttributeNode" class="summary-sig-name"><code>getAttributeNode</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+<br />
+Retrieves an Attr node by name or None if there is no such 
+attribute.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.ElementWithAttributes-class.html#getAttributes" class="summary-sig-name"><code>getAttributes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NamedNodeMap containing the attributes of this node (if it 
+is an element) or None otherwise.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Element</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getChildNodes" class="summary-sig-name"><code>getChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns a NodeList that contains all children of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getElementsByTagName" class="summary-sig-name"><code>getElementsByTagName</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>tagname</span>)</span></code>
+<br />
+Returns a NodeList of all the Elements with a given tag name in the 
+order in which they would be encountered in a preorder traversal of the 
+Document tree.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getFirstChild" class="summary-sig-name"><code>getFirstChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The first child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getLastChild" class="summary-sig-name"><code>getLastChild</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The last child of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNextSibling" class="summary-sig-name"><code>getNextSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeName" class="summary-sig-name"><code>getNodeName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getNodeType" class="summary-sig-name"><code>getNodeType</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+A code representing the type of the node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getParentNode" class="summary-sig-name"><code>getParentNode</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The parent of this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getPreviousSibling" class="summary-sig-name"><code>getPreviousSibling</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The node immediately preceding this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Element-class.html#getTagName" class="summary-sig-name"><code>getTagName</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The name of the element</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getNodeValue" class="summary-sig-name"><code>getNodeValue</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The value of this node, depending on its type</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#getOwnerDocument" class="summary-sig-name"><code>getOwnerDocument</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+The Document object associated with this node.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.ZDOM.Node-class.html#hasChildNodes" class="summary-sig-name"><code>hasChildNodes</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns true if the node has any children, false if it doesn't.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="OFS.ZDOM.ElementWithAttributes-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy OFS.ZDOM.ElementWithAttributes&gt;"><code>&lt;implementedBy&nbsp;OFS.ZDOM.ElementWithAtt<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.ZDOM.ElementWithAttributes-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb765664c&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Element</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.ZDOM.Element-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Access contents information', ('getTagName', 'getAttribute', 'getAttributeNode', 'getElementsByTagName')),)"><code>(('Access&nbsp;contents&nbsp;information',&nbsp;('<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Node</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.ZDOM.Node-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb76ae6ac&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="getAttribute"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getAttribute</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>name</span>)</span>
+  </h3>
+  Retrieves an attribute value by name.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="OFS.ZDOM.Element-class.html#getAttribute"><code>OFS.ZDOM.Element.getAttribute</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getAttributeNode"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getAttributeNode</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>name</span>)</span>
+  </h3>
+  Retrieves an Attr node by name or None if there is no such 
+  attribute.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="OFS.ZDOM.Element-class.html#getAttributeNode"><code>OFS.ZDOM.Element.getAttributeNode</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getAttributes"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getAttributes</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns a NamedNodeMap containing the attributes of this node (if it 
+  is an element) or None otherwise.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="OFS.ZDOM.Node-class.html#getAttributes"><code>OFS.ZDOM.Node.getAttributes</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy OFS.ZDOM.ElementWithAttributes&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy OFS.ZDOM.ElementWithAttributes&gt;                         </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb765664c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb765664c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:19 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

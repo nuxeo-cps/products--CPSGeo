@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;Products ::
+        Package&nbsp;BTreeFolder2 ::
+        Module&nbsp;BTreeFolder2 ::
+        Class&nbsp;BTreeFolder2Base
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type BTreeFolder2Base</h2>
+
+<pre class="base-tree">
+<a href="__builtin__.object-class.html"><code>object</code></a> --+        
+         |        
+      <a href="ExtensionClass.Base-class.html"><code>Base</code></a> --+    
+             |    
+<a href="__builtin__.object-class.html"><code>object</code></a> --+   |    
+         |   |    
+<a href="persistent.Persistent-class.html"><code>Persistent</code></a> --+    
+             |    
+    <a href="Persistence.Persistent-class.html"><code>Persistent</code></a> --+
+                 |
+                <b>BTreeFolder2Base</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CMFCore.CMFBTreeFolder.CMFBTreeFolder-class.html"><code>CMFBTreeFolder</code></a></dd></dl>
+
+<hr/>
+
+Base for BTree-based folders.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__init__"></a><span class="summary-sig"><span class="summary-sig-name">__init__</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__getattr__"></a><span class="summary-sig"><span class="summary-sig-name">__getattr__</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectCount" class="summary-sig-name"><code>__len__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the number of items in the folder.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#generateId" class="summary-sig-name"><code>generateId</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>prefix</span>,
+          <span class=summary-sig-arg>suffix</span>,
+          <span class=summary-sig-arg>rand_ceiling</span>)</span></code>
+<br />
+Returns an ID not used yet by this folder.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="get"></a><span class="summary-sig"><span class="summary-sig-name">get</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>default</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#getBatchObjectListing" class="summary-sig-name"><code>getBatchObjectListing</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Return a structure for a page template to show the list of 
+objects.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#has_key" class="summary-sig-name"><code>has_key</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Indicates whether the folder has an item by ID.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#has_key" class="summary-sig-name"><code>hasObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Indicates whether the folder has an item by ID.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectItems"></a><span class="summary-sig"><span class="summary-sig-name">items</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectIds"></a><span class="summary-sig"><span class="summary-sig-name">keys</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_cleanup" class="summary-sig-name"><code>manage_cleanup</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Calls self._cleanup() and reports the result as text.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_fixCount" class="summary-sig-name"><code>manage_fixCount</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Calls self._fixCount() and reports the result as text.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_object_workspace" class="summary-sig-name"><code>manage_object_workspace</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Redirects to the workspace of the first object in the list.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectCount" class="summary-sig-name"><code>objectCount</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Returns the number of items in the folder.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectIds"></a><span class="summary-sig"><span class="summary-sig-name">objectIds</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectIds_d"></a><span class="summary-sig"><span class="summary-sig-name">objectIds_d</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectItems"></a><span class="summary-sig"><span class="summary-sig-name">objectItems</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectMap"></a><span class="summary-sig"><span class="summary-sig-name">objectMap</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectMap_d"></a><span class="summary-sig"><span class="summary-sig-name">objectMap_d</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>t</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectValues"></a><span class="summary-sig"><span class="summary-sig-name">objectValues</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#tpValues" class="summary-sig-name"><code>tpValues</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Ensures the items don't show up in the left pane.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="objectValues"></a><span class="summary-sig"><span class="summary-sig-name">values</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>spec</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#default__class_init__" class="summary-sig-name"><code>__class_init__</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#bobobase_modification_time" class="summary-sig-name"><code>bobobase_modification_time</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#locked_in_version" class="summary-sig-name"><code>locked_in_version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Was the object modified in any version?</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="Persistence.Persistent-class.html#modified_in_version" class="summary-sig-name"><code>modified_in_version</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Was the object modified in this version?</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Persistent</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from Base</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ExtensionClass.Base-class.html#__getnewargs__" class="summary-sig-name"><code>__getnewargs__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get arguments to be passed to __new__</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Access contents information', ('objectValues', 'objectMap', 'objectIds_d', 'objectMap_d', 'objectItems', 'generateId', 'get', 'objectIds', 'objectCount', 'has_key', 'tpValues')), ('View management screens', ('getBatchObjectListing', 'manage_main', 'manage_cleanup', 'manage_object_workspace', 'manage_fixCount')))"><code>(('Access&nbsp;contents&nbsp;information',&nbsp;('<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base&gt;"><code>&lt;implementedBy&nbsp;Products.BTreeFolder2.B<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb6be67ac&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb6be67ac&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#generateId__roles__"><code>generateId__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#get__roles__"><code>get__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b068&gt;     </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#getBatchObjectListing__roles__"><code>getBatchObjectListing__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b080&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#has_key__roles__"><code>has_key__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b068&gt; </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_cleanup__roles__"><code>manage_cleanup__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b080&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb7<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_fixCount__roles__"><code>manage_fixCount__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b080&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>DTMLFile</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_main"><code>manage_main</code></a></b> = <span title="&lt;App.special_dtml.DTMLFile object at 0xb75fdd4c&gt;"><code>&lt;App.special_dtml.DTMLFile&nbsp;object&nbsp;at&nbsp;0xb75<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_main__roles__"><code>manage_main__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b080&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_object_workspace__roles__"><code>manage_object_workspace__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b080&gt;"><code>&lt;PermissionRole&nbsp;objec<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_main', 'label': 'Contents'}, {'action': '', 'help': ('OFSP', 'Folder_View.stx'), 'label': 'View'}, {'action': 'manage_propertiesForm', 'help': ('OFSP', 'Properties.stx'), 'label': 'Properties'}, {'action': 'manage_access', 'filter': &lt;function _isNotBeingUsedAsAMethod at 0xb78811ec&gt;, 'help': ('OFSP', 'Security.stx'), 'label': 'Security'}, {'action': 'manage_access', 'filter': &lt;function _isBeingUsedAsAMethod at 0xb7878764&gt;, 'help': ('OFSP', 'Security_Define-Permissions.stx'), 'label': 'Define Permissions'}, {'action': 'manage_UndoForm', 'help': ('OFSP', 'Undo.stx'), 'label..."><code>({'action':&nbsp;'manage_main',&nbsp;'label':&nbsp;'Co<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectCount__roles__"><code>objectCount__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectIds__roles__"><code>objectIds__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b06<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectIds_d__roles__"><code>objectIds_d__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectItems__roles__"><code>objectItems__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectMap__roles__"><code>objectMap__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b06<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectMap_d__roles__"><code>objectMap_d__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#objectValues__roles__"><code>objectValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#title"><code>title</code></a></b> = <span title="''"><code><span class="variable-quote">'</span><span class="variable-quote">'</span>                                               </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base-class.html#tpValues__roles__"><code>tpValues__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b068&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760b068<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="objectCount"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__len__</span>(<span class=sig-arg>self</span>)</span>
+    <br /><i>(Length operator)</i>
+  </h3>
+  Returns the number of items in the folder.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="generateId"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">generateId</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>prefix</span>=<span class=sig-default>'item'</span>,
+          <span class=sig-arg>suffix</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>rand_ceiling</span>=<span class=sig-default>999999999</span>)</span>
+  </h3>
+  <p>Returns an ID not used yet by this folder.</p>
+  The ID is unlikely to collide with other threads and clients. The 
+  IDs are sequential to optimize access to objects that are likely to 
+  have some relation.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getBatchObjectListing"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getBatchObjectListing</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Return a structure for a page template to show the list of 
+  objects.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="has_key"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">has_key</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>)</span>
+  </h3>
+  Indicates whether the folder has an item by ID.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="has_key"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">hasObject</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>)</span>
+  </h3>
+  Indicates whether the folder has an item by ID.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_cleanup"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_cleanup</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Calls self._cleanup() and reports the result as text.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_fixCount"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_fixCount</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Calls self._fixCount() and reports the result as text.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_object_workspace"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_object_workspace</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>()</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Redirects to the workspace of the first object in the list.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="objectCount"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">objectCount</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Returns the number of items in the folder.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="tpValues"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">tpValues</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Ensures the items don't show up in the left pane.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Access contents information', ('objectValues', 'objectMap', 'objectIds_d', 'objectMap_d', 'objectItems', 'generateId', 'get', 'objectIds', 'objectCount', 'has_key', 'tpValues')), ('View management screens', ('getBatchObjectListing', 'manage_main', 'manage_cleanup', 'manage_object_workspace', 'manage_fixCount')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Access contents information',
+  ('objectValues',
+   'objectMap',
+   'objectIds_d',
+   'objectMap_d',
+   'objectItems',
+   'generateId',
+   'get',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy Products.BTreeFolder2.BTreeFolder2.BTreeFolder2Base&gt;    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__providedBy__"></a>
+<h3>__providedBy__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb6be67ac&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb6be67ac&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb6be67ac&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb6be67ac&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="generateId__roles__"></a>
+<h3>generateId__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="get__roles__"></a>
+<h3>get__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getBatchObjectListing__roles__"></a>
+<h3>getBatchObjectListing__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b080&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b080&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="has_key__roles__"></a>
+<h3>has_key__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_cleanup__roles__"></a>
+<h3>manage_cleanup__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b080&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b080&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_fixCount__roles__"></a>
+<h3>manage_fixCount__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b080&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b080&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_main"></a>
+<h3>manage_main</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>DTMLFile</code>
+
+      </dd>
+<span title="&lt;App.special_dtml.DTMLFile object at 0xb75fdd4c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;App.special_dtml.DTMLFile object at 0xb75fdd4c&gt;                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_main__roles__"></a>
+<h3>manage_main__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b080&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b080&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_object_workspace__roles__"></a>
+<h3>manage_object_workspace__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b080&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b080&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_main', 'label': 'Contents'}, {'action': '', 'help': ('OFSP', 'Folder_View.stx'), 'label': 'View'}, {'action': 'manage_propertiesForm', 'help': ('OFSP', 'Properties.stx'), 'label': 'Properties'}, {'action': 'manage_access', 'filter': &lt;function _isNotBeingUsedAsAMethod at 0xb78811ec&gt;, 'help': ('OFSP', 'Security.stx'), 'label': 'Security'}, {'action': 'manage_access', 'filter': &lt;function _isBeingUsedAsAMethod at 0xb7878764&gt;, 'help': ('OFSP', 'Security_Define-Permissions.stx'), 'label': 'Define Permissions'}, {'action': 'manage_UndoForm', 'help': ('OFSP', 'Undo.stx'), 'label...">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_main', 'label': 'Contents'},
+ {'action': '', 'help': ('OFSP', 'Folder_View.stx'), 'label': 'View'},
+ {'action': 'manage_propertiesForm',
+  'help': ('OFSP', 'Properties.stx'),
+  'label': 'Properties'},
+ {'action': 'manage_access',
+  'filter': &lt;function _isNotBeingUsedAsAMethod at 0xb78811ec&gt;,
+  'help': ('OFSP', 'Security.stx'),
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectCount__roles__"></a>
+<h3>objectCount__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectIds__roles__"></a>
+<h3>objectIds__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectIds_d__roles__"></a>
+<h3>objectIds_d__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectItems__roles__"></a>
+<h3>objectItems__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectMap__roles__"></a>
+<h3>objectMap__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectMap_d__roles__"></a>
+<h3>objectMap_d__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="objectValues__roles__"></a>
+<h3>objectValues__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="title"></a>
+<h3>title</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="''">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span><span class="variable-quote">'</span>                                                                     </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="tpValues__roles__"></a>
+<h3>tpValues__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b068&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b068&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:19 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

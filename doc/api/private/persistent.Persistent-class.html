@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>persistent.Persistent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;persistent ::
+        Class&nbsp;Persistent
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/persistent.Persistent-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="persistent.Persistent-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Type Persistent</h2>
+
+<pre class="base-tree">
+<a href="__builtin__.object-class.html"><code>object</code></a> --+
+         |
+        <b>Persistent</b>
+</pre><br />
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Persistence.Persistent-class.html"><code>Persistent</code></a></dd></dl>
+
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__delattr__" class="summary-sig-name"><code>__delattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__delattr__('name') &lt;==&gt; del x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__getattribute__" class="summary-sig-name"><code>__getattribute__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__getattribute__('name') &lt;==&gt; x.name</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__getstate__" class="summary-sig-name"><code>__getstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Get the object serialization state</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__new__" class="summary-sig-name"><code>__new__</code></a>(<span class=summary-sig-arg>T</span>,
+          <span class=summary-sig-arg>S</span>,
+          <span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+T.__new__(S, ...) -&gt; a new object with type S, a subtype of T</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__reduce__" class="summary-sig-name"><code>__reduce__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Reduce an object to contituent parts for serialization</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setattr__" class="summary-sig-name"><code>__setattr__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__setattr__('name', value) &lt;==&gt; x.name = value</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="persistent.Persistent-class.html#__setstate__" class="summary-sig-name"><code>__setstate__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_activate" class="summary-sig-name"><code>_p_activate</code></a>()</span></code>
+<br />
+_p_activate() -- Activate the object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_deactivate" class="summary-sig-name"><code>_p_deactivate</code></a>()</span></code>
+<br />
+_p_deactivate() -- Deactivate the object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_delattr" class="summary-sig-name"><code>_p_delattr</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+This method should be called by subclass __delattr__ implementations 
+before doing anything else.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_getattr" class="summary-sig-name"><code>_p_getattr</code></a>(<span class=summary-sig-arg>name</span>)</span></code>
+<br />
+The method unghostifies the object, if necessary.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_invalidate" class="summary-sig-name"><code>_p_invalidate</code></a>()</span></code>
+<br />
+_p_invalidate() -- Invalidate the object</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="../private/persistent.Persistent-class.html#_p_setattr" class="summary-sig-name"><code>_p_setattr</code></a>(<span class=summary-sig-arg>name</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+<br />
+This method should be called by subclass __setattr__ implementations 
+before doing anything else.</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from object</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__init__" class="summary-sig-name"><code>__init__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+x.__init__(...) initializes x; see x.__class__.__doc__ for 
+signature</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__hash__" class="summary-sig-name"><code>__hash__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__hash__() &lt;==&gt; hash(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__reduce_ex__" class="summary-sig-name"><code>__reduce_ex__</code></a>(<span class="summary-sig-vararg">...</span>)</span></code>
+<br />
+helper for pickle</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__repr__" class="summary-sig-name"><code>__repr__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__repr__() &lt;==&gt; repr(x)</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="__builtin__.object-class.html#__str__" class="summary-sig-name"><code>__str__</code></a>(<span class=summary-sig-arg>x</span>)</span></code>
+<br />
+x.__str__() &lt;==&gt; str(x)</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_changed"><code>_p_changed</code></a></b> = <span title="&lt;attribute '_p_changed' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_changed'&nbsp;of&nbsp;'persistent.Pers<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_jar"><code>_p_jar</code></a></b> = <span title="&lt;attribute '_p_jar' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_jar'&nbsp;of&nbsp;'persistent.Persistent'&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_mtime"><code>_p_mtime</code></a></b> = <span title="&lt;attribute '_p_mtime' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_mtime'&nbsp;of&nbsp;'persistent.Persiste<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_oid"><code>_p_oid</code></a></b> = <span title="&lt;attribute '_p_oid' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_oid'&nbsp;of&nbsp;'persistent.Persistent'&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_serial"><code>_p_serial</code></a></b> = <span title="&lt;attribute '_p_serial' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_serial'&nbsp;of&nbsp;'persistent.Persis<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>getset_descriptor</code></font></td>
+<td><b><a href="../private/persistent.Persistent-class.html#_p_state"><code>_p_state</code></a></b> = <span title="&lt;attribute '_p_state' of 'persistent.Persistent' objects&gt;"><code>&lt;attribute&nbsp;'_p_state'&nbsp;of&nbsp;'persistent.Persiste<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="__delattr__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__delattr__</span>(<span class="sig-vararg">...</span>)</span>
+  </h3>
+  x.__delattr__('name') &lt;==&gt; del x.name
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__delattr__"><code>__builtin__.object.__delattr__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__getattribute__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__getattribute__</span>(<span class="sig-vararg">...</span>)</span>
+  </h3>
+  x.__getattribute__('name') &lt;==&gt; x.name
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__getattribute__"><code>__builtin__.object.__getattribute__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__getstate__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__getstate__</span>(<span class="sig-vararg">...</span>)</span>
+  </h3>
+  <p>Get the object serialization state</p>
+  <p>If the object has no assigned slots and has no instance dictionary, 
+  then None is returned.</p>
+  <p>If the object has no assigned slots and has an instance dictionary, 
+  then the a copy of the instance dictionary is returned. The copy has 
+  any items with names starting with '_v_' or '_p_' ommitted.</p>
+  If the object has assigned slots, then a two-element tuple is 
+  returned. The first element is either None or a copy of the instance 
+  dictionary, as described above. The second element is a dictionary with 
+  items for each of the assigned slots.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__new__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__new__</span>(<span class=sig-arg>T</span>,
+          <span class=sig-arg>S</span>,
+          <span class="sig-vararg">...</span>)</span>
+  </h3>
+  T.__new__(S, ...) -&gt; a new object with type S, a subtype of T
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+<pre class="literalblock">
+a new object with type S, a subtype of T
+</pre>
+      </dd>
+    </dl>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__new__"><code>__builtin__.object.__new__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__reduce__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__reduce__</span>(<span class="sig-vararg">...</span>)</span>
+  </h3>
+  Reduce an object to contituent parts for serialization
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__reduce__"><code>__builtin__.object.__reduce__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__setattr__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__setattr__</span>(<span class="sig-vararg">...</span>)</span>
+  </h3>
+  x.__setattr__('name', value) &lt;==&gt; x.name = value
+  <dl><dt></dt><dd>
+    <dl><dt><b>Overrides:</b></dt>
+      <dd><a href="__builtin__.object-class.html#__setattr__"><code>__builtin__.object.__setattr__</code></a></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="__setstate__"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">__setstate__</span>(<span class="sig-vararg">...</span>)</span>
+  </h3>
+<pre class="literalblock">
+Set the object serialization state
+
+The state should be in one of 3 forms:
+
+- None
+
+  Ignored
+
+- A dictionary
+
+  In this case, the object's instance dictionary will be cleared and 
+  updated with the new state.
+
+- A two-tuple with a string as the first element. 
+
+  In this case, the method named by the string in the first element will be
+  called with the second element.
+
+  This form supports migration of data formats.
+
+- A two-tuple with None or a Dictionary as the first element and
+  with a dictionary as the second element.
+
+  If the first element is not None, then the object's instance dictionary 
+  will be cleared and updated with the value.
+
+  The items in the second element will be assigned as attributes.
+</pre>
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_p_activate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_p_activate</span>()</span>
+  </h3>
+  _p_activate() -- Activate the object
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_p_deactivate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_p_deactivate</span>()</span>
+  </h3>
+  _p_deactivate() -- Deactivate the object
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_p_delattr"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_p_delattr</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  <p>This method should be called by subclass __delattr__ implementations 
+  before doing anything else. If it returns true, then the attribute was 
+  handled by the base class.</p>
+  The method unghostifies the object, if necessary. The method records 
+  the object access, if necessary.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_p_getattr"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_p_getattr</span>(<span class=sig-arg>name</span>)</span>
+  </h3>
+  <p>The method unghostifies the object, if necessary. The method records 
+  the object access, if necessary.</p>
+  This method should be called by subclass __getattribute__ 
+  implementations before doing anything else. If the method returns True, 
+  then __getattribute__ implementations must delegate to the base class, 
+  Persistent.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_p_invalidate"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_p_invalidate</span>()</span>
+  </h3>
+  _p_invalidate() -- Invalidate the object
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="_p_setattr"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_p_setattr</span>(<span class=sig-arg>name</span>,
+          <span class=sig-arg>value</span>)</span>
+  </h3>
+  <p>This method should be called by subclass __setattr__ implementations 
+  before doing anything else. If it returns true, then the attribute was 
+  handled by the base class.</p>
+  The method unghostifies the object, if necessary. The method records 
+  the object access, if necessary.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_p_changed"></a>
+<h3>_p_changed</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>getset_descriptor</code>
+
+      </dd>
+<span title="&lt;attribute '_p_changed' of 'persistent.Persistent' objects&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;attribute '_p_changed' of 'persistent.Persistent' objects&gt;            </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_p_jar"></a>
+<h3>_p_jar</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>getset_descriptor</code>
+
+      </dd>
+<span title="&lt;attribute '_p_jar' of 'persistent.Persistent' objects&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;attribute '_p_jar' of 'persistent.Persistent' objects&gt;                </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_p_mtime"></a>
+<h3>_p_mtime</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>getset_descriptor</code>
+
+      </dd>
+<span title="&lt;attribute '_p_mtime' of 'persistent.Persistent' objects&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;attribute '_p_mtime' of 'persistent.Persistent' objects&gt;              </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_p_oid"></a>
+<h3>_p_oid</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>getset_descriptor</code>
+
+      </dd>
+<span title="&lt;attribute '_p_oid' of 'persistent.Persistent' objects&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;attribute '_p_oid' of 'persistent.Persistent' objects&gt;                </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_p_serial"></a>
+<h3>_p_serial</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>getset_descriptor</code>
+
+      </dd>
+<span title="&lt;attribute '_p_serial' of 'persistent.Persistent' objects&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;attribute '_p_serial' of 'persistent.Persistent' objects&gt;             </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="_p_state"></a>
+<h3>_p_state</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>getset_descriptor</code>
+
+      </dd>
+<span title="&lt;attribute '_p_state' of 'persistent.Persistent' objects&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;attribute '_p_state' of 'persistent.Persistent' objects&gt;              </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:09 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

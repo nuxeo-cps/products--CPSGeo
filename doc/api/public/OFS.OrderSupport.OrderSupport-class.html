@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>OFS.OrderSupport.OrderSupport</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Package&nbsp;OFS ::
+        Module&nbsp;OrderSupport ::
+        Class&nbsp;OrderSupport
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/OFS.OrderSupport.OrderSupport-class.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="OFS.OrderSupport.OrderSupport-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class OrderSupport</h2>
+
+<dl><dt><b>Known Subclasses:</b></dt>
+<dd>
+    <a href="Products.CMFCore.PortalFolder.PortalFolder-class.html"><code>PortalFolder</code></a></dd></dl>
+
+<hr/>
+
+<p>Ordered container mixin class.</p>
+This is an extension to the regular ObjectManager. It saves the 
+objects in order and lets you change the order of the contained objects. 
+This is particular helpful, if the order does not depend on object 
+attributes, but is totally user-specific.
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsByDelta" class="summary-sig-name"><code>_cps_old_moveObjectsByDelta</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>delta</span>,
+          <span class=summary-sig-arg>subset_ids</span>)</span></code>
+<br />
+Move specified sub-objects by delta.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#getDefaultSorting" class="summary-sig-name"><code>getDefaultSorting</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Get default sorting key and direction.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#getObjectPosition" class="summary-sig-name"><code>getObjectPosition</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>)</span></code>
+<br />
+Get the position of an object by its id.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_down" class="summary-sig-name"><code>manage_move_objects_down</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>delta</span>)</span></code>
+<br />
+Move specified sub-objects down by delta in container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_to_bottom" class="summary-sig-name"><code>manage_move_objects_to_bottom</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>ids</span>)</span></code>
+<br />
+Move specified sub-objects to bottom of container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_to_top" class="summary-sig-name"><code>manage_move_objects_to_top</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>ids</span>)</span></code>
+<br />
+Move specified sub-objects to top of container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_up" class="summary-sig-name"><code>manage_move_objects_up</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>delta</span>)</span></code>
+<br />
+Move specified sub-objects up by delta in container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#manage_renameObject" class="summary-sig-name"><code>manage_renameObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>new_id</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+<br />
+Rename a particular sub-object without changing its position.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#manage_set_default_sorting" class="summary-sig-name"><code>manage_set_default_sorting</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>REQUEST</span>,
+          <span class=summary-sig-arg>key</span>,
+          <span class=summary-sig-arg>reverse</span>)</span></code>
+<br />
+Set default sorting key and direction.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="moveObjectsByDelta"></a><span class="summary-sig"><span class="summary-sig-name">moveObjectsByDelta</span>(<span class=summary-sig-arg>self</span>,
+          <span class="summary-sig-vararg">*args</span>,
+          <span class="summary-sig-kwarg">**kw</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsDown" class="summary-sig-name"><code>moveObjectsDown</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>delta</span>,
+          <span class=summary-sig-arg>subset_ids</span>)</span></code>
+<br />
+Move specified sub-objects down by delta in container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsToBottom" class="summary-sig-name"><code>moveObjectsToBottom</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>subset_ids</span>)</span></code>
+<br />
+Move specified sub-objects to bottom of container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsToTop" class="summary-sig-name"><code>moveObjectsToTop</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>subset_ids</span>)</span></code>
+<br />
+Move specified sub-objects to top of container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsUp" class="summary-sig-name"><code>moveObjectsUp</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>ids</span>,
+          <span class=summary-sig-arg>delta</span>,
+          <span class=summary-sig-arg>subset_ids</span>)</span></code>
+<br />
+Move specified sub-objects up by delta in container.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectToPosition" class="summary-sig-name"><code>moveObjectToPosition</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>position</span>)</span></code>
+<br />
+Move specified object to absolute position.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#orderObjects" class="summary-sig-name"><code>orderObjects</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>key</span>,
+          <span class=summary-sig-arg>reverse</span>)</span></code>
+<br />
+Order sub-objects by key and direction.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.OrderSupport.OrderSupport-class.html#setDefaultSorting" class="summary-sig-name"><code>setDefaultSorting</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>key</span>,
+          <span class=summary-sig-arg>reverse</span>)</span></code>
+<br />
+Set default sorting key and direction.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="tpValues"></a><span class="summary-sig"><span class="summary-sig-name">tpValues</span>(<span class=summary-sig-arg>self</span>)</span></code>
+</td></tr>
+<tr bgcolor="#e8f0f8" class="group">
+  <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;Inherited from CopyContainer</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="OFS.CopySupport.CopyContainer-class.html#manage_renameObject" class="summary-sig-name"><code>_old_manage_renameObject</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>id</span>,
+          <span class=summary-sig-arg>new_id</span>,
+          <span class=summary-sig-arg>REQUEST</span>)</span></code>
+</td></tr>
+</table><br />
+
+
+<!-- =========== START OF CLASS VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Class Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#__ac_permissions__"><code>__ac_permissions__</code></a></b> = <span title="(('Access contents information', ('getObjectPosition', 'getDefaultSorting')), ('Manage properties', ('manage_move_objects_down', 'moveObjectsToBottom', 'manage_move_objects_up', 'moveObjectsDown', 'setDefaultSorting', 'manage_move_objects_to_bottom', 'manage_move_objects_to_top', 'moveObjectToPosition', 'moveObjectsToTop', 'manage_set_default_sorting', 'moveObjectsByDelta', 'orderObjects', 'moveObjectsUp')))"><code>(('Access&nbsp;contents&nbsp;information',&nbsp;('<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Implements</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#__implemented__"><code>__implemented__</code></a></b> = <span title="&lt;implementedBy OFS.OrderSupport.OrderSupport&gt;"><code>&lt;implementedBy&nbsp;OFS.OrderSupport.OrderS<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>Interface</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#__implements__"><code>__implements__</code></a></b> = <span title="&lt;Interface OFS.IOrderSupport.IOrderedContainer at b758fa2c&gt;"><code>&lt;Interface&nbsp;OFS.IOrderSupport.IOrderedCo<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#__providedBy__"><code>__providedBy__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5b5eb0c&gt;"><code>&lt;zope.interface.declarations.ClassProvi<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>ClassProvides</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#__provides__"><code>__provides__</code></a></b> = <span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5b5eb0c&gt;"><code>&lt;zope.interface.declarations.ClassProvide<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#getDefaultSorting__roles__"><code>getDefaultSorting__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0e0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#getObjectPosition__roles__"><code>getObjectPosition__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0e0&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>int</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#has_order_support"><code>has_order_support</code></a></b> = <span title="1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_down__roles__"><code>manage_move_objects_down__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;obje<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_to_bottom__roles__"><code>manage_move_objects_to_bottom__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_to_top__roles__"><code>manage_move_objects_to_top__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_move_objects_up__roles__"><code>manage_move_objects_up__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_options"><code>manage_options</code></a></b> = <span title="({'action': 'manage_main', 'help': ('OFSP', 'OrderSupport_Contents.stx'), 'label': 'Contents'},)"><code>({'action':&nbsp;'manage_main',&nbsp;'help':&nbsp;('OF<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>tuple</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_renameObject__roles__"><code>manage_renameObject__roles__</code></a></b> = <span title="('Manager',)"><code>('Manager',)              </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#manage_set_default_sorting__roles__"><code>manage_set_default_sorting__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;ob<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsByDelta__roles__"><code>moveObjectsByDelta__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsDown__roles__"><code>moveObjectsDown__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsToBottom__roles__"><code>moveObjectsToBottom__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsToTop__roles__"><code>moveObjectsToTop__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0x<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectsUp__roles__"><code>moveObjectsUp__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb76<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#moveObjectToPosition__roles__"><code>moveObjectToPosition__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;a<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#orderObjects__roles__"><code>orderObjects__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0xb760<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>PermissionRole</code></font></td>
+<td><b><a href="OFS.OrderSupport.OrderSupport-class.html#setDefaultSorting__roles__"><code>setDefaultSorting__roles__</code></a></b> = <span title="&lt;PermissionRole object at 0xb760b0f8&gt;"><code>&lt;PermissionRole&nbsp;object&nbsp;at&nbsp;0<span class="variable-ellipsis">...</span></code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="moveObjectsByDelta"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">_cps_old_moveObjectsByDelta</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>,
+          <span class=sig-arg>delta</span>,
+          <span class=sig-arg>subset_ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects by delta.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getDefaultSorting"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getDefaultSorting</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Get default sorting key and direction.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getObjectPosition"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getObjectPosition</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>)</span>
+  </h3>
+  Get the position of an object by its id.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_move_objects_down"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_move_objects_down</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>delta</span>=<span class=sig-default>1</span>)</span>
+  </h3>
+  Move specified sub-objects down by delta in container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_move_objects_to_bottom"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_move_objects_to_bottom</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects to bottom of container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_move_objects_to_top"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_move_objects_to_top</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects to top of container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_move_objects_up"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_move_objects_up</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>ids</span>=<span class=sig-default>None</span>,
+          <span class=sig-arg>delta</span>=<span class=sig-default>1</span>)</span>
+  </h3>
+  Move specified sub-objects up by delta in container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_renameObject"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_renameObject</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>new_id</span>,
+          <span class=sig-arg>REQUEST</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Rename a particular sub-object without changing its position.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="manage_set_default_sorting"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">manage_set_default_sorting</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>REQUEST</span>,
+          <span class=sig-arg>key</span>,
+          <span class=sig-arg>reverse</span>)</span>
+  </h3>
+  Set default sorting key and direction.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="moveObjectsDown"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">moveObjectsDown</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>,
+          <span class=sig-arg>delta</span>=<span class=sig-default>1</span>,
+          <span class=sig-arg>subset_ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects down by delta in container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="moveObjectsToBottom"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">moveObjectsToBottom</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>,
+          <span class=sig-arg>subset_ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects to bottom of container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="moveObjectsToTop"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">moveObjectsToTop</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>,
+          <span class=sig-arg>subset_ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects to top of container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="moveObjectsUp"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">moveObjectsUp</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>ids</span>,
+          <span class=sig-arg>delta</span>=<span class=sig-default>1</span>,
+          <span class=sig-arg>subset_ids</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Move specified sub-objects up by delta in container.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="moveObjectToPosition"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">moveObjectToPosition</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>id</span>,
+          <span class=sig-arg>position</span>)</span>
+  </h3>
+  Move specified object to absolute position.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="orderObjects"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">orderObjects</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>key</span>,
+          <span class=sig-arg>reverse</span>=<span class=sig-default>None</span>)</span>
+  </h3>
+  Order sub-objects by key and direction.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setDefaultSorting"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setDefaultSorting</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>key</span>,
+          <span class=sig-arg>reverse</span>)</span>
+  </h3>
+  Set default sorting key and direction.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF CLASS VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Class Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__ac_permissions__"></a>
+<h3>__ac_permissions__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="(('Access contents information', ('getObjectPosition', 'getDefaultSorting')), ('Manage properties', ('manage_move_objects_down', 'moveObjectsToBottom', 'manage_move_objects_up', 'moveObjectsDown', 'setDefaultSorting', 'manage_move_objects_to_bottom', 'manage_move_objects_to_top', 'moveObjectToPosition', 'moveObjectsToTop', 'manage_set_default_sorting', 'moveObjectsByDelta', 'orderObjects', 'moveObjectsUp')))">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+(('Access contents information', ('getObjectPosition', 'getDefaultSort<span class="variable-linewrap">\</span>
+ing')),
+ ('Manage properties',
+  ('manage_move_objects_down',
+   'moveObjectsToBottom',
+   'manage_move_objects_up',
+   'moveObjectsDown',
+   'setDefaultSorting',
+<span class="variable-ellipsis">...</span>                                                                    </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implemented__"></a>
+<h3>__implemented__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Implements</code>
+
+      </dd>
+<span title="&lt;implementedBy OFS.OrderSupport.OrderSupport&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;implementedBy OFS.OrderSupport.OrderSupport&gt;                          </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__implements__"></a>
+<h3>__implements__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>Interface</code>
+
+      </dd>
+<span title="&lt;Interface OFS.IOrderSupport.IOrderedContainer at b758fa2c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;Interface OFS.IOrderSupport.IOrderedContainer at b758fa2c&gt;            </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__providedBy__"></a>
+<h3>__providedBy__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5b5eb0c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb5b5eb0c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="__provides__"></a>
+<h3>__provides__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>ClassProvides</code>
+
+      </dd>
+<span title="&lt;zope.interface.declarations.ClassProvides object at 0xb5b5eb0c&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0xb5b5eb0c&gt;       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getDefaultSorting__roles__"></a>
+<h3>getDefaultSorting__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0e0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0e0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="getObjectPosition__roles__"></a>
+<h3>getObjectPosition__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0e0&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0e0&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="has_order_support"></a>
+<h3>has_order_support</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>int</code>
+
+      </dd>
+<span title="1">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_move_objects_down__roles__"></a>
+<h3>manage_move_objects_down__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_move_objects_to_bottom__roles__"></a>
+<h3>manage_move_objects_to_bottom__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_move_objects_to_top__roles__"></a>
+<h3>manage_move_objects_to_top__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_move_objects_up__roles__"></a>
+<h3>manage_move_objects_up__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_options"></a>
+<h3>manage_options</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="({'action': 'manage_main', 'help': ('OFSP', 'OrderSupport_Contents.stx'), 'label': 'Contents'},)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+({'action': 'manage_main',
+  'help': ('OFSP', 'OrderSupport_Contents.stx'),
+  'label': 'Contents'},)                                               </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_renameObject__roles__"></a>
+<h3>manage_renameObject__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>tuple</code>
+
+      </dd>
+<span title="('Manager',)">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+('Manager',)                                                           </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="manage_set_default_sorting__roles__"></a>
+<h3>manage_set_default_sorting__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="moveObjectsByDelta__roles__"></a>
+<h3>moveObjectsByDelta__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="moveObjectsDown__roles__"></a>
+<h3>moveObjectsDown__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="moveObjectsToBottom__roles__"></a>
+<h3>moveObjectsToBottom__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="moveObjectsToTop__roles__"></a>
+<h3>moveObjectsToTop__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="moveObjectsUp__roles__"></a>
+<h3>moveObjectsUp__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="moveObjectToPosition__roles__"></a>
+<h3>moveObjectToPosition__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="orderObjects__roles__"></a>
+<h3>orderObjects__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="setDefaultSorting__roles__"></a>
+<h3>setDefaultSorting__roles__</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>PermissionRole</code>
+
+      </dd>
+<span title="&lt;PermissionRole object at 0xb760b0f8&gt;">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+&lt;PermissionRole object at 0xb760b0f8&gt;                                  </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="CPSGeo-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Fri Dec  9 03:18:18 2005</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

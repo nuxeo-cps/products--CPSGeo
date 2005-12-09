@@ -5,13 +5,14 @@
 		    base_url here/cpsskins_getBaseUrl;">
     <title>CPSGeo Map Browser</title>
     <metal:block use-macro="here/header_lib_header/macros/header|here/header_lib/macros/header"/>
-    <tal:block replace="structure string:<script type='text/javascript'>
+    <tal:block replace="structure string:<script>
       var baseDir = '${base_dir}';
+      var mbConfigUrl='geo_view_config.xml';
       </script>" />
     <script type="text/javascript" src="cps_geo_common.js"
-	    tal:attributes="src python:here.portal_url.getPortalPath() + '/cps_geo_common.js'"/>
+	    tal:attributes="src python:here.portal_url.getPortalPath() + '/cps_geo_common.js'"></script>
     <script type="text/javascript"
-	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"/>
+	    tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
   </head>
   <body onload="mbDoLoad()">
     <tal:zmi_header define="mtool nocall:here/portal_maps"

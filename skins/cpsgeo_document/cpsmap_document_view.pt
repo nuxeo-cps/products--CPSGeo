@@ -12,15 +12,15 @@
 	// URL of Mapbuilder configuration file.
 	var mbConfigUrl='cpsdoc_view_config.xml';    
       </script>
-      <script type="text/javascript" 
-	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
-      <script type="text/javascript" src="overlib.js" 
-	      tal:attributes="src string:${here/absolute_url}/overlib.js"></script>
     </metal:block>
     <metal:block fill-slot="header">
     </metal:block>
 
     <metal:block fill-slot="main">
+      <script type="text/javascript" 
+	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+      <script type="text/javascript" src="overlib.js" 
+	      tal:attributes="src string:${here/absolute_url}/overlib.js"></script>
       <div id="map_doc_body">
 	<tal:block tal:content="structure rendered_main|python:here.getContent().render(proxy=here)" />
       </div>

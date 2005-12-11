@@ -1,21 +1,21 @@
 <metal:block use-macro="here/main_template/macros/master">
   <metal:block fill-slot="doctype"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"></metal:block>
-  <metal:block fill-slot="javascript_head_slot"
-	       tal:define="base_dir python:utool.getPortalPath() + '/mapbuilder/lib'">
-    <tal:block replace="structure string:<script type='text/javascript'>
-      var baseDir = '${base_dir}';
-      </script>" />
-      <script type="text/javascript" src="cps_geo_common.js" 
-	      tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
-    </metal:block>
     <metal:block fill-slot="header">
       <h1 i18n:translate="header_geolocation_browser">
 	Browse maps
       </h1>
     </metal:block>
     <metal:block fill-slot="main">
-      <script type="text/javascript"
-	      tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+      <tal:block define="base_dir python:utool.getPortalPath() + '/mapbuilder/lib'">
+	<tal:block replace="structure string:<script type='text/javascript'>
+	  var baseDir = '${base_dir}';
+	  var mbConfigUrl='geo_edit_config.xml';
+	  </script>" />
+	  <script type="text/javascript" src="cps_geo_common.js" 
+		  tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
+	<script type="text/javascript"
+		tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+      </tal:block>
       <div align="right">
 	<metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
       </div>

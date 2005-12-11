@@ -1,7 +1,3 @@
-// URL of Mapbuilder configuration file.
-// Has to be included in all geo related template.
-var mbConfigUrl='geo_edit_config.xml';
-    
 function switch_map() {
   var box = document.getElementById("map_selector").map;
   var mappath = box.options[box.selectedIndex].value;

@@ -5,13 +5,10 @@
 	       tal:define="base_dir python:utool() + '/mapbuilder/lib'">
     <tal:block replace="structure string:<script type='text/javascript'>
       var baseDir = '${base_dir}';
+      var mbConfigUrl='cpsdoc_view_config.xml';    
       </script>" />
       <script type="text/javascript" src="cps_geo_common.js" 
 	      tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
-      <script>
-	// URL of Mapbuilder configuration file.
-	var mbConfigUrl='cpsdoc_view_config.xml';    
-      </script>
     </metal:block>
     <metal:block fill-slot="header">
     </metal:block>

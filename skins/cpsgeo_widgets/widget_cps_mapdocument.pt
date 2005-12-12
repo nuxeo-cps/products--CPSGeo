@@ -5,8 +5,6 @@
 		   global hide_buttons ds/hide_buttons;
 		   global hide_scale_box ds/hide_scale_box;
 		   global hide_cursor_track ds/hide_cursor_track;
-		   maptool nocall:here/portal_maps;
-		   map_context python:maptool.mapContextFor(map_id)
 		   ">
   <div align="right">
     <metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />

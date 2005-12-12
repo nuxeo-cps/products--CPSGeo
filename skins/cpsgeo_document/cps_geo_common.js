@@ -1,7 +1,7 @@
 function switch_map() {
   var box = document.getElementById("map_selector").map;
   var mappath = box.options[box.selectedIndex].value;
-  if (mappath)
+  if (mappath != '')
   {
     config.loadModel('mainMap', mappath + '/aggMapContext');
     config.loadModel('layerControl', mappath + '/mapContext');

@@ -21,7 +21,7 @@
 <div style="padding:10px; visibility:hidden" tal:condition="current_map_context">
   <form id="map_selector">
     <select name=map onChange="switch_map()">
-      <option tal:attributes="value string:portal_maps/${current_map_context/id}" selected="1"
+      <option tal:attributes="value string:" selected="1"
 	      tal:content="current_map_context/title">title
       </option>
     </select>

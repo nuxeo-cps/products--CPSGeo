@@ -7,6 +7,7 @@ New features:
 Bug fixes:
 ~~~~~~~~~~
 - Fix javacript warnings / errors on IE6 SP2.
+- Fix bug on the bounds / size override
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

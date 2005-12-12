@@ -7,14 +7,14 @@
     </metal:block>
     <metal:block fill-slot="main">
       <tal:block define="base_dir python:utool.getPortalPath() + '/mapbuilder/lib'">
-	<tal:block replace="structure string:<script type='text/javascript'>
+	<tal:block replace="structure string:<script>
 	  var baseDir = '${base_dir}';
 	  var mbConfigUrl='geo_edit_config.xml';
 	  </script>" />
-	  <script type="text/javascript" src="cps_geo_common.js" 
-		  tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
-	<script type="text/javascript"
-		tal:attributes="src string:mapbuilder/lib/Mapbuilder.js"></script>
+	  <script type="text/javascript"
+		  tal:attributes="src string:${base_dir}/cps_geo_common.js"></script>
+	  <script type="text/javascript"
+		  tal:attributes="src string:${base_dir}/Mapbuilder.js"></script>
       </tal:block>
       <div align="right">
 	<metal:block use-macro="here/cpsgeo_selector/macros/map_selector" />
@@ -25,18 +25,18 @@
 	    <metal:block use-macro="here/cpsgeo_maplocator/macros/maplocator" /><br/>
 	    <metal:block use-macro="here/cpsgeo_layers/macros/layers" />
 	  </td>
-	  <td valign="top"> 
+	  <td valign="top">
 	    <table width="100%">
 	      <tr>
 		<td align="center" valign="top"> <table>
 		  <tr>
-		    <td colspan="3"> 
+		    <td colspan="3">
 		      <div id="mainMapPane"/>
 		      <metal:block use-macro="here/cpsgeo_loading/macros/loading"/>
 		    </td>
 		  </tr>
 		  <tr>
-		    <td align="left"> 
+		    <td align="left">
 		      <div id="mainButtonBar"/>
 		    </td>
 		    <td align="center" id="mapScaleText" />&nbsp;

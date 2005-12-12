@@ -12,7 +12,7 @@
 	  var mbConfigUrl='geo_edit_config.xml';
 	  </script>" />
 	  <script type="text/javascript"
-		  tal:attributes="src string:${base_dir}/cps_geo_common.js"></script>
+		  tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
 	  <script type="text/javascript"
 		  tal:attributes="src string:${base_dir}/Mapbuilder.js"></script>
       </tal:block>

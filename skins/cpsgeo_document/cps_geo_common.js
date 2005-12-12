@@ -1,6 +1,11 @@
 function switch_map() {
+  // Switch the current map with one specified within the map selector.
+  // Has to be call *after* mapbuilder initialization has been completed
   var box = document.getElementById("map_selector").map;
   var mappath = box.options[box.selectedIndex].value;
+
+  // Here we are on a CPSMapDocument. The config file specifies
+  // already the model URLs including bounds and size overrides
   if (mappath != '')
   {
     config.loadModel('mainMap', mappath + '/aggMapContext');

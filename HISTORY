@@ -1,4 +1,21 @@
 *******************************************
+** CPSGeo V0.9.2 [R1 build 2005/12/12-15:48 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30501
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Fix javacript warnings / errors on IE6 SP2.
+- Fix bug on the bounds / size override
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSGeo V0.9.1 [R1 build 2005/12/12-00:58 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30490
 Requires:

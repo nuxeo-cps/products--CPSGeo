@@ -1,4 +1,20 @@
 *******************************************
+** CPSGeo V0.9.3 [R1 build 2005/12/15-16:50 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30678
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Allow administrator to add members that will be able to manage maps.
+Bug fixes:
+~~~~~~~~~~
+- Fix the global manager map action for PortalMapsManagers
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSGeo V0.9.2 [R1 build 2005/12/12-15:48 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30501
 Requires:

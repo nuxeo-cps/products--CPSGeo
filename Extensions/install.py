@@ -65,12 +65,22 @@ class CPSGeoInstaller(CPSInstaller):
     def verifyNewRolesAndPermissions(self):
         """Verify new Roles and permissions
         """
+
+        # Setup the new role 
         self.verifyRoles(['PortalMapsManager'])
+
+        # Adjust the permissions for the role
         self.setupPortalPermissions({
             ManagePortalMaps: ['Manager',
                                'PortalMapsManager',
                                 ],
             })
+
+        # Extend the roles vocabulary
+        vtool = getToolByName(self.portal, 'portal_vocabularies')
+        roles_voc = vtool['global_roles']
+        roles_voc.set('PortalMapsManager', 'PortalMapsManager',
+                      'label_cpsgeo_roles_PortalMapsManager')
         
     def setupMapTool(self):
         """Map Repository Tool
@@ -139,7 +149,7 @@ class CPSGeoInstaller(CPSInstaller):
             name='action_cps_manage_maps',
             action='string:${portal_url}/cpsgeo_manage_maps_form',
             condition="",
-            permission=(ManagePortal,),
+            permission=(ManagePortalMaps,),
             category='global',
             visible=1)
 

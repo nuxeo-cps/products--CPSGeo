@@ -129,3 +129,6 @@ msgstr ""
 
 msgid "action_add_map"
 msgstr ""
+
+msgid "label_cpsgeo_roles_PortalMapsManager"
+msgstr ""

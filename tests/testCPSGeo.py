@@ -20,6 +20,8 @@
 import os
 import sys
 
+from Products.CMFCore.utils import getToolByName
+
 import unittest
 import CPSGeoTestCase
 
@@ -27,9 +29,9 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
     def afterSetUp(self):
         self.login('manager')
-        self._mtool = self.portal.portal_maps
-
-        members = self.portal.portal_directories.members
+        self._mtool = getToolByName(self.portal, 'portal_maps')
+        self._mdir = getToolByName(self.portal, 'portal_directories')
+        members = self._mdir.members
         # Create a Member
         members.createEntry(
             {'id': 'member', 'givenName' : 'Foo',
@@ -194,6 +196,14 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
         bounds = self.portal.getMapBoundsFor()
         self.assertEqual(bounds, '')
+
+    def test_global_roles_voc(self):
+        vtool = getToolByName(self.portal, 'portal_vocabularies')
+        roles = vtool['global_roles']
+        map_manager = roles.get('PortalMapsManager')
+        self.assertEqual(map_manager, 'PortalMapsManager')
+        self.assertEqual(roles.getMsgid('PortalMapsManager'),
+                         'label_cpsgeo_roles_PortalMapsManager')
         
     #
     # PRIVATE

@@ -183,4 +183,8 @@ msgstr "Modifier cette carte"
 
 #, fuzzy
 msgid "action_add_map"
-msgstr "Modifier cette carte"
+msgstr "Ajouter une nouvelle carte"
+
+#, fuzzy
+msgid "label_cpsgeo_roles_PortalMapsManager"
+msgstr "Nom de la carte"

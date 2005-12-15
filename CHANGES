@@ -3,10 +3,10 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- Allow administrator to add members that will be able to manage maps.
 Bug fixes:
 ~~~~~~~~~~
--
+- Fix the global manager map action for PortalMapsManagers
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

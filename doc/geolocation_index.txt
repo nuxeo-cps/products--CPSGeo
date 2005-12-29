@@ -2,7 +2,7 @@
 Geolocation Index
 =================
 
-:Revision: $Id $
+:Revision: $Id$
 
 
 Geolocation and Cataloging

@@ -1,27 +1,48 @@
-Introduction
+===============
+CPSGeo Glossary
+===============
 
-    The CPSGeo product is aimed at geolocating and displaying documents
-    within the context of a map. Simple GIS (Geographic Information Systems)
-    capabilities are provided by three components: a site map tool, a map
-    widget, and a geolocation schema for documents.
+:Revision: $Id $
+
+.. sectnum::    :depth: 4
+.. contents::   :depth: 4
+
+
+Introduction
+============
+
+
+The CPSGeo product is aimed at geolocating and displaying
+documents within the context of a map. Simple GIS (Geographic
+Information Systems) capabilities are provided by three
+components: a site map tool, a map widget, and a geolocation
+schema for documents.
+
+Glossary
+========
 
 Geolocation Schema
-
-    Attaching a few new properties inspired by GML (Geography Markup Language)
-    to documents as a geolocation schema can promote a CPS document to a GIS
-    feature that can be displayed cartographically. See geolocation_schema.txt
-    for more details.
+    Attaching a few new properties inspired by GML (Geography
+    Markup Language) to documents as a geolocation schema can
+    promote a CPS document to a GIS feature that can be displayed
+    cartographically. See geolocation_schema.txt for more details.
     
 Map Tool
-
-    The site map tool, portal_maps, is used for configuration of base map
-    layers and also provides the means to query the portal_catalog for
-    geolocated documents. All server-side GIS is to be performed by
-    portal_maps.
+    The site map tool, portal_maps, is used for configuration of
+    base map layers and also provides the means to query the
+    portal_catalog for geolocated documents. All server-side GIS
+    is to be performed by portal_maps.
 
 Map Widget
+    The CPSGeo map widget provides the means to get document
+    location (geolocation schema fields) from a map, and also to
+    display documents overlaid on base map layers.
 
-    The CPSGeo map widget provides the means to get document location
-    (geolocation schema fields) from a map, and also to display documents
-    overlaid on base map layers.
+
+.. Emacs
+.. Local Variables:
+.. mode: rst
+.. End:
+.. Vim
+.. vim: set filetype=rst:
 

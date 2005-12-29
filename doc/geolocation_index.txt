@@ -1,20 +1,28 @@
-$Id: $
+=================
+Geolocation Index
+=================
+
+:Revision: $Id $
+
 
 Geolocation and Cataloging
-
     To rapidly find and map geolocated documents, new metadata and
     index are added. They extended CPS default metadata.
 
 Metadata
-
-    pos_list should be added to the catalog metadata to speed up the mapping of
-    geolocated documents.
+    pos_list should be added to the catalog metadata to speed up
+    the mapping of geolocated documents.
 
 Indexing
+    A new index, a FielIndex one, is added to the portal_catalog
+    that holds the coordinates of a given document. This is
+    available as well as metadata of the catalog search items.
 
-    A new index, a FielIndex one, is added to the portal_catalog that
-    holds the coordinates of a given document. This is available as
-    well as metadata of the catalog search items.
 
-      
-    
+.. Emacs
+.. Local Variables:
+.. mode: rst
+.. End:
+.. Vim
+.. vim: set filetype=rst:
+

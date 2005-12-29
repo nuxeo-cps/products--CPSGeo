@@ -1,74 +1,95 @@
-$Id: $
+==================
+Geolocation Schema
+==================
+
+:Revision: $Id $
 
 Schema Name
+===========
 
-    This schema is "geolocation" and is merged within the CPS default metadata.
+This schema is "geolocation" and is merged within the CPS default
+metadata.
     
+
 Origins in GML
+==============
 
-    The geolocation schema is based on a simple GML (Geography Markup
-    Language) point type geometry::
+The geolocation schema is based on a simple GML (Geography Markup
+Language) point type geometry::
 
-        <gml:Point srsName="EPSG:4326">
-            <gml:posList dimension="2">2.4 47.3</gml:posList>
-        </gml:Point>
+    <gml:Point srsName="EPSG:4326">
+        <gml:posList dimension="2">2.4 47.3</gml:posList>
+    </gml:Point>
 
-    With GML, it is generally accepted that *location* properties are of
-    *Point* type.
+With GML, it is generally accepted that *location* properties are
+of *Point* type.
     
+
 Schema for CPS
+==============
 
-    For CPS, we flatten this into three simple fields::
+For CPS, we flatten this into three simple fields:
 
-        spatial_reference_system : string , default: "string:EPSG:4326"
-            The default is "EPSG:4326", longitude/latitude coordinates using
-            the WGS84 earth model.
+spatial_reference_system : string , default: "string:EPSG:4326"
+    The default is "EPSG:4326", longitude/latitude coordinates using
+    the WGS84 earth model.
 
-        pos_list_dimension : int , default: "python:2"
-            The dimension of coordinate tuples specified in the PosList
-            string.  Our default is 2, meaning that we only specify x and y
-            coordinates.
+pos_list_dimension : int , default: "python:2"
+    The dimension of coordinate tuples specified in the PosList
+    string.  Our default is 2, meaning that we only specify x and y
+    coordinates.
 
-        pos_list : string , default: "string:"
-            Location coordinates in decimal degree units, like "[x] [y]",
-            where x is the longitude East of the Greenwich meridian, and y is
-            the latitude North of the equator.  A PosList for a location near
-            Paris would be "2.4 48.73", and for Denver: "-105.0 39.75"
+pos_list : string , default: "string:"
+    Location coordinates in decimal degree units, like "[x] [y]",
+    where x is the longitude East of the Greenwich meridian, and y is
+    the latitude North of the equator.  A PosList for a location near
+    Paris would be "2.4 48.73", and for Denver: "-105.0 39.75"
 
-    Note, for now only the `pos_list` field is used by CPS. In fact,
-    we are preforming conversions to EPSG:4326 coordinates system
-    before storing.
+Note, for now only the `pos_list` field is used by CPS. In fact,
+we are preforming conversions to EPSG:4326 coordinates system
+before storing.
+
 
 PosList Widget and Layout
+=========================
 
-    We will rely on the default values for spatial_reference_system and
-    pos_list_dimension until there is a strong future requirement for other
-    coordinates systems or 3D locations. No widgets or layout elements are
-    required for those schema fields. Below are the recommended properties for
-    the PosList widget::
+We will rely on the default values for spatial_reference_system
+and pos_list_dimension until there is a strong future requirement
+for other coordinates systems or 3D locations. No widgets or
+layout elements are required for those schema fields. Below are
+the recommended properties for the PosList widget:
 
-        Title : string
-            PosList
-        
-        Fields : tokens
-            pos_list
-        
-        Labels : string
-            WGS84 Coordinates
-        
-        Description : text
-            A string of location coordinates
-        
-        Help : text
-            A string of location coordinates. A point location must be
-            represented as a x (longitude east of Greenwich meridian) and y
-            (latitude north of equator) pair in decimal degree units. For
-            example:
-                Paris: "2.40 48.7333"
-                Denver: "-105.0 39.75"
-        
-        Display width : int
-            25
+Title : string
+    PosList
 
-  Same thing for the layout here, this merged within the CPS metadata layout.
+Fields : tokens
+    pos_list
+
+Labels : string
+    WGS84 Coordinates
+
+Description : text
+    A string of location coordinates
+
+Help : text
+    A string of location coordinates. A point location must be
+    represented as a x (longitude east of Greenwich meridian) and y
+    (latitude north of equator) pair in decimal degree units. For
+    example::
+
+        Paris: "2.40 48.7333"
+        Denver: "-105.0 39.75"
+
+Display width : int
+    25
+
+Same thing for the layout here, this merged within the CPS
+metadata layout.
+
+.. Emacs
+.. Local Variables:
+.. mode: rst
+.. End:
+.. Vim
+.. vim: set filetype=rst:
 

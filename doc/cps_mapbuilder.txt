@@ -1,52 +1,51 @@
-==================
-CPS and Mapbuilder
-==================
+=====================================
+CPS and Mapbuilder -- Developer Notes
+=====================================
 
-Developer Notes
+:Authors:
+  - Sean Gillies <sgillies@frii.com>
+  - Julien Anguenot <ja@nuxeo.com>
 
-Authors: Sean Gillies, sgillies@frii.com
-         Julien Anguenot, ja@nuxeo.com
+:Status: Draft, not complete.
 
-Status 
+:Revision: $Id $
 
-  Draft, not complete.
+.. sectnum::    :depth: 4
+.. contents::   :depth: 4
 
-Revision
 
-$Id: $
+Mapbuilder Overview
+===================
 
-1. Mapbuilder Overview
-======================
-
-Mapbuilder is a library for programming GIS and mapping AJAX web applications
-using XSL and Javascript. It is based upon the Sarissa library 
+Mapbuilder is a library for programming GIS and mapping AJAX web
+applications using XSL and JavaScript. It is based upon the
+Sarissa library: 
 
     http://sarissa.sourceforge.net/
 
-A mapbuilder application consists of one or more models, associated with one
-or more widgets and tools. Mapbuilder models store application state data as
-an XML document. Widgets use a combination of XSL and Javascript to render the
-models into HTML or images. Tools are for manipulation of the models.
+A Mapbuilder application consists of one or more models,
+associated with one or more widgets and tools. Mapbuilder models
+store application state data as an XML document. Widgets use a
+combination of XSL and JavaScript to render the models into HTML
+or images. Tools are for manipulation of the models.
  
-Mapbuilder's design is described in detail at
+Mapbuilder's design is described in detail at:
+http://mapbuilder.sourceforge.net/mapbuilder/docs/design/index.html
 
-    http://mapbuilder.sourceforge.net/mapbuilder/docs/design/index.html
+Configuration File
+------------------
 
-1.1 Configuration File
-----------------------
+Models, widgets, and their association are configured by
+Mapbuilder configuration files. 
 
-Models, widgets, and their association are configured by mapbuilder
-configuration files. 
+We have three Mapbuilder config files in use:
 
-We got three mapbuilder config files in use : 
+- CPSGeo/skins/cpsgeo_config/geo_view_config.xml.pt
+- CPSGeo/skins/cpsgeo_config/geo_edit_config.xml.pt
+- CPSGeo/skins/cpsgeo_config/cpsdoc_view_config.xml.pt
 
-CPSGeo/skins/cpsgeo_config/geo_view_config.xml.pt
-CPSGeo/skins/cpsgeo_config/geo_edit_config.xml.pt
-CPSGeo/skins/cpsgeo_config/cpsdoc_view_config.xml.pt
-
-Below is an excerpt from one of them :
-
-which configures the document geo-locating application::
+Below is an excerpt from one of them: This example configures the
+document geo-locating application::
 
     <MapbuilderConfig ...>
       <models>
@@ -66,145 +65,166 @@ which configures the document geo-locating application::
       </models>
     </MapbuilderConfig>
 
-Mapbuilder maps XML objects ("Context", "MapPane", "AoiMouseHandler") to
-library components in mapbuilder/lib/model, mapbuilder/lib/widget, or
-mapbuilder/lib/tool. Widget output is tied to DIVs in a web page through the
-"htmlTagId" property.
+Mapbuilder maps XML objects ("Context", "MapPane",
+"AoiMouseHandler") to library components in mapbuilder/lib/model,
+mapbuilder/lib/widget, or mapbuilder/lib/tool. Widget output is
+tied to DIVs in a web page through the "htmlTagId" property.
 
-1.2 Loading the Configuration
------------------------------
 
-The configuration is loaded upon load of HTML. Once loaded, all configured
-models can be accessed via a global "config" object. 
+Loading the Configuration
+-------------------------
 
-See for instance the files below that are loading configuration : 
+The configuration is loaded upon load of HTML. Once loaded, all
+configured models can be accessed via a global ``config`` object. 
 
- CPSGeo/skins/cpsgeo_document/cps_geolocation_form.pt
- CPSGeo/skins/cpsgeo_document/cpsmap_document_view.pt
- CPSGeo/skins/cpsgeo_standalone/cps_map_browser.pt
+See for instance the files below that are loading configuration: 
 
-They are actually simply including javascript files that will in
-result load the configuration.
+- CPSGeo/skins/cpsgeo_document/cps_geolocation_form.pt
+- CPSGeo/skins/cpsgeo_document/cpsmap_document_view.pt
+- CPSGeo/skins/cpsgeo_standalone/cps_map_browser.pt
 
-2. Mapbuilder Installation and Setup
-====================================
+They are actually simply including JavaScript files that will
+result in loading the configuration.
+
+
+Mapbuilder Installation and Setup
+=================================
 
 The initial release of CPSGeo uses Mapbuiler 0.4 with two
-modifications. The mapbuilder source must be mounted at
+modifications. The Mapbuilder source must be mounted at
 CPSGeo/skins/mapbuilder so that a CPSGeo/skins/mapbuilder/lib
-directory exists. In CPSGeo/skins/mapbuilder-patches are the two mods:
-a modified GmlPointRenderer widget, and a new FeatureBase widget.
+directory exists. In CPSGeo/skins/mapbuilder-patches are the two
+modifications: a modified GmlPointRenderer widget, and a new
+FeatureBase widget.
 
-As well, mapbuilder 0.4 does not allow to specify the Zoom factor, in
-and out, within the config file. Thus 2 mapbuilder files are patched
-to adress this issue. The default zoom factor for CPSGeo is 1.5
-instead of 4. ZoomIn.js and ZoomOut.js. We can expect to have this
-possiblity within mappbuilder-1.0.
+As well, Mapbuilder 0.4 does not support specifying the Zoom
+factor, in and out, within the config file. Thus two Mapbuilder
+files are patched to address this issue. The default zoom factor
+for CPSGeo is 1.5 instead of 4. ZoomIn.js and ZoomOut.js. We can
+expect to have this possibility within mapbuilder-1.0.
 
-2 other libraries are patched to avoid useless javascript
-popups. Proj.js and Config.js. The reason is that when doscument
-search results are showed on a map document and the one of those
-documents is not within the map bounds it raises a popup saying so
-which is useless.
+Two other libraries are patched to avoid useless JavaScript
+pop-ups. Proj.js and Config.js. The reason is that when document
+search results are showed on a map document and one of those
+documents is not within the map bounds, it raises a pop-up saying
+so, which is useless.
 
 The patches are documented within the external method itself.
 
-2.1 Installer Script
---------------------
 
-CPSGeo/Extensions/mapbuilder_installer.py contains an install_lib()
-function for loading mapbuilder and the two mods into a mapbuilder/lib
-folder in the CPS root. This function is called by the CPSGeo main
-installer in the context of the CPS root. Note, this external method
-is reponsible for patching the mapbuilder libs (see above)
-
-
-3. CPSGeo Mapbuilder Applications
-=================================
-
-CPSGeo includes two mapbuilder applications: one for document geo-location,
-and another for viewing geo-located documents on a map.
-
-3.1 Geo-location
+Installer Script
 ----------------
 
-The main HTML for this application is 
+CPSGeo/Extensions/mapbuilder_installer.py contains an
+``install_lib()`` function for loading Mapbuilder and the two
+modifications into a mapbuilder/lib folder in the CPS root. This
+function is called by the CPSGeo main installer in the context of
+the CPS root. Note, this external method is responsible for
+patching the Mapbuilder libs (see above).
 
-  CPSGeo/skins/cpsgeo_document/cps_geolocation_form.pt
 
-and the mapbuilder config file is 
+CPSGeo Mapbuilder Applications
+==============================
+
+CPSGeo includes two Mapbuilder applications: one for document
+geo-location, and another for viewing geo-located documents on a
+map.
+
+
+Geo-location
+------------
+
+The main HTML for this application is:
+
+  CPSGeo/skins/cpsgeo_document/cps_geolocation_form.pt.
+
+and the Mapbuilder config file is:
 
   CPSGeo/skins/cpsgeo_widgets/geo_edit_config.xml.dtml
 
-This app uses three models: a Context for the main map, a Context for the
-locator map, and a FeatureCollection for tracking the geo-location point.
+This application uses three models: a Context for the main map, a Context
+for the locator map, and a FeatureCollection for tracking the
+geo-location point.
 
-3.1.1 Main Map Context
-......................
 
-The main map context (id="mainMap") gets its initial state from the site map
-tool. The important properties of this model are its map layers, map size, and
-spatial extent. Initial values of these properties are managed through the
-site map tool, but afterwards are modified by the application widgets and
-tools. The main map is rendered into the main HTML at the DIV with
-id="mainMapPane".
+Main Map Context
+................
 
-3.1.2 Locator Map Context
-.........................
+The main map context (id="mainMap") gets its initial state from
+the site map tool. The important properties of this model are its
+map layers, map size, and spatial extent. Initial values of these
+properties are managed through the site map tool, but afterwards
+are modified by the application widgets and tools. The main map is
+rendered into the main HTML at the DIV with id="mainMapPane".
 
-The locator map context (id="locator") gets its initial state from a DTML skin
-component "geo_locatorMap.xml", whose source is
+
+Locator Map Context
+...................
+
+The locator map context (id="locator") gets its initial state from
+a DTML skin component "geo_locatorMap.xml", whose source is:
 
   CPSGeo/skins/cpsgeo_standalone/geo_locatorMap.xml.dtml
 
 It is rendered into the id="locatorMap" DIV in the main HTML.
 
-3.1.3 Feature Collection
-........................
 
-A feature collection (id="featureCollection") acts as a buffer to store
-temporary locations while we are geo-locating a document. The temp location is
-rendered both onto the main map pane as a red square, and into a form field
-that appears below the map pane in the main HTML.
+Feature Collection
+..................
 
-3.2 Mapping Documents
----------------------
+A feature collection (id="featureCollection") acts as a buffer to
+store temporary locations while we are geo-locating a document.
+The temp location is rendered both onto the main map pane as a red
+square, and into a form field that appears below the map pane in
+the main HTML.
 
-The main HTML for this application is 
+
+Mapping Documents
+-----------------
+
+The main HTML for this application is:
 
   CPSGeo/skins/cpsgeo_document/cpsmap_document_view.pt
 
-and the mapbuilder config file is 
+and the Mapbuilder config file is:
 
   CPSGeo/skins/cpsgeo_document/cpsdoc_view_config.xml.dtml
 
-This app uses three models: a Context for the main map, a Context for the
-locator map, and a GeoRSS model for the locations, titles, and descriptions of
-the documents to be mapped. The main map and locator contexts are identical to
-the ones described in sections 3.1.1 and 3.1.2 above.
+This application uses three models: a Context for the main map, a Context
+for the locator map, and a GeoRSS model for the locations, titles,
+and descriptions of the documents to be mapped. The main map and
+locator contexts are identical to the ones described in sections
+`Main Map Context`_ and `Locator Map Context`_ above.
 
-3.2.1 GeoRSS Model
-..................
 
-A GeoRSS document
+GeoRSS Model
+............
 
-    http://www.georss.org/
-
-is used to store the state of documents to be mapped in a form that can be
-easily rendered onto the map. The initial state of this model comes from the
-getGeoRSSModel() skin method called in the context of a CPSGeo Map Document.
-The source for that method is at
+A GeoRSS document (http://www.georss.org/) is used to store the
+state of documents to be mapped in a form that can be easily
+rendered onto the map. The initial state of this model comes from
+the ``getGeoRSSModel()`` skin method called in the context of a
+CPSGeo Map Document. The source for that method is at:
 
   CPSGeo/skins/cpsgeo_document/getGeoRSSModel.py
 
-This is actually calling a getGeoRSSModel() method on the
+This is actually calling a ``getGeoRSSModel()`` method on the
 CPSMapDocument within the proxy context itself.
 
-A GmlPointRenderer widget (id="pointRenderer") is responsible for rendering
-items of this GeoRSS model onto the main map pane using a document icon. A
-generic widget (id="printingFeatures") renders GeoRSS items into elements of a
-form used to generate the print-quality map.
+A GmlPointRenderer widget (``id="pointRenderer"``) is responsible
+for rendering items of this GeoRSS model onto the main map pane
+using a document icon. A generic widget (id="printingFeatures")
+renders GeoRSS items into elements of a form used to generate the
+print-quality map.
 
-CPSGeo has a modified version of Mapbuilder's GmlPointRenderer which exploits
-the overlib library's popup capability.
+CPSGeo has a modified version of Mapbuilder's GmlPointRenderer
+which exploits the overlib library's pop-up capability.
+
+
+.. Emacs
+.. Local Variables:
+.. mode: rst
+.. End:
+.. Vim
+.. vim: set filetype=rst:
 

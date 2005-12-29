@@ -8,7 +8,7 @@ CPS and Mapbuilder -- Developer Notes
 
 :Status: Draft, not complete.
 
-:Revision: $Id $
+:Revision: $Id$
 
 .. sectnum::    :depth: 4
 .. contents::   :depth: 4

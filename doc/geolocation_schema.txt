@@ -2,7 +2,7 @@
 Geolocation Schema
 ==================
 
-:Revision: $Id $
+:Revision: $Id$
 
 Schema Name
 ===========
@@ -46,7 +46,7 @@ pos_list : string , default: "string:"
     Paris would be "2.4 48.73", and for Denver: "-105.0 39.75"
 
 Note, for now only the `pos_list` field is used by CPS. In fact,
-we are preforming conversions to EPSG:4326 coordinates system
+we are performing conversions to EPSG:4326 coordinates system
 before storing.
 
 

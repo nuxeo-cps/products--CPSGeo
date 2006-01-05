@@ -67,6 +67,12 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         return os.path.join(
             utool.getRelativeContentURL(self), 'getGeoRSSModel')
 
+    security.declareProtected(View, 'hasMap')
+    def hasMap(self):
+        """Any map in here ?
+        """
+        return len(self.keys()) > 0
+
     security.declareProtected(View, 'mapContexts')
     def mapContexts(self):
         """Return a list of dicts describing map id, title, and BASEPATH2-ish
@@ -86,7 +92,6 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         for id_ in list(self.keys()):
             contexts.append(self.mapContextFor(id_, True))
         return contexts
-
 
     security.declareProtected(View, 'mapContextFor')
     def mapContextFor(self, mapid, aggregate_layers=False):

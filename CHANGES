@@ -6,7 +6,8 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Avoid js popup on map management form when no map are stored within
+the repository
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

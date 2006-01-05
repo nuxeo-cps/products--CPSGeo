@@ -1,14 +1,10 @@
-<metal:block define-macro="actions">
-  <div id="manage_map">
-    <h3>
-      <a href="javascript:editMap()" i18n:translate="action_edit_map">
-	Edit this map
-      </a>
-    </h3>
-    <h3>
-      <a href="javascript:addMap()" i18n:translate="action_add_map">
-	Add a new map
-      </a>
-    </h3>
-  </div>
+<metal:block define-macro="action_add">
+  <input type="button" class="context" onClick="history.back()"
+	 value="button_back" i18n:attributes="value" />
+  <input type="button" class="context" onClick="javascript:addMap();" 
+	 value="action_add_map" i18n:attributes="value"/>
+</metal:block>
+<metal:block define-macro="action_edit">
+  <input type="button" class="context" onClick="javascript:editMap();" 
+	 value="action_edit_map" i18n:attributes="value"/>
 </metal:block>

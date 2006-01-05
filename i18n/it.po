@@ -188,3 +188,6 @@ msgstr "Ajouter une nouvelle carte"
 #, fuzzy
 msgid "label_cpsgeo_roles_PortalMapsManager"
 msgstr "Nom de la carte"
+
+msgid "label_no_map_available_yet"
+msgstr "Aucune carte disponible"

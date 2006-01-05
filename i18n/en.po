@@ -178,3 +178,6 @@ msgstr "Add a new map"
 msgid "label_cpsgeo_roles_PortalMapsManager"
 msgstr "Maps Manager"
 
+msgid "label_no_map_available_yet"
+msgstr "No map available yet"
+

@@ -5,14 +5,16 @@
 	Browse maps
       </h1>
     </metal:block>
-    <metal:block fill-slot="main">
+    <metal:block fill-slot="main"
+		 tal:define="global with_context python:here.portal_maps.hasMap()">
+      <script type="text/javascript"
+	      tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
+      <tal:block condition="with_context">
       <tal:block define="base_dir python:utool.getPortalPath() + '/mapbuilder/lib'">
 	<tal:block replace="structure string:<script>
 	  var baseDir = '${base_dir}';
 	  var mbConfigUrl='geo_edit_config.xml';
 	  </script>" />
-	  <script type="text/javascript"
-		  tal:attributes="src string:${here/absolute_url}/cps_geo_common.js"></script>
 	  <script type="text/javascript"
 		  tal:attributes="src string:${base_dir}/Mapbuilder.js"></script>
       </tal:block>
@@ -45,14 +47,24 @@
 		</table>
 		</td>
 	      </tr>
-	      <tr>
-		<td colspan="3" align="right">
-		  <metal:block use-macro="here/cpsgeo_admin/macros/actions"/>
-		</td>
-	      </tr>
 	    </table>
 	  </td>
 	</tr>
       </table>
+    </tal:block>
+    <tal:block condition="not:with_context">
+      <div align="center" style="border-style:solid">
+	<br/>
+	<strong>
+	  <h3 i18n:translate="label_no_map_available_yet">No map available yet</h3>
+	</strong>
+	<br/>
+      </div>
+      <br/>
+    </tal:block>
+      <div align="right">
+	<metal:block use-macro="here/cpsgeo_admin/macros/action_add"/>
+	<metal:block use-macro="here/cpsgeo_admin/macros/action_edit"/>
+      </div>
     </metal:block>
   </metal:block>

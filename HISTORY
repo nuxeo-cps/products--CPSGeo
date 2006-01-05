@@ -1,4 +1,23 @@
 *******************************************
+** CPSGeo V0.9.4 [R1 build 2006/01/05-17:30 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 31343
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Avoid js popup on map management form when no map are stored within
+the repository
+- When all tools are hidden on a map document, prevent the user to be
+able to click on the map to zoom
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSGeo V0.9.3 [R1 build 2005/12/15-16:50 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 30678
 Requires:

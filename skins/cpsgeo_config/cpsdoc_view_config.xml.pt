@@ -87,7 +87,7 @@
     <ZoomIn id="zoomIn">
       <buttonBar>mainButtonBar</buttonBar>
       <targetModel>mainMap</targetModel>
-      <mouseHandler>mainAoi</mouseHandler>
+      <mouseHandler tal:condition="python:not getattr(here.getContent(), 'hide_buttons', True)">mainAoi</mouseHandler>
       <class>RadioButton</class>
       <selected>true</selected>
       <enabledSrc>/images/ZoomInEnable.gif</enabledSrc>

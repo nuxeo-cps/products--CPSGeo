@@ -142,6 +142,45 @@ class Reader111TestCase03(unittest.TestCase):
         expected = 'epsg:27582'
         self.assertEqual(srs, expected)
 
+class Reader111TestCase04(unittest.TestCase):
+
+    # To check that the legend url works ok
+
+    def setUp(self):
+        this_directory = os.path.split(__file__)[0]
+        filepath = os.path.join(
+            this_directory,
+            'capa_agri.xml')
+        f = open(filepath, 'r')
+        self._cap = WMSCapabilitiesInfoset(etree.fromstring(f.read()))
+    
+    def test_layerInfo(self):
+
+        info = self._cap.getLayerInfo()
+        self.assertEqual(len(info.keys()), 6)
+
+        titles = info.keys()
+        titles.sort()
+
+        expected = ['Communes_37',
+                    'Depfla',
+                    # Because of the accents
+                    u'Dessertes_Foresti\xe8re',
+                    'Massifs_forestiers',
+                    'Points_d_eau',
+                    'scan25_037']
+
+        expected.sort()
+        self.assertEqual(titles, expected)
+                                 
+        self.assertEqual(len(info.values()), 6)
+        styles = [x[0] for x in info.values() if x]
+        self.assertEqual(len(styles), 5)
+
+#        for iinfo in info:
+#            if iinfo:
+#                print etree.tostring(info)
+
 class WMSCapabilitiesReaderFromStringTestCase(Reader111TestCase03):
 
     def setUp(self):
@@ -203,6 +242,7 @@ def test_suite():
     suite.addTest(unittest.makeSuite(Reader111TestCase01))
     suite.addTest(unittest.makeSuite(Reader111TestCase02))
     suite.addTest(unittest.makeSuite(Reader111TestCase03))
+    suite.addTest(unittest.makeSuite(Reader111TestCase04))
     suite.addTest(unittest.makeSuite(WMSErrorTestCase))
     suite.addTest(unittest.makeSuite(WMSCapabilitiesReaderFromStringTestCase))
     suite.addTest(unittest.makeSuite(WMSCapabilitiesReaderURLTestCase))

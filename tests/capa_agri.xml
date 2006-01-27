@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/capabilities_1_1_1.dtd"
+ [
+ <!ELEMENT VendorSpecificCapabilities EMPTY>
+ ]>  <!-- end of DOCTYPE declaration -->
+
+<WMT_MS_Capabilities version="1.1.1">
+
+<!-- MapServer version 4.6.1 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=WBMP OUTPUT=SVG SUPPORTS=PROJ SUPPORTS=FREETYPE SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=GEOS INPUT=EPPL7 INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>OGC:WMS</Name>
+  <Title>exemple037</Title>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/png</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/wbmp</Format>
+      <Format>image/tiff</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>application/vnd.ogc.gml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+    <DescribeLayer>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </DescribeLayer>
+    <GetLegendGraphic>
+      <Format>image/png</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=24bit</Format>
+      <Format>image/jpeg</Format>
+      <Format>image/wbmp</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetLegendGraphic>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+    <Format>application/vnd.ogc.se_blank</Format>
+  </Exception>
+  <VendorSpecificCapabilities />
+  <UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0"/>
+  <Layer>
+    <Name>exemple037</Name>
+    <Title>exemple037</Title>
+    <SRS>epsg:27582</SRS>
+    <LatLonBoundingBox minx="-4.64287" miny="46.7227" maxx="-3.30242" maxy="47.7165" />
+    <BoundingBox SRS="EPSG:27582"
+                minx="426955" miny="2.1939e+06" maxx="526245" maxy="2.30234e+06" />
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>scan25_037</Name>
+        <Title>scan25_037</Title>
+        <SRS>epsg:27582</SRS>
+        <ScaleHint min="0" max="12.4726" />
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Depfla</Name>
+        <Title>Depfla</Title>
+        <SRS>epsg:27582</SRS>
+        <LatLonBoundingBox minx="-10.7644" miny="41.3473" maxx="6.13858" maxy="51.0896" />
+        <BoundingBox SRS="EPSG:27582"
+                    minx="5638.02" miny="1.62043e+06" maxx="1.19782e+06" maxy="2.67744e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="20" height="10">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Depfla&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Communes_37</Name>
+        <Title>Communes_37</Title>
+        <SRS>epsg:27582</SRS>
+        <LatLonBoundingBox minx="-4.64327" miny="46.7227" maxx="-3.30098" maxy="47.718" />
+        <BoundingBox SRS="EPSG:27582"
+                    minx="426930" miny="2.1939e+06" maxx="526355" maxy="2.30251e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="20" height="10">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Communes_37&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Massifs_forestiers</Name>
+        <Title>Massifs_forestiers</Title>
+        <SRS>epsg:27582</SRS>
+        <LatLonBoundingBox minx="-4.64261" miny="46.7433" maxx="-3.30135" maxy="47.703" />
+        <BoundingBox SRS="EPSG:27582"
+                    minx="426930" miny="2.19619e+06" maxx="526355" maxy="2.30085e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="20" height="10">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Massifs_forestiers&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+<!-- WARNING: The layer name 'Dessertes_Forestière' might contain spaces or invalid characters or may start with a number. This could lead to potential problems. -->
+        <Name>Dessertes_Forestière</Name>
+        <Title>Dessertes_Forestière</Title>
+        <SRS>epsg:27582</SRS>
+        <LatLonBoundingBox minx="-4.64032" miny="46.7442" maxx="-3.30657" maxy="47.7007" />
+        <BoundingBox SRS="EPSG:27582"
+                    minx="427095" miny="2.19628e+06" maxx="525957" maxy="2.30059e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="20" height="10">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Dessertes_Forestière&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+    <Layer queryable="0" opaque="0" cascaded="0">
+        <Name>Points_d_eau</Name>
+        <Title>Points_d_eau</Title>
+        <SRS>epsg:27582</SRS>
+        <LatLonBoundingBox minx="-4.64506" miny="46.7325" maxx="-3.31068" maxy="47.7038" />
+        <BoundingBox SRS="EPSG:27582"
+                    minx="426749" miny="2.195e+06" maxx="525627" maxy="2.30095e+06" />
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="20" height="10">
+             <Format>image/png</Format>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://sig.geoweb.auzeville.agri/cgi-bin/mapserv?map=/geobase/local/web/geoweb/donnees_mapserver/stock_mapfiles/exemple037.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Points_d_eau&amp;format=image/png"/>
+          </LegendURL>
+        </Style>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>
+

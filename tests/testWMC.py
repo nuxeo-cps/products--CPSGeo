@@ -22,6 +22,7 @@ import unittest
 
 from Products.CPSGeo.Map import Map
 from Products.CPSGeo.ogclib import wmc
+from Products.CPSGeo.ogclib import wms
 
 class WMCBaseTestCase(unittest.TestCase):
 
@@ -95,10 +96,52 @@ class AggMapContextTestCase(WMCBaseTestCase):
     def _makeOneContext(self, **kw):
         return wmc.AggregateMapContext(self._map, **kw)
 
+# For the next test case testing the encoding of the capilities
+# document.
+class FakeMap(Map):
+    def __init__(self, id, url='', name=None, title=None, size='',
+                 bounds="", srs='', format=None, layers=[]):
+        """Initialize"""
+        this_directory = os.path.split(__file__)[0]
+        filepath = os.path.join(
+            this_directory,
+            'capa_agri.xml')
+        reader = wms.WMSCapabilitiesReader('1.1.1')
+        self._cap = reader.readString(open(filepath, 'r').read())
+        self.name = self._cap.servicename() or name
+        self.title = self._cap.servicetitle() or title
+        self.layernames = self._cap.layernames()
+        self.layertitles = self._cap.layertitles()
+        self.formatlist = self._cap.getmapformats()
+        self.srslist = self._cap.layersrs()
+        self.size = tuple(size)
+        self.srs = self._cap.getSRS()
+        self.bounds = self._cap.getBounds(self.srs)
+        self.format = format
+        self.visible_layers = tuple(layers)
+        self.url = "http://foo.bar"
+
+    def _readCapabilities(self):
+        return self._cap
+
+class EncodingTestCase(unittest.TestCase):
+
+    # agricms usecase
+
+    def setUp(self):
+        fake_map = FakeMap('fake')
+        self._wmc = wmc.MapContext(map_=fake_map)
+        self._aggwmc = wmc.AggregateMapContext(map_=fake_map)
+
+    def test_getLayerElement(self):
+        self._wmc._getLayerListElement()
+        self._aggwmc._getLayerListElement()
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(MapContextTestCase))
     suite.addTest(unittest.makeSuite(AggMapContextTestCase))
+    suite.addTest(unittest.makeSuite(EncodingTestCase))
     return suite
 
 if __name__ == '__main__':

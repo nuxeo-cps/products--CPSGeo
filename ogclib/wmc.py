@@ -154,10 +154,10 @@ class MapContext:
                 int(name not in self._map.visible_layers))
 
             # Layer styles
-            if layer_infos and layer_infos.get(title):
+            if layer_infos and layer_infos.get(name):
                 stylelist = WMCElement('StyleList')
                 # Get wms `Style` nodes for a given layer
-                for e_style in layer_infos.get(title):
+                for e_style in layer_infos.get(name):
                     e_style.attrib['current'] = '1'
                     # Change namespace to wmc
                     for node in e_style.getiterator():

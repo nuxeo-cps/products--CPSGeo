@@ -18,7 +18,7 @@ function submit_location() {
   var pos = doc_location.pos_list.value;
   var srs = config.objects.mainMap.getSRS();
   doc_location.srs.value = srs;
-  window.close();
+  //  window.close();
 }
 
 function update_map() {

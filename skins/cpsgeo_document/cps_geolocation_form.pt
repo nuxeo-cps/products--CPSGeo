@@ -55,7 +55,12 @@
 			  </span>
 			</div>
 			<div class="row">
-			  <span id="docLocation"/>
+			  <span id="docLocation">
+			    <input id="MbWidget_19" size="25" name="pos_list" type="text"  
+				   tal:define="doc here/getContent"  
+				   tal:attributes="value python:getattr(doc, 'pos_list', 'O O')" />  
+			      
+			  </span>
 			</div>
 		      </div>
 		      <div align="left">

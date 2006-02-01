@@ -1,4 +1,22 @@
 *******************************************
+** CPSGeo V0.9.6 [R1 build 2006/02/01-17:58 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 32494
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Fix IE bug on location submit. It seems this creep needs to have the
+widget defined within the template for being able to find it after on
+the submit.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSGeo V0.9.5 [R1 build 2006/01/30-15:48 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 32379
 Requires:

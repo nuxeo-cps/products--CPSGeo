@@ -6,9 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- Fix IE bug on location submit. It seems this creep needs to have the
-widget defined within the template for being able to find it after on
-the submit.
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

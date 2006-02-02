@@ -1,4 +1,22 @@
 *******************************************
+** CPSGeo V0.10.0 [R1 build 2006/02/02-02:16 by anguenot]
+** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 32530
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Change default value for `pos_list` from '0.00 0.00' to 'nan nan' so that
+documents that are not geo-localized don't appear on maps with this
+coordinates.
+
+*******************************************
 ** CPSGeo V0.9.6 [R1 build 2006/02/01-17:58 by anguenot]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSGeo/trunk Revision: 32494
 Requires:

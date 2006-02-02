@@ -9,6 +9,4 @@ Bug fixes:
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- Change default value for `pos_list` from '0.00 0.00' to 'nan nan' so that
-documents that are not geo-localized don't appear on maps with this
-coordinates.
+-

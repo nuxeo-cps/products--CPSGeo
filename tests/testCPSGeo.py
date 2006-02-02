@@ -99,7 +99,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
     def test_getCoordinatesForAsManager(self):
 
-        default_ = ''
+        default_ = 'nan nan'
 
         # No coordinates for now
         self.assertEqual(
@@ -121,7 +121,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
         self.login('member')
 
-        default_ = ''
+        default_ = 'nan nan'
 
 
         # No allowed so the user will get 0.0 instead of the real

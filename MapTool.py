@@ -122,12 +122,13 @@ class MapTool(UniqueObject, CMFBTreeFolder, ActionProviderBase):
         """Returns the coordinates of this proxy.
 
         The coordiantes are stored as metadata of the object within
-        the pos_list field.
+        the `pos_list` field.
 
-        We return '0.0,0.0' as default value.
+        We return 'nan nan' as default value since no coordinates means that
+        the proxy is not geo-localized.
         """
 
-        default_ = '0.0,0.0'
+        default_ = 'nan nan'
 
         if not _checkPermission(View, proxy):
             return default_

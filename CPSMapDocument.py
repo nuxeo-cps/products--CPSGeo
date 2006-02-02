@@ -20,6 +20,8 @@
 """CPS Map Document
 """
 
+from zLOG import LOG, DEBUG
+
 from AccessControl import ClassSecurityInfo
 from Globals import InitializeClass
 
@@ -52,9 +54,33 @@ class CPSMapDocument(CPSDocument):
             REQUEST.RESPONSE.setHeader('Content-type', 'text/xml')
             dm = self.getDataModel()
             brains = proxy.getSearchWidgetContents(dm)[0]
+            smart_brains = []
+            default_ = 'nan nan'
+            for brain in brains:
+                pos_list = getattr(brain, 'pos_list', default_)
+                try:
+                    # Handle default values. No corrdinates in this case.
+                    if pos_list == default_ or pos_list == '':
+                        continue
+
+                    # raise a ValueError if the split result list
+                    # doesn't contain exactly 2 elements
+                    # raise a TypeError if pos_list is not a sequence.
+                    x, y = pos_list.split() 
+
+                    # Try to cast.  Raise a ValueError if the values
+                    # cannot be casted to integers
+                    float(x)
+                    float(y)
+                except (TypeError, ValueError):
+                    LOG("CPSMapDocument.getGeoRSSModel", DEBUG,
+                        "Wrong pos_list value %s for %s" % (
+                        str(brain.getObject()), pos_list))
+                else:
+                    smart_brains.append(brain)
             map_ = self._getMapInstance()
             return brainsToGeoRSS(
-                proxy.Title(), proxy.absolute_url(), brains, map_.srs)
+                proxy.Title(), proxy.absolute_url(), smart_brains, map_.srs)
 
     security.declareProtected(View, 'getWebMapContext')
     def getWebMapContext(self, aggregate_layers=False, REQUEST=None):

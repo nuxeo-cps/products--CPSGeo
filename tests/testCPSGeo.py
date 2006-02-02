@@ -99,7 +99,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
     def test_getCoordinatesForAsManager(self):
 
-        default_ = '0.0,0.0'
+        default_ = ''
 
         # No coordinates for now
         self.assertEqual(
@@ -121,7 +121,8 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
         self.login('member')
 
-        default_ = '0.0,0.0'
+        default_ = ''
+
 
         # No allowed so the user will get 0.0 instead of the real
         # coordinates instead of the real one.
@@ -181,9 +182,9 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
 
         bounds = self.portal.getMapBoundsFor('map1')
         self.assertEqual(bounds, '-180.0 -90.0 180.0 90.0')
-        
+
     def test_getMapBoundsFor_does_not_exist(self):
-    
+
         # Python script
 
         self.login('manager')
@@ -204,7 +205,7 @@ class MapTest(CPSGeoTestCase.CPSGeoTestCase):
         self.assertEqual(map_manager, 'PortalMapsManager')
         self.assertEqual(roles.getMsgid('PortalMapsManager'),
                          'label_cpsgeo_roles_PortalMapsManager')
-        
+
     #
     # PRIVATE
     #

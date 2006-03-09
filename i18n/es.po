@@ -1,0 +1,182 @@
+# translation of en.po to
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+# Julien Anguenot <anguenot@dhcp-316-577>, 2005.
+# Julien Anguenot <ja@nuxeo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: CPSGeo\n"
+"POT-Creation-Date: 2005-11-14 04:27default\n"
+"PO-Revision-Date: 2006-03-04 10:38+0100\n"
+"Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
+"Language-Team: español <jesusmartin@lasalle.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Preferred-encodings: latin9 utf-8\n"
+"Domain: default\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"X-Generator: KBabel 1.10.2\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#.   <input name="cps_geolocate:method" onclick="submit_location();" type="submit" class="standalone" value="button_cpsgeo_set_location" />
+#: from ../skins/cpsgeo_document/cps_geolocation_form.pt
+msgid "button_cpsgeo_set_location"
+msgstr "Establecer las coordenadas"
+
+#.   <input name="x" onclick="update_map();" type="submit" class="standalone" value="button_cpsgeo_update_mainmap" />
+#: from ../skins/cpsgeo_widgets/cpsgeo_layers.pt
+msgid "button_cpsgeo_update_mainmap"
+msgstr "Actualizar el mapa principal"
+
+#.   <h1>
+#.   	Browse maps
+#.       </h1>
+#: from ../skins/cpsgeo_standalone/cps_map_browser.pt
+msgid "header_geolocation_browser"
+msgstr "Gestionar los mapas"
+
+#.   <h1>
+#.   	Geo-locate this document
+#.       </h1>
+#: from ../skins/cpsgeo_document/cps_geolocation_form.pt
+msgid "header_geolocation_form"
+msgstr "Geo-referenciar este documento"
+
+#.   <option value="">
+#.   	--- Choose Map ---
+#.         </option>
+#: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
+msgid "label_cpsgeo_choose_map"
+msgstr "Seleccionar un mapa"
+
+#.   <span>
+#.   			      WGS84 Coordinates
+#.   			    </span>
+#: from ../skins/cpsgeo_document/cps_geolocation_form.pt
+msgid "label_cpsgeo_coordinates"
+msgstr "Coordenadas"
+
+#.   <h3>
+#.   			Document Location
+#.   		      </h3>
+#: from ../skins/cpsgeo_document/cps_geolocation_form.pt
+msgid "label_cpsgeo_document_location"
+msgstr "Localización del documento"
+
+#.   <p>Loading Program<br />
+#.   		      <img attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif" />
+#.   		      </p>
+#.   <p>
+#.   		      Loading Program
+#.   		      <br />
+#.   		    <img attributes="src string:mapbuilder/lib/skin/default/images/Loading.gif" />
+#.   		    </p>
+#: from ../skins/cpsgeo_document/cps_geolocation_form.pt
+#: ../skins/cpsgeo_standalone/cps_map_browser.pt
+msgid "label_cpsgeo_loading_program"
+msgstr "Cargando programa"
+
+#.   <span>
+#.       Select base map
+#.     </span>
+#: from ../skins/cpsgeo_widgets/cpsgeo_selector.pt
+msgid "label_cpsgeo_select_base_map"
+msgstr "Seleccione un mapa"
+
+msgid "portal_type_CPSMapDocument_title"
+msgstr "Documento mapa"
+
+msgid "portal_type_CPSMapDocument_description"
+msgstr "Un documento mapa permite visualizar un mapa, propuesto por el propio sistema. Podremos realizar búsquedas en documentos geo-referenciados, generándose una capa representando la localización en el mapa de los documentos."
+
+msgid "label_cpsgeo_map_id"
+msgstr "Identificador del mapa"
+
+msgid "action_cps_map_server"
+msgstr "Ver los mapas"
+
+msgid "action_cps_geolocation"
+msgstr "Geo-referenciar este documento"
+
+msgid "label_WGS84_coordinates"
+msgstr "Geo-localización (coordenadas WGS84)"
+
+msgid "psm_document_geolocated"
+msgstr "Este documento ha sido geo-referenciado"
+
+msgid "label_cpsgeo_search_results"
+msgstr "Resultados de la búsqueda"
+
+msgid "label_folder"
+msgstr "Carpeta"
+
+msgid "label_nb_items"
+msgstr "Nb ítem"
+
+msgid "label_cpsgeo_hide_locator"
+msgstr "¿Ocultar el localizador?"
+
+msgid "label_cpsgeo_hide_layers"
+msgstr "¿Ocultar la lista de capas?"
+
+msgid "label_cpsgeo_hide_buttons"
+msgstr "¿Ocultar las herramientas (zoom, localización y desplazamiento)?"
+
+msgid "label_cpsgeo_hide_scale_box"
+msgstr "¿Ocultar la información sobre la escala del mapa?"
+
+msgid "label_cpsgeo_hide_cursor_track"
+msgstr "¿Ocultar las coordenadas del cursor?"
+
+msgid "label_cpsmap_document_print"
+msgstr "Imprimir"
+
+msgid "action_cps_manage_maps"
+msgstr "Gestionar mapas"
+
+msgid "label_cpsgeo_bounds"
+msgstr "Límites para el documento mapa"
+
+msgid "label_cpsgeo_size"
+msgstr "Tamaño del documento-mapa"
+
+msgid "label_cpsgeo_edit_map_url"
+msgstr "WMS URL"
+
+msgid "label_cpsgeo_edit_map_name"
+msgstr "Nombre del mapa"
+
+msgid "label_cpsgeo_edit_map_title"
+msgstr "Título del mapa"
+
+msgid "label_cpsgeo_edit_map_format"
+msgstr "Formato del mapa"
+
+msgid "label_cpsgeo_edit_map_size"
+msgstr "Tamaño del mapa"
+
+msgid "label_cpsgeo_edit_map_srs"
+msgstr "Proyección del mapa"
+
+msgid "label_cpsgeo_edit_map_bounds"
+msgstr "Límites del mapa"
+
+msgid "label_cpsgeo_edit_map_visible_layers"
+msgstr "Capas visibles del mapa"
+
+msgid "action_edit_map"
+msgstr "Editar este mapa"
+
+msgid "action_add_map"
+msgstr "Añadir un nuevo mapa"
+
+msgid "label_cpsgeo_roles_PortalMapsManager"
+msgstr "Administrador de mapas"
+
+msgid "label_no_map_available_yet"
+msgstr "No hay ningún mapa disponible"
+
